@@ -1,0 +1,27 @@
+platform :ios, '8.0'
+
+target 'UenoNativeStarter' do
+
+  pod 'react-native-navigation', :path => '../node_modules/react-native-navigation'
+
+  pod 'CodePush', :path => '../node_modules/react-native-code-push'
+
+  pod 'Yoga', :path => '../node_modules/react-native/ReactCommon/yoga/Yoga.podspec'
+
+  pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    'Core',
+    'BatchedBridge',
+    'RCTText',
+    'RCTNetwork',
+    'RCTWebSocket',
+    'RCTAnimation',
+    'RCTImage',
+    'RCTLinkingIOS',
+    'RCTPushNotification',
+    'DevSupport',
+  ]
+
+  target 'UenoNativeStarterTests' do
+    inherit! :search_paths
+  end
+end

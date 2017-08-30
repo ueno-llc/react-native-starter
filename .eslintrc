@@ -1,0 +1,33 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "plugins": [
+    "react-native"
+  ],
+  "rules": {
+    "react/prefer-stateless-function": 0,
+    "react/jsx-filename-extension": 0,
+    "jsx-a11y/href-no-hash": 0,
+    "no-use-before-define": 0,
+    "padded-blocks": 0,
+    "new-cap": 0,
+    "class-methods-use-this": 0,
+    "react/forbid-prop-types": 0,
+    "global-require": 0,
+    "import/no-unresolved": [2, {
+      "ignore": ['\.png$', '\.jpg$']
+    }],
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 1,
+    "react-native/no-inline-styles": 2,
+    "react-native/no-color-literals": 0,
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
+  "globals": {
+    "fetch": true,
+  }
+}

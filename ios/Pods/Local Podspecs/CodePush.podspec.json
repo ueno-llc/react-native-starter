@@ -1,0 +1,45 @@
+{
+  "name": "CodePush",
+  "version": "5.0.0",
+  "summary": "React Native plugin for the CodePush service",
+  "authors": "Microsoft Corporation",
+  "license": "MIT",
+  "homepage": "https://microsoft.github.io/code-push",
+  "source": {
+    "git": "https://github.com/Microsoft/react-native-code-push.git",
+    "tag": "v5.0.0-beta"
+  },
+  "platforms": {
+    "ios": "7.0",
+    "tvos": "9.0"
+  },
+  "preserve_paths": "*.js",
+  "libraries": "z",
+  "dependencies": {
+    "React": [
+
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "ios/CodePush/*.{h,m}",
+      "public_header_files": [
+        "ios/CodePush/CodePush.h"
+      ]
+    },
+    {
+      "name": "SSZipArchive",
+      "source_files": [
+        "ios/CodePush/SSZipArchive/*.{h,m}",
+        "ios/CodePush/SSZipArchive/aes/*.{h,c}",
+        "ios/CodePush/SSZipArchive/minizip/*.{h,c}"
+      ],
+      "private_header_files": [
+        "ios/CodePush/SSZipArchive/*.h",
+        "ios/CodePush/SSZipArchive/aes/*.h",
+        "ios/CodePush/SSZipArchive/minizip/*.h"
+      ]
+    }
+  ]
+}

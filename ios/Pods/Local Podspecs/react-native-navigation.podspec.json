@@ -1,0 +1,27 @@
+{
+  "name": "react-native-navigation",
+  "version": "1.1.206",
+  "summary": "React-native navigation solution",
+  "authors": {
+    "Wix": "Wix"
+  },
+  "homepage": "https://github.com/wix/react-native-navigation.git#readme",
+  "license": "MIT",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "module_name": "ReactNativeNavigation",
+  "source": {
+    "git": "https://github.com/wix/react-native-navigation.git",
+    "tag": "v1.1.206"
+  },
+  "source_files": "ios/**/*.{h,m}",
+  "header_mappings_dir": "ios",
+  "public_header_files": "ios/*.h",
+  "dependencies": {
+    "React": [
+
+    ]
+  },
+  "frameworks": "UIKit"
+}

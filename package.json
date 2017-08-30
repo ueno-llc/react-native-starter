@@ -1,0 +1,45 @@
+{
+	"name": "UenoNativeStarter",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"postinstall": "sh ./scripts/postinstall.sh",
+		"reload-env": "sh ./scripts/dotenv.sh",
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest"
+	},
+	"eslintIgnore": [
+		"config.env.js"
+	],
+	"dependencies": {
+		"core-decorators": "0.19.0",
+		"lodash": "4.17.4",
+		"mobx": "3.2.2",
+		"mobx-persist": "0.3.4",
+		"mobx-react": "4.2.2",
+		"prop-types": "15.5.10",
+		"react": "16.0.0-alpha.12",
+		"react-native": "0.47.2",
+		"react-native-code-push": "5.0.0-beta",
+		"react-native-config": "0.6.0",
+		"react-native-navigation": "1.1.206"
+	},
+	"devDependencies": {
+		"babel-jest": "20.0.3",
+		"babel-plugin-module-resolver": "2.7.1",
+		"babel-preset-react-native": "3.0.2",
+		"babel-preset-react-native-stage-0": "1.0.1",
+		"eslint": "4.5.0",
+		"eslint-config-airbnb": "15.1.0",
+		"eslint-import-resolver-babel-module": "3.0.0",
+		"eslint-plugin-import": "2.7.0",
+		"eslint-plugin-jsx-a11y": "6.0.2",
+		"eslint-plugin-react": "7.3.0",
+		"eslint-plugin-react-native": "3.1.0",
+		"jest": "20.0.4",
+		"react-test-renderer": "16.0.0-alpha.12"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}
