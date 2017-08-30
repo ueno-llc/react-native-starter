@@ -88,9 +88,9 @@ I personally needed to install additionally
 
 Close Android Studio
 
-### Running on Android device
+### Running on Android device or emulator
 
-Plug your phone in to USB port.
+Plug your phone in to USB port. (Skip if emulator)
 
 ```bash
 adb devices
@@ -99,21 +99,8 @@ adb devices
 Go to phone and check "Always allow ..." and hit Allow.
 
 ```bash
-react-native run-android --appIdSuffix=debug
+react-native run-android
 ```
 
-App now opens on device, but you will be prompted that the app want's to  draw overlay over other apps. Scroll down to our app and tick YES.
+App now opens on device, but if you will be prompted that the app want's to  draw overlay over other apps. Scroll down to our app and tick YES.
 Go back to app, shake device and hit Reload.
-
-### Running on Android Emulator
-
-Create a emulator device with Google APIs (Needed for signin)
-
-https://developer.android.com/studio/run/managing-avds.html
-
-```bash
-react-native run-android --appIdSuffix=debug
-```
-
-App now opens on device, but you will be prompted that the app want's to  draw overlay over other apps. Scroll down to our app and tick YES.
-Go back to app, Command+M and hit Reload.
