@@ -4,6 +4,7 @@
 
 # Xcode
 #
+.build
 build/
 *.pbxuser
 !default.pbxuser
@@ -24,11 +25,13 @@ project.xcworkspace
 
 # Android/IntelliJ
 #
+android/keystores/release.*
 build/
 .idea
 .gradle
 local.properties
 *.iml
+.vscode
 
 # node.js
 #
@@ -42,19 +45,17 @@ buck-out/
 *.keystore
 
 # fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
-
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 
-android/keystores/release.*
+# Environment (react-native-config)
 .env
 config.env.js
 GeneratedDotEnv.m
 GeneratedInfoPlistDotEnv.h
-.vscode
+
+# Firebase and Sentry
+sentry.properties
+GoogleService-Info.plist
+google-services.json

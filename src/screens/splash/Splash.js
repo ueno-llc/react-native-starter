@@ -11,7 +11,7 @@ export default class Splash extends Component {
     navigator: PropTypes.object.isRequired,
   }
 
-  @bind
+  @bind()
   onPress() {
     this.props.navigator.push({
       ...Screens.get(SPLASH_SCREEN).preset,
