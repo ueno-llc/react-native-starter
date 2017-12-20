@@ -9,8 +9,9 @@ matrix:
       os: osx
       osx_image: xcode9.2
       env: LANE=ios
-      # before_install:
-      #   - .travis/before_install.sh
+      before_install:
+        - nvm install 8
+        - node --version
 
     # Android builds
     - language: android
@@ -25,17 +26,18 @@ matrix:
         licenses:
           - 'android-sdk-license-.+'
           - 'google-gdk-license-.+'
-      # before_install:
-      #   - .travis/before_install.sh
+      before_install:
+        - nvm install 8
+        - node --version
 
     # CodePush builds
     - language: javascript
       env: LANE=js
-      # before_install:
-      #   - .travis/before_install.sh
-      #   - nvm install 8
-      #   - node --version
-      #   - npm install -g yarn react-native-cli
+      node_js:
+        - "8"
+      before_install:
+        - nvm install 8
+        - node --version
 
 install:
   - .travis/before_install.sh

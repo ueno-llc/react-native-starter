@@ -14,6 +14,14 @@ if [[ "$TRAVIS_BRANCH" == "master" ]]; then
   LAST_ANDROID=$(git log --grep='\[travis-android\]' -1 | grep -o -E -e "[0-9a-f]{40}")
   LAST_IOS=$(git log --grep='\[travis-ios\]' -1 | grep -o -E -e "[0-9a-f]{40}")
 
+  if [[ "$LAST_ANDROID" == "" ]]; then
+    LAST_ANDROID=$(git log --max-parents=0 HEAD | grep -o -E -e "[0-9a-f]{40}")
+  fi
+
+  if [[ "$LAST_IOS" == "" ]]; then
+    LAST_IOS=$(git log --max-parents=0 HEAD | grep -o -E -e "[0-9a-f]{40}")
+  fi
+
   # Get list of files changed since last successful builds
   TRIGGER_ANDROID=$(git rev-list $LAST_ANDROID..$TRAVIS_COMMIT | xargs -L1 git diff-tree --no-commit-id --name-only -r | grep "^android")
   TRIGGER_IOS=$(git rev-list $LAST_IOS..$TRAVIS_COMMIT | xargs -L1 git diff-tree --no-commit-id --name-only -r | grep "^ios")
@@ -52,11 +60,11 @@ fi
 
 if [[ "$TRAVIS_FINISHED" == "0" ]]; then
 
-    nvm install 8
     node --version
     npm install -g yarn react-native-cli
     curl -sL https://sentry.io/get-cli/ | bash
     gem install fastlane --no-rdoc --no-ri --no-document --quiet
+    yarn install
 
     if [[ "$LANE" == "ios" ]]; then
         (cd ios; pod install --repo-update; cd -)
