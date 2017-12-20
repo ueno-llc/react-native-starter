@@ -35,12 +35,9 @@ matrix:
       env: LANE=js
       node_js:
         - "8"
-      before_install:
-        - nvm install 8
-        - node --version
 
 install:
-  - .travis/before_install.sh
+  - .travis/install.sh
 
 script:
   - .travis/build.sh

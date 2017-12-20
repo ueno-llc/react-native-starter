@@ -1,9 +1,15 @@
 if [[ "$TRAVIS_FINISHED" == "1" ]]; then
+  # This lane has finished. Exit successfully.
   exit 0
 fi
 
+# Lint code
 yarn lint
+
+# Test code
 yarn test
+
+# TODO: Test with detox
 
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 
