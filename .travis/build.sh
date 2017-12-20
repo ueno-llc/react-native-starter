@@ -9,9 +9,12 @@ yarn lint
 # Test code
 yarn test
 
-# TODO: Test with detox
+# TODO: detox
 
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+
+  # Install Sentry CLI (cross-platform)
+  curl -sL https://sentry.io/get-cli/ | bash
 
   if [[ "$LANE" == "ios" && "$TRAVIS_BUILD_IOS" == "1" ]]; then
     fastlane ios travis
@@ -22,6 +25,9 @@ if [[ "$TRAVIS_BRANCH" == "master" ]]; then
   fi
 
   if [[ "$LANE" == "js" ]]; then
+    # Install code-push-cli
+    npm install -g code-push-cli
+
     # Login to code-push-cli
     code-push login --accessKey $CODEPUSH_ACCESS_KEY
 

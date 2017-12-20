@@ -60,9 +60,8 @@ fi
 
 if [[ "$TRAVIS_FINISHED" == "0" ]]; then
 
-    node --version
+    echo "Node version: $(node --version)"
     npm install -g yarn react-native-cli
-    curl -sL https://sentry.io/get-cli/ | bash
     gem install fastlane --no-rdoc --no-ri --no-document --quiet
     yarn install
 

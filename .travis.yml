@@ -11,7 +11,6 @@ matrix:
       env: LANE=ios
       before_install:
         - nvm install 8
-        - node --version
 
     # Android builds
     - language: android
@@ -28,7 +27,6 @@ matrix:
           - 'google-gdk-license-.+'
       before_install:
         - nvm install 8
-        - node --version
 
     # CodePush builds
     - language: javascript
