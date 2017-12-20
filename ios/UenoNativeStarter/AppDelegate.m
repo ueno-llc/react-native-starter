@@ -9,16 +9,21 @@
 
 #import "AppDelegate.h"
 #import "RCCManager.h"
+#import "RNSentry.h"
 
 #import <React/RCTLinkingManager.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <CodePush/CodePush.h>
+#import <Firebase.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [RNSentry installWithBridge:[[RCCManager sharedInstance] getBridge]];
+  [FIRApp configure];
+
   NSURL *jsCodeLocation;
   
 #ifdef DEBUG
