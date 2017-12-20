@@ -11,7 +11,7 @@ yarn test
 
 # TODO: detox
 
-if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+if [[ "$TRAVIS_BRANCH" == "feature/travis" ]]; then
 
   # Install Sentry CLI (cross-platform)
   curl -sL https://sentry.io/get-cli/ | bash

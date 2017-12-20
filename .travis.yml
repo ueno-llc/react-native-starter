@@ -3,6 +3,9 @@ branches:
     - master
 
 matrix:
+  fast_finish: true
+  allow_failures:
+    - os: osx
   include:
     # iOS builds
     - language: objective-c

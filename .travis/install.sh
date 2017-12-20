@@ -8,7 +8,7 @@ echo "export default {};" > src/config.env.js
 ## Determine what to build on which matrix lane
 ## ============================================
 
-if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+if [[ "$TRAVIS_BRANCH" == "feature/travis" ]]; then
 
   # Find last successfully built android and ios commits
   LAST_ANDROID=$(git log --grep='\[travis-android\]' -1 | grep -o -E -e "[0-9a-f]{40}")
