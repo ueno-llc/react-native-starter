@@ -57,3 +57,4 @@ android/keystores/release.*
 config.env.js
 GeneratedDotEnv.m
 GeneratedInfoPlistDotEnv.h
+.vscode
