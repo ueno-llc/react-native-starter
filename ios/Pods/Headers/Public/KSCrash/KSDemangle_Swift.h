@@ -1,0 +1,1 @@
+../../../KSCrash/Source/KSCrash/Recording/Tools/KSDemangle_Swift.h

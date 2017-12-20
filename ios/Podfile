@@ -2,12 +2,16 @@ platform :ios, '8.0'
 
 target 'UenoNativeStarter' do
 
+  pod 'Firebase/Core'
+
   pod 'react-native-navigation', :path => '../node_modules/react-native-navigation'
+  pod 'SentryReactNative', :path => '../node_modules/react-native-sentry'
   pod 'CodePush', :path => '../node_modules/react-native-code-push'
   pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
   pod 'React', :path => '../node_modules/react-native', :subspecs => [
     'Core',
     'BatchedBridge',
+    'RCTActionSheet',
     'RCTText',
     'RCTNetwork',
     'RCTWebSocket',

@@ -13,6 +13,16 @@ PODS:
     - React
   - CodePush/SSZipArchive (5.2.1):
     - React
+  - KSCrash/Core (1.15.16):
+    - KSCrash/Reporting/Filters/Basic
+  - KSCrash/Recording (1.15.16):
+    - KSCrash/Recording/Tools (= 1.15.16)
+  - KSCrash/Recording/Tools (1.15.16)
+  - KSCrash/Reporting/Filters/Base (1.15.16):
+    - KSCrash/Recording
+  - KSCrash/Reporting/Filters/Basic (1.15.16):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
   - React (0.51.0):
     - React/Core (= 0.51.0)
   - react-native-navigation (1.1.315):
@@ -48,6 +58,16 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
+  - Sentry (3.10.0):
+    - Sentry/Core (= 3.10.0)
+    - Sentry/KSCrash (= 3.10.0)
+  - Sentry/Core (3.10.0)
+  - Sentry/KSCrash (3.10.0):
+    - KSCrash/Core (~> 1.15.12)
+  - SentryReactNative (0.32.0):
+    - React
+    - Sentry (~> 3.10.0)
+    - Sentry/KSCrash (~> 3.10.0)
   - yoga (0.51.0.React)
 
 DEPENDENCIES:
@@ -63,6 +83,7 @@ DEPENDENCIES:
   - React/RCTPushNotification (from `../node_modules/react-native`)
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
+  - SentryReactNative (from `../node_modules/react-native-sentry`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 EXTERNAL SOURCES:
@@ -72,15 +93,20 @@ EXTERNAL SOURCES:
     :path: ../node_modules/react-native
   react-native-navigation:
     :path: ../node_modules/react-native-navigation
+  SentryReactNative:
+    :path: ../node_modules/react-native-sentry
   yoga:
     :path: ../node_modules/react-native/ReactCommon/yoga
 
 SPEC CHECKSUMS:
   CodePush: 9400969397b340ee26772b79fcadd1a48a0449dc
+  KSCrash: e4cda5c8612c5f9478defcf43418f24870d313f4
   React: 352f02f1db6e4744f9a758527e13e3fdefbbd6ba
   react-native-navigation: 60aab54b90c47d7501c99ae507d5091936a8bee3
+  Sentry: 546079394a729c35ba8c10332942c25f96cac921
+  SentryReactNative: 4cbea26ab775a42929d4e841701de9b3573278f4
   yoga: b5d96400ca8b2936965a7a6516da7c1177f432a3
 
-PODFILE CHECKSUM: 4ecf38af1935198c705f8ea8ded236b1f7a35408
+PODFILE CHECKSUM: 3d2327ed5892bc3d7a3fe2688013eda314d05328
 
 COCOAPODS: 1.3.1
