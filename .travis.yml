@@ -9,10 +9,8 @@ matrix:
       os: osx
       osx_image: xcode9.2
       env: LANE=ios
-      before_install:
-        - brew install getsentry/tools/sentry-cli
-        - gem install fastlane --no-rdoc --no-ri --no-document --quiet
-        - (cd ios; pod install --repo-update; cd -)
+      # before_install:
+      #   - .travis/before_install.sh
 
     # Android builds
     - language: android
@@ -27,29 +25,20 @@ matrix:
         licenses:
           - 'android-sdk-license-.+'
           - 'google-gdk-license-.+'
-      before_install:
-        - .travis/before_install.sh
-        - nvm install 8
-        - node --version
-        - npm install -g yarn react-native-cli
-        - gem install fastlane --no-rdoc --no-ri --no-document --quiet
+      # before_install:
+      #   - .travis/before_install.sh
 
     # CodePush builds
     - language: javascript
       env: LANE=js
-      before_install:
-        - npm install -g code-push-cli
-
-before_install:
-  - .travis/before_install.sh
-  - nvm install 8
-  - node --version
-  - npm install -g yarn react-native-cli
+      # before_install:
+      #   - .travis/before_install.sh
+      #   - nvm install 8
+      #   - node --version
+      #   - npm install -g yarn react-native-cli
 
 install:
-  - yarn install
+  - .travis/before_install.sh
 
 script:
-  - npm run lint
-  - npm run test
   - .travis/build.sh

@@ -1,13 +1,12 @@
 TRAVIS_BUILD_ANDROID=0
 TRAVIS_BUILD_IOS=0
+TRAVIS_FINISHED=0
 
-travis_terminate() {
-  travis_finish build $1
-  pkill -9 -P $$ > /dev/null 2>&1
-  exit $1
-}
-
+# Set config env
 echo "export default {};" > src/config.env.js
+
+## Determine what to build on which matrix lane
+## ============================================
 
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 
@@ -40,16 +39,31 @@ if [[ "$TRAVIS_BRANCH" == "master" ]]; then
   fi
 fi
 
-echo "Build android? $TRAVIS_BUILD_ANDROID"
-echo "Build ios? $TRAVIS_BUILD_IOS"
+## Install dependencies
+## ====================
 
 if [[ "$LANE" == "android" && "$TRAVIS_BUILD_ANDROID" == "0" ]]; then
-    travis_terminate 1
+  TRAVIS_FINISHED=1
 fi
 
 if [[ "$LANE" == "ios" && "$TRAVIS_BUILD_IOS" == "0" ]]; then
-    travis_terminate 1
+  TRAVIS_FINISHED=1
+fi
+
+if [[ "$TRAVIS_FINISHED" == "0" ]]; then
+
+    nvm install 8
+    node --version
+    npm install -g yarn react-native-cli
+    curl -sL https://sentry.io/get-cli/ | bash
+    gem install fastlane --no-rdoc --no-ri --no-document --quiet
+
+    if [[ "$LANE" == "ios" ]]; then
+        (cd ios; pod install --repo-update; cd -)
+    fi
+
 fi
 
 export TRAVIS_BUILD_ANDROID=$TRAVIS_BUILD_ANDROID
 export TRAVIS_BUILD_IOS=$TRAVIS_BUILD_IOS
+export TRAVIS_FINISHED=$TRAVIS_FINISHED

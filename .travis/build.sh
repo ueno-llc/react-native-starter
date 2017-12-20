@@ -1,3 +1,10 @@
+if [[ "$TRAVIS_FINISHED" == "1" ]]; then
+  exit 0
+fi
+
+yarn lint
+yarn test
+
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 
   if [[ "$LANE" == "ios" && "$TRAVIS_BUILD_IOS" == "1" ]]; then
