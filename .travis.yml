@@ -2,12 +2,6 @@ branches:
   only:
     - master
 
-before_install:
-  - .travis/before_install.sh
-  - nvm install 8
-  - node --version
-  - npm install -g yarn react-native-cli
-
 matrix:
   include:
     # iOS builds
@@ -23,7 +17,18 @@ matrix:
     # Android builds
     - language: android
       env: LANE=android
+      android:
+        components:
+          - build-tools-25.0.3
+          - android-26
+          - extra-android-m2repository
+          - extra-google-google_play_services
+          - extra-google-m2repository
       before_install:
+        - .travis/before_install.sh
+        - nvm install 8
+        - node --version
+        - npm install -g yarn react-native-cli
         - gem install fastlane --no-rdoc --no-ri --no-document --quiet
 
     # CodePush builds
@@ -31,6 +36,12 @@ matrix:
       env: LANE=js
       before_install:
         - npm install -g code-push-cli
+
+before_install:
+  - .travis/before_install.sh
+  - nvm install 8
+  - node --version
+  - npm install -g yarn react-native-cli
 
 install:
   - yarn install
