@@ -24,6 +24,9 @@ matrix:
           - extra-android-m2repository
           - extra-google-google_play_services
           - extra-google-m2repository
+        licenses:
+          - 'android-sdk-license-.+'
+          - 'google-gdk-license-.+'
       before_install:
         - .travis/before_install.sh
         - nvm install 8
@@ -32,7 +35,7 @@ matrix:
         - gem install fastlane --no-rdoc --no-ri --no-document --quiet
 
     # CodePush builds
-    - os: linux
+    - language: javascript
       env: LANE=js
       before_install:
         - npm install -g code-push-cli

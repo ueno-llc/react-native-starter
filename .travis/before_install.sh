@@ -1,6 +1,8 @@
 TRAVIS_BUILD_ANDROID=0
 TRAVIS_BUILD_IOS=0
 
+echo "export default {};" > src/config.env.js
+
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 
   # Find last successfully built android and ios commits
