@@ -1,43 +1,54 @@
 PODS:
-  - CodePush (5.0.0):
-    - CodePush/Core (= 5.0.0)
-    - CodePush/SSZipArchive (= 5.0.0)
+  - CodePush (5.2.1):
+    - CodePush/Base64 (= 5.2.1)
+    - CodePush/Core (= 5.2.1)
+    - CodePush/JWT (= 5.2.1)
+    - CodePush/SSZipArchive (= 5.2.1)
     - React
-  - CodePush/Core (5.0.0):
+  - CodePush/Base64 (5.2.1):
     - React
-  - CodePush/SSZipArchive (5.0.0):
+  - CodePush/Core (5.2.1):
     - React
-  - React (0.47.2):
-    - React/Core (= 0.47.2)
-  - react-native-navigation (1.1.206):
+  - CodePush/JWT (5.2.1):
     - React
-  - React/BatchedBridge (0.47.2):
+  - CodePush/SSZipArchive (5.2.1):
+    - React
+  - React (0.51.0):
+    - React/Core (= 0.51.0)
+  - react-native-navigation (1.1.315):
+    - React
+  - React/BatchedBridge (0.51.0):
     - React/Core
     - React/cxxreact_legacy
-  - React/Core (0.47.2):
-    - Yoga (= 0.47.2.React)
-  - React/cxxreact_legacy (0.47.2):
+  - React/Core (0.51.0):
+    - yoga (= 0.51.0.React)
+  - React/cxxreact_legacy (0.51.0):
     - React/jschelpers_legacy
-  - React/DevSupport (0.47.2):
+  - React/DevSupport (0.51.0):
     - React/Core
     - React/RCTWebSocket
-  - React/jschelpers_legacy (0.47.2)
-  - React/RCTAnimation (0.47.2):
+  - React/fishhook (0.51.0)
+  - React/jschelpers_legacy (0.51.0)
+  - React/RCTAnimation (0.51.0):
     - React/Core
-  - React/RCTImage (0.47.2):
+  - React/RCTBlob (0.51.0):
+    - React/Core
+  - React/RCTImage (0.51.0):
     - React/Core
     - React/RCTNetwork
-  - React/RCTLinkingIOS (0.47.2):
+  - React/RCTLinkingIOS (0.51.0):
     - React/Core
-  - React/RCTNetwork (0.47.2):
+  - React/RCTNetwork (0.51.0):
     - React/Core
-  - React/RCTPushNotification (0.47.2):
+  - React/RCTPushNotification (0.51.0):
     - React/Core
-  - React/RCTText (0.47.2):
+  - React/RCTText (0.51.0):
     - React/Core
-  - React/RCTWebSocket (0.47.2):
+  - React/RCTWebSocket (0.51.0):
     - React/Core
-  - Yoga (0.47.2.React)
+    - React/fishhook
+    - React/RCTBlob
+  - yoga (0.51.0.React)
 
 DEPENDENCIES:
   - CodePush (from `../node_modules/react-native-code-push`)
@@ -52,7 +63,7 @@ DEPENDENCIES:
   - React/RCTPushNotification (from `../node_modules/react-native`)
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
-  - Yoga (from `../node_modules/react-native/ReactCommon/yoga/Yoga.podspec`)
+  - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 EXTERNAL SOURCES:
   CodePush:
@@ -61,15 +72,15 @@ EXTERNAL SOURCES:
     :path: ../node_modules/react-native
   react-native-navigation:
     :path: ../node_modules/react-native-navigation
-  Yoga:
-    :path: ../node_modules/react-native/ReactCommon/yoga/Yoga.podspec
+  yoga:
+    :path: ../node_modules/react-native/ReactCommon/yoga
 
 SPEC CHECKSUMS:
-  CodePush: 089e3da41b5040ba0ef89aa5d485f720ee4d5862
-  React: fbe1a006550fb55871cb377ba7741f5d1cfff733
-  react-native-navigation: 943b7094da149b8dab4a369b7fdee81be66a802c
-  Yoga: ff8531e8cf9f7ec92a75dd44286a68c4a084c507
+  CodePush: 9400969397b340ee26772b79fcadd1a48a0449dc
+  React: 352f02f1db6e4744f9a758527e13e3fdefbbd6ba
+  react-native-navigation: 60aab54b90c47d7501c99ae507d5091936a8bee3
+  yoga: b5d96400ca8b2936965a7a6516da7c1177f432a3
 
-PODFILE CHECKSUM: e25cff3b76532252f5297c1ddb12d5561ad8f299
+PODFILE CHECKSUM: 4ecf38af1935198c705f8ea8ded236b1f7a35408
 
 COCOAPODS: 1.3.1

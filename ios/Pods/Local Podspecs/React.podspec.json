@@ -1,6 +1,6 @@
 {
   "name": "React",
-  "version": "0.47.2",
+  "version": "0.51.0",
   "summary": "A framework for building native apps using React",
   "description": "React Native apps are built using the React JS\nframework, and render directly to native UIKit\nelements using a fully asynchronous architecture.\nThere is no browser and no HTML. We have picked what\nwe think is the best set of features from these and\nother technologies to build what we hope to become\nthe best product development framework available,\nwith an emphasis on iteration speed, developer\ndelight, continuity of technology, and absolutely\nbeautiful and fast products with no compromises in\nquality or capability.",
   "homepage": "http://facebook.github.io/react-native/",
@@ -8,12 +8,13 @@
   "authors": "Facebook",
   "source": {
     "git": "https://github.com/facebook/react-native.git",
-    "tag": "v0.47.2"
+    "tag": "v0.51.0"
   },
   "default_subspecs": "Core",
   "requires_arc": true,
   "platforms": {
-    "ios": "8.0"
+    "ios": "8.0",
+    "tvos": "9.2"
   },
   "pod_target_xcconfig": {
     "CLANG_CXX_LANGUAGE_STANDARD": "c++14"
@@ -29,8 +30,8 @@
     {
       "name": "Core",
       "dependencies": {
-        "Yoga": [
-          "0.47.2.React"
+        "yoga": [
+          "0.51.0.React"
         ]
       },
       "source_files": "React/**/*.{c,h,m,mm,S}",
@@ -39,12 +40,25 @@
         "IntegrationTests/*",
         "React/DevSupport/*",
         "React/Inspector/*",
-        "React/**/RCTTVView.*",
         "ReactCommon/yoga/*",
         "React/Cxx*/*",
         "React/Base/RCTBatchedBridge.mm",
         "React/Executors/*"
       ],
+      "ios": {
+        "exclude_files": "React/**/RCTTVView.*"
+      },
+      "tvos": {
+        "exclude_files": [
+          "React/Modules/RCTClipboard*",
+          "React/Views/RCTDatePicker*",
+          "React/Views/RCTPicker*",
+          "React/Views/RCTRefreshControl*",
+          "React/Views/RCTSlider*",
+          "React/Views/RCTSwitch*",
+          "React/Views/RCTWebView*"
+        ]
+      },
       "header_dir": "React",
       "frameworks": "JavaScriptCore",
       "libraries": "stdc++",
@@ -138,6 +152,9 @@
       "dependencies": {
         "Folly": [
           "2016.09.26.00"
+        ],
+        "React/PrivateDatabase": [
+
         ]
       },
       "compiler_flags": "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1",
@@ -147,6 +164,14 @@
         "HEADER_SEARCH_PATHS": "\"$(PODS_TARGET_SRCROOT)/ReactCommon\""
       },
       "frameworks": "JavaScriptCore"
+    },
+    {
+      "name": "PrivateDatabase",
+      "source_files": "ReactCommon/privatedata/*.{cpp,h}",
+      "private_header_files": "ReactCommon/privatedata/*.h",
+      "pod_target_xcconfig": {
+        "HEADER_SEARCH_PATHS": "\"$(PODS_TARGET_SRCROOT)/ReactCommon\""
+      }
     },
     {
       "name": "cxxreact",
@@ -163,7 +188,7 @@
       },
       "compiler_flags": "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1",
       "source_files": "ReactCommon/cxxreact/*.{cpp,h}",
-      "exclude_files": "ReactCommon/cxxreact/{JSCTracing,SampleCxxModule}.*",
+      "exclude_files": "ReactCommon/cxxreact/SampleCxxModule.*",
       "private_header_files": "ReactCommon/cxxreact/*.h",
       "pod_target_xcconfig": {
         "HEADER_SEARCH_PATHS": "\"$(PODS_TARGET_SRCROOT)/ReactCommon\" \"$(PODS_ROOT)/boost\" \"$(PODS_ROOT)/DoubleConversion\" \"$(PODS_ROOT)/Folly\""
@@ -188,15 +213,6 @@
       "source_files": "Libraries/ActionSheetIOS/*.{h,m}"
     },
     {
-      "name": "RCTAdSupport",
-      "dependencies": {
-        "React/Core": [
-
-        ]
-      },
-      "source_files": "Libraries/AdSupport/*.{h,m}"
-    },
-    {
       "name": "RCTAnimation",
       "dependencies": {
         "React/Core": [
@@ -205,6 +221,16 @@
       },
       "source_files": "Libraries/NativeAnimation/{Drivers/*,Nodes/*,*}.{h,m}",
       "header_dir": "RCTAnimation"
+    },
+    {
+      "name": "RCTBlob",
+      "dependencies": {
+        "React/Core": [
+
+        ]
+      },
+      "source_files": "Libraries/Blob/*.{h,m}",
+      "preserve_paths": "Libraries/Blob/*.js"
     },
     {
       "name": "RCTCameraRoll",
@@ -289,9 +315,20 @@
       "dependencies": {
         "React/Core": [
 
+        ],
+        "React/RCTBlob": [
+
+        ],
+        "React/fishhook": [
+
         ]
       },
       "source_files": "Libraries/WebSocket/*.{h,m}"
+    },
+    {
+      "name": "fishhook",
+      "header_dir": "fishhook",
+      "source_files": "Libraries/fishhook/*.{h,c}"
     },
     {
       "name": "RCTLinkingIOS",

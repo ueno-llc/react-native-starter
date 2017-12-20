@@ -1,0 +1,1 @@
+../../../../../../node_modules/react-native-navigation/ios/Helpers/RCTConvert+UIBarButtonSystemItem.h
