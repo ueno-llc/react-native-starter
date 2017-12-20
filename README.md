@@ -104,3 +104,5 @@ react-native run-android
 
 App now opens on device, but if you will be prompted that the app want's to  draw overlay over other apps. Scroll down to our app and tick YES.
 Go back to app, shake device and hit Reload.
+
+### Pipeline
