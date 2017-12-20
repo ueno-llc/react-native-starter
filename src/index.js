@@ -26,8 +26,7 @@ Array.from(Screens.entries()).forEach(([screenConst, screenModule]) =>
     screenModule.module,
     store,
     codePush(StoreProvider),
-  ),
-);
+  ));
 
 store
   .setup()

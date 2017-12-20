@@ -18,4 +18,4 @@ export const startApp = () => {
   Navigation.startSingleScreenApp({
     screen: Screens.get(SPLASH_SCREEN).preset,
   });
-}
+};

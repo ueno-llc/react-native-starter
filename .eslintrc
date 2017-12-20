@@ -2,7 +2,8 @@
   "extends": "airbnb",
   "parser": "babel-eslint",
   "plugins": [
-    "react-native"
+    "react-native",
+    "jest"
   ],
   "rules": {
     "react/prefer-stateless-function": 0,
@@ -15,7 +16,10 @@
     "react/forbid-prop-types": 0,
     "global-require": 0,
     "import/no-unresolved": [2, {
-      "ignore": ['\.png$', '\.jpg$']
+      "ignore": [
+        ".png$",
+        ".jpg$"
+      ]
     }],
     "react-native/no-unused-styles": 2,
     "react-native/split-platform-components": 1,
@@ -29,5 +33,9 @@
   },
   "globals": {
     "fetch": true,
+    "__DEV__": true
+  },
+  "env": {
+    "jest/globals": true
   }
 }
