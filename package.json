@@ -1,5 +1,5 @@
 {
-	"name": "UenoNativeStarter",
+	"name": "react-native-starter",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -22,6 +22,7 @@
 		"react-native": "0.51.0",
 		"react-native-code-push": "5.2.1",
 		"react-native-config": "0.11.2",
+		"react-native-firebase": "3.2.0",
 		"react-native-navigation": "1.1.315",
 		"react-native-sentry": "0.32.0"
 	},

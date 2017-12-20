@@ -7,6 +7,8 @@ import com.microsoft.codepush.react.CodePush;
 import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 
 import com.facebook.react.ReactApplication;
+import io.invertase.firebase.RNFirebasePackage;
+import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.sentry.RNSentryPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -27,7 +29,9 @@ public class MainApplication extends NavigationApplication {
         return Arrays.<ReactPackage>asList(
           new CodePush(BuildConfig.CODE_PUSH_DEPLOYMENT_KEY_ANDROID, MainApplication.this, BuildConfig.DEBUG),
           new ReactNativeConfigPackage(),
-          new RNSentryPackage(MainApplication.this)
+          new RNSentryPackage(MainApplication.this),
+          new RNFirebasePackage(),
+          new RNFirebaseAnalyticsPackage()
         );
     }
 

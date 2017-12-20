@@ -13,6 +13,20 @@ PODS:
     - React
   - CodePush/SSZipArchive (5.2.1):
     - React
+  - Firebase/Core (4.7.0):
+    - FirebaseAnalytics (= 4.0.5)
+    - FirebaseCore (= 4.0.12)
+  - FirebaseAnalytics (4.0.5):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.12):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (2.0.7)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
   - KSCrash/Core (1.15.16):
     - KSCrash/Reporting/Filters/Basic
   - KSCrash/Recording (1.15.16):
@@ -23,6 +37,11 @@ PODS:
   - KSCrash/Reporting/Filters/Basic (1.15.16):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/Base
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
   - React (0.51.0):
     - React/Core (= 0.51.0)
   - react-native-navigation (1.1.315):
@@ -39,6 +58,8 @@ PODS:
     - React/RCTWebSocket
   - React/fishhook (0.51.0)
   - React/jschelpers_legacy (0.51.0)
+  - React/RCTActionSheet (0.51.0):
+    - React/Core
   - React/RCTAnimation (0.51.0):
     - React/Core
   - React/RCTBlob (0.51.0):
@@ -58,6 +79,8 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
+  - RNFirebase (3.2.0):
+    - React
   - Sentry (3.10.0):
     - Sentry/Core (= 3.10.0)
     - Sentry/KSCrash (= 3.10.0)
@@ -72,10 +95,12 @@ PODS:
 
 DEPENDENCIES:
   - CodePush (from `../node_modules/react-native-code-push`)
+  - Firebase/Core
   - react-native-navigation (from `../node_modules/react-native-navigation`)
   - React/BatchedBridge (from `../node_modules/react-native`)
   - React/Core (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
+  - React/RCTActionSheet (from `../node_modules/react-native`)
   - React/RCTAnimation (from `../node_modules/react-native`)
   - React/RCTImage (from `../node_modules/react-native`)
   - React/RCTLinkingIOS (from `../node_modules/react-native`)
@@ -83,6 +108,7 @@ DEPENDENCIES:
   - React/RCTPushNotification (from `../node_modules/react-native`)
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
+  - RNFirebase (from `../node_modules/react-native-firebase/ios/RNFirebase.podspec`)
   - SentryReactNative (from `../node_modules/react-native-sentry`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -93,6 +119,8 @@ EXTERNAL SOURCES:
     :path: ../node_modules/react-native
   react-native-navigation:
     :path: ../node_modules/react-native-navigation
+  RNFirebase:
+    :path: ../node_modules/react-native-firebase/ios/RNFirebase.podspec
   SentryReactNative:
     :path: ../node_modules/react-native-sentry
   yoga:
@@ -100,13 +128,20 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CodePush: 9400969397b340ee26772b79fcadd1a48a0449dc
+  Firebase: dbfb98ccec2dcfcd21ab9cc1b4981a3f3c8c5e26
+  FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
+  FirebaseCore: 6cf108b63997bc08c04a1ffa55a3ac0d71a59ffc
+  FirebaseInstanceID: 148c25c986c8699e67304b114e365713dce467f2
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   KSCrash: e4cda5c8612c5f9478defcf43418f24870d313f4
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   React: 352f02f1db6e4744f9a758527e13e3fdefbbd6ba
   react-native-navigation: 60aab54b90c47d7501c99ae507d5091936a8bee3
+  RNFirebase: 22b1917fec663706907bc901ed665ac4f8b9bfd6
   Sentry: 546079394a729c35ba8c10332942c25f96cac921
   SentryReactNative: 4cbea26ab775a42929d4e841701de9b3573278f4
   yoga: b5d96400ca8b2936965a7a6516da7c1177f432a3
 
-PODFILE CHECKSUM: 3d2327ed5892bc3d7a3fe2688013eda314d05328
+PODFILE CHECKSUM: f8feaf22fe9e8c8673f531bd8ca7a6fb9fc53bb9
 
 COCOAPODS: 1.3.1
