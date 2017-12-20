@@ -1,6 +1,12 @@
 TRAVIS_BUILD_ANDROID=0
 TRAVIS_BUILD_IOS=0
 
+travis_terminate() {
+  travis_finish build $1
+  pkill -9 -P $$ > /dev/null 2>&1
+  exit $1
+}
+
 echo "export default {};" > src/config.env.js
 
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
