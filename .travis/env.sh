@@ -12,10 +12,12 @@ if [[ "$TRAVIS_BRANCH" == "feature/travis" ]]; then
   LAST_IOS=$(git log --grep='\[travis-ios\]' -1 | grep -o -E -e "[0-9a-f]{40}")
 
   if [[ "$LAST_ANDROID" == "" ]]; then
+    echo "Warning: No previous [Android] built on travis"
     LAST_ANDROID=$(git log --max-parents=0 HEAD | grep -o -E -e "[0-9a-f]{40}")
   fi
 
   if [[ "$LAST_IOS" == "" ]]; then
+    echo "Warning: No previous [iOS] built on travis"
     LAST_IOS=$(git log --max-parents=0 HEAD | grep -o -E -e "[0-9a-f]{40}")
   fi
 
@@ -55,7 +57,18 @@ if [[ "$LANE" == "ios" && "$TRAVIS_BUILD_IOS" == "0" ]]; then
   TRAVIS_FINISHED=1
 fi
 
-echo "LANE: $LANE"
-echo "BUILD_ANDROID: $TRAVIS_BUILD_ANDROID"
-echo "BUILD_IOS: $TRAVIS_BUILD_IOS"
-echo "FINISHED: $TRAVIS_FINISHED"
+echo "=== Environment checks ==="
+echo "[Android] Last android build: $LAST_ANDROID"
+echo "[Android] Changes in ./android since last build"
+echo "[Android]  - $TRIGGER_ANDROID"
+echo "[Android] Commit messages that forced a build"
+echo "[Android]  - $TRIGGER_ANDROID_BUILD"
+echo "[iOS] Last ios build: $LAST_IOS"
+echo "[iOS] Changes in ./ios since last build"
+echo "[iOS]  - $TRIGGER_ANDROID_BUILD"
+echo "[iOS] Commit messages that forced a build"
+echo "[iOS]  - $TRIGGER_IOS_BUILD"
+echo "[Environment] Lane: $LANE"
+echo "[Environment] TRAVIS_BUILD_ANDROID: $TRAVIS_BUILD_ANDROID"
+echo "[Environment] TRAVIS_BUILD_IOS: $TRAVIS_BUILD_IOS"
+echo "[Environment] TRAVIS_FINISHED: $TRAVIS_FINISHED"
