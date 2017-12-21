@@ -72,3 +72,8 @@ echo "[Environment] Lane: $LANE"
 echo "[Environment] TRAVIS_BUILD_ANDROID: $TRAVIS_BUILD_ANDROID"
 echo "[Environment] TRAVIS_BUILD_IOS: $TRAVIS_BUILD_IOS"
 echo "[Environment] TRAVIS_FINISHED: $TRAVIS_FINISHED"
+
+# Generate .env
+for KEY in $(cat .env_example | sed 's/\"/\\\"/g' | sed -n 's|\(.*\)=\(.*\)|\1|p'); do
+  echo "$KEY=$(printf '%s\n' "${!KEY}")" >> .env
+done

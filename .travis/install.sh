@@ -1,8 +1,5 @@
 source "$(dirname "$0")/env.sh"
 
-# Set config env
-echo "export default {};" > src/config.env.js
-
 if [[ "$TRAVIS_FINISHED" == "0" ]]; then
 
   echo "Node version: $(node --version)"
