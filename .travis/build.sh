@@ -1,7 +1,4 @@
-echo "LANE: $LANE"
-echo "BUILD_ANDROID: $TRAVIS_BUILD_ANDROID"
-echo "BUILD_IOS: $TRAVIS_BUILD_IOS"
-echo "FINISHED: $TRAVIS_FINISHED"
+source "$(dirname "$0")/env.sh"
 
 if [[ "$TRAVIS_FINISHED" == "1" ]]; then
   # This lane has finished. Exit successfully.
