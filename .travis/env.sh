@@ -56,24 +56,3 @@ fi
 if [[ "$LANE" == "ios" && "$TRAVIS_BUILD_IOS" == "0" ]]; then
   TRAVIS_FINISHED=1
 fi
-
-echo "=== Environment checks ==="
-echo "[Android] Last android build: $LAST_ANDROID"
-echo "[Android] Changes in ./android since last build"
-echo "$TRIGGER_ANDROID" | while read line; do echo "[Android] - $line"; done
-echo "[Android] Commit messages that forced a build"
-echo "$TRIGGER_ANDROID_BUILD" | while read line; do echo "[Android] - $line"; done
-echo "[iOS] Last ios build: $LAST_IOS"
-echo "[iOS] Changes in ./ios since last build"
-echo "$TRIGGER_IOS" | while read line; do echo "[iOS] - $line"; done
-echo "[iOS] Commit messages that forced a build"
-echo "$TRIGGER_IOS_BUILD" | while read line; do echo "[iOS] - $line"; done
-echo "[Environment] Lane: $LANE"
-echo "[Environment] TRAVIS_BUILD_ANDROID: $TRAVIS_BUILD_ANDROID"
-echo "[Environment] TRAVIS_BUILD_IOS: $TRAVIS_BUILD_IOS"
-echo "[Environment] TRAVIS_FINISHED: $TRAVIS_FINISHED"
-
-# Generate .env
-for KEY in $(cat .env_example | sed 's/\"/\\\"/g' | sed -n 's|\(.*\)=\(.*\)|\1|p'); do
-  echo "$KEY=$(printf '%s\n' "${!KEY}")" >> .env
-done
