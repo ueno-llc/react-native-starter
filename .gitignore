@@ -32,6 +32,7 @@ build/
 local.properties
 *.iml
 .vscode
+playstore.json
 
 # node.js
 #

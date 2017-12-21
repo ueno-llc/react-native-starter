@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.002347">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.002327">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: android_set_version_code" time="0.004283">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: android_get_version_name" time="0.002672">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="4: android_get_version_code" time="0.002513">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>

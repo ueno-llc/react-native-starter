@@ -45,7 +45,9 @@ platform :ios do
       xcodeproj: path,
       message: "Version #{version} (build #{build}) [travis-ios] [skip ci]"
     )
-    add_git_tag(tag: "v#{version}-#{build}")
+    add_git_tag(
+      tag: "v#{version}-#{build}-ios"
+    )
     push_to_git_remote(
       remote_branch:"master",
       tags: true,

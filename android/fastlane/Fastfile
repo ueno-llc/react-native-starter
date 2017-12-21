@@ -1,0 +1,41 @@
+fastlane_version "2.69.2"
+
+default_platform :android
+
+platform :android do
+  before_all do
+  end
+
+  desc "Continous Delivery build to Google Play"
+  lane :travis do
+    android_set_version_code
+    version = android_get_version_name
+    build = android_get_version_code
+    gradle(
+      task: "assembleRelease"
+    )
+    upload_to_play_store
+    git_pull
+    commit_android_version_bump(
+      force: true,
+      message: "Version #{version} (build #{build}) [travis-android] [skip ci]"
+    )
+    add_git_tag(
+      tag: "v#{version}-#{build}-android"
+    )
+    push_to_git_remote(
+      remote_branch: "master",
+      tags: true,
+      force: true
+    )
+    slack(
+      message: "Successfully uploaded #{version} (build #{build}) to Play Store"
+    )
+  end
+
+  after_all do |lane|
+  end
+
+  error do |lane, exception|
+  end
+end
