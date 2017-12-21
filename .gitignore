@@ -26,6 +26,8 @@ project.xcworkspace
 # Android/IntelliJ
 #
 android/keystores/release.*
+android/app/bin
+.project
 build/
 .idea
 .gradle
@@ -46,9 +48,9 @@ buck-out/
 *.keystore
 
 # fastlane
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots
+*/fastlane/report.xml
+*/fastlane/Preview.html
+*/fastlane/screenshots
 
 # Environment (react-native-config)
 .env

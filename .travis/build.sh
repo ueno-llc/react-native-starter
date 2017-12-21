@@ -19,11 +19,13 @@ yarn test
   curl -sL https://sentry.io/get-cli/ | bash
 
   if [[ "$LANE" == "ios" && "$TRAVIS_BUILD_IOS" == "1" ]]; then
-    fastlane ios travis
+    cd ios
+    fastlane travis
   fi
 
   if [[ "$LANE" == "android" && "$TRAVIS_BUILD_ANDROID" == "1" ]]; then
-    fastlane android travis
+    cd android
+    fastlane travis
   fi
 
   if [[ "$LANE" == "js" ]]; then

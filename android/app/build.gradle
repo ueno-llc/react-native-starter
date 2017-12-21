@@ -99,7 +99,7 @@ android {
         applicationId "com.ueno.reactnativestarter"
         minSdkVersion 16
         targetSdkVersion 22
-        versionCode 1
+        versionCode 11
         versionName "1.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
@@ -113,10 +113,19 @@ android {
             include "armeabi-v7a", "x86"
         }
     }
+    signingConfigs {
+        release {
+            storeFile file("../keystores/release.keystore")
+            storePassword project.env.get("ANDROID_KEYSTORE_PASSWORD")
+            keyAlias project.env.get("ANDROID_KEYSTORE_ALIAS")
+            keyPassword project.env.get("ANDROID_KEYSTORE_PASSWORD")
+        }
+    }
     buildTypes {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
         }
     }
     // applicationVariants are e.g. debug, release
