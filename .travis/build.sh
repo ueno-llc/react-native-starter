@@ -13,7 +13,7 @@ yarn test
 
 # TODO: detox
 
-if [[ "$TRAVIS_BRANCH" == "feature/travis" ]]; then
+# if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 
   # Install Sentry CLI (cross-platform)
   curl -sL https://sentry.io/get-cli/ | bash
@@ -45,4 +45,4 @@ if [[ "$TRAVIS_BRANCH" == "feature/travis" ]]; then
       sentry-cli react-native codepush $ANDROID_CODEPUSH_APPID android ./build --bundle-id $ANDROID_BUNDLE_ID
     fi
   fi
-fi
+# fi

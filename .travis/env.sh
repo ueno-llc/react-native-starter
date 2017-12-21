@@ -5,7 +5,7 @@ TRAVIS_FINISHED=0
 ## Determine what to build on which matrix lane
 ## ============================================
 
-if [[ "$TRAVIS_BRANCH" == "feature/travis" ]]; then
+# if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 
   # Find last successfully built android and ios commits
   LAST_ANDROID=$(git log --grep='\[travis-android\]' -1 | grep -o -E -e "[0-9a-f]{40}")
@@ -44,7 +44,7 @@ if [[ "$TRAVIS_BRANCH" == "feature/travis" ]]; then
   if [[ "$TRIGGER_IOS_BUILD" != "" ]]; then
     TRAVIS_BUILD_IOS=1
   fi
-fi
+# fi
 
 ## Install dependencies
 ## ====================
@@ -60,14 +60,14 @@ fi
 echo "=== Environment checks ==="
 echo "[Android] Last android build: $LAST_ANDROID"
 echo "[Android] Changes in ./android since last build"
-echo "[Android]  - $TRIGGER_ANDROID"
+echo "$TRIGGER_ANDROID" | while read line; do echo "[Android] - $line"; done
 echo "[Android] Commit messages that forced a build"
-echo "[Android]  - $TRIGGER_ANDROID_BUILD"
+echo "$TRIGGER_ANDROID_BUILD" | while read line; do echo "[Android] - $line"; done
 echo "[iOS] Last ios build: $LAST_IOS"
 echo "[iOS] Changes in ./ios since last build"
-echo "[iOS]  - $TRIGGER_ANDROID_BUILD"
+echo "$TRIGGER_IOS" | while read line; do echo "[iOS] - $line"; done
 echo "[iOS] Commit messages that forced a build"
-echo "[iOS]  - $TRIGGER_IOS_BUILD"
+echo "$TRIGGER_IOS_BUILD" | while read line; do echo "[iOS] - $line"; done
 echo "[Environment] Lane: $LANE"
 echo "[Environment] TRAVIS_BUILD_ANDROID: $TRAVIS_BUILD_ANDROID"
 echo "[Environment] TRAVIS_BUILD_IOS: $TRAVIS_BUILD_IOS"
