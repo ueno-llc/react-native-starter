@@ -22,6 +22,7 @@ matrix:
         components:
           - tools
           - platform-tools
+          - build-tools-23.0.1
           - build-tools-25.0.2
           - build-tools-25.0.3
           - android-25
