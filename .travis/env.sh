@@ -5,7 +5,7 @@ TRAVIS_FINISHED=0
 ## Determine what to build on which matrix lane
 ## ============================================
 
-# if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 
   # Find last successfully built android and ios commits
   LAST_ANDROID=$(git log --grep='\[travis-android\]' -1 | grep -o -E -e "[0-9a-f]{40}")
@@ -44,7 +44,7 @@ TRAVIS_FINISHED=0
   if [[ "$TRIGGER_IOS_BUILD" != "" ]]; then
     TRAVIS_BUILD_IOS=1
   fi
-# fi
+fi
 
 ## Install dependencies
 ## ====================
