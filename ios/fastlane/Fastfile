@@ -1,0 +1,68 @@
+fastlane_version "2.69.2"
+
+default_platform :ios
+
+platform :ios do
+
+  before_all do
+  end
+
+  desc "Continous Delivery build to TestFlight"
+  lane :travis do
+    create_keychain(
+      name: "ios-build.keychain-db",
+      password: ENV["MATCH_PASSWORD"],
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      add_to_search_list: true
+    )
+    match(
+      type: "appstore",
+      keychain_name: "ios-build.keychain-db",
+      keychain_password: ENV["MATCH_PASSWORD"],
+      readonly: true
+    )
+    scheme = "react-native-starter"
+    project_name = "react-native-starter"
+    path = "./#{project_name}.xcodeproj"
+    increment_build_number(xcodeproj: path)
+    version = get_version_number(xcodeproj: path)
+    build = get_build_number(xcodeproj: path)
+    gym(
+      scheme: scheme,
+      workspace: "./#{project_name}.xcworkspace",
+      output_directory: "ios/build",
+      configuration: "Release",
+      export_method: "app-store"
+    )
+    testflight(
+      skip_waiting_for_build_processing: true
+    )
+    git_pull
+    commit_version_bump(
+      force: true,
+      xcodeproj: path,
+      message: "Version #{version} (build #{build}) [travis-ios] [skip ci]"
+    )
+    add_git_tag(
+      tag: "v#{version}-#{build}-ios"
+    )
+    push_to_git_remote(
+      remote_branch:"master",
+      tags: true,
+      force: true
+    )
+    slack(
+      message: "Successfully uploaded #{version} (build #{build}) to TestFlight"
+    )
+  end
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+  end
+
+  error do |lane, exception|
+  end
+
+end

@@ -1,3 +1,5 @@
+./scripts/build-env.sh
+
 # Add podspecs
 git apply --directory=node_modules/react-native-navigation ./scripts/patches/react-native-navigation.patch
 

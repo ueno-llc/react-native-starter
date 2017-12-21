@@ -1,3 +1,5 @@
+source "$(dirname "$0")/env.sh"
+
 if [[ "$TRAVIS_FINISHED" == "1" ]]; then
   # This lane has finished. Exit successfully.
   exit 0
@@ -17,11 +19,13 @@ if [[ "$TRAVIS_BRANCH" == "master" ]]; then
   curl -sL https://sentry.io/get-cli/ | bash
 
   if [[ "$LANE" == "ios" && "$TRAVIS_BUILD_IOS" == "1" ]]; then
-    fastlane ios travis
+    cd ios
+    fastlane travis
   fi
 
   if [[ "$LANE" == "android" && "$TRAVIS_BUILD_ANDROID" == "1" ]]; then
-    fastlane android travis
+    cd android
+    fastlane travis
   fi
 
   if [[ "$LANE" == "js" ]]; then

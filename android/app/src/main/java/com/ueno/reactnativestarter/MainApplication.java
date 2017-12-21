@@ -27,7 +27,7 @@ public class MainApplication extends NavigationApplication {
 
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
-          new CodePush(BuildConfig.CODE_PUSH_DEPLOYMENT_KEY_ANDROID, MainApplication.this, BuildConfig.DEBUG),
+          new CodePush(BuildConfig.ANDROID_CODEPUSH_DEPLOYMENT_KEY, MainApplication.this, BuildConfig.DEBUG),
           new ReactNativeConfigPackage(),
           new RNSentryPackage(MainApplication.this),
           new RNFirebasePackage(),
