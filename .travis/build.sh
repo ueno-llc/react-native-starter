@@ -7,10 +7,10 @@ if [[ "$TRAVIS_FINISHED" == "1" ]]; then
 fi
 
 # Lint code
-yarn lint
+yarn lint || exit $?
 
 # Test code
-yarn test
+yarn test || exit $?
 
 # TODO: detox
 
@@ -21,20 +21,20 @@ if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 
   if [[ "$LANE" == "ios" && "$TRAVIS_BUILD_IOS" == "1" ]]; then
     cd ios
-    fastlane travis
+    fastlane travis || exit $?
   fi
 
   if [[ "$LANE" == "android" && "$TRAVIS_BUILD_ANDROID" == "1" ]]; then
     cd android
-    fastlane travis
+    fastlane travis || exit $?
   fi
 
   if [[ "$LANE" == "js" ]]; then
     # Install code-push-cli
-    npm install -g code-push-cli
+    npm install -g code-push-cli || exit $?
 
     # Login to code-push-cli
-    code-push login --accessKey $CODEPUSH_ACCESS_KEY
+    code-push login --accessKey $CODEPUSH_ACCESS_KEY || exit $?
 
     if [[ "$TRAVIS_BUILD_IOS" == "0" ]]; then
       code-push release-react $IOS_CODEPUSH_APPID ios --outputDir build --description "$TRAVIS_COMMIT_MESSAGE"
