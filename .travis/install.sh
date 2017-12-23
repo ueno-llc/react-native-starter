@@ -16,7 +16,20 @@ echo "[Environment] TRAVIS_BUILD_ANDROID: $TRAVIS_BUILD_ANDROID"
 echo "[Environment] TRAVIS_BUILD_IOS: $TRAVIS_BUILD_IOS"
 echo "[Environment] TRAVIS_FINISHED: $TRAVIS_FINISHED"
 
+# Generate secret files
+echo "[Environment] Generating secret files"
+FILES=(${GENSECRET//,/ })
+for file in "${FILES[@]}"
+do
+    KEYVAL=(${file//\:/ })
+    KEY=$(echo "${KEYVAL[0]}" | base64 -D)
+    VAL=$(echo "${KEYVAL[1]}" | base64 -D)
+    echo "[Environment] Generating $KEY"
+    echo $VAL >> $KEY
+done
+
 # Generate .env
+echo "[Environment] Creating .env file"
 for KEY in $(cat .env_example | sed 's/\"/\\\"/g' | sed -n 's|\(.*\)=\(.*\)|\1|p'); do
   echo "$KEY=$(printf '%s\n' "${!KEY}")" >> .env
 done
