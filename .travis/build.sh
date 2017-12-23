@@ -16,11 +16,6 @@ yarn test
 
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 
-  # Decrypt secret files
-  echo "Decrypting files (not available in PRs from forks)"
-  openssl aes-256-cbc -K $encrypted_4fa633217742_key -iv $encrypted_4fa633217742_iv -in .travis/secrets.tar.enc -out secrets.tar -d
-  tar xvf secrets.tar
-
   # Setup ssh-agent
   git config user.name "Travis CI"
   git config user.email "travis@travis-ci.org"
