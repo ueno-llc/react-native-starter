@@ -16,8 +16,8 @@ platform :android do
     )
     upload_to_play_store
     git_pull
-    commit_android_version_bump(
-      force: true,
+    git_commit(
+      path: "./app/build.gradle",
       message: "Version #{version} (build #{build}) [travis-android] [skip ci]"
     )
     add_git_tag(
