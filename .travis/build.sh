@@ -1,6 +1,7 @@
 source "$(dirname "$0")/env.sh"
 
 if [[ "$TRAVIS_FINISHED" == "1" ]]; then
+  echo "Finished. Exit 0"
   # This lane has finished. Exit successfully.
   exit 0
 fi
