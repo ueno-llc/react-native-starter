@@ -12,6 +12,7 @@ matrix:
     env: LANE=ios
     before_install:
     - nvm install 8
+    - brew install gnupg
   - language: android
     env: LANE=android
     android:
