@@ -22,8 +22,8 @@ FILES=(${GENSECRET//,/ })
 for file in "${FILES[@]}"
 do
     KEYVAL=(${file//\:/ })
-    KEY=$(echo "${KEYVAL[0]}" | base64 -D)
-    VAL=$(echo "${KEYVAL[1]}" | base64 -D)
+    KEY=$(echo "${KEYVAL[0]}" | base64 --decode)
+    VAL=$(echo "${KEYVAL[1]}" | base64 --decode)
     echo "[Environment] Generating $KEY"
     echo $VAL >> $KEY
 done
