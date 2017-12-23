@@ -16,8 +16,5 @@ do
     fi
 done
 
-tar cvf .travis/secrets.tar $FILES_TO_ADD
-
-# Run this command in terminal after loggin in
-#
-# `travis encrypt-file .travis/secrets.tar`
+zip .travis/secrets.zip -r $FILES_TO_ADD
+gpg -c .travis/secrets.zip

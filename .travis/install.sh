@@ -22,6 +22,11 @@ for KEY in $(cat .env_example | sed 's/\"/\\\"/g' | sed -n 's|\(.*\)=\(.*\)|\1|p
   echo "$KEY=$(printf '%s\n' "${!KEY}")" >> .env
 done
 
+# Generate secret files
+echo "[Environment] Generating secret files"
+echo $MATCH_PASSWORD | gpg --passphrase-fd 0 .travis/secrets.zip.gpg
+unzip .travis/secrets.zip -d ./
+
 # Setup github push certificate
 
 if [[ "$TRAVIS_FINISHED" == "0" ]]; then
