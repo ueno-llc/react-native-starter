@@ -14,6 +14,18 @@ yarn test || exit $?
 
 # TODO: detox
 
+if [ ! -z "$MATCH_PASSWORD" ]; then
+  # Setup ssh-agent for GitHub pushes
+  # This is only for public repositories with no write-access.
+  git config user.name "Travis CI"
+  git config user.email "travis@travis-ci.org"
+  eval `ssh-agent -s`
+  ssh-add .travis/id_rsa
+  REPO=`git config remote.origin.url`
+  git remote set-url origin ${REPO/https:\/\/github.com\//git@github.com:}
+  git ls-remote
+fi
+
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 
   # Install Sentry CLI (cross-platform)
