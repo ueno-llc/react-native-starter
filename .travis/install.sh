@@ -16,17 +16,13 @@ echo "[Environment] TRAVIS_BUILD_ANDROID: $TRAVIS_BUILD_ANDROID"
 echo "[Environment] TRAVIS_BUILD_IOS: $TRAVIS_BUILD_IOS"
 echo "[Environment] TRAVIS_FINISHED: $TRAVIS_FINISHED"
 
-# Generate secret files
-echo "[Environment] Generating secret files"
-echo $GENSECRET | base64 --decode > gensecret.zip
-unzip gensecret.zip
-rm gensecret.zip
-
 # Generate .env
 echo "[Environment] Creating .env file"
 for KEY in $(cat .env_example | sed 's/\"/\\\"/g' | sed -n 's|\(.*\)=\(.*\)|\1|p'); do
   echo "$KEY=$(printf '%s\n' "${!KEY}")" >> .env
 done
+
+# Setup github push certificate
 
 if [[ "$TRAVIS_FINISHED" == "0" ]]; then
 

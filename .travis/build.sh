@@ -7,26 +7,37 @@ if [[ "$TRAVIS_FINISHED" == "1" ]]; then
 fi
 
 # Lint code
-set -o pipefail && yarn lint
+yarn lint
 
 # Test code
-set -o pipefail && yarn test
+yarn test
 
 # TODO: detox
 
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+
+  # Decrypt secret files
+  echo "Decrypting files (not available in PRs from forks)"
+  openssl aes-256-cbc -K $encrypted_4fa633217742_key -iv $encrypted_4fa633217742_iv -in .travis/secrets.tar.enc -out secrets.tar -d
+  tar xvf secrets.tar
+
+  # Setup ssh-agent
+  git config user.name "Travis CI"
+  git config user.email "travis@travis-ci.org"
+  eval `ssh-agent -s`
+  ssh-add .travis/deploy_key
 
   # Install Sentry CLI (cross-platform)
   curl -sL https://sentry.io/get-cli/ | bash
 
   if [[ "$LANE" == "ios" && "$TRAVIS_BUILD_IOS" == "1" ]]; then
     cd ios
-    set -o pipefail && fastlane travis
+    fastlane travis
   fi
 
   if [[ "$LANE" == "android" && "$TRAVIS_BUILD_ANDROID" == "1" ]]; then
     cd android
-    set -o pipefail && fastlane travis
+    fastlane travis
   fi
 
   if [[ "$LANE" == "js" ]]; then
@@ -47,5 +58,3 @@ if [[ "$TRAVIS_BRANCH" == "master" ]]; then
     fi
   fi
 fi
-
-exit ${PIPESTATUS[0]}

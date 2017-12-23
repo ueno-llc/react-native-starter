@@ -57,6 +57,8 @@ buck-out/
 config.env.js
 GeneratedDotEnv.m
 GeneratedInfoPlistDotEnv.h
+.travis/secrets.tar
+.travis/deployment_key
 
 # Firebase and Sentry
 sentry.properties
