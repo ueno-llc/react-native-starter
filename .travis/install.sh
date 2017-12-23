@@ -23,11 +23,21 @@ for KEY in $(cat .env_example | sed 's/\"/\\\"/g' | sed -n 's|\(.*\)=\(.*\)|\1|p
 done
 
 # Generate secret files
-echo "[Environment] Generating secret files"
-echo $MATCH_PASSWORD | gpg --passphrase-fd 0 .travis/secrets.zip.gpg
-unzip .travis/secrets.zip -d ./
+if [ ! -z "$MATCH_PASSWORD" ]; then
+  echo "[Environment] Generating secret files"
+  echo $MATCH_PASSWORD | gpg --passphrase-fd 0 .travis/secrets.zip.gpg
+  unzip .travis/secrets.zip -d ./
 
-# Setup github push certificate
+  # Setup ssh-agent for GitHub pushes
+  # This is only for public repositories with no write-access.
+  git config user.name "Travis CI"
+  git config user.email "travis@travis-ci.org"
+  eval `ssh-agent -s`
+  ssh-add .travis/id_rsa
+  REPO=`git config remote.origin.url`
+  git remote set-url origin ${REPO/https:\/\/github.com\//git@github.com:}
+  git fetch
+fi
 
 if [[ "$TRAVIS_FINISHED" == "0" ]]; then
 

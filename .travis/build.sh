@@ -16,12 +16,6 @@ yarn test
 
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 
-  # Setup ssh-agent
-  git config user.name "Travis CI"
-  git config user.email "travis@travis-ci.org"
-  eval `ssh-agent -s`
-  ssh-add .travis/id_rsa
-
   # Install Sentry CLI (cross-platform)
   curl -sL https://sentry.io/get-cli/ | bash
 
