@@ -4,7 +4,7 @@ FILES=(
     "ios/react-native-starter/GoogleService-Info.plist"
     "android/keystores/release.keystore"
     "android/sentry.properties"
-    "android/app/playstore.json"
+    "android/playstore.json"
     "android/app/google-services.json"
 )
 
