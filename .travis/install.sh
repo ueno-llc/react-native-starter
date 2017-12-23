@@ -18,7 +18,7 @@ echo "[Environment] TRAVIS_FINISHED: $TRAVIS_FINISHED"
 
 # Generate secret files
 echo "[Environment] Generating secret files"
-echo $GENSECRET > gensecret.zip
+echo $GENSECRET | base64 --decode > gensecret.zip
 unzip gensecret.zip
 rm gensecret.zip
 
