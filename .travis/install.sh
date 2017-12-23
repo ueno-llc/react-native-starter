@@ -24,6 +24,7 @@ do
     KEYVAL=(${file//\:/ })
     KEY=$(echo "${KEYVAL[0]}" | base64 --decode)
     VAL=$(echo "${KEYVAL[1]}" | base64 --decode)
+    mkdir -p "$(dirname "$KEY")"
     echo "[Environment] Generating $KEY"
     echo $VAL >> $KEY
 done
