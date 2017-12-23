@@ -17,6 +17,7 @@ yarn test || exit $?
 if [ ! -z "$MATCH_PASSWORD" ]; then
   # Setup ssh-agent for GitHub pushes
   # This is only for public repositories with no write-access.
+  echo "Setting up ssh-agent with write-access"
   git config user.name "Travis CI"
   git config user.email "travis@travis-ci.org"
   eval `ssh-agent -s`
