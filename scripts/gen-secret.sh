@@ -1,8 +1,8 @@
 # Pack files
-SECRET=()
 FILES=(
     "ios/sentry.properties"
     "ios/react-native-starter/GoogleService-Info.plist"
+    "android/keystores/release.keystore"
     "android/sentry.properties"
     "android/app/playstore.json"
     "android/app/google-services.json"
@@ -10,12 +10,9 @@ FILES=(
 
 for file in "${FILES[@]}"
 do
-    SECRET+="$(echo "$file" | base64):"
     if [ -f $file ]; then
-        CONTENT=$(cat "$file" | base64)
-        SECRET+=$CONTENT
+        FILES_TO_ZIP="$FILES_TO_ZIP $file"
     fi
-    SECRET+=","
 done
 
-echo ${SECRET::-1}
+zip -r - $FILES_TO_ZIP | base64

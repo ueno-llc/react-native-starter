@@ -18,21 +18,9 @@ echo "[Environment] TRAVIS_FINISHED: $TRAVIS_FINISHED"
 
 # Generate secret files
 echo "[Environment] Generating secret files"
-FILES=(${GENSECRET//,/ })
-for file in "${FILES[@]}"
-do
-    KEYVAL=(${file//\:/ })
-    KEY=$(echo "${KEYVAL[0]}" | base64 --decode)
-    VAL=$(echo "${KEYVAL[1]}" | base64 --decode)
-    mkdir -p "$(dirname "$KEY")"
-    echo "[Environment] Generating $KEY"
-    echo $VAL >> $KEY
-done
-
-# Adding android keystore
-echo "Storing android keystore file to ./android/keystores/release.keystore"
-mkdir -p ./android/keystores
-echo $ANDROID_KEYSTORE_FILE | base64 --decode > ./android/keystores/release.keystore
+echo $GENSECRET > gensecret.zip
+unzip gensecret.zip
+rm gensecret.zip
 
 # Generate .env
 echo "[Environment] Creating .env file"
