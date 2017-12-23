@@ -6,10 +6,10 @@ if [[ "$TRAVIS_FINISHED" == "1" ]]; then
 fi
 
 # Lint code
-yarn lint
+set -o pipefail && yarn lint
 
 # Test code
-yarn test
+set -o pipefail && yarn test
 
 # TODO: detox
 
@@ -20,12 +20,12 @@ if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 
   if [[ "$LANE" == "ios" && "$TRAVIS_BUILD_IOS" == "1" ]]; then
     cd ios
-    fastlane travis
+    set -o pipefail && fastlane travis
   fi
 
   if [[ "$LANE" == "android" && "$TRAVIS_BUILD_ANDROID" == "1" ]]; then
     cd android
-    fastlane travis
+    set -o pipefail && fastlane travis
   fi
 
   if [[ "$LANE" == "js" ]]; then
