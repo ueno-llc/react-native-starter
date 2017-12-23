@@ -58,7 +58,7 @@ config.env.js
 GeneratedDotEnv.m
 GeneratedInfoPlistDotEnv.h
 .travis/secrets.zip
-.travis/deployment_key
+.travis/id_rsa
 
 # Firebase and Sentry
 sentry.properties

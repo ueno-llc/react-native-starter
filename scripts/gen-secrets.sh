@@ -1,6 +1,6 @@
 # Pack files
 FILES=(
-    ".travis/deployment_key"
+    ".travis/id_rsa"
     "ios/sentry.properties"
     "ios/react-native-starter/GoogleService-Info.plist"
     "android/keystores/release.keystore"
