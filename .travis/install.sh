@@ -29,6 +29,11 @@ do
     echo $VAL >> $KEY
 done
 
+# Adding android keystore
+echo "Storing android keystore file to ./android/keystores/release.keystore"
+mkdir -p ./android/keystores
+echo $ANDROID_KEYSTORE_FILE | base64 --decode > ./android/keystores/release.keystore
+
 # Generate .env
 echo "[Environment] Creating .env file"
 for KEY in $(cat .env_example | sed 's/\"/\\\"/g' | sed -n 's|\(.*\)=\(.*\)|\1|p'); do
