@@ -50,11 +50,13 @@ if [[ "$TRAVIS_BRANCH" == "master" ]]; then
     code-push login --accessKey $CODEPUSH_ACCESS_KEY || exit $?
 
     if [[ "$TRAVIS_BUILD_IOS" == "0" ]]; then
+      echo "Releasing code-push for iOS"
       code-push release-react $IOS_CODEPUSH_APPID ios --outputDir build --description "$TRAVIS_COMMIT_MESSAGE"
       sentry-cli react-native codepush $IOS_CODEPUSH_APPID ios ./build --bundle-id $IOS_BUNDLE_ID
     fi
 
     if [[ "$TRAVIS_BUILD_ANDROID" == "0" ]]; then
+      echo "Releasing code-push for Android"
       code-push release-react $ANDROID_CODEPUSH_APPID android --outputDir build --description "$TRAVIS_COMMIT_MESSAGE"
       sentry-cli react-native codepush $ANDROID_CODEPUSH_APPID android ./build --bundle-id $ANDROID_BUNDLE_ID
     fi
