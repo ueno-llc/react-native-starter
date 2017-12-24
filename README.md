@@ -61,9 +61,11 @@ npm run test
 
 ![Imgur](https://i.imgur.com/o91jUrQ.png)
 
-The pipeline to continously deliver the app are two separate processes integrated into one. Each platform is runned individually in a travis matrix (osx, android and node_js).
+The pipeline to continously deliver the app are two separate processes integrated into one. Each platform is ran individually in a travis matrix (osx, android and node_js).
 
-Changes are detected in `./android` and `./ios` folder that will make native builds automatically. New builds will also be triggered via commit message tags `[BUILD]` for both or explicitly `[BUILD IOS]` and `[BUILD ANDROID]`.
+Commit changes are detected in `./android` and `./ios` folder that will make native builds automatically.
+
+New builds will also be triggered via commit message tags `[BUILD]` for both or explicitly `[BUILD IOS]` and `[BUILD ANDROID]`.
 
 ### Android ci
  - run `jest`, `lint` and `detox test` in Android Emulator
@@ -81,7 +83,7 @@ Changes are detected in `./android` and `./ios` folder that will make native bui
  - packs and deploys bundle to code-push ios staging.
  - upload source maps to sentry
 
-Every task above is runned conditionally based on other task actions, like not deploy a code-push update for android if 
+Every task listed above is conditionally executed based on other task actions. It will for example not deploy a code-push update for android if a native android build was done (and same for iOS).
 
 ## Installing on Mac OS X Sierra 10.12.5
 
