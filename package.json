@@ -13,6 +13,7 @@
 		"config.env.js"
 	],
 	"dependencies": {
+		"date-fns": "1.29.0",
 		"lodash": "4.17.4",
 		"lodash-decorators": "4.5.0",
 		"mobx": "3.4.1",

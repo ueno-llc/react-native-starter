@@ -1,10 +1,10 @@
 ![Build status](https://travis-ci.org/ueno-llc/react-native-starter.svg?branch=master)
 
-# Ueno's React Native starter
+# React Native Starter
 
-This is a starter to quickly get up and running with few dependencies we tend to always use at Ueno.
+This is a starter to quickly get up and running with a opinionated dependencies.
 
-Jump down to the [install section](#installing-on-mac-os-x-sierra-10125) for quick start.
+Jump down to the [install section](#installing-on-mac-os-x-sierra-10125) for install on fresh mac.
 
 ## Features
  - [x] react-native-navigation *(native)*
@@ -14,18 +14,74 @@ Jump down to the [install section](#installing-on-mac-os-x-sierra-10125) for qui
  - [x] firebase *(native)*
  - [x] mobx, mobx-react and mobx-persist
  - [x] lodash and lodas-decorators
+ - [x] date-fns
 
-## Config
+## Environment config and secrets
 
-All environment variables should be put into `.env` so they will be cross-platform accessible.
-- To read from environment variables you can `import config from 'config';`.
-- To hot reload JS side environment variables, you can run `yarn reload-env`.
+All environment variables are in `.env` for cross-platform accessibility.
+- Environment variables can be read with `import config from 'config';`.
+- Environment hot-reload support with `yarn reload-env`.
 
-## Components
+## E2E Testing
 
-The `./components` folder includes shared components like buttons, inputs, cards etc. while
-components inside a screen folder should be components that only apply to specific screen
-or within its navigation stack (modals, shared element transitions, etc).
+This project uses detox to run end-to-end UI testing with jest as test runner under the hood. Some tooling is needed to get started, but the tests will also run on a CI.
+
+### Setup tools
+
+```bash
+brew tap wix/brew
+brew install --HEAD applesimutils
+npm install -g detox-cli
+```
+
+### Run the tests
+
+```bash
+npm start
+gem install xcpretty
+detox build --configuration ios.sim.release
+detox test --configuration ios.sim.release
+```
+
+## Integration, Unit and Code Quality Testing
+
+Code is linted with eslint using @ueno/eslint config with some modifications.
+
+```bash
+npm run lint
+```
+
+Jest is also used for unit tests with snapshots and enzyme for more granular tests.
+
+```bash
+npm run test
+```
+
+## Continuous Delivery
+
+![Imgur](https://i.imgur.com/o91jUrQ.png)
+
+The pipeline to continously deliver the app are two separate processes integrated into one. Each platform is runned individually in a travis matrix (osx, android and node_js).
+
+Changes are detected in `./android` and `./ios` folder that will make native builds automatically. New builds will also be triggered via commit message tags `[BUILD]` for both or explicitly `[BUILD IOS]` and `[BUILD ANDROID]`.
+
+### Android ci
+ - run `jest`, `lint` and `detox test` in Android Emulator
+ - build a release and upload to Play Store
+ - update build number, git commit, tag and push to github
+
+### iOS
+ - run `jest`, `lint` and `detox test` in iOS Simulator
+ - builds a release and uploads to TestFlight
+ - update build number, git commit, tag and push to github
+
+### CodePush
+ - run `jest` and `lint`
+ - packs and deploys bundle to code-push android staging.
+ - packs and deploys bundle to code-push ios staging.
+ - upload source maps to sentry
+
+Every task above is runned conditionally based on other task actions, like not deploy a code-push update for android if 
 
 ## Installing on Mac OS X Sierra 10.12.5
 
