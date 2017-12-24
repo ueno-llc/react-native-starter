@@ -20,6 +20,7 @@ if [ ! -z "$MATCH_PASSWORD" ]; then
   echo "Setting up ssh-agent with write-access"
   git config user.name "Travis CI"
   git config user.email "travis@travis-ci.org"
+  echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   eval `ssh-agent -s`
   ssh-add .travis/id_rsa
   REPO=`git config remote.origin.url`

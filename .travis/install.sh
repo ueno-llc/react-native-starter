@@ -35,7 +35,7 @@ if [[ "$TRAVIS_FINISHED" == "0" ]]; then
   echo "Node version: $(node --version)"
   npm install -g yarn react-native-cli
   gem install fastlane --no-rdoc --no-ri --no-document --quiet
-  yarn install
+  yarn install --ignore-engines
 
   if [[ "$LANE" == "ios" ]]; then
     (cd ios; pod install --repo-update; cd -)
