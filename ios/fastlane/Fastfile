@@ -49,7 +49,7 @@ platform :ios do
       tag: "v#{version}-#{build}-ios"
     )
     push_to_git_remote(
-      remote_branch:"master",
+      remote_branch: "master",
       tags: true,
       force: true
     )
