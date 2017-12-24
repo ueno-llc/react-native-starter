@@ -31,7 +31,7 @@ fi
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 
   # Install Sentry CLI (cross-platform)
-  curl -sL https://sentry.io/get-cli/ | bash
+  npm install -g @sentry/cli || exit $?
 
   if [[ "$LANE" == "ios" && "$TRAVIS_BUILD_IOS" == "1" ]]; then
     cd ios
