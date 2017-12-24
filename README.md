@@ -1,17 +1,23 @@
+![Build status](https://travis-ci.org/ueno-llc/react-native-starter.svg?branch=master)
+
 # Ueno's React Native starter
 
-This is a starter to quickly get up and running with few major dependencies that we always use at Ueno.
+This is a starter to quickly get up and running with few dependencies we tend to always use at Ueno.
 
-## Native Dependencies
- - [x] react-native-navigation
- - [x] react-native-code-push
- - [x] react-native-config
+Jump down to the [install section](#installing-on-mac-os-x-sierra-10125) for quick start.
+
+## Features
+ - [x] react-native-navigation *(native)*
+ - [x] react-native-config *(native)*
+ - [x] code-push *(native)*
+ - [x] sentry *(native)*
+ - [x] firebase *(native)*
+ - [x] mobx, mobx-react and mobx-persist
+ - [x] lodash and lodas-decorators
 
 ## Config
 
-We use react-native-config to get access to .env variables on both build- and runtime.
-Only the JS part of the library is used, the native code lives inside `ios/Config`.
-
+All environment variables should be put into `.env` so they will be cross-platform accessible.
 - To read from environment variables you can `import config from 'config';`.
 - To hot reload JS side environment variables, you can run `yarn reload-env`.
 
@@ -25,27 +31,21 @@ or within its navigation stack (modals, shared element transitions, etc).
 
 Below is a tutorial to get up and running on a mac machine. Assuming you have brew installed.
 
-### React Native Packager
+### Install dependencies
 
 ```bash
 brew install git yarn cocoapods watchman
-brew cask install android-platform-tools
+brew cask install java android-sdk android-platform-tools
+echo "export ANDROID_HOME=/usr/local/opt/android-sdk" >> ~/.bash_profile
+source ~/.bash_profile
 npm install -g react-native-cli
-```
-
-I ran into this problem https://github.com/facebook/react-native/issues/910
-Fixed with comment #2 or #3
-
-```bash
 (cd ios; pod repo update; cd -)
 yarn install
-yarn start
 ```
 
-Now react native bundler is running successfully.
-Next up is Android and iOS tools.
+The packager can be started via `yarn start`.
 
-### iOS
+### Install iOS Simulator
 
 Install xcode and this should work out of the box
 
@@ -54,14 +54,7 @@ react-native run-ios
 ```
 
 
-### Android (sigh)
-
-```bash
-brew cask install java
-brew cask install android-sdk
-echo "export ANDROID_HOME=/usr/local/opt/android-sdk" >> ~/.bash_profile
-source ~/.bash_profile
-```
+### Install Android Emulator
 
 Install android studio https://developer.android.com/studio/index.html
 
@@ -104,5 +97,3 @@ react-native run-android
 
 App now opens on device, but if you will be prompted that the app want's to  draw overlay over other apps. Scroll down to our app and tick YES.
 Go back to app, shake device and hit Reload.
-
-### Pipeline
