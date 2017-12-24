@@ -25,7 +25,8 @@ done
 # Generate secret files
 if [ ! -z "$MATCH_PASSWORD" ]; then
   echo "[Environment] Generating secret files"
-  echo $MATCH_PASSWORD | gpg --passphrase-fd 0 .travis/secrets.zip.gpg
+  gpg --version
+  gpg --batch --passphrase $MATCH_PASSWORD --decrypt .travis/secrets.zip.gpg > .travis/secrets.zip
   unzip .travis/secrets.zip -d ./
 fi
 
