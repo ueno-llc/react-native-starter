@@ -16,6 +16,7 @@ matrix:
     - brew install gnupg
   - language: android
     env: LANE=android
+    jdk: oraclejdk8
     android:
       components:
       - tools
