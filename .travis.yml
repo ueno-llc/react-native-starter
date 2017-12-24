@@ -35,7 +35,7 @@ matrix:
       - google-gdk-license-.+
     before_install:
     - nvm install 8
-  - language: javascript
+  - language: node_js
     env: LANE=js
     node_js:
     - '8'
