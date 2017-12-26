@@ -23,7 +23,7 @@ const store = new Store(config.SECRET_TOKEN);
 Array.from(Screens.entries()).forEach(([screenConst, screenModule]) =>
   Navigation.registerComponent(
     screenConst,
-    screenModule.module,
+    screenModule,
     store,
     codePush(StoreProvider),
   ));

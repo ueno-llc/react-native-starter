@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { bind } from 'lodash-decorators';
-import { Screens, SPLASH_SCREEN } from 'screens';
+import { SPLASH_SCREEN } from 'screens';
 import Button from 'components/button';
 
 export default class Splash extends Component {
@@ -14,7 +14,7 @@ export default class Splash extends Component {
   @bind()
   onPress() {
     this.props.navigator.push({
-      ...Screens.get(SPLASH_SCREEN).preset,
+      screen: SPLASH_SCREEN,
       passProps: {
         id: 1,
       },
@@ -23,9 +23,9 @@ export default class Splash extends Component {
 
   render() {
     return (
-      <View style={styles.host}>
+      <View style={styles.host} testID="SPLASH_SCREEN">
         <Text>Splash Screen</Text>
-        <Button onPress={this.onPress}>Next</Button>
+        <Button testID="BUTTON_NEXT" onPress={this.onPress}>Next</Button>
       </View>
     );
   }

@@ -18,6 +18,11 @@ xcode-select --install
 
 # Available Actions
 ## iOS
+### ios test
+```
+fastlane ios test
+```
+Build and run UI tests
 ### ios travis
 ```
 fastlane ios travis

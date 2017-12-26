@@ -7,17 +7,21 @@ export default class Button extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
     onPress: PropTypes.func,
+    testID: PropTypes.string,
   };
 
   static defaultProps = {
     children: undefined,
     onPress: undefined,
+    testID: undefined,
   };
 
   render() {
-    const { children, onPress } = this.props;
+    const { children, onPress, testID } = this.props;
     return (
       <TouchableOpacity
+        accessibilityComponentType="button"
+        testID={testID}
         onPress={onPress}
         disabled={!onPress}
         style={styles.host}
