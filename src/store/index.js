@@ -43,6 +43,7 @@ export class StoreProvider extends PureComponent {
 
   render() {
     const { store, children } = this.props;
+
     return (
       <Provider ui={store.ui}>
         {children}

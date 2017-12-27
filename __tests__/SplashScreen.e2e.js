@@ -1,30 +1,16 @@
-/* global driver config wait */
-describe('Test SplashScreen', () => {
+/* eslint-env detox/detox, mocha */
+describe('SplashScreen', () => {
 
-  beforeAll(async () => {
-    await driver.init(config);
-    await wait(1000);
-  }, 60000);
-
-  afterAll(async () => {
-    await driver.quit();
+  beforeEach(async () => {
+    await device.reloadReactNative();
   });
 
-  it('test if jest works', () => {
-    expect(1).toBe(1);
+  it('should have next button', async () => {
+    await expect(element(by.id('BUTTON_NEXT'))).toBeVisible();
   });
 
-  it('has a "Next" button', async () => {
-    expect(await driver.hasElementById('BUTTON_NEXT')).toBe(true);
-  });
-
-  it('press the button', async () => {
-    const button = await driver.elementById('BUTTON_NEXT');
-    button.click();
-    await wait(1000);
-  });
-
-  it('confirm screen appears', async () => {
-    expect(await driver.hasElementById('SPLASH_SCREEN')).toBe(true);
+  it('should show new screen after tap', async () => {
+    await element(by.id('BUTTON_NEXT')).tap();
+    await expect(element(by.id('SPLASH_SCREEN'))).toBeVisible();
   });
 });

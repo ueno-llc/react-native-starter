@@ -64,3 +64,6 @@ GeneratedInfoPlistDotEnv.h
 sentry.properties
 GoogleService-Info.plist
 google-services.json
+
+# Android emulator logs
+*_API_*.log

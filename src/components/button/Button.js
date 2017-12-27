@@ -18,6 +18,7 @@ export default class Button extends PureComponent {
 
   render() {
     const { children, onPress, testID } = this.props;
+
     return (
       <TouchableOpacity
         accessibilityComponentType="button"

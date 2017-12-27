@@ -1,6 +1,8 @@
 package com.ueno.reactnativestarter;
 
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.reactnativenavigation.NavigationApplication;
 import com.microsoft.codepush.react.CodePush;
@@ -19,6 +21,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainApplication extends NavigationApplication {
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 
     @Override
     public boolean isDebug() {

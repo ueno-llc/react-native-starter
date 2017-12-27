@@ -2,7 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <View
-  accessibilityComponentType={undefined}
+  accessibilityComponentType="button"
   accessibilityLabel={undefined}
   accessibilityTraits={undefined}
   accessible={true}

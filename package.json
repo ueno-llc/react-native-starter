@@ -4,14 +4,16 @@
 	"private": true,
 	"scripts": {
 		"postinstall": "sh ./scripts/postinstall.sh",
-		"build-env": "sh ./scripts/build-env.sh",
+		"build:env": "sh ./scripts/build-env.sh",
+		"build:e2e": "detox build --configuration $E2E_CONFIG",
+		"build:e2e:ios": "E2E_CONFIG=ios yarn build:e2e",
+		"build:e2e:android": "E2E_CONFIG=android yarn build:e2e",
 		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"start:appium": "appium",
 		"test": "jest",
-		"test:e2e": "jest --setupFiles ./__tests__/e2e.js --testMatch=\"**/*.e2e.js\"",
-		"test:e2e:android": "E2E_DEVICE=android npm run test:e2e",
-		"test:e2e:ios": "E2E_DEVICE=ios npm run test:e2e",
-		"lint": "eslint src"
+		"test:e2e": "detox test --configuration $E2E_CONFIG",
+		"test:e2e:ios": "E2E_CONFIG=ios.sim.release yarn test:e2e",
+		"test:e2e:android": "E2E_CONFIG=android.emu.release yarn test:e2e",
+		"lint": "eslint src __tests__"
 	},
 	"eslintIgnore": [
 		"config.env.js"
@@ -33,47 +35,56 @@
 		"react-native-sentry": "0.32.0"
 	},
 	"devDependencies": {
+		"@ueno/eslint-config": "1.2.7",
 		"babel-core": "6.26.0",
 		"babel-eslint": "8.0.3",
 		"babel-jest": "22.0.3",
 		"babel-plugin-module-resolver": "3.0.0",
 		"babel-preset-react-native": "4.0.0",
 		"babel-preset-react-native-stage-0": "1.0.1",
+		"detox": "6.0.4",
 		"enzyme": "3.2.0",
 		"enzyme-adapter-react-16": "1.1.1",
 		"eslint": "4.13.1",
 		"eslint-config-airbnb": "16.1.0",
 		"eslint-import-resolver-babel-module": "4.0.0",
+		"eslint-plugin-detox": "1.0.0",
 		"eslint-plugin-import": "2.8.0",
 		"eslint-plugin-jest": "21.5.0",
 		"eslint-plugin-jsx-a11y": "6.0.3",
 		"eslint-plugin-react": "7.5.1",
 		"eslint-plugin-react-native": "3.2.0",
 		"jest": "22.0.3",
+		"mocha": "4.0.1",
 		"react-dom": "16.2.0",
-		"react-test-renderer": "16.2.0",
-		"wd": "1.5.0"
+		"react-test-renderer": "16.2.0"
 	},
 	"jest": {
 		"preset": "react-native",
 		"setupFiles": [
-			"./__tests__/jest.js"
+			"./scripts/setup-jest.js"
 		],
 		"testMatch": [
 			"**/__tests__/**/*.spec.js"
 		]
 	},
-	"e2e": {
-		"ios": {
-			"platformName": "iOS",
-			"platformVersion": "11.2",
-			"deviceName": "iPhone Simulator",
-			"app": "./ios/build/Build/Products/Release-iphonesimulator/react-native-starter.app"
-		},
-		"android": {
-			"platformName": "Android",
-			"deviceName": "Pixel_2_API_27",
-			"app": "./android/app/build/outputs/apk/app-release.apk"
+	"detox": {
+		"test-runner": "mocha",
+		"specs": "__tests__",
+		"runner-config": "__tests__/mocha.opts",
+		"configurations": {
+			"ios.sim.release": {
+				"binaryPath": "ios/build/Build/Products/Release-iphonesimulator/react-native-starter.app",
+				"build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/react-native-starter.xcworkspace -scheme react-native-starter -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -quiet",
+				"type": "ios.simulator",
+				"name": "iPhone 7 Plus"
+			},
+			"android.emu.release": {
+				"binaryPath": "android/app/build/outputs/apk/app-release.apk",
+				"build": "pushd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && popd",
+				"type": "android.emulator",
+				"name": "Pixel_2_API_27"
+			}
 		}
 	}
 }

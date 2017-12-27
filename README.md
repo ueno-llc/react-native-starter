@@ -34,27 +34,34 @@ brew install --HEAD applesimutils
 npm install -g detox-cli
 ```
 
-### Run the tests
-
-```bash
-npm start
-gem install xcpretty
-detox build --configuration ios.sim.release
-detox test --configuration ios.sim.release
-```
-
 ## Integration, Unit and Code Quality Testing
 
 Code is linted with eslint using @ueno/eslint config with some modifications.
 
 ```bash
-npm run lint
+yarn lint
 ```
 
 Jest is also used for unit tests with snapshots and enzyme for more granular tests.
 
 ```bash
-npm run test
+yarn test
+```
+
+### UI testing
+
+You can build the UI test app for the first time (you need to build again if any native code has changed).
+
+```bash
+yarn build:e2e:ios
+yarn build:e2e:android
+```
+
+Run UI tests.
+
+```bash
+yarn test:e2e:ios
+yarn test:e2e:android
 ```
 
 ## Continuous Delivery

@@ -10,17 +10,6 @@ platform :ios do
   before_all do
   end
 
-  desc "Build and run UI tests"
-  lane :test do
-    xcodebuild(
-      scheme: scheme,
-      workspace: "./#{project_name}.xcworkspace",
-      derivedDataPath: "build",
-      sdk: "iphonesimulator",
-      configuration: "Release"
-    )
-  end
-
   desc "Continous Delivery build to TestFlight"
   lane :travis do
     create_keychain(
