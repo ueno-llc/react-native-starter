@@ -162,3 +162,88 @@ react-native run-android
 
 App now opens on device, but if you will be prompted that the app want's to  draw overlay over other apps. Scroll down to our app and tick YES.
 Go back to app, shake device and hit Reload.
+
+# Publish the app
+
+There are some steps required to publish the app to Google Play Store and iTunes App Store.
+
+Update .env with your bundle-ids.
+```
+ANDROID_BUNDLE_ID=com.companyname.appnameandroid
+IOS_BUNDLE_ID=com.companyname.appnameios
+```
+
+## Setup Code Push and update .env
+
+Create an app in Mobile Center for each platform (iOS, Android). Lets say the organization is `CompanyName` and app name is `app-name-$platform`.
+
+Update .env
+```
+ANDROID_CODEPUSH_APPID=CompanyName/app-name-android
+IOS_CODEPUSH_APPID=CompanyName/app-name-android
+```
+
+Then by using the command-line utility, add deployment targets to each app and store the secrets.
+
+```
+code-push deployment add CompanyName/app-name-android
+code-push deployment add CompanyName/app-name-ios
+```
+
+Update .env
+```
+ANDROID_CODEPUSH_DEPLOYMENT_KEY=productionKeyFromStepAbove
+IOS_CODEPUSH_DEPLOYMENT_KEY=productionKeyFromStepAbove
+```
+
+## Setup Sentry and update environment keys
+
+Create project in Sentry and update your .env (just one project needed for both platforms).
+```
+SENTRY_DSN=https://a:b@sentry.io/12345
+SENTRY_PROJECT=app-name
+SENTRY_ORG=company-name
+```
+
+Then get authorization token from here (https://docs.sentry.io/api/auth/)
+
+```
+SENTRY_AUTH_TOKEN=abcdef0123456789
+```
+
+## Create app in iTunes Connect
+
+Create app in itunes connect
+Update your `ios/fastlane/[Appfile,Matchfile]`
+Run `fastlane match appstore`
+
+Note: You need to have a repository containing all your certificates managed by fastlane match that travis can access.
+
+## Create app in Play Store
+
+Create app in play store.
+Get your `playstore.json` file and put into android folder (https://docs.fastlane.tools/actions/supply/#setup).
+Update your `android/fastlane/[Appfile,Matchfile]`.
+Run `fastlane supply run`
+
+Note: You need to upload at least one APK to the playstore manually before Continous Deployment can take over.
+
+
+## Setup travis
+
+Sign into travis with your GitHub account, find your repository in the list and mark the checkbox.
+
+Note: It is extremely important to use secret environment variables if the target repository is public (travis.org).
+
+Add all your environment variables (public/secrets)
+```
+travis env set ANDROID_BUNDLE_ID=com.companyname.appnameandroid
+travis encrypt MATCH_PASSWORD=yourpassword --add
+```
+
+Run this script to add secret files to your repository that travis can read. When promted for password, use your password set for `MATCH_PASSWORD`.
+```
+./scripts/gen-secrets.sh
+```
+
+Commit and push should start travis.
