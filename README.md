@@ -4,7 +4,15 @@
 
 This is a starter to quickly get up and running with a opinionated dependencies.
 
-Jump down to the [install section](#installing-on-mac-os-x-sierra-10125) for install on fresh mac.
+Jump down to the [install section](#installing-on-mac-os-x-sierra-10125) for install on fresh mac. For other, these are required:
+
+```
+brew tap wix/brew
+brew install --HEAD applesimutils
+npm install -g react-native-cli detox-cli
+# Also good to have for app management
+npm install -g sentry-cli code-push-cli
+```
 
 ## Features
  - [x] react-native-navigation *(native)*
@@ -22,18 +30,6 @@ All environment variables are in `.env` for cross-platform accessibility.
 - Environment variables can be read with `import config from 'config';`.
 - Environment hot-reload support with `yarn reload-env`.
 
-## E2E Testing
-
-This project uses detox to run end-to-end UI testing with jest as test runner under the hood. Some tooling is needed to get started, but the tests will also run on a CI.
-
-### Setup tools
-
-```bash
-brew tap wix/brew
-brew install --HEAD applesimutils
-npm install -g detox-cli
-```
-
 ## Integration, Unit and Code Quality Testing
 
 Code is linted with eslint using @ueno/eslint config with some modifications.
@@ -48,7 +44,9 @@ Jest is also used for unit tests with snapshots and enzyme for more granular tes
 yarn test
 ```
 
-### UI testing
+## E2E Testing
+
+This project uses detox to run end-to-end UI testing with jest as test runner under the hood. Some tooling is needed to get started, but the tests will also run on a CI.
 
 You can build the UI test app for the first time (you need to build again if any native code has changed).
 
@@ -63,6 +61,7 @@ Run UI tests.
 yarn test:e2e:ios
 yarn test:e2e:android
 ```
+
 
 ## Continuous Delivery
 
