@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B0739A8F5C9048E9AC93D045 /* libPods-react-native-starter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3988A5A05ABF10E5A9B33ED5 /* libPods-react-native-starter.a */; };
+		E33FD0F41FFBDBD900EB627A /* RNUeno.m in Sources */ = {isa = PBXBuildFile; fileRef = E33FD0F31FFBDBD900EB627A /* RNUeno.m */; };
 		E3A2B8A61FEACEE70099C8F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A2B89F1FEACEE70099C8F8 /* AppDelegate.m */; };
 		E3A2B8A71FEACEE70099C8F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A2B8A01FEACEE70099C8F8 /* LaunchScreen.xib */; };
 		E3A2B8A81FEACEE70099C8F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3A2B8A21FEACEE70099C8F8 /* GoogleService-Info.plist */; };
@@ -26,6 +27,8 @@
 		D54EB502811BEE926F2F8941 /* Pods-react-native-starter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-react-native-starter.release.xcconfig"; path = "Pods/Target Support Files/Pods-react-native-starter/Pods-react-native-starter.release.xcconfig"; sourceTree = "<group>"; };
 		DF6B3032214A4831BACEAB38 /* libPods-UenoNativeStarter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UenoNativeStarter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF940EB702F911EAF36780E6 /* Pods-UenoNativeStarterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UenoNativeStarterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UenoNativeStarterTests/Pods-UenoNativeStarterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E33FD0F31FFBDBD900EB627A /* RNUeno.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNUeno.m; sourceTree = "<group>"; };
+		E33FD0F51FFBDBFB00EB627A /* RNUeno.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNUeno.h; sourceTree = "<group>"; };
 		E3A2B89E1FEACEE70099C8F8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E3A2B89F1FEACEE70099C8F8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E3A2B8A11FEACEE70099C8F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 				E3A2B8A31FEACEE70099C8F8 /* Images.xcassets */,
 				E3A2B8A41FEACEE70099C8F8 /* Info.plist */,
 				E3A2B8A51FEACEE70099C8F8 /* main.m */,
+				E33FD0F31FFBDBD900EB627A /* RNUeno.m */,
+				E33FD0F51FFBDBFB00EB627A /* RNUeno.h */,
 			);
 			path = "react-native-starter";
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3A2B8AB1FEACEE70099C8F8 /* main.m in Sources */,
+				E33FD0F41FFBDBD900EB627A /* RNUeno.m in Sources */,
 				E3A2B8A61FEACEE70099C8F8 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
