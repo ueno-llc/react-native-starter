@@ -5,7 +5,7 @@ TARGET_ENV=".env"
 RNCDIR="./node_modules/react-native-config/ios"
 
 GOOGLESERVICE_JSON_FILE="./android/app/google-services.json"
-GOOGLESERVICE_JSON_CONTENT='{"project_info":{"project_id":"sample","project_number":"000000000000","name":"sample","firebase_url":"https://sample.firebaseio.com"},"client":[{"client_info":{"mobilesdk_app_id":"1:000000000000:android:ffffffffffffffff","client_id":"android:com.ueno.tvinna","client_type":1,"android_client_info":{"package_name":"com.ueno.tvinna","certificate_hash":[]}},"api_key":[{"current_key":"sample"}]}],"configuration_version":"1"}'
+GOOGLESERVICE_JSON_CONTENT='{"project_info":{"project_id":"sample","project_number":"000000000000","name":"sample","firebase_url":"https://sample.firebaseio.com"},"client":[{"client_info":{"mobilesdk_app_id":"1:000000000000:android:ffffffffffffffff","client_id":"android:com.ueno.reactnativestarter","client_type":1,"android_client_info":{"package_name":"com.ueno.tvinna","certificate_hash":[]}},"api_key":[{"current_key":"sample"}]}],"configuration_version":"1"}'
 GOOGLESERVICE_INFO_FILE="./ios/react-native-starter/GoogleService-Info.plist"
 GOOGLESERVICE_INFO_CONTENT=$(cat <<EOL
 <?xml version="1.0" encoding="UTF-8"?>
