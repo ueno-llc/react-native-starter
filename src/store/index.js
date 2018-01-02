@@ -10,14 +10,6 @@ const hydrate = create({
   jsonify: true,
 });
 
-/* eslint-disable */
-if (__DEV__) {
-  XMLHttpRequest = GLOBAL.originalXMLHttpRequest
-    ? GLOBAL.originalXMLHttpRequest
-    : GLOBAL.XMLHttpRequest;
-}
-/* eslint-enable */
-
 export default class Store {
 
   @persist('object', UI)
