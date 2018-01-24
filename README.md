@@ -28,7 +28,7 @@ npm install -g sentry-cli code-push-cli
 
 All environment variables are in `.env` for cross-platform accessibility.
 - Environment variables can be read with `import config from 'config';`.
-- Environment hot-reload support with `yarn reload-env`.
+- Environment hot-reload support with `yarn build:env`.
 
 ## Integration, Unit and Code Quality Testing
 
