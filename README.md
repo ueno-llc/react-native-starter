@@ -23,6 +23,7 @@ npm install -g sentry-cli code-push-cli
  - [x] mobx, mobx-react and mobx-persist
  - [x] lodash and lodas-decorators
  - [x] date-fns
+ - [x] react-native-ui-lib
 
 ## Environment config and secrets
 
