@@ -5,6 +5,10 @@ import codePush from 'react-native-code-push';
 import isEmpty from 'lodash/isEmpty';
 import config from 'config';
 import Store, { StoreProvider } from 'store';
+import xhr from 'utils/xhr';
+
+// Proxy network requests to devtools network panel
+xhr.enabled();
 
 if (!__DEV__ && !isEmpty(config.SENTRY_DSN)) {
 
@@ -19,13 +23,6 @@ if (!__DEV__ && !isEmpty(config.SENTRY_DSN)) {
       Sentry.setVersion(`${update.appVersion}-codepush:${update.label}`);
     }
   });
-}
-
-if (__DEV__) {
-  // eslint-disable-next-line no-global-assign
-  XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest;
-  // eslint-disable-next-line no-console
-  console.log('Environment? %o', config);
 }
 
 const store = new Store(config.SECRET_TOKEN);

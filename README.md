@@ -30,6 +30,30 @@ All environment variables are in `.env` for cross-platform accessibility.
 - Environment variables can be read with `import config from 'config';`.
 - Environment hot-reload support with `yarn build:env`.
 
+## Network requests
+
+Development mode proxies all network requests to the open devtools network panel.
+
+Get a CORS extension for Chrome to allow requests to fetch restricted requests and enable for the devtools page.
+
+If you are having problems with this feature, you can bypass network requests with the following:
+
+```js
+import xhr from 'utils/xhr';
+
+xhr.bypass(() => fetch('https://google.com'))
+.then(data => data.json());
+
+const ws = new WebSocket('ws://google.com');
+xhr.bypass(() => ws.open());
+
+// Also supported
+xhr.toggle();
+xhr.enabled();
+xhr.disabled();
+```
+
+
 ## Integration, Unit and Code Quality Testing
 
 Code is linted with eslint using @ueno/eslint config with some modifications.
