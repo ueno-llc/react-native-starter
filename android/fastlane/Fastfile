@@ -42,10 +42,6 @@ platform :android do
 
   desc "Travis build to Google Play"
   lane :travis do
-    if ENV["BUILD_ANDROID"] != "1"
-      UI.important "Skipping build"
-      next
-    end
     android_set_version_code
     version = android_get_version_name
     build = android_get_version_code

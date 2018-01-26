@@ -53,10 +53,6 @@ platform :ios do
 
   desc "Travis build to TestFlight"
   lane :travis do
-    if ENV["BUILD_IOS"] != "1"
-      UI.important 'Skipping build'
-      next
-    end
     create_keychain(
       name: "ios-build.keychain-db",
       password: ENV["MATCH_PASSWORD"],
