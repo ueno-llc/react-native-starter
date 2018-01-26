@@ -75,6 +75,7 @@ import com.android.build.OutputFile
 
 apply from: "../../node_modules/react-native/react.gradle"
 apply from: "../../node_modules/react-native-sentry/sentry.gradle"
+apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -104,6 +105,7 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        multiDexEnabled true
         testBuildType System.getProperty('testBuildType', 'debug')
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -118,9 +120,9 @@ android {
     signingConfigs {
         release {
             storeFile file("../keystores/release.keystore")
-            storePassword project.env.get("ANDROID_KEYSTORE_PASSWORD")
-            keyAlias project.env.get("ANDROID_KEYSTORE_ALIAS")
-            keyPassword project.env.get("ANDROID_KEYSTORE_PASSWORD")
+            storePassword "$System.env.ANDROID_KEYSTORE_PASSWORD"
+            keyAlias "$System.env.ANDROID_KEYSTORE_ALIAS"
+            keyPassword "$System.env.ANDROID_KEYSTORE_PASSWORD"
         }
     }
     buildTypes {
@@ -142,6 +144,9 @@ android {
                         versionCodes.get(abi) * 1048576 + defaultConfig.versionCode
             }
         }
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
     }
 }
 

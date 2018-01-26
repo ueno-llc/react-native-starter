@@ -6,15 +6,56 @@ platform :android do
   before_all do
   end
 
-  desc "Continous Delivery build to Google Play"
-  lane :travis do
+  desc "Bitrise build to Google Play"
+  lane :bitrise do
+    if ENV["BUILD_ANDROID"] != "1"
+      UI.important "Skipping build"
+      next
+    end
     android_set_version_code
     version = android_get_version_name
     build = android_get_version_code
     gradle(
       task: "assembleRelease"
     )
-    upload_to_play_store
+    upload_to_play_store(
+      track: "beta",
+    )
+    sh "git checkout master"
+    git_pull
+    git_commit(
+      path: "./app/build.gradle",
+      message: "Version #{version} (build #{build}) [bitrise-android] [skip ci]"
+    )
+    add_git_tag(
+      tag: "v#{version}-#{build}-android"
+    )
+    push_to_git_remote(
+      remote_branch: "master",
+      tags: true,
+      force: true
+    )
+    slack(
+      message: "Successfully uploaded #{version} (build #{build}) to Google Play Store"
+    )
+  end
+
+  desc "Travis build to Google Play"
+  lane :travis do
+    if ENV["BUILD_ANDROID"] != "1"
+      UI.important "Skipping build"
+      next
+    end
+    android_set_version_code
+    version = android_get_version_name
+    build = android_get_version_code
+    gradle(
+      task: "assembleRelease"
+    )
+    upload_to_play_store(
+      track: "beta",
+    )
+    sh "git checkout master"
     git_pull
     git_commit(
       path: "./app/build.gradle",
@@ -29,7 +70,7 @@ platform :android do
       force: true
     )
     slack(
-      message: "Successfully uploaded #{version} (build #{build}) to Play Store"
+      message: "Successfully uploaded #{version} (build #{build}) to Google Play Store"
     )
   end
 

@@ -18,7 +18,7 @@ echo "[Environment] TRAVIS_FINISHED: $TRAVIS_FINISHED"
 
 # Generate .env
 echo "[Environment] Creating .env file"
-for KEY in $(cat .env_example | sed 's/\"/\\\"/g' | sed -n 's|\(.*\)=\(.*\)|\1|p'); do
+for KEY in $(cat .env_example | egrep "^[A-Za-z]+" | sed 's/\"/\\\"/g' | sed -n 's|\(.*\)=\(.*\)|\1|p'); do
   echo "$KEY=$(printf '%s\n' "${!KEY}")" >> .env
 done
 

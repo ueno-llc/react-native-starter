@@ -10,8 +10,53 @@ platform :ios do
   before_all do
   end
 
-  desc "Continous Delivery build to TestFlight"
+  desc "Bitrise build to TestFlight"
+  lane :bitrise do
+    if ENV["BUILD_IOS"] != "1"
+      UI.important 'Skipping build'
+      next
+    end
+    match(
+      type: "appstore",
+      readonly: true
+    )
+    path = "./#{project_name}.xcodeproj"
+    increment_build_number(xcodeproj: path)
+    version = get_version_number(xcodeproj: path)
+    build = get_build_number(xcodeproj: path)
+    gym(
+      scheme: scheme,
+      workspace: "./#{project_name}.xcworkspace",
+      output_directory: "ios/build",
+      configuration: "Release",
+      export_method: "app-store"
+    )
+    testflight(
+      skip_waiting_for_build_processing: true
+    )
+    sh "git checkout master"
+    git_pull
+    commit_version_bump(
+      force: true,
+      xcodeproj: path,
+      message: "Version #{version} (build #{build}) [bitrise-ios] [skip ci]"
+    )
+    add_git_tag(
+      tag: "v#{version}-#{build}-ios"
+    )
+    push_to_git_remote(
+      remote_branch: "master",
+      tags: true,
+      force: true
+    )
+  end
+
+  desc "Travis build to TestFlight"
   lane :travis do
+    if ENV["BUILD_IOS"] != "1"
+      UI.important 'Skipping build'
+      next
+    end
     create_keychain(
       name: "ios-build.keychain-db",
       password: ENV["MATCH_PASSWORD"],
