@@ -66,6 +66,7 @@
 		"lint-staged": "6.1.0",
 		"mocha": "5.0.0",
 		"react-dom": "16.2.0",
+		"react-native-rename": "2.2.2",
 		"react-test-renderer": "16.2.0"
 	},
 	"jest": {

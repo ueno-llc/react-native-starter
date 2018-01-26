@@ -30,6 +30,15 @@ All environment variables are in `.env` for cross-platform accessibility.
 - Environment variables can be read with `import config from 'config';`.
 - Environment hot-reload support with `yarn build:env`.
 
+## Renaming the app
+
+```
+./scripts/rename.sh "New App Name" com.ueno.newappname
+```
+
+Also remember to change icons to iOS and Android.
+
+
 ## Network requests
 
 Development mode proxies all network requests to the open devtools network panel.
