@@ -9,7 +9,7 @@ const bypass = (cb) => {
   const result = cb();
   toggle();
   return result;
-}
+};
 
 const toggle = (flag) => {
   if (!__DEV__) {
@@ -36,9 +36,11 @@ const toggle = (flag) => {
 const enabled = () => toggle(true);
 const disabled = () => toggle(false);
 
-export default {
+global.xhr = {
   toggle,
   bypass,
   enabled,
   disabled,
 };
+
+export default global.xhr;

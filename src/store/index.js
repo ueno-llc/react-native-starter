@@ -16,7 +16,10 @@ export default class Store {
   ui = new UI();
 
   async setup() {
+    // Hydrate store
     await hydrate('store', this);
+    // Setup sub-stores.
+    await this.ui.setup();
     return true;
   }
 }

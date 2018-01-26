@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { View, Text } from 'react-native-ui-lib';
 import PropTypes from 'prop-types';
 import { bind } from 'lodash-decorators';
 import { SPLASH_SCREEN } from 'screens';
@@ -23,18 +23,12 @@ export default class Splash extends Component {
 
   render() {
     return (
-      <View style={styles.host} testID="SPLASH_SCREEN">
-        <Text>Splash Screen</Text>
+      <View flex center paddingB-120 testID="SPLASH_SCREEN">
+        <View paddingB-30>
+          <Text text30>React Native Starter</Text>
+        </View>
         <Button testID="BUTTON_NEXT" onPress={this.onPress}>Next</Button>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  host: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});

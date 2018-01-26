@@ -5,10 +5,7 @@ import codePush from 'react-native-code-push';
 import isEmpty from 'lodash/isEmpty';
 import config from 'config';
 import Store, { StoreProvider } from 'store';
-import xhr from 'utils/xhr';
-
-// Proxy network requests to devtools network panel
-xhr.enabled();
+import 'utils/xhr';
 
 if (!__DEV__ && !isEmpty(config.SENTRY_DSN)) {
 
@@ -25,8 +22,6 @@ if (!__DEV__ && !isEmpty(config.SENTRY_DSN)) {
   });
 }
 
-const store = new Store(config.SECRET_TOKEN);
-
 // Register screens
 Array.from(Screens.entries()).forEach(([screenConst, screenModule]) =>
   Navigation.registerComponent(
@@ -36,6 +31,10 @@ Array.from(Screens.entries()).forEach(([screenConst, screenModule]) =>
     codePush(StoreProvider),
   ));
 
+const store = new Store();
+
 store
   .setup()
-  .then(() => startApp());
+  .then(() => {
+    startApp();
+  });
