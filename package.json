@@ -34,13 +34,13 @@
 		"mobx-react": "4.3.5",
 		"prop-types": "15.6.0",
 		"react": "16.2.0",
-		"react-native": "0.52.1",
+		"react-native": "0.52.2",
 		"react-native-code-push": "5.2.1",
 		"react-native-config": "0.11.5",
 		"react-native-firebase": "3.2.2",
-		"react-native-navigation": "1.1.354",
+		"react-native-navigation": "1.1.361",
 		"react-native-sentry": "0.33.0",
-		"react-native-ui-lib": "2.0.160"
+		"react-native-ui-lib": "3.0.0"
 	},
 	"devDependencies": {
 		"babel-core": "6.26.0",
@@ -59,7 +59,7 @@
 		"eslint-plugin-import": "2.8.0",
 		"eslint-plugin-jest": "21.7.0",
 		"eslint-plugin-jsx-a11y": "6.0.3",
-		"eslint-plugin-react": "7.6.0",
+		"eslint-plugin-react": "7.6.1",
 		"eslint-plugin-react-native": "3.2.1",
 		"husky": "0.14.3",
 		"jest": "22.1.4",

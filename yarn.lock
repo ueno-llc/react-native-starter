@@ -2260,9 +2260,9 @@ eslint-plugin-react-native@3.2.1:
   dependencies:
     eslint-plugin-react-native-globals "^0.1.1"
 
-eslint-plugin-react@7.6.0:
-  version "7.6.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.6.0.tgz#351651188c74c5b2fecc2717e3936b7207baa728"
+eslint-plugin-react@7.6.1:
+  version "7.6.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.6.1.tgz#5d0e908be599f0c02fbf4eef0c7ed6f29dff7633"
   dependencies:
     doctrine "^2.0.2"
     has "^1.0.1"
@@ -5425,9 +5425,9 @@ react-native-interactable@latest:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/react-native-interactable/-/react-native-interactable-0.1.7.tgz#c785688ea6ec7c4ef443e715d145c6862ae210da"
 
-react-native-navigation@1.1.354:
-  version "1.1.354"
-  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-1.1.354.tgz#27a8bb3fbd2cff5cfc27c6376c81dc45f7b567c2"
+react-native-navigation@1.1.361:
+  version "1.1.361"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-1.1.361.tgz#f62d85dc93b3b9f7dc4dff62f7abbf647e11bdf3"
   dependencies:
     lodash "4.x.x"
 
@@ -5448,9 +5448,9 @@ react-native-sentry@0.33.0:
     "@sentry/wizard" "^0.8.1"
     raven-js "^3.22.1"
 
-react-native-ui-lib@2.0.160:
-  version "2.0.160"
-  resolved "https://registry.yarnpkg.com/react-native-ui-lib/-/react-native-ui-lib-2.0.160.tgz#63d03352ccbda0ada414596d348586c370f51b95"
+react-native-ui-lib@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-ui-lib/-/react-native-ui-lib-3.0.0.tgz#f53306832bd57a2b4a591a2e8515dc22b68b25a4"
   dependencies:
     babel-plugin-transform-inline-environment-variables "^0.0.2"
     hoist-non-react-statics "^2.3.0"
@@ -5460,9 +5460,9 @@ react-native-ui-lib@2.0.160:
     react-native-blur "^3.1.1"
     react-native-interactable latest
 
-react-native@0.52.1:
-  version "0.52.1"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.52.1.tgz#68ca222f9c6a9bbe4a6f95896a5f9611c1311c31"
+react-native@0.52.2:
+  version "0.52.2"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.52.2.tgz#1ae9a4c4441bd6e54a8ffc8aae4ac2b5c7cccd68"
   dependencies:
     absolute-path "^0.0.0"
     art "^0.10.0"

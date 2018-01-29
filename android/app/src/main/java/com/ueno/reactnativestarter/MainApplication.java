@@ -21,7 +21,8 @@ import com.facebook.soloader.SoLoader;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainApplication extends NavigationApplication implements ReactInstanceHolder {
+public class MainApplication extends NavigationApplication {
+  // implements ReactInstanceHolder {
 
     @Override
     protected void attachBaseContext(Context base) {
@@ -54,9 +55,8 @@ public class MainApplication extends NavigationApplication implements ReactInsta
         return getPackages();
     }
 
-    @Override
-    public ReactInstanceManager getReactInstanceManager() {
-        // CodePush must be told how to find React Native instance
-        return getReactNativeHost().getReactInstanceManager();
-    }
+    // @Override
+    // public ReactInstanceManager getReactInstanceManager() {
+    //     return getReactNativeHost().getReactInstanceManager();
+    // }
 }
