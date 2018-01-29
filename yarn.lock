@@ -1907,21 +1907,21 @@ detect-newline@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/detect-newline/-/detect-newline-2.1.0.tgz#f41f1c10be4b00e87b5f13da680759f2c5bfd3e2"
 
-detox-server@^7.0.0-alpha.1:
-  version "7.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/detox-server/-/detox-server-7.0.0-alpha.1.tgz#fcd90fd2620c647ad238339882448cf53590182a"
+detox-server@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/detox-server/-/detox-server-6.0.2.tgz#a51140fda1b311782acef6bf48a899924d9a3b7b"
   dependencies:
     lodash "^4.13.1"
     npmlog "^4.0.2"
     ws "^1.1.0"
 
-detox@7.0.0-alpha.1:
-  version "7.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/detox/-/detox-7.0.0-alpha.1.tgz#128a3faa00d9ec4a9827eefac800bfc17d5987f1"
+detox@6.0.4:
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/detox/-/detox-6.0.4.tgz#d8ba32bfd5f0161527a338638f6f94581a0c7765"
   dependencies:
     child-process-promise "^2.2.0"
     commander "^2.9.0"
-    detox-server "^7.0.0-alpha.1"
+    detox-server "^6.0.2"
     fs-extra "^4.0.2"
     get-port "^2.1.0"
     ini "^1.3.4"
