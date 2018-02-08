@@ -38,6 +38,16 @@ All environment variables are in `.env` for cross-platform accessibility.
 - Environment variables can be read with `import config from 'config';`.
 - Environment hot-reload support with `yarn build:env`.
 
+## Adding native dependencies (react-native link)
+
+**Note:** This starter-kit does not support react-native link.
+
+All native iOS modules need to be installed through cocoapods by adding podspec to ios/Podfile and pod install.
+
+If the npm package does not provide podspec, simply add it to the `node_modules/{package-name}/{package-name}.podspec` folder and run `patch-package {package-name}` and commit the changes into your repository. The patch file will go into `patches` folder.
+
+Installing for android is just as normal manual installation, add project to `./android/settings.gradle`, add implementation to project dependencies in `./android/app/build.gradle` and finally import the module in `./android/app/src/main/**/MainApplication.java` and add it to the packages array.
+
 ## Network requests
 
 Development mode proxies all network requests to the open devtools network panel.
@@ -60,7 +70,6 @@ xhr.toggle();
 xhr.enabled();
 xhr.disabled();
 ```
-
 
 ## Integration, Unit and Code Quality Testing
 
