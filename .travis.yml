@@ -18,9 +18,11 @@ matrix:
       - build-tools-25.0.1
       - build-tools-25.0.2
       - build-tools-25.0.3
+      - build-tools-27.0.1
       - android-23
       - android-25
       - android-26
+      - android-27
       - extra-android-m2repository
       - extra-google-google_play_services
       - extra-google-m2repository
