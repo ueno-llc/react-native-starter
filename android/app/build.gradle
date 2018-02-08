@@ -74,8 +74,14 @@ import com.android.build.OutputFile
  */
 
 apply from: "../../node_modules/react-native/react.gradle"
-apply from: "../../node_modules/react-native-sentry/sentry.gradle"
-apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
+
+if (project.env.get("SENTRY_ORG") != '') {
+  apply from: "../../node_modules/react-native-sentry/sentry.gradle"
+}
+
+if (project.env.get('CODEPUSH_ACCESS_KEY') != '') {
+  apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
+}
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -94,7 +100,7 @@ def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '27.0.1'
 
     defaultConfig {
         applicationId "com.ueno.reactnativestarter"
@@ -121,7 +127,7 @@ android {
         release {
             storeFile file("../keystores/release.keystore")
             storePassword "$System.env.ANDROID_KEYSTORE_PASSWORD"
-            keyAlias "$System.env.ANDROID_KEYSTORE_ALIAS"
+            keyAlias "release"
             keyPassword "$System.env.ANDROID_KEYSTORE_PASSWORD"
         }
     }
@@ -150,24 +156,30 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy.force 'com.android.support:support-annotations:25.3.1'
+}
+
 dependencies {
-    compile fileTree(dir: "libs", include: ["*.jar"])
-    compile project(':react-native-sentry')
-    compile project(':react-native-navigation')
-    compile project(':react-native-code-push')
-    compile project(':react-native-config')
-    compile(project(':react-native-firebase')) {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(':react-native-sentry')
+    implementation project(':react-native-navigation')
+    implementation project(':react-native-code-push')
+    implementation project(':react-native-config')
+    implementation(project(':react-native-firebase')) {
         transitive = false
         // exclude group: 'com.google.firebase', :module 'firebase-firestore'
         // exclude group: 'com.google.firebase', :module 'firebase-invites'
         // exclude group: 'com.google.firebase', :module 'firebase-ads'
     }
-    compile "com.google.android.gms:play-services-base:11.6.0"
-    compile "com.google.firebase:firebase-core:11.6.0"
-    compile "com.android.support:appcompat-v7:23.0.1"
-    compile "com.facebook.react:react-native:+"
-    compile "com.android.support:multidex:1.0.1"
-    androidTestCompile(project(path: ":detox", configuration: "newOkhttpDebug"), {
+    implementation "com.google.android.gms:play-services-base:11.6.0"
+    implementation "com.google.firebase:firebase-core:11.6.0"
+    implementation "com.android.support:appcompat-v7:25.0.0"
+    implementation "com.facebook.react:react-native:+"
+    implementation "com.android.support:multidex:1.0.1"
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test:rules:1.0.1'
+    androidTestImplementation(project(":detox"), {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 }

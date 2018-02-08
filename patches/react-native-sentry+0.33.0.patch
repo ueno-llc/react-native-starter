@@ -1,0 +1,12 @@
+patch-package
+--- a/node_modules/react-native-sentry/android/build.gradle
++++ b/node_modules/react-native-sentry/android/build.gradle
+@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
+
+ android {
+     compileSdkVersion 23
+-    buildToolsVersion '23.0.1'
++    buildToolsVersion '27.0.1'
+     
+     defaultConfig {
+         consumerProguardFiles 'proguard-rules.pro'

@@ -4,15 +4,22 @@
 
 This is a starter to quickly get up and running with a opinionated dependencies.
 
-Jump down to the [install section](#installing-on-mac-os-x-sierra-10125) for install on fresh mac. For other, these are required:
+Jump down to the [install section](#installing-on-mac-os-x-sierra-10125) for install necessery dependencies on fresh mac.
+
+## Getting Started
 
 ```
-brew tap wix/brew
-brew install --HEAD applesimutils
-npm install -g react-native-cli detox-cli
-# Also good to have for app management
-npm install -g sentry-cli code-push-cli
+git clone git@github.com:ueno-llc/react-native-starter.git new-app-name
+git remote remove origin
+# git remote add origin {your own git repository}
+./scripts/rename.sh "NewAppName" com.ueno.newappname
+git commit -m "Renamed application to NewAppName"
+yarn install
+(cd ios; pod install --repo-update; cd -)
+react-native run-ios
 ```
+
+Also remember to change icons to iOS and Android.
 
 ## Features
  - [x] react-native-navigation *(native)*
@@ -30,15 +37,6 @@ npm install -g sentry-cli code-push-cli
 All environment variables are in `.env` for cross-platform accessibility.
 - Environment variables can be read with `import config from 'config';`.
 - Environment hot-reload support with `yarn build:env`.
-
-## Renaming the app
-
-```
-./scripts/rename.sh "New App Name" com.ueno.newappname
-```
-
-Also remember to change icons to iOS and Android.
-
 
 ## Network requests
 
@@ -82,7 +80,13 @@ yarn test
 
 This project uses detox to run end-to-end UI testing with jest as test runner under the hood. Some tooling is needed to get started, but the tests will also run on a CI.
 
-You can build the UI test app for the first time (you need to build again if any native code has changed).
+```
+brew tap wix/brew
+brew install --HEAD applesimutils
+npm install -g detox-cli
+```
+
+You can build the UI test app for the first time (you need to build again if any code has changed or test debug release).
 
 ```bash
 yarn build:e2e:ios
@@ -276,7 +280,7 @@ travis encrypt MATCH_PASSWORD=yourpassword --add
 
 Run this script to add secret files to your repository that travis can read. When promted for password, use your password set for `MATCH_PASSWORD`.
 ```
-./scripts/gen-secrets.sh
+./.travis/gen-secrets.sh
 ```
 
 Commit and push should start travis.

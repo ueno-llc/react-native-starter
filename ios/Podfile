@@ -24,15 +24,3 @@ target 'react-native-starter' do
     'DevSupport',
   ]
 end
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-      if target.name == 'yoga'
-          puts "Patching yoga: react-native v0.52 bug issue #17274"
-          target.build_configurations.each do |config|
-              config.build_settings['GCC_TREAT_WARNINGS_AS_ERRORS'] = 'NO'
-              config.build_settings['GCC_WARN_64_TO_32_BIT_CONVERSION'] = 'NO'
-          end
-      end
-  end
-end
