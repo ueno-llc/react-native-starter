@@ -1,4 +1,5 @@
 source "$(dirname "$0")/env.sh"
+source "$(dirname "$0")/../scripts/build-env.sh"
 
 echo "=== Environment checks ==="
 echo "[Android] Last android build: $LAST_ANDROID"

@@ -6,14 +6,6 @@ if [[ "$TRAVIS_FINISHED" == "1" ]]; then
   exit 0
 fi
 
-# Lint code
-yarn lint || exit $?
-
-# Test code
-yarn test || exit $?
-
-# TODO: detox
-
 if [ ! -z "$MATCH_PASSWORD" ]; then
   # Setup ssh-agent for GitHub pushes
   # This is only for public repositories with no write-access.
@@ -44,6 +36,12 @@ if [[ "$TRAVIS_BRANCH" == "master" ]]; then
   fi
 
   if [[ "$LANE" == "js" ]]; then
+    # Lint code
+    yarn lint || exit $?
+
+    # Test code
+    yarn test || exit $?
+
     # Install code-push-cli
     npm install -g code-push-cli || exit $?
 
