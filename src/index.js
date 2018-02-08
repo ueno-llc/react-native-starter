@@ -22,6 +22,8 @@ if (!__DEV__ && !isEmpty(config.SENTRY_DSN)) {
   });
 }
 
+const store = new Store();
+
 // Register screens
 Array.from(Screens.entries()).forEach(([screenConst, screenModule]) =>
   Navigation.registerComponent(
@@ -30,8 +32,6 @@ Array.from(Screens.entries()).forEach(([screenConst, screenModule]) =>
     store,
     codePush(StoreProvider),
   ));
-
-const store = new Store();
 
 store
   .setup()
