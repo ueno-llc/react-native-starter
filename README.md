@@ -8,7 +8,7 @@ Jump down to the [install section](#installing-on-mac-os-x-sierra-10125) for ins
 
 ## Getting Started
 
-```
+```bash
 git clone git@github.com:ueno-llc/react-native-starter.git new-app-name
 git remote remove origin
 # git remote add origin {your own git repository}
