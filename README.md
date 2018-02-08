@@ -12,10 +12,13 @@ Jump down to the [install section](#installing-on-mac-os-x-sierra-10125) for ins
 git clone git@github.com:ueno-llc/react-native-starter.git new-app-name
 git remote remove origin
 # git remote add origin {your own git repository}
+
 ./scripts/rename.sh "NewAppName" com.ueno.newappname
 git commit -m "Renamed application to NewAppName"
+
 yarn install
 (cd ios; pod install --repo-update; cd -)
+
 react-native run-ios
 ```
 

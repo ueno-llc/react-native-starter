@@ -14,8 +14,8 @@
 		"test:e2e:android": "E2E_CONFIG=android.emu.release yarn test:e2e",
 		"lint": "eslint src __tests__",
 		"precommit": "lint-staged",
-    "prepush": "npm run test",
-    "prepare": "patch-package"
+		"prepush": "npm run test",
+		"prepare": "patch-package"
 	},
 	"lint-staged": {
 		"*.js": [
@@ -38,6 +38,7 @@
 		"react-native-code-push": "5.2.1",
 		"react-native-config": "0.11.5",
 		"react-native-firebase": "3.2.4",
+		"react-native-interactable": "0.1.10",
 		"react-native-navigation": "1.1.374",
 		"react-native-sentry": "0.33.0",
 		"react-native-ui-lib": "3.2.14"
@@ -103,12 +104,12 @@
 				"type": "android.emulator",
 				"name": "Nexus_5_API_27"
 			},
-      "android.emu.debug": {
+			"android.emu.debug": {
 				"binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
 				"build": "pushd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && popd",
 				"type": "android.emulator",
 				"name": "Nexus_5_API_27"
-      }
+			}
 		}
 	}
 }
