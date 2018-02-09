@@ -1,5 +1,5 @@
 source "$(dirname "$0")/env.sh"
-source "$(dirname "$0")/../scripts/build-env.sh"
+source "scripts/build-env.sh"
 
 echo "=== Environment checks ==="
 echo "[Android] Last android build: $LAST_ANDROID"
@@ -39,8 +39,7 @@ if [[ "$TRAVIS_FINISHED" == "0" ]]; then
   yarn install
 
   if [[ "$LANE" == "android" ]]; then
-    rm -rf "$(dirname "$0")/../node_modules/react-native-interactable/{ios,android}"
-    cp -r "$(dirname "$0")/../node_modules/react-native-interactable/lib/{ios,android}" "$(dirname "$0")/node_modules/react-native-interactable/."
+    rm -rf node_modules/react-native-ui-lib/node_modules
   fi
 
   if [[ "$LANE" == "ios" ]]; then
