@@ -1,19 +1,17 @@
 - [Getting started](/GETTING_STARTED.md)
   - [Rename the app](/RENAME.md)
+  - [Change icons](/ICONS.md)
   - [Features](/FEATURES.md)
   - [DevTools](/DEVTOOLS.md)
   - [Installing dependencies](/INSTALL_DEPENDENCIES.md)
   - [Adding Screens](/ADDING_SCREENS.md)
 - [Environment Variables](/ENV.md)
-- Testing
-  - Code linting
-  - Unit testing
-  - E2E testing
-- Publishing
+- [Testing](/TESTING.md)
+- [Publishing](/PUBLISHING.md)
   - Fastlane
   - iTunes Connect
   - Play Store
-- Continous Integration
+- [Continous Delivery](/CI.md)
   - Overview
   - Travis
   - Bitrise
