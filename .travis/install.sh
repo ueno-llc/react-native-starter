@@ -40,6 +40,10 @@ if [[ "$TRAVIS_FINISHED" == "0" ]]; then
 
   if [[ "$LANE" == "android" ]]; then
     rm -rf node_modules/react-native-ui-lib/node_modules
+    ls -al node_modules/react-native-interactable
+    rm -rf node_modules/react-native-interactable/\{ios,android\}
+    cp -r node_modules/react-native-interactable/lib/ios node_modules/react-native-interactable/ios
+    cp -r node_modules/react-native-interactable/lib/android node_modules/react-native-interactable/android
   fi
 
   if [[ "$LANE" == "ios" ]]; then
