@@ -5589,7 +5589,7 @@ react-native-animatable@^1.1.0:
   dependencies:
     prop-types "^15.5.10"
 
-react-native-blur@^3.1.1:
+react-native-blur@3.2.2, react-native-blur@^3.1.1:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/react-native-blur/-/react-native-blur-3.2.2.tgz#5bfb50638d148982c9560436554ed01d77d6d07d"
   dependencies:

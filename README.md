@@ -34,6 +34,7 @@ Also remember to change icons to iOS and Android.
  - [x] lodash and lodas-decorators
  - [x] date-fns
  - [x] react-native-ui-lib
+ - [x] react-native-blur
 
 ## Environment config and secrets
 

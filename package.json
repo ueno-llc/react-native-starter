@@ -35,6 +35,7 @@
 		"prop-types": "15.6.0",
 		"react": "16.2.0",
 		"react-native": "0.53.0",
+		"react-native-blur": "3.2.2",
 		"react-native-code-push": "5.2.1",
 		"react-native-config": "0.11.5",
 		"react-native-firebase": "3.2.4",
