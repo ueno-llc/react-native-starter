@@ -39,8 +39,8 @@ if [[ "$TRAVIS_FINISHED" == "0" ]]; then
   yarn install
 
   if [[ "$LANE" == "android" ]]; then
-    rm -rf "$(dirname "$0")/node_modules/react-native-interactable/{ios,android}"
-    cp -r "$(dirname "$0")/node_modules/react-native-interactable/lib/{ios,android}" "$(dirname "$0")/node_modules/react-native-interactable/."
+    rm -rf "$(dirname "$0")/../node_modules/react-native-interactable/{ios,android}"
+    cp -r "$(dirname "$0")/../node_modules/react-native-interactable/lib/{ios,android}" "$(dirname "$0")/node_modules/react-native-interactable/."
   fi
 
   if [[ "$LANE" == "ios" ]]; then
