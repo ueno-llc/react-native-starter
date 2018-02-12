@@ -45,7 +45,7 @@ do
     fi
 done
 
-perl -pi -e "s/\"name\".*/\"name\"\: \"$SLUG\",/" package.json
+# perl -pi -e "s/  \"name\".*/  \"name\"\: \"$SLUG\",/" package.json
 
 if [[ $REST != *"--no-git"* ]]; then
   git add .

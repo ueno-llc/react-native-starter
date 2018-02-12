@@ -18,8 +18,8 @@ The Professional react-native starter kit with everything you'll ever need to de
 Super-Quick Start
 
 ```bash
-./scripts/rename.sh "My New App" com.ueno.mynewap
 yarn install
+./scripts/rename.sh "My New App" com.ueno.mynewap
 (cd ios; pod install; cd -)
 react-native run-ios
 ```
