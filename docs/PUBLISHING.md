@@ -1,53 +1,78 @@
 # Publishing
 
-## Setup Sentry and update environment keys
+Publishing is probably the most complicated thing about app development. We have made sure to have everything ready and approvable by the app stores.
 
-Create project in Sentry and update your .env (just one project needed for both platforms).
-```
-SENTRY_DSN=https://a:b@sentry.io/12345
-SENTRY_PROJECT=app-name
-SENTRY_ORG=company-name
-```
+Make sure you have fastlane before proceeding.
 
-Then get authorization token from here (https://docs.sentry.io/api/auth/)
-
-```
-SENTRY_AUTH_TOKEN=abcdef0123456789
+```bash
+brew cask install fastlane
 ```
 
-## Create app in iTunes Connect
+Also make sure you've [set up all services](/SERVICES.md) you intend to use.
 
-Create app in itunes connect
-Update your `ios/fastlane/[Appfile,Matchfile]`
-Run `fastlane match appstore`
+## iOS
 
-Note: You need to have a repository containing all your certificates managed by fastlane match that travis can access.
+### 1. Apple Developer Program
 
-## Create app in Play Store
+You will need an apple developer account to be able to publish (and test apps).
 
-Create app in play store.
-Get your `playstore.json` file and put into android folder (https://docs.fastlane.tools/actions/supply/#setup).
-Update your `android/fastlane/[Appfile,Matchfile]`.
-Run `fastlane supply run`
+You can [register for one here](https://developer.apple.com/programs/enroll/), the fee is $99 per year.
 
-Note: You need to upload at least one APK to the playstore manually before Continous Deployment can take over.
+### 2. Setup fastlane match
 
+You will need a repository to store all your certificates, make sure to keep this repository private.
 
-## Setup travis
+Change your `./ios/fastlane/Matchfile` to match your git repository so it looks like this:
 
-Sign into travis with your GitHub account, find your repository in the list and mark the checkbox.
-
-Note: It is extremely important to use secret environment variables if the target repository is public (travis.org).
-
-Add all your environment variables (public/secrets)
-```
-travis env set ANDROID_BUNDLE_ID=com.companyname.appnameandroid
-travis encrypt MATCH_PASSWORD=yourpassword --add
+```ruby
+git_url "git@github.com:repo.git" # Change this URL
+app_identifier "com.ueno.reactnativestarter"
+type "appstore"
 ```
 
-Run this script to add secret files to your repository that travis can read. When promted for password, use your password set for `MATCH_PASSWORD`.
-```
-./.travis/gen-secrets.sh
+Now you can run this command in the `./ios` folder.
+
+```bash
+fastlane match appstore
 ```
 
-Commit and push should start travis.
+It should create the app in Apple Developer Portal for you and so on...
+
+[More details here](https://docs.fastlane.tools/actions/match/#usage)
+
+### 3. Create app in iTunes Connect
+
+Go to iTunes Connect portal and select **My Apps** and create new app.
+
+Select the correct Bundle ID for your app, you can put the same bundle identifier to the SKU field.
+
+Update `./ios/fastlane/Appfile` with your **team_id** and **apple_id**.
+
+(Also update `./ios/fastlane/Deliverfile` with the correct **apple_id**)
+
+## Android
+
+## 1. Google Play Developer Account
+
+You will need a Google Play Developer account to publish and distribute Android apps.
+
+You can [register for one here](https://play.google.com/apps/publish/) and then you'll have to pay one-time fee of $25
+
+Complete your profile and create the app in the Google Play Developer console.
+
+## 2. Download the Google Credentials file
+
+[Guide to download](https://docs.fastlane.tools/getting-started/android/setup/#collect-your-google-credentials)
+
+Save the file as `./android/playstore.json`
+
+## 3. Create app
+
+Create new application in Google Developer Console.
+
+You will need to upload a build manually for the first time before CI can take over uploading automatically.
+
+```bash
+# Test that all works well
+fastlane supply run
+```

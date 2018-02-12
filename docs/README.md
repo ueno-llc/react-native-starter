@@ -2,7 +2,7 @@
 
 # react-native-starter <small>1.0.1</small>
 
-Professional react-native starter kit with everything you'll ever need to get started.
+The Professional react-native starter kit with everything you'll ever need to deploy rock solid apps.
 
 - Opinionated dependencies.
 - Native navigation

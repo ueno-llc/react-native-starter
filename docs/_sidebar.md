@@ -7,11 +7,8 @@
   - [Adding Screens](/ADDING_SCREENS.md)
 - [Environment Variables](/ENV.md)
 - [Testing](/TESTING.md)
+- [Services](/SERVICES.md)
 - [Publishing](/PUBLISHING.md)
-  - Fastlane
-  - iTunes Connect
-  - Play Store
 - [Continous Delivery](/CI.md)
-  - Overview
-  - Travis
-  - Bitrise
+  - [Travis](/CI_TRAVIS.md)
+  - [Bitrise](CI_BITRISE.md)
