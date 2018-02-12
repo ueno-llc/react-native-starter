@@ -12,4 +12,4 @@ The Professional react-native starter kit with everything you'll ever need to de
 - Continuous delivery support for Travis and Bitrise
 
 [GitHub](https://github.com/ueno-llc/react-native-starter)
-[Get Started](https://ueno-llc.github.io/react-native-starter/#/GETTING_STARTED)
+[Get Started](/GETTING_STARTED.md)
