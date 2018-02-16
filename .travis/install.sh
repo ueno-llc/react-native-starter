@@ -1,5 +1,4 @@
 source "$(dirname "$0")/env.sh"
-source "scripts/build-env.sh"
 
 echo "=== Environment checks ==="
 echo "[Android] Last android build: $LAST_ANDROID"
@@ -23,6 +22,10 @@ for KEY in $(cat .env_example | egrep "^[A-Za-z]+" | sed 's/\"/\\\"/g' | sed -n 
   echo "$KEY=$(printf '%s\n' "${!KEY}")" >> .env
 done
 
+# Display environment
+echo "[Environment] .env contents"
+cat .env
+
 # Generate secret files
 if [ ! -z "$MATCH_PASSWORD" ]; then
   echo "[Environment] Generating secret files"
@@ -30,6 +33,9 @@ if [ ! -z "$MATCH_PASSWORD" ]; then
   gpg --batch --passphrase $MATCH_PASSWORD --decrypt .travis/secrets.zip.gpg > .travis/secrets.zip
   unzip -o .travis/secrets.zip -d ./
 fi
+
+# Build environment
+source "scripts/build-env.sh"
 
 if [[ "$TRAVIS_FINISHED" == "0" ]]; then
 
