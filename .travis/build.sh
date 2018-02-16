@@ -50,7 +50,7 @@ if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 
     if [[ "$TRAVIS_BUILD_IOS" == "0" ]]; then
       echo "Releasing code-push for iOS"
-      code-push release-react $IOS_CODEPUSH_APPID ios --outputDir build --description "$TRAVIS_COMMIT_MESSAGE"
+      code-push release-react $IOS_CODEPUSH_APPID ios --outputDir build --description "$TRAVIS_COMMIT_MESSAGE"  --plistFile ./ios/react-native-starter/Info.plist
       sentry-cli react-native codepush $IOS_CODEPUSH_APPID ios ./build --bundle-id $IOS_BUNDLE_ID
     fi
 
