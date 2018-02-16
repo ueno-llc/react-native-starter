@@ -40,6 +40,8 @@ echo "> Building environment config"
 echo "Using $TARGET_ENV"
 
 if [ ! -z "$SYMROOT" ]; then
+  mkdir -p $SYMROOT
+
   # Build dotenv
   cd $RNCDIR
   ./ReactNativeConfig/BuildDotenvConfig.ruby
