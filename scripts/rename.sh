@@ -33,6 +33,8 @@ FILES=(
   "ios/fastlane/Matchfile"
   "scripts/gen-secrets.sh"
   "scripts/build-env.sh"
+  ".travis/gen-secrets.sh"
+  ".travis/build.sh"
   "package.json"
 )
 
