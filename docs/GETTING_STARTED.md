@@ -24,3 +24,8 @@ yarn install
 # Start developing!
 react-native run-ios
 ```
+
+If you get errors that some files do not exists or something similar, you may need to run this script to mock Services files.
+```bash
+./scripts/build-env.sh
+```
