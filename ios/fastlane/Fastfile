@@ -4,6 +4,7 @@ default_platform :ios
 
 project_name = "react-native-starter"
 scheme = project_name
+path = "./#{project_name}.xcodeproj"
 
 platform :ios do
 
@@ -23,7 +24,6 @@ platform :ios do
 
   desc "Bump version number"
   lane :bump_version do
-    path = "./#{project_name}.xcodeproj"
     increment_build_number(xcodeproj: path)
   end
 
