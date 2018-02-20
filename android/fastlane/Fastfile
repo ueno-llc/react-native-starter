@@ -6,21 +6,22 @@ platform :android do
   before_all do
   end
 
-  desc "Bitrise build to Google Play"
-  lane :bitrise do
-    if ENV["BUILD_ANDROID"] != "1"
-      UI.important "Skipping build"
-      next
-    end
-    android_set_version_code
-    version = android_get_version_name
-    build = android_get_version_code
+  desc "Build Release"
+  lane :build do
     gradle(
       task: "assembleRelease"
     )
-    upload_to_play_store(
-      track: "beta",
-    )
+  end
+
+  desc "Bump version number"
+  lane :bump_version do
+    android_set_version_code
+  end
+
+  desc "Tag current version and push to GitHub"
+  lane :tag_version do
+    version = android_get_version_name
+    build = android_get_version_code
     sh "git checkout master"
     git_pull
     git_commit(
@@ -40,34 +41,29 @@ platform :android do
     )
   end
 
-  desc "Travis build to Google Play"
-  lane :travis do
-    android_set_version_code
-    version = android_get_version_name
-    build = android_get_version_code
-    gradle(
-      task: "assembleRelease"
-    )
+
+  desc "Bitrise build to Google Play"
+  lane :bitrise do
+    if ENV["BUILD_ANDROID"] != "1"
+      UI.important "Skipping build"
+      next
+    end
+    bump_version
+    build
     upload_to_play_store(
       track: "beta",
     )
-    sh "git checkout master"
-    git_pull
-    git_commit(
-      path: "./app/build.gradle",
-      message: "Version #{version} (build #{build}) [travis-android] [skip ci]"
+    tag_version
+  end
+
+  desc "Travis build to Google Play"
+  lane :travis do
+    bump_version
+    build
+    upload_to_play_store(
+      track: "beta",
     )
-    add_git_tag(
-      tag: "v#{version}-#{build}-android"
-    )
-    push_to_git_remote(
-      remote_branch: "master",
-      tags: true,
-      force: true
-    )
-    slack(
-      message: "Successfully uploaded #{version} (build #{build}) to Google Play Store"
-    )
+    tag_version
   end
 
   after_all do |lane|

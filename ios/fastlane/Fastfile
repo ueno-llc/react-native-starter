@@ -10,20 +10,8 @@ platform :ios do
   before_all do
   end
 
-  desc "Bitrise build to TestFlight"
-  lane :bitrise do
-    if ENV["BUILD_IOS"] != "1"
-      UI.important 'Skipping build'
-      next
-    end
-    match(
-      type: "appstore",
-      readonly: true
-    )
-    path = "./#{project_name}.xcodeproj"
-    increment_build_number(xcodeproj: path)
-    version = get_version_number(xcodeproj: path)
-    build = get_build_number(xcodeproj: path)
+  desc "Build Release"
+  lane :build do
     gym(
       scheme: scheme,
       workspace: "./#{project_name}.xcworkspace",
@@ -31,9 +19,18 @@ platform :ios do
       configuration: "Release",
       export_method: "app-store"
     )
-    testflight(
-      skip_waiting_for_build_processing: true
-    )
+  end
+
+  desc "Bump version number"
+  lane :bump_version do
+    path = "./#{project_name}.xcodeproj"
+    increment_build_number(xcodeproj: path)
+  end
+
+  desc "Tag current version and push to GitHub"
+  lane :tag_version do
+    version = get_version_number(xcodeproj: path)
+    build = get_build_number(xcodeproj: path)
     sh "git checkout master"
     git_pull
     commit_version_bump(
@@ -49,6 +46,27 @@ platform :ios do
       tags: true,
       force: true
     )
+    slack(
+      message: "Successfully uploaded #{version} (build #{build}) to TestFlight"
+    )
+  end
+
+  desc "Bitrise build to TestFlight"
+  lane :bitrise do
+    if ENV["BUILD_IOS"] != "1"
+      UI.important 'Skipping build'
+      next
+    end
+    match(
+      type: "appstore",
+      readonly: true
+    )
+    bump_version
+    build
+    testflight(
+      skip_waiting_for_build_processing: true
+    )
+    tag_version
   end
 
   desc "Travis build to TestFlight"
@@ -67,37 +85,12 @@ platform :ios do
       keychain_password: ENV["MATCH_PASSWORD"],
       readonly: true
     )
-    path = "./#{project_name}.xcodeproj"
-    increment_build_number(xcodeproj: path)
-    version = get_version_number(xcodeproj: path)
-    build = get_build_number(xcodeproj: path)
-    gym(
-      scheme: scheme,
-      workspace: "./#{project_name}.xcworkspace",
-      output_directory: "ios/build",
-      configuration: "Release",
-      export_method: "app-store"
-    )
+    bump_version
+    build
     testflight(
       skip_waiting_for_build_processing: true
     )
-    git_pull
-    commit_version_bump(
-      force: true,
-      xcodeproj: path,
-      message: "Version #{version} (build #{build}) [travis-ios] [skip ci]"
-    )
-    add_git_tag(
-      tag: "v#{version}-#{build}-ios"
-    )
-    push_to_git_remote(
-      remote_branch: "master",
-      tags: true,
-      force: true
-    )
-    slack(
-      message: "Successfully uploaded #{version} (build #{build}) to TestFlight"
-    )
+    tag_version
   end
 
   after_all do |lane|
@@ -106,6 +99,5 @@ platform :ios do
 
   error do |lane, exception|
   end
-
 
 end

@@ -8,26 +8,39 @@ Make sure you have the latest version of the Xcode command line tools installed:
 xcode-select --install
 ```
 
-## Choose your installation method:
-
-| Method                     | OS support                              | Description                                                                                                                           |
-|----------------------------|-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| [Homebrew](http://brew.sh) | macOS                                   | `brew cask install fastlane`                                                                                                          |
-| Installer Script           | macOS                                   | [Download the zip file](https://download.fastlane.tools). Then double click on the `install` script (or run it in a terminal window). |
-| RubyGems                   | macOS or Linux with Ruby 2.0.0 or above | `sudo gem install fastlane -NV`                                                                                                       |
+Install _fastlane_ using
+```
+[sudo] gem install fastlane -NV
+```
+or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios test
+### ios build
 ```
-fastlane ios test
+fastlane ios build
 ```
-Build and run UI tests
+Build Release
+### ios bump_version
+```
+fastlane ios bump_version
+```
+Bump version number
+### ios tag_version
+```
+fastlane ios tag_version
+```
+Tag current version and push to GitHub
+### ios bitrise
+```
+fastlane ios bitrise
+```
+Bitrise build to TestFlight
 ### ios travis
 ```
 fastlane ios travis
 ```
-Continous Delivery build to TestFlight
+Travis build to TestFlight
 
 ----
 
