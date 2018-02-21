@@ -32,7 +32,7 @@ The **[Documentation is available here](https://ueno-llc.github.io/react-native-
 
 We also recommend the following reading material:
  - [React Native](https://facebook.github.io/react-native/)
- - [React Native Navigation](wix.github.io/react-native-navigation/)
+ - [React Native Navigation](https://wix.github.io/react-native-navigation/)
  - [React Native Config](https://github.com/luggit/react-native-config)
  - [Apple Developer Documentation](https://developer.apple.com/documentation/)
  - [Android Developer Guide](https://developer.android.com/guide/index.html)
@@ -49,6 +49,4 @@ If you are interested in helping out, feel free to submit issues, pull-requests 
 
 ## License
 
-This project is [BSD licensed](/LICENSE.md)
-
-Facebook's react-native has an additional [patent grant](https://github.com/facebook/react-native/blob/master/PATENTS).
+This project is [MIT licensed](/LICENSE.md)
