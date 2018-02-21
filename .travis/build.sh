@@ -1,5 +1,5 @@
 source "$(dirname "$0")/env.sh"
-
+FASTLANE_COMMAND="build"
 if [[ "$TRAVIS_FINISHED" == "1" ]]; then
   echo "Finished. Exit 0"
   # This lane has finished. Exit successfully.
@@ -20,55 +20,47 @@ if [ ! -z "$MATCH_PASSWORD" ]; then
   git ls-remote
 fi
 
-if [[ "$TRAVIS_BRANCH" == "master" ]]; then
-
+if [[ "$TRAVIS_RELEASE" == "1" ]]; then
   # Install Sentry CLI (cross-platform)
   npm install -g @sentry/cli || exit $?
+  FASTLANE_COMMAND="travis"
+fi
 
-  if [[ "$LANE" == "ios" && "$TRAVIS_BUILD_IOS" == "1" ]]; then
-    cd ios
-    if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then
-      fastlane travis || exit $?
-    else
-      fastlane build || exit $?
+if [[ "$LANE" == "ios" && "$TRAVIS_BUILD_IOS" == "1" ]]; then
+  cd ios
+  fastlane $FASTLANE_COMMAND || exit $?
+fi
+
+if [[ "$LANE" == "android" && "$TRAVIS_BUILD_ANDROID" == "1" ]]; then
+  cd android
+  fastlane $FASTLANE_COMMAND || exit $?
+fi
+
+if [[ "$LANE" == "js" ]]; then
+  # Lint code
+  yarn lint || exit $?
+
+  # Test code
+  yarn test || exit $?
+
+  if [[ "$TRAVIS_RELEASE" == "1" ]]; then
+
+    # Install code-push-cli
+    npm install -g code-push-cli || exit $?
+
+    # Login to code-push-cli
+    code-push login --accessKey $CODEPUSH_ACCESS_KEY || exit $?
+
+    if [[ "$TRAVIS_BUILD_IOS" == "0" ]]; then
+      echo "Releasing code-push for iOS"
+      code-push release-react $IOS_CODEPUSH_APPID ios --outputDir build --description "$TRAVIS_COMMIT_MESSAGE"  --plistFile ./ios/react-native-starter/Info.plist
+      sentry-cli react-native codepush $IOS_CODEPUSH_APPID ios ./build --bundle-id $IOS_BUNDLE_ID
     fi
-  fi
 
-  if [[ "$LANE" == "android" && "$TRAVIS_BUILD_ANDROID" == "1" ]]; then
-    cd android
-    if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then
-      fastlane travis || exit $?
-    else
-      fastlane build || exit $?
-    fi
-  fi
-
-  if [[ "$LANE" == "js" ]]; then
-    # Lint code
-    yarn lint || exit $?
-
-    # Test code
-    yarn test || exit $?
-
-    if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then
-
-      # Install code-push-cli
-      npm install -g code-push-cli || exit $?
-
-      # Login to code-push-cli
-      code-push login --accessKey $CODEPUSH_ACCESS_KEY || exit $?
-
-      if [[ "$TRAVIS_BUILD_IOS" == "0" ]]; then
-        echo "Releasing code-push for iOS"
-        code-push release-react $IOS_CODEPUSH_APPID ios --outputDir build --description "$TRAVIS_COMMIT_MESSAGE"  --plistFile ./ios/react-native-starter/Info.plist
-        sentry-cli react-native codepush $IOS_CODEPUSH_APPID ios ./build --bundle-id $IOS_BUNDLE_ID
-      fi
-
-      if [[ "$TRAVIS_BUILD_ANDROID" == "0" ]]; then
-        echo "Releasing code-push for Android"
-        code-push release-react $ANDROID_CODEPUSH_APPID android --outputDir build --description "$TRAVIS_COMMIT_MESSAGE"
-        sentry-cli react-native codepush $ANDROID_CODEPUSH_APPID android ./build --bundle-id $ANDROID_BUNDLE_ID
-      fi
+    if [[ "$TRAVIS_BUILD_ANDROID" == "0" ]]; then
+      echo "Releasing code-push for Android"
+      code-push release-react $ANDROID_CODEPUSH_APPID android --outputDir build --description "$TRAVIS_COMMIT_MESSAGE"
+      sentry-cli react-native codepush $ANDROID_CODEPUSH_APPID android ./build --bundle-id $ANDROID_BUNDLE_ID
     fi
   fi
 fi
