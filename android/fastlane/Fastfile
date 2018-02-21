@@ -19,14 +19,14 @@ platform :android do
   end
 
   desc "Tag current version and push to GitHub"
-  lane :tag_version do
+  lane :tag_version do |options|
     version = android_get_version_name
     build = android_get_version_code
     sh "git checkout master"
     git_pull
     git_commit(
       path: "./app/build.gradle",
-      message: "Version #{version} (build #{build}) [bitrise-android] [skip ci]"
+      message: "Version #{version} (build #{build}) [#{options[:ci]}-android] [skip ci]"
     )
     add_git_tag(
       tag: "v#{version}-#{build}-android"
@@ -53,7 +53,7 @@ platform :android do
     upload_to_play_store(
       track: "beta",
     )
-    tag_version
+    tag_version(ci: "bitrise")
   end
 
   desc "Travis build to Google Play"
@@ -63,7 +63,7 @@ platform :android do
     upload_to_play_store(
       track: "beta",
     )
-    tag_version
+    tag_version(ci: "travis")
   end
 
   after_all do |lane|

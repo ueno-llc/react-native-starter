@@ -43,7 +43,7 @@ platform :ios do
   end
 
   desc "Tag current version and push to GitHub"
-  lane :tag_version do
+  lane :tag_version do |options|
     version = get_version_number(xcodeproj: path)
     build = get_build_number(xcodeproj: path)
     sh "git checkout master"
@@ -51,7 +51,7 @@ platform :ios do
     commit_version_bump(
       force: true,
       xcodeproj: path,
-      message: "Version #{version} (build #{build}) [bitrise-ios] [skip ci]"
+      message: "Version #{version} (build #{build}) [#{options[:ci]}-ios] [skip ci]"
     )
     add_git_tag(
       tag: "v#{version}-#{build}-ios"
@@ -81,7 +81,7 @@ platform :ios do
     testflight(
       skip_waiting_for_build_processing: true
     )
-    tag_version
+    tag_version(ci: "bitrise")
   end
 
   desc "Travis build to TestFlight"
@@ -105,7 +105,7 @@ platform :ios do
     testflight(
       skip_waiting_for_build_processing: true
     )
-    tag_version
+    tag_version(ci: "travis")
   end
 
   after_all do |lane|
