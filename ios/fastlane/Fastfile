@@ -11,8 +11,23 @@ platform :ios do
   before_all do
   end
 
-  desc "Build Release"
+  desc "Build"
   lane :build do
+    xcodebuild(
+      workspace: "./#{project_name}.xcworkspace",
+      scheme: scheme,
+      configuration: "Debug",
+      build: true,
+      destination: "generic/platform=iOS",
+      build_settings: {
+        "CODE_SIGNING_REQUIRED" => "NO",
+        "CODE_SIGN_IDENTITY" => ""
+      }
+    )
+  end
+
+  desc "Build Release"
+  lane :build_release do
     gym(
       scheme: scheme,
       workspace: "./#{project_name}.xcworkspace",
@@ -62,7 +77,7 @@ platform :ios do
       readonly: true
     )
     bump_version
-    build
+    build_release
     testflight(
       skip_waiting_for_build_processing: true
     )
@@ -86,7 +101,7 @@ platform :ios do
       readonly: true
     )
     bump_version
-    build
+    build_release
     testflight(
       skip_waiting_for_build_processing: true
     )

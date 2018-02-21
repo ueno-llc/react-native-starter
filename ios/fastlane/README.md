@@ -20,6 +20,11 @@ or alternatively using `brew cask install fastlane`
 ```
 fastlane ios build
 ```
+Build
+### ios build_release
+```
+fastlane ios build_release
+```
 Build Release
 ### ios bump_version
 ```
