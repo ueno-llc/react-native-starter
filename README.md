@@ -12,6 +12,7 @@ The Professional react-native starter kit with everything you'll ever need to de
  - Gradle 4
  - Unit and integration tests
  - Continuous delivery support for Travis and Bitrise
+ - Pull Requests work
 
 ## Getting Started
 
