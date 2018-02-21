@@ -8,7 +8,7 @@ import codePush from 'react-native-code-push';
 import isEmpty from 'lodash/isEmpty';
 import config from 'config';
 import UI from './UI';
-// import '../utils/xhr';
+import xhr from '../utils/xhr';
 
 const hydrate = create({
   storage: AsyncStorage,
@@ -61,6 +61,7 @@ export const getProvider = async () => {
 
   if (__DEV__) {
     console.log('Provider initialized in developer mode'); // eslint-disable-line no-console
+    xhr.enabled();
     // No setup needed for developer environment
     return StoreProvider;
   }
