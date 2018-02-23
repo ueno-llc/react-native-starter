@@ -40,7 +40,7 @@
 		"react-native-config": "0.11.5",
 		"react-native-firebase": "3.2.6",
 		"react-native-interactable": "0.1.10",
-		"react-native-navigation": "1.1.385",
+		"react-native-navigation": "1.1.386",
 		"react-native-sentry": "0.34.0",
 		"react-native-ui-lib": "3.2.21"
 	},
@@ -64,7 +64,7 @@
 		"eslint-plugin-react": "7.7.0",
 		"eslint-plugin-react-native": "3.2.1",
 		"husky": "0.14.3",
-		"jest": "22.4.1",
+		"jest": "22.4.2",
 		"lint-staged": "7.0.0",
 		"mocha": "5.0.1",
 		"patch-package": "5.1.1",
