@@ -8,6 +8,7 @@ The Professional react-native starter kit with everything you'll ever need to de
 
  - Opinionated dependencies.
  - Native navigation
+ - TypeScript support
  - Cocoapods
  - Gradle 4
  - Unit and integration tests
@@ -19,7 +20,7 @@ Super-Quick Start
 
 ```bash
 yarn install
-./scripts/rename.sh "My New App" com.ueno.mynewap
+./scripts/rename.sh "My New App" com.ueno.mynewapp
 (cd ios; pod install; cd -)
 react-native run-ios
 ```

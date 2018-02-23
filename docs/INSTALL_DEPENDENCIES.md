@@ -5,7 +5,7 @@ This starter kit will not work with `react-native link $PACKAGE_NAME`.
  - All native iOS dependencies need to be manually installed with cocoapods.
  - All native Android dependencies need to be manually installed with gradle.
 
-### My dependency doesn't have Podspec
+### The dependency I want to use doesn't have Podspec file
 
 That's not good. I suggest you create a pull-request with a Podspec for the package.
 

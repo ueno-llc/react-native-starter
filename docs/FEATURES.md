@@ -1,13 +1,22 @@
 # Features
 
-The starter kit is shipped with a couple of native modules that we feel is essential when publishing an app.
+This Starter Kit is packed with great features.
 
+## TypeScript
+
+We support TypeScript out of the box. Checkout `./components/button` for example how to write using TypeScript.
+
+You can disable TypeScript support by removing `./rn-cli.config.js`.
+
+## Dependencies
+
+These dependencies are shipped by default. They are strictly opinionated by Ueno and may change over time.
 
 ### Native modules
 
  - [react-native-navigation](#react-native-navigation)
  - [react-native-config](#react-native-config)
- - react-native-blur
+ - [react-native-blur](#react-native-ui-lib)
  - [code-push](#code-push)
  - [sentry](#sentry)
  - [firebase](#firebase)
@@ -15,8 +24,8 @@ The starter kit is shipped with a couple of native modules that we feel is essen
 ## Other modules
 
  - [mobx](#mobx)
- - mobx-react
- - mobx-persist
+ - [mobx-react](#mobx)
+ - [mobx-persist](#mobx)
  - [lodash](#lodash)
  - [core-decorators](#core-decorators)
  - [date-fns](#date-fns)
@@ -67,3 +76,5 @@ Mostly for autobind, but also for other things like create our own decorators.
 ### react-native-ui-lib
 
 Wix doing an awesome job of scaffolding great way to deal with UI components. We are currently experimenting with the library and decided to include it in the build.
+
+It also includes the native library `react-native-blur`.

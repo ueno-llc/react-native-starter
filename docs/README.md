@@ -6,6 +6,7 @@ The Professional react-native starter kit with everything you'll ever need to de
 
 - Opinionated dependencies.
 - Native navigation
+- TypeScript support
 - Cocoapods
 - Gradle 4
 - Unit and integration tests

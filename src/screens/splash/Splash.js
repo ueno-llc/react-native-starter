@@ -3,7 +3,7 @@ import { View, Text } from 'react-native-ui-lib';
 import PropTypes from 'prop-types';
 import { autobind } from 'core-decorators';
 import { SPLASH_SCREEN } from 'screens';
-import Button from 'components/button/Button.tsx';
+import Button from 'components/button';
 
 export default class Splash extends Component {
 
