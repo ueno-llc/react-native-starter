@@ -1,20 +1,14 @@
-import React, { PureComponent } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import * as React from 'react';
+import { StyleSheet, View, Text, TouchableOpacity, GestureResponderEvent } from 'react-native';
 import PropTypes from 'prop-types';
 
-export default class Button extends PureComponent {
+interface IButtonProps {
+  children: React.ReactNode,
+  onPress: (event: GestureResponderEvent) => void,
+  testID: string
+}
 
-  static propTypes = {
-    children: PropTypes.node,
-    onPress: PropTypes.func,
-    testID: PropTypes.string,
-  };
-
-  static defaultProps = {
-    children: undefined,
-    onPress: undefined,
-    testID: undefined,
-  };
+export default class Button extends React.PureComponent<IButtonProps, any> {
 
   render() {
     const { children, onPress, testID } = this.props;

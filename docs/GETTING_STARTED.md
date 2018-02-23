@@ -16,7 +16,7 @@ git remote add origin {your own git repository}
 yarn install
 
 # Rename the application
-./scripts/rename.sh "My New App" com.ueno.mynewap
+./scripts/rename.sh "My New App" com.ueno.mynewapp
 
 # Install cocoapods
 (cd ios; pod install --repo-update; cd -)

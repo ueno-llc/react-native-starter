@@ -6,7 +6,10 @@
     [
       "module-resolver", {
         "extensions": [
-          ".js"
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
         ],
         "root": [
           "./src"

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "jsx": "react",
+    "noEmit": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "importHelpers": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
