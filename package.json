@@ -96,6 +96,13 @@
 			"**/__tests__/**/*.spec.js"
 		]
 	},
+  "greenkeeper": {
+    "ignore": [
+      "detox",
+      "react-native-navigation",
+      "react-native-firebase"
+    ]
+  }
 	"detox": {
 		"test-runner": "mocha",
 		"specs": "__tests__",
