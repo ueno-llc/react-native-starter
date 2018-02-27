@@ -102,7 +102,7 @@
       "react-native-navigation",
       "react-native-firebase"
     ]
-  }
+  },
 	"detox": {
 		"test-runner": "mocha",
 		"specs": "__tests__",
