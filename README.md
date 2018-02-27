@@ -4,6 +4,8 @@
 
 # React Native Starter
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ueno-llc/react-native-starter.svg)](https://greenkeeper.io/)
+
 The Professional react-native starter kit with everything you'll ever need to deploy rock solid apps.
 
  - Opinionated dependencies.
