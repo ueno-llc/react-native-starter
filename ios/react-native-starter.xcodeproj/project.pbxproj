@@ -13,7 +13,6 @@
 		E3A2B8A71FEACEE70099C8F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A2B8A01FEACEE70099C8F8 /* LaunchScreen.xib */; };
 		E3A2B8A81FEACEE70099C8F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3A2B8A21FEACEE70099C8F8 /* GoogleService-Info.plist */; };
 		E3A2B8A91FEACEE70099C8F8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3A2B8A31FEACEE70099C8F8 /* Images.xcassets */; };
-		E3A2B8AA1FEACEE70099C8F8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3A2B8A41FEACEE70099C8F8 /* Info.plist */; };
 		E3A2B8AB1FEACEE70099C8F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A2B8A51FEACEE70099C8F8 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -165,7 +164,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
@@ -203,7 +202,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3A2B8AA1FEACEE70099C8F8 /* Info.plist in Resources */,
 				E3A2B8A91FEACEE70099C8F8 /* Images.xcassets in Resources */,
 				E3A2B8A71FEACEE70099C8F8 /* LaunchScreen.xib in Resources */,
 				E3A2B8A81FEACEE70099C8F8 /* GoogleService-Info.plist in Resources */,
