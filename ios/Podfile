@@ -10,10 +10,14 @@ target 'react-native-starter' do
   pod 'SentryReactNative', :path => '../node_modules/react-native-sentry'
   pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios/RNFirebase.podspec'
   pod 'CodePush', :path => '../node_modules/react-native-code-push'
+
   pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+  pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'GLog', :podspec => '../node_modules/react-native/third-party-podspecs/GLog.podspec'
+  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
   pod 'React', :path => '../node_modules/react-native', :subspecs => [
     'Core',
-    'BatchedBridge',
+    'CxxBridge',
     'RCTActionSheet',
     'RCTText',
     'RCTNetwork',
