@@ -38,9 +38,9 @@
 		"react-native-blur": "3.2.2",
 		"react-native-code-push": "5.2.2",
 		"react-native-config": "0.11.5",
-		"react-native-firebase": "3.2.7",
+		"react-native-firebase": "3.2.6",
 		"react-native-interactable": "0.1.10",
-		"react-native-navigation": "1.1.390",
+		"react-native-navigation": "1.1.386",
 		"react-native-sentry": "0.34.0",
 		"react-native-ui-lib": "3.3.0",
 		"tslib": "1.9.0"
