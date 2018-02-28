@@ -5,6 +5,12 @@ matrix:
     env: LANE=js
     node_js:
     - '8'
+    before_install:
+    - yarn global add greenkeeper-lockfile@1
+    before_script:
+    - greenkeeper-lockfile-update
+    after_script:
+    - greenkeeper-lockfile-upload
   - language: objective-c
     os: osx
     osx_image: xcode9.2
@@ -35,16 +41,10 @@ matrix:
       - google-gdk-license-.+
     before_install:
     - nvm install 8
-before_install:
-- yarn global add greenkeeper-lockfile@1
 install:
 - ".travis/install.sh"
-before_script:
-- greenkeeper-lockfile-update
 script:
 - ".travis/build.sh"
-after_script:
-- greenkeeper-lockfile-upload
 env:
   global:
   - secure: I/VLo06SgsAKbVK7HeKQnVN3mQuL3nlZ+Rqqz/Q8iWEyyyKbQrVC0pXxLfMHsYVPMCkOYZ7A+eSBHFnpKhOM3JpvxK7FmT0ilFu6HPkoELMFIW3Qduk5lcb5qTy+9cmL7Z/HN3Aw/+ujh+Y9wiC1dBUSxN2K573h2Bc3XukLhC140SqBQFQLhDIdZ1yUiR0Fneso3eN6t2IYd6HRhh9VSxrISBgkUjrKeGILUISVb8bFUcpUSg9nr8+Oo6Nl46nz+BwBiP8wAbREBk4BaZ96Q76Xyn01ub8QuJujQBYWtc/qcv4h/HH1hqZ+OOdpoCkHQVwfq+mwDhetdKclj56lEBRWfYbyK+2SZGbq8egnHIXbziUQ547u7l09q9CthnyDZ1nalbUy10dnWo9vs0emaDSoM7EkTQfTZVYt8O+ltAd9QV3Q6WcW/o3BWq01FozA47TfS3XmCOKkLgHQQ3Vf9DgZdiGVBHNnnYE2MKjujUohKRHjiqw7pYUuPOa1D2UXnTnqw1IAeZ6Bt8ba/GwjbG0qskJwEHdeIZNcIeLsVNLJy8sPWbml/DvNOLpGO6xZQx5+PMOpC9VAKBixkNbeSlxH1uyxjbg5VaebMK91Q65sCjDLYHHHF5FRDRphpiqlD4sOzpzoO4+dJjugpfBsljFHAP4m0yHTGoa4DIfnAbU=
