@@ -82,9 +82,9 @@
 		"typescript": "2.7.2"
 	},
 	"jest": {
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
+		"transform": {
+			"^.+\\.tsx?$": "ts-jest"
+		},
 		"preset": "react-native",
 		"modulePaths": [
 			"<rootDir>"
@@ -96,13 +96,6 @@
 			"**/__tests__/**/*.spec.js"
 		]
 	},
-  "greenkeeper": {
-    "ignore": [
-      "detox",
-      "react-native-navigation",
-      "react-native-firebase"
-    ]
-  },
 	"detox": {
 		"test-runner": "mocha",
 		"specs": "__tests__",
