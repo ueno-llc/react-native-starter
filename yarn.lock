@@ -6208,9 +6208,9 @@ react-native-typescript-transformer@1.2.3:
     semver "^5.4.1"
     source-map "^0.5.6"
 
-react-native-ui-lib@3.3.28:
-  version "3.3.28"
-  resolved "https://registry.yarnpkg.com/react-native-ui-lib/-/react-native-ui-lib-3.3.28.tgz#a90062fc33f12d1fc9059b1d04781db7232306af"
+react-native-ui-lib@3.3.32:
+  version "3.3.32"
+  resolved "https://registry.yarnpkg.com/react-native-ui-lib/-/react-native-ui-lib-3.3.32.tgz#f6af8009c663df76ed8ad787d7d303d9a1cc2593"
   dependencies:
     babel-plugin-transform-inline-environment-variables "^0.0.2"
     hoist-non-react-statics "^2.3.0"
