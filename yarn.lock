@@ -6208,9 +6208,9 @@ react-native-rename@2.2.2:
     node-replace "^0.3.3"
     shelljs "^0.7.7"
 
-react-native-sentry@0.35.1:
-  version "0.35.1"
-  resolved "https://registry.yarnpkg.com/react-native-sentry/-/react-native-sentry-0.35.1.tgz#f4f6360801cab18a512f437e33211473905349c2"
+react-native-sentry@0.35.2:
+  version "0.35.2"
+  resolved "https://registry.yarnpkg.com/react-native-sentry/-/react-native-sentry-0.35.2.tgz#becc573980643421d07ddeb96df7b5955ba47044"
   dependencies:
     "@sentry/wizard" "^0.9.1"
     raven-js "^3.22.1"
