@@ -29,7 +29,7 @@
 		"core-decorators": "0.20.0",
 		"date-fns": "1.29.0",
 		"lodash": "4.17.5",
-		"mobx": "3.6.1",
+		"mobx": "3.6.2",
 		"mobx-persist": "0.4.1",
 		"mobx-react": "4.4.3",
 		"prop-types": "15.6.1",
