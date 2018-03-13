@@ -6161,9 +6161,9 @@ react-native-blur@3.2.2, react-native-blur@^3.1.1:
   dependencies:
     prop-types "^15.5.10"
 
-react-native-code-push@5.2.2:
-  version "5.2.2"
-  resolved "https://registry.yarnpkg.com/react-native-code-push/-/react-native-code-push-5.2.2.tgz#79666ac5c3bd10424c200e5e550c64612630c02f"
+react-native-code-push@5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-code-push/-/react-native-code-push-5.3.0.tgz#902a8c32b47ddd0b10660746ff5546b71fa6e907"
   dependencies:
     code-push "2.0.4"
     glob "^5.0.15"
