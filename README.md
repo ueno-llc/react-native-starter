@@ -19,6 +19,8 @@ The Professional react-native starter kit with everything you'll ever need to de
 Super-Quick Start
 
 ```bash
+git clone -b master git@github.com:ueno-llc/react-native-starter.git my-app
+cd my-app
 yarn install
 ./scripts/rename.sh "My New App" com.ueno.mynewapp
 (cd ios; pod install; cd -)
