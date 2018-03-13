@@ -111,9 +111,9 @@
   version "8.5.2"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.2.tgz#83b8103fa9a2c2e83d78f701a9aa7c9539739aa5"
 
-"@types/react-native@0.52.16":
-  version "0.52.16"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.52.16.tgz#d474cdba5b44e4b695e4c918c88d3e171772c298"
+"@types/react-native@0.52.17":
+  version "0.52.17"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.52.17.tgz#4714aa125af5f20b502ff3ffa75700a1cdb3d794"
   dependencies:
     "@types/react" "*"
 
