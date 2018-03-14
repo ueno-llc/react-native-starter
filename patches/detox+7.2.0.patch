@@ -2,7 +2,7 @@ patch-package
 --- a/node_modules/detox/android/detox/build.gradle
 +++ b/node_modules/detox/android/detox/build.gradle
 @@ -12,10 +12,6 @@ android {
-
+ 
      productFlavors {
          flavorDimensions "minReactNative"
 -        minReactNative44 {
@@ -14,11 +14,11 @@ patch-package
          }
 @@ -57,9 +53,6 @@ android {
  }
-
+ 
  dependencies {
 -    minReactNative44Implementation 'com.squareup.okhttp3:okhttp:3.4.1'
 -    minReactNative44Implementation 'com.squareup.okhttp3:okhttp-ws:3.4.1'
 -
      minReactNative46Implementation 'com.squareup.okhttp3:okhttp:3.6.0'
      minReactNative46Implementation 'com.squareup.okio:okio:1.13.0'
-
+ 
