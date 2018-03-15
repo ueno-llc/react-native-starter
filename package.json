@@ -51,7 +51,7 @@
 		"@types/react-native": "0.52.17",
 		"babel-core": "6.26.0",
 		"babel-eslint": "8.2.2",
-		"babel-jest": "22.4.1",
+		"babel-jest": "23.0.0-alpha.0",
 		"babel-plugin-module-resolver": "3.1.0",
 		"babel-preset-react-native": "4.0.0",
 		"babel-preset-react-native-stage-0": "1.0.1",
