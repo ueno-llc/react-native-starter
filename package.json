@@ -42,7 +42,7 @@
 		"react-native-interactable": "0.1.10",
 		"react-native-navigation": "1.1.407",
 		"react-native-sentry": "0.35.2",
-		"react-native-ui-lib": "3.3.32",
+		"react-native-ui-lib": "3.3.33",
 		"tslib": "1.9.0"
 	},
 	"devDependencies": {
