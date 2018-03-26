@@ -22,6 +22,17 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>18</string>
+  <key>CFBundleURLTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleURLName</key>
+      <string>com.ueno.reactnativestarter</string>
+      <key>CFBundleURLSchemes</key>
+      <array>
+          <string>react-native-starter</string>
+      </array>
+    </dict>
+  </array>
 	<key>CodePushDeploymentKey</key>
 	<string>__RN_CONFIG_IOS_CODEPUSH_DEPLOYMENT_KEY</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
