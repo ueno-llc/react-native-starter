@@ -6442,9 +6442,9 @@ react-native-interactable@latest:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/react-native-interactable/-/react-native-interactable-0.1.7.tgz#c785688ea6ec7c4ef443e715d145c6862ae210da"
 
-react-native-navigation@1.1.407:
-  version "1.1.407"
-  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-1.1.407.tgz#86724d6fbb278ced024959f6a3d01f02a9556be6"
+react-native-navigation@1.1.434:
+  version "1.1.434"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-1.1.434.tgz#191284066e7b2cb7b38f1b22561824fee2f546b8"
   dependencies:
     lodash "4.x.x"
 
