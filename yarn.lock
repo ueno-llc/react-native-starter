@@ -6244,9 +6244,9 @@ react-native-ui-lib@3.3.45:
     react-native-interactable latest
     url-parse "^1.2.0"
 
-react-native@0.55.1:
-  version "0.55.1"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.55.1.tgz#0ca06b3e1bcb8ddfb56b916a3853d423f9ee6439"
+react-native@0.55.2:
+  version "0.55.2"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.55.2.tgz#80d26a3f4193ebd1fd49a4859011c501b0ca3bab"
   dependencies:
     absolute-path "^0.0.0"
     art "^0.10.0"
