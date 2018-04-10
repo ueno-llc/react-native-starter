@@ -6187,9 +6187,9 @@ react-native-config@0.11.5:
   version "0.11.5"
   resolved "https://registry.yarnpkg.com/react-native-config/-/react-native-config-0.11.5.tgz#516cb7b6ec437c7739236ca075971db3aabdcb95"
 
-react-native-firebase@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-4.0.0.tgz#2e73f918cce561a6053ef01db732012e01e70e96"
+react-native-firebase@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-4.0.1.tgz#95a8d87e287e421ea526161868efc95fc8ad14ec"
   dependencies:
     opencollective "^1.0.3"
     postinstall-build "^5.0.1"
