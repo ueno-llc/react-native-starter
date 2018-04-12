@@ -106,8 +106,8 @@ android {
         applicationId "com.ueno.reactnativestarter"
         minSdkVersion 18
         targetSdkVersion 22
-        versionCode 24
-        versionName "1.0.2"
+        versionCode 25
+        versionName "1.0.4"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
