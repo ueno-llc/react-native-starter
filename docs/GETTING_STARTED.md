@@ -17,7 +17,7 @@ yarn install
 
 # Rename the application
 # Cocoapods will be installed automatically
-./scripts/rename.sh "My New App" com.ueno.mynewapp
+yarn rename "My New App" com.ueno.mynewapp
 
 # Start developing!
 react-native run-ios

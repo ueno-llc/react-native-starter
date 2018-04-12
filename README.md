@@ -22,7 +22,7 @@ Super-Quick Start
 git clone -b master git@github.com:ueno-llc/react-native-starter.git my-app
 cd my-app
 yarn
-./scripts/rename.sh "My New App" com.ueno.mynewapp
+yarn rename "My New App" com.ueno.mynewapp
 react-native run-ios
 ```
 
