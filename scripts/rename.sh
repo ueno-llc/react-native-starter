@@ -22,7 +22,7 @@ NAME=$(echo ${1//[[:blank:]]/} | iconv -t ascii//TRANSLIT | sed -E 's/[^a-zA-Z0-
 ID=$2
 REST=$3
 IDPATH=$(echo $ID | sed -e 's/\./\//g')
-SLUG=$(echo $NAME | iconv -t ascii//TRANSLIT | sed -E 's/ /-/g' | sed -E 's/[~\^]+//g' | sed -E 's/[^a-zA-Z0-9-]+//g' | sed -E 's/^-+\|-+$//g' | sed -E 's/\-+/-/g' | tr A-Z a-z)
+SLUG=$(echo $1 | iconv -t ascii//TRANSLIT | sed -E 's/ /-/g' | sed -E 's/[~\^]+//g' | sed -E 's/[^a-zA-Z0-9-]+//g' | sed -E 's/^-+\|-+$//g' | sed -E 's/\-+/-/g' | tr A-Z a-z)
 DIRTY=$(git status --porcelain)
 
 if [[ $REST != *"--no-git"* ]]; then
@@ -37,6 +37,13 @@ if [[ $REST != *"--no-git"* ]]; then
   git checkout -B feature/rename
 fi
 
+echo ""
+echo "Renaming the application"
+echo ""
+echo "ID: $ID"
+echo "NAME: $NAME"
+echo "SLUG: $SLUG"
+
 # Reset versions
 cat android/app/build.gradle | sed -e 's/versionCode .*/versionCode 1/' | sed -e 's/versionName ".*"/versionName "1.0.0"/' > android/app/_build.gradle && mv android/app/_build.gradle android/app/build.gradle
 cat ios/react-native-starter/Info.plist | sed -e 's/\([0-9]*\.[0-9]*\.[0-9]*\)/1.0.0/' > ios/react-native-starter/_Info.plist && mv ios/react-native-starter/_Info.plist ios/react-native-starter/Info.plist
@@ -47,6 +54,8 @@ if [[ $RENAME = *"not a valid name"* ]]; then
   exit 1
 fi
 
+# Move android test folder
+mkdir -p "android/app/src/androidTest/java/$IDPATH"
 mv android/app/src/androidTest/java/com/ueno/reactnativestarter "android/app/src/androidTest/java/$IDPATH"
 
 # Some stuff
@@ -69,11 +78,13 @@ FILES=(
 
 for file in "${FILES[@]}"
 do
-    if [ -f $file ]; then
-        echo "Patching $file"
-        perl -pi -e "s/com.ueno.reactnativestarter/$ID/g" $file
-        perl -pi -e "s/react-native-starter/$NAME/g" $file
-    fi
+  if [ -f $file ]; then
+    echo "Patching $file"
+    perl -pi -e "s/com.ueno.reactnativestarter/$ID/g" $file
+    perl -pi -e "s/react-native-starter/$NAME/g" $file
+  else
+    echo "$file does not match any file(s)."
+  fi
 done
 
 # Package JSON
