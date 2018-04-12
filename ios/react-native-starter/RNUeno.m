@@ -17,10 +17,16 @@
 
 @implementation RNUeno
 
-- (dispatch_queue_t)methodQueue
+- (dispatch_queue_t) methodQueue
 {
   return dispatch_get_main_queue();
 }
+
++ (BOOL)requiresMainQueueSetup
+{
+  return NO;
+}
+
 RCT_EXPORT_MODULE()
 
 - (BOOL) isSimulator {

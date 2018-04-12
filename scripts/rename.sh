@@ -1,5 +1,24 @@
 #!/bin/bash
-NAME=$1
+libs=(git perl sed iconv tr)
+for lib in "${libs[@]}"
+do
+  if [ "$(which $lib)" == "" ]; then
+    echo "Could not find $lib"
+    echo "You can try: brew install $lib"
+    exit 1
+  fi
+done
+
+if [ ! -f ./node_modules/.bin/react-native-rename ]; then
+  echo ""
+  echo "Did you forgot to do install node modules ?"
+  echo ""
+  echo "  yarn install"
+  echo ""
+  exit 1
+fi
+
+NAME=$(echo ${1//[[:blank:]]/} | iconv -t ascii//TRANSLIT | sed -E 's/[^a-zA-Z0-9-]+//g')
 ID=$2
 REST=$3
 IDPATH=$(echo $ID | sed -e 's/\./\//g')
@@ -13,6 +32,10 @@ if [[ $REST != *"--no-git"* ]]; then
 
   git checkout -B feature/rename
 fi
+
+# Reset versions
+cat android/app/build.gradle | sed -e 's/versionCode .*/versionCode 1/' | sed -e 's/versionName ".*"/versionName "1.0.0"/' > android/app/_build.gradle && mv android/app/_build.gradle android/app/build.gradle
+cat ios/react-native-starter/Info.plist | sed -e 's/\([0-9]*\.[0-9]*\.[0-9]*\)/1.0.0/' > ios/react-native-starter/_Info.plist && mv ios/react-native-starter/_Info.plist ios/react-native-starter/Info.plist
 
 RENAME=$(./node_modules/.bin/react-native-rename "$NAME" -b "$ID")
 if [[ $RENAME = *"not a valid name"* ]]; then
@@ -47,7 +70,9 @@ do
     fi
 done
 
-# perl -pi -e "s/  \"name\".*/  \"name\"\: \"$SLUG\",/" package.json
+# Package JSON
+perl -pi -e "s/\"name\": \".*\",/\"name\"\: \"$SLUG\",/" package.json
+perl -pi -e "s/\"version\": \".*\",/\"version\": \"1.0.0\",/" package.json
 
 if [[ $REST != *"--no-git"* ]]; then
   git add .
