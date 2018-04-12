@@ -60,11 +60,3 @@ echo $JSON > ./src/config.env.js
 
 # Build config
 echo "Config built successfully"
-
-# Install Cocoapods
-if [ ! -d ./ios/Pods ]; then
-  echo "Installing Cocoapods"
-  cd ios
-  pod install --repo-update
-  cd -
-fi

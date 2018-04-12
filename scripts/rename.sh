@@ -80,6 +80,16 @@ done
 perl -pi -e "s/\"name\": \".*\",/\"name\"\: \"$SLUG\",/" package.json
 perl -pi -e "s/\"version\": \".*\",/\"version\": \"1.0.0\",/" package.json
 
+# Build environment
+source ./scripts/build-env.sh
+
+# Build Cocoapods
+echo "Rebuilding pods"
+rm -rf ./ios/{Pods,Podfile.lock}
+cd ios
+pod install
+cd -
+
 if [[ $REST != *"--no-git"* ]]; then
   git add .
   git commit -m "App renamed to $NAME ($ID)" --no-verify
@@ -88,5 +98,4 @@ if [[ $REST != *"--no-git"* ]]; then
   git branch -D feature/rename
 fi
 
-# Build environment
-source ./scripts/build-env.sh
+echo "Successfully renamed app"
