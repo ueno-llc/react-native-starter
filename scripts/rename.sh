@@ -56,10 +56,12 @@ fi
 
 # Move android test folder
 mkdir -p "android/app/src/androidTest/java/$IDPATH"
-mv android/app/src/androidTest/java/com/ueno/reactnativestarter "android/app/src/androidTest/java/$IDPATH"
+mv android/app/src/androidTest/java/com/ueno/reactnativestarter/* "android/app/src/androidTest/java/$IDPATH/."
+rm -rf android/app/src/androidTest/java/com/ueno/reactnativestarter
 
 # Some stuff
 FILES=(
+  "android/app/src/main/AndroidManifest.xml"
   "android/app/src/androidTest/java/$IDPATH/DetoxTest.java"
   "android/app/proguard-rules.pro"
   "android/fastlane/Appfile"
@@ -69,6 +71,7 @@ FILES=(
   "ios/fastlane/Matchfile"
   "ios/*/Info.plist"
   "ios/*.xcodeproj/project.pbxproj"
+  "ios/*.xcodeproj/xcshareddata/xcschemes/*.xcscheme"
   "scripts/gen-secrets.sh"
   "scripts/build-env.sh"
   ".travis/gen-secrets.sh"
