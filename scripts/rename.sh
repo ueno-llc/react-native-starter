@@ -30,6 +30,10 @@ if [[ $REST != *"--no-git"* ]]; then
     echo "Git status is dirty. Please stash or commit your changes before proceeding."
   fi
 
+  branch_name=$(git symbolic-ref -q HEAD)
+  branch_name=${branch_name##refs/heads/}
+  branch_name=${branch_name:-HEAD}
+
   git checkout -B feature/rename
 fi
 
@@ -77,6 +81,7 @@ perl -pi -e "s/\"version\": \".*\",/\"version\": \"1.0.0\",/" package.json
 if [[ $REST != *"--no-git"* ]]; then
   git add .
   git commit -m "App renamed to $NAME ($ID)" --no-verify
-  git checkout master
+  git checkout $branch_name
   git merge feature/rename
+  git branch -D feature/rename
 fi
