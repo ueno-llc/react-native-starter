@@ -58,6 +58,8 @@ FILES=(
   "ios/fastlane/Fastfile"
   "ios/fastlane/Deliverfile"
   "ios/fastlane/Matchfile"
+  "ios/*/Info.plist"
+  "ios/*.xcodeproj/project.pbxproj"
   "scripts/gen-secrets.sh"
   "scripts/build-env.sh"
   ".travis/gen-secrets.sh"
@@ -85,3 +87,6 @@ if [[ $REST != *"--no-git"* ]]; then
   git merge feature/rename
   git branch -D feature/rename
 fi
+
+# Build environment
+source ./scripts/build-env.sh
