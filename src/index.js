@@ -5,11 +5,10 @@ import Store, { getProvider } from 'store';
 
 // These will still be logged out to Developer Tools
 YellowBox.ignoreWarnings([
-  'RCTBatchedBridge',
-  'RCTBridge required dispatch_sync',
-  'Required dispatch_sync',
-  'Module RCTImageLoader',
-  'Module RNUeno',
+  // Will be fixed in 0.56.x
+  'Class RCTCxxModule was not exported',
+  // Will be fixed in 0.56.x
+  'Module RCTImageLoader requires main queue setup',
 ]);
 
 const store = new Store();

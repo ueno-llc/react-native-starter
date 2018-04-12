@@ -16,16 +16,9 @@ git remote add origin {your own git repository}
 yarn install
 
 # Rename the application
-./scripts/rename.sh "My New App" com.ueno.mynewapp
-
-# Install cocoapods
-(cd ios; pod install --repo-update; cd -)
+# Cocoapods will be installed automatically
+yarn rename "My New App" com.ueno.mynewapp
 
 # Start developing!
 react-native run-ios
-```
-
-If you get errors that some files do not exists or something similar, you may need to run this script to mock Services files.
-```bash
-./scripts/build-env.sh
 ```
