@@ -39,13 +39,20 @@ platform :ios do
 
   desc "Bump version number"
   lane :bump_version do
-    increment_build_number(xcodeproj: path)
+    increment_build_number(
+      xcodeproj: path
+    )
   end
 
   desc "Tag current version and push to GitHub"
   lane :tag_version do |options|
-    version = get_version_number(xcodeproj: path)
-    build = get_build_number(xcodeproj: path)
+    version = get_version_number(
+      xcodeproj: path,
+      target: project_name
+    )
+    build = get_build_number(
+      xcodeproj: path
+    )
     sh "git checkout master"
     git_pull
     commit_version_bump(
