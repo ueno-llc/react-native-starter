@@ -6223,9 +6223,9 @@ react-native-typescript-transformer@1.2.4:
     semver "^5.4.1"
     source-map "^0.5.6"
 
-react-native-ui-lib@3.3.50:
-  version "3.3.50"
-  resolved "https://registry.yarnpkg.com/react-native-ui-lib/-/react-native-ui-lib-3.3.50.tgz#be89272f5eb4fc79d7cd707a2f3ba6ad0cb5fa8d"
+react-native-ui-lib@3.3.84:
+  version "3.3.84"
+  resolved "https://registry.yarnpkg.com/react-native-ui-lib/-/react-native-ui-lib-3.3.84.tgz#a0f7097f2bf1063c2ef35d716da3c3a76e615027"
   dependencies:
     babel-plugin-transform-inline-environment-variables "^0.0.2"
     hoist-non-react-statics "^2.3.0"
@@ -6234,6 +6234,7 @@ react-native-ui-lib@3.3.50:
     react-native-animatable "^1.1.0"
     react-native-blur "^3.1.1"
     react-native-interactable latest
+    semver "^5.5.0"
     url-parse "^1.2.0"
 
 react-native@0.55.2:
@@ -6763,7 +6764,7 @@ semver-diff@^2.0.0:
   dependencies:
     semver "^5.0.3"
 
-"semver@2 || 3 || 4 || 5", semver@5.x, semver@^5.0.1, semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1:
+"semver@2 || 3 || 4 || 5", semver@5.x, semver@^5.0.1, semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
