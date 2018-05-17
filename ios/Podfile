@@ -2,7 +2,7 @@ platform :ios, '9.0'
 
 target 'react-native-starter' do
 
-  pod 'Firebase/Core'
+  pod 'Firebase/Core', '~> 4.13.0'
 
   pod 'react-native-blur', :path => '../node_modules/react-native-blur'
   pod 'react-native-navigation', :path => '../node_modules/react-native-navigation'
