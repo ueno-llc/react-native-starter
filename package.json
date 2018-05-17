@@ -29,7 +29,7 @@
 	"dependencies": {
 		"core-decorators": "0.20.0",
 		"date-fns": "1.29.0",
-		"lodash": "4.17.5",
+		"lodash": "4.17.9",
 		"mobx": "4.1.1",
 		"mobx-persist": "0.4.1",
 		"mobx-react": "5.0.0",
