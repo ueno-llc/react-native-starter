@@ -453,9 +453,9 @@
   version "9.6.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.4.tgz#0ef7b4cfc3499881c81e0ea1ce61a23f6f4f5b42"
 
-"@types/react-native@0.55.1":
-  version "0.55.1"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.55.1.tgz#dbcfbeb9294ef69b55d5531d330c1927f5d8629e"
+"@types/react-native@0.55.14":
+  version "0.55.14"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.55.14.tgz#9a702845c7d72f2774b4e2004cb698c099f9b50e"
   dependencies:
     "@types/react" "*"
 
@@ -5226,7 +5226,7 @@ min-document@^2.19.0:
   dependencies:
     dom-walk "^0.1.0"
 
-"minimatch@2 || 3", minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4:
+"minimatch@2 || 3", minimatch@3.0.4, minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   dependencies:
@@ -5273,9 +5273,9 @@ mobx@4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-4.1.1.tgz#7ce7ef92b22e85271d1fc274a124d7fa32fcceeb"
 
-mocha@5.0.5:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/mocha/-/mocha-5.0.5.tgz#e228e3386b9387a4710007a641f127b00be44b52"
+mocha@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/mocha/-/mocha-5.1.1.tgz#b774c75609dac05eb48f4d9ba1d827b97fde8a7b"
   dependencies:
     browser-stdout "1.3.1"
     commander "2.11.0"
@@ -5285,6 +5285,7 @@ mocha@5.0.5:
     glob "7.1.2"
     growl "1.10.3"
     he "1.1.1"
+    minimatch "3.0.4"
     mkdirp "0.5.1"
     supports-color "4.4.0"
 
@@ -6179,9 +6180,9 @@ react-native-config@0.11.5:
   version "0.11.5"
   resolved "https://registry.yarnpkg.com/react-native-config/-/react-native-config-0.11.5.tgz#516cb7b6ec437c7739236ca075971db3aabdcb95"
 
-react-native-firebase@4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-4.0.1.tgz#95a8d87e287e421ea526161868efc95fc8ad14ec"
+react-native-firebase@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-4.1.0.tgz#ad18bd4f90020e79de9bca3bf5b179b3a49d6103"
   dependencies:
     opencollective "^1.0.3"
     postinstall-build "^5.0.1"
