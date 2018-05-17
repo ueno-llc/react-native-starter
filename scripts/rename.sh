@@ -91,7 +91,7 @@ do
 done
 
 # Package JSON
-perl -pi -e "s/\"name\": \".*\",/\"name\"\: \"$SLUG\",/" package.json
+perl -pi -e "s/\"name\": \"react-native-starter\",/\"name\"\: \"$SLUG\",/" package.json
 perl -pi -e "s/\"version\": \".*\",/\"version\": \"1.0.0\",/" package.json
 
 # Build environment
