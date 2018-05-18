@@ -53,6 +53,7 @@ if [[ "$TRAVIS_FINISHED" == "0" ]]; then
   fi
 
   if [[ "$LANE" == "ios" ]]; then
+    gem install cocoapods
     (cd ios; pod install --repo-update; cd -)
   fi
 
