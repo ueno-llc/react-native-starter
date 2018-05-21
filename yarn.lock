@@ -453,9 +453,9 @@
   version "9.6.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.4.tgz#0ef7b4cfc3499881c81e0ea1ce61a23f6f4f5b42"
 
-"@types/react-native@0.55.14":
-  version "0.55.14"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.55.14.tgz#9a702845c7d72f2774b4e2004cb698c099f9b50e"
+"@types/react-native@0.55.15":
+  version "0.55.15"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.55.15.tgz#e577c625e6a254def6487d43532ee32ef18d2630"
   dependencies:
     "@types/react" "*"
 
