@@ -41,7 +41,7 @@
 		"react-native-config": "0.11.5",
 		"react-native-firebase": "4.2.0",
 		"react-native-interactable": "0.1.10",
-		"react-native-navigation": "1.1.462",
+		"react-native-navigation": "1.1.463",
 		"react-native-sentry": "0.37.0",
 		"react-native-ui-lib": "3.3.84",
 		"tslib": "1.9.1"
