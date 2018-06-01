@@ -44,7 +44,7 @@
 		"react-native-navigation": "1.1.462",
 		"react-native-sentry": "0.37.0",
 		"react-native-ui-lib": "3.3.84",
-		"tslib": "1.9.1"
+		"tslib": "1.9.2"
 	},
 	"devDependencies": {
 		"@types/jest": "22.2.3",
