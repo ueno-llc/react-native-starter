@@ -5,12 +5,20 @@ export const Screens = new Map();
 
 export const SPLASH_SCREEN = 'uenostarter.SplashScreen';
 
-Screens.set(SPLASH_SCREEN, () => SplashScreen);
+Screens.set(SPLASH_SCREEN, SplashScreen);
 
 export const startApp = () => {
-  Navigation.startSingleScreenApp({
-    screen: {
-      screen: SPLASH_SCREEN,
-    },
+  Navigation.events().registerAppLaunchedListener(() => {
+    Navigation.setRoot({
+      root: {
+        stack: {
+          children: [{
+            component: {
+              name: SPLASH_SCREEN,
+            },
+          }],
+        },
+      },
+    });
   });
 };

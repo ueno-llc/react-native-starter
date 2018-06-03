@@ -33,6 +33,7 @@
 		"mobx": "4.2.1",
 		"mobx-persist": "0.4.1",
 		"mobx-react": "5.1.2",
+		"mobx-state-tree": "2.0.5",
 		"prop-types": "15.6.1",
 		"react": "16.3.2",
 		"react-native": "0.55.4",
@@ -41,9 +42,9 @@
 		"react-native-config": "0.11.5",
 		"react-native-firebase": "4.2.0",
 		"react-native-interactable": "0.1.10",
-		"react-native-navigation": "1.1.462",
+		"react-native-navigation": "2.0.2314",
 		"react-native-sentry": "0.37.0",
-		"react-native-ui-lib": "3.3.84",
+		"styled-components": "3.3.0",
 		"tslib": "1.9.1"
 	},
 	"devDependencies": {

@@ -1,6 +1,6 @@
 import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import { StyleSheet, View, Text, TouchableOpacity, GestureResponderEvent } from 'react-native';
-import PropTypes from 'prop-types';
 
 interface IButtonProps {
   children: React.ReactNode,

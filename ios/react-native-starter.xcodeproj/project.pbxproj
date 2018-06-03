@@ -166,8 +166,7 @@
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = M734F5G6DK;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					E3AAD4501F573E3700B7831D = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -273,11 +272,12 @@
 			baseConfigurationReference = F978EFCD4B3FC4AAB213917B /* Pods-react-native-starter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 18;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = M734F5G6DK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "react-native-starter/Info.plist";
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/GeneratedInfoPlistDotEnv.h";
@@ -290,8 +290,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ueno.reactnativestarter;
 				PRODUCT_NAME = "react-native-starter";
-				PROVISIONING_PROFILE = "93f64944-5111-4c7a-afcc-f49d50f2e560";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.ueno.reactnativestarter";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -301,10 +301,11 @@
 			baseConfigurationReference = D54EB502811BEE926F2F8941 /* Pods-react-native-starter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 18;
-				DEVELOPMENT_TEAM = M734F5G6DK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "react-native-starter/Info.plist";
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/GeneratedInfoPlistDotEnv.h";
@@ -317,8 +318,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ueno.reactnativestarter;
 				PRODUCT_NAME = "react-native-starter";
-				PROVISIONING_PROFILE = "93f64944-5111-4c7a-afcc-f49d50f2e560";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.ueno.reactnativestarter";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

@@ -8,7 +8,7 @@
  */
 
 #import "AppDelegate.h"
-#import "RCCManager.h"
+#import "ReactNativeNavigation.h"
 #import "RNSentry.h"
 
 #import <React/RCTLinkingManager.h>
@@ -21,7 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [RNSentry installWithBridge:[[RCCManager sharedInstance] getBridge]];
+  [RNSentry installWithBridge:[ReactNativeNavigation getBridge]];
 
   if ([[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"GoogleService-Info" ofType:@"plist"]] objectForKey:@"GOOGLE_APP_ID"]) {
     [FIRApp configure];
@@ -40,7 +40,7 @@
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   self.window.backgroundColor = [UIColor whiteColor];
-  [[RCCManager sharedInstance] initBridgeWithBundleURL:jsCodeLocation launchOptions:launchOptions];
+  [ReactNativeNavigation bootstrap:jsCodeLocation launchOptions:launchOptions];
 
   return YES;
 }
