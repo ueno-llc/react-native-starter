@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "jsx": "react",
+    "jsx": "react-native",
     "noEmit": true,
     "moduleResolution": "node",
     "baseUrl": "./src",

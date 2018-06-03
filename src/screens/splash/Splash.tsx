@@ -7,28 +7,12 @@ import { observer } from 'mobx-react'
 import { SPLASH_SCREEN } from 'screens';
 import styled from 'styled-components';
 import Button from 'components/button';
+const styles = require('./Splash.css');
 
 interface ISplashProps {
   children: React.ReactNode,
   componentId: string,
 }
-
-const ContainerView = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 120px;
-`;
-
-const TextView = styled.View`
-  padding-bottom: 30px;
-`;
-
-const Heading = styled.Text`
-  font-size: 36px;
-  font-weight: 200;
-  line-height: 47px;
-`;
 
 @observer
 export default class Splash extends React.Component<ISplashProps, any> {
@@ -46,13 +30,14 @@ export default class Splash extends React.Component<ISplashProps, any> {
   }
 
   render() {
+    console.log(styles);
     return (
-      <ContainerView testID="SPLASH_SCREEN">
-        <TextView>
-          <Heading>Hello World</Heading>
-        </TextView>
+      <View style={styles.container} testID="SPLASH_SCREEN">
+        <View style={styles.text}>
+          <Text style={styles.heading}>Hello World</Text>
+        </View>
         <Button onPress={this.onPress}>Push screen</Button>
-      </ContainerView>
+      </View>
     );
   }
 }

@@ -1,0 +1,16 @@
+.container {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 120px;
+}
+
+.text {
+  padding-bottom: 30px;
+}
+
+.heading {
+  font-size: 36px;
+  font-weight: 200;
+  line-height: 47px;
+}
