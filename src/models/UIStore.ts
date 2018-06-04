@@ -1,5 +1,5 @@
 import { types, destroy } from 'mobx-state-tree';
-import CodePush, { LocalPackage } from 'react-native-code-push';
+import * as CodePush from 'react-native-code-push';
 
 const updateMetadataModel = types.model('UpdateMetadata', {
   appVersion: types.string,

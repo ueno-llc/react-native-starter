@@ -13,7 +13,7 @@
     "test:e2e": "detox test --configuration $E2E_CONFIG",
     "test:e2e:ios": "E2E_CONFIG=ios.sim.release yarn test:e2e",
     "test:e2e:android": "E2E_CONFIG=android.emu.release yarn test:e2e",
-    "lint": "eslint src __tests__",
+    "lint": "tslint src/**/*.ts src/**/*.tsx",
     "precommit": "lint-staged",
     "prepush": "npm run test",
     "prepare": "patch-package"
@@ -21,6 +21,9 @@
   "lint-staged": {
     "*.js": [
       "eslint"
+    ],
+    "*.tsx?": [
+      "tslint"
     ]
   },
   "eslintIgnore": [
@@ -92,6 +95,8 @@
     "react-test-renderer": "16.4.0",
     "ts-jest": "22.4.6",
     "tslint": "5.10.0",
+    "tslint-config-airbnb": "5.9.2",
+    "tslint-react": "3.6.0",
     "typescript": "2.9.1"
   },
   "resolutions": {

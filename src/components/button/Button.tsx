@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import { StyleSheet, View, Text, TouchableOpacity, GestureResponderEvent } from 'react-native';
 const styles = require('./Button.css');
 
 interface Props {
-  children?: React.ReactNode,
-  onPress?: (event: GestureResponderEvent) => void,
-  testID?: string
+  children?: React.ReactNode;
+  onPress?: (event: GestureResponderEvent) => void;
+  testID?: string;
 }
 
-export default class Button extends Component<Props> {
+export default class Button extends React.Component<Props> {
   render() {
     const { children, onPress, testID } = this.props;
 

@@ -3,14 +3,14 @@ import * as PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import { autobind } from 'core-decorators';
-import { observer } from 'mobx-react'
+import { observer } from 'mobx-react';
 import { SPLASH_SCREEN } from 'screens';
-import Button from 'components/button';
+import * as Button from 'components/button';
 const styles = require('./Splash.css');
 
 interface Props {
-  children: React.ReactNode,
-  componentId: string,
+  children: React.ReactNode;
+  componentId: string;
 }
 
 @observer

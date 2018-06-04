@@ -1,5 +1,5 @@
 import { Navigation } from 'react-native-navigation';
-import SplashScreen from './splash';
+import * as SplashScreen from './splash';
 
 export const Screens = new Map();
 
