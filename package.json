@@ -13,16 +13,18 @@
     "test:e2e": "detox test --configuration $E2E_CONFIG",
     "test:e2e:ios": "E2E_CONFIG=ios.sim.release yarn test:e2e",
     "test:e2e:android": "E2E_CONFIG=android.emu.release yarn test:e2e",
-    "lint": "tslint src/**/*.ts src/**/*.tsx",
+    "tslint": "tslint src/**/*.ts src/**/*.tsx",
+    "eslint": "eslint src __tests__",
+    "lint": "yarn tslint && yarn eslint",
     "precommit": "lint-staged",
     "prepush": "npm run test",
     "prepare": "patch-package"
   },
   "lint-staged": {
-    "*.js": [
+    "*.{js,jsx}": [
       "eslint"
     ],
-    "*.tsx?": [
+    "*.{ts,tsx}": [
       "tslint"
     ]
   },
