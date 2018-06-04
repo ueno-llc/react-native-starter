@@ -1,14 +1,20 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { StyleSheet, View, Text, TouchableOpacity, GestureResponderEvent } from 'react-native';
+const styles = require('./Button.css');
 
 interface IButtonProps {
-  children: React.ReactNode,
-  onPress: (event: GestureResponderEvent) => void,
-  testID: string
+  children?: React.ReactNode,
+  onPress?: (event: GestureResponderEvent) => void,
+  testID?: string
 }
 
-export default class Button extends React.PureComponent<IButtonProps, any> {
+// interface Props {} // 1
+// interface State { // 2
+//     name: string
+// }
+
+class Button extends React.Component<IButtonProps> {
 
   render() {
     const { children, onPress, testID } = this.props;
@@ -29,25 +35,4 @@ export default class Button extends React.PureComponent<IButtonProps, any> {
   }
 }
 
-const styles = StyleSheet.create({
-  host: {
-    height: 52,
-    backgroundColor: '#E0E3E6',
-    borderRadius: 4,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 20,
-  },
-
-  container: {
-    flex: 1,
-    paddingHorizontal: 60,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-  },
-
-  text: {
-    textAlign: 'center',
-  },
-});
+export default Button;

@@ -1,132 +1,152 @@
 {
-	"name": "react-native-starter",
-	"version": "1.0.5",
-	"private": true,
-	"scripts": {
-		"build:env": "sh ./scripts/build-env.sh",
-		"build:e2e": "detox build --configuration $E2E_CONFIG",
-		"build:e2e:ios": "E2E_CONFIG=ios.sim.release yarn build:e2e",
-		"build:e2e:android": "E2E_CONFIG=android.emu.release yarn build:e2e",
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"rename": "./scripts/rename.sh",
-		"test": "jest",
-		"test:e2e": "detox test --configuration $E2E_CONFIG",
-		"test:e2e:ios": "E2E_CONFIG=ios.sim.release yarn test:e2e",
-		"test:e2e:android": "E2E_CONFIG=android.emu.release yarn test:e2e",
-		"lint": "eslint src __tests__",
-		"precommit": "lint-staged",
-		"prepush": "npm run test",
-		"prepare": "patch-package"
-	},
-	"lint-staged": {
-		"*.js": [
-			"eslint"
-		]
-	},
-	"eslintIgnore": [
-		"config.env.js"
-	],
-	"dependencies": {
-		"core-decorators": "0.20.0",
-		"date-fns": "1.29.0",
-		"lodash": "4.17.10",
-		"mobx": "4.2.1",
-		"mobx-persist": "0.4.1",
-		"mobx-react": "5.1.2",
-		"mobx-state-tree": "2.0.5",
-		"prop-types": "15.6.1",
-		"react": "16.3.2",
-		"react-native": "0.55.4",
-		"react-native-blur": "3.2.2",
-		"react-native-code-push": "5.3.3",
-		"react-native-config": "0.11.5",
-		"react-native-firebase": "4.2.0",
-		"react-native-interactable": "0.1.10",
-		"react-native-navigation": "2.0.2314",
-		"react-native-sentry": "0.37.0",
-		"tslib": "1.9.1"
-	},
-	"devDependencies": {
-		"@types/jest": "22.2.3",
-    "@types/react": "16.3.14",
+  "name": "react-native-starter",
+  "version": "1.0.5",
+  "private": true,
+  "scripts": {
+    "build:env": "sh ./scripts/build-env.sh",
+    "build:e2e": "detox build --configuration $E2E_CONFIG",
+    "build:e2e:ios": "E2E_CONFIG=ios.sim.release yarn build:e2e",
+    "build:e2e:android": "E2E_CONFIG=android.emu.release yarn build:e2e",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "rename": "./scripts/rename.sh",
+    "test": "jest",
+    "test:e2e": "detox test --configuration $E2E_CONFIG",
+    "test:e2e:ios": "E2E_CONFIG=ios.sim.release yarn test:e2e",
+    "test:e2e:android": "E2E_CONFIG=android.emu.release yarn test:e2e",
+    "lint": "eslint src __tests__",
+    "precommit": "lint-staged",
+    "prepush": "npm run test",
+    "prepare": "patch-package"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
+  },
+  "eslintIgnore": [
+    "config.env.js"
+  ],
+  "dependencies": {
+    "core-decorators": "0.20.0",
+    "date-fns": "1.29.0",
+    "lodash": "4.17.10",
+    "mobx": "4.2.1",
+    "mobx-persist": "0.4.1",
+    "mobx-react": "5.1.2",
+    "mobx-state-tree": "2.0.5",
+    "prop-types": "15.6.1",
+    "react": "16.3.2",
+    "react-native": "0.55.4",
+    "react-native-blur": "3.2.2",
+    "react-native-code-push": "5.3.3",
+    "react-native-config": "0.11.5",
+    "react-native-firebase": "4.2.0",
+    "react-native-interactable": "0.1.10",
+    "react-native-navigation": "2.0.2314",
+    "react-native-sentry": "0.37.0",
+    "tslib": "1.9.2"
+  },
+  "devDependencies": {
+    "@types/enzyme": "3.1.10",
+    "@types/jest": "22.2.3",
+    "@types/react": "16.3.16",
     "@types/react-native": "0.55.14",
-		"babel-core": "6.26.3",
-		"babel-eslint": "8.2.3",
-		"babel-jest": "23.0.0-alpha.0",
-		"babel-plugin-module-resolver": "3.1.1",
-		"babel-preset-react-native": "4.0.0",
-		"babel-preset-react-native-stage-0": "1.0.1",
-		"detox": "7.3.7",
-		"enzyme": "3.3.0",
-		"enzyme-adapter-react-16": "1.1.1",
-		"eslint": "4.19.1",
-		"eslint-config-airbnb": "16.1.0",
-		"eslint-import-resolver-babel-module": "4.0.0",
-		"eslint-plugin-detox": "1.0.0",
-		"eslint-plugin-import": "2.12.0",
-		"eslint-plugin-jest": "21.15.1",
-		"eslint-plugin-jsx-a11y": "6.0.3",
-		"eslint-plugin-react": "7.8.2",
-		"eslint-plugin-react-native": "3.2.1",
-		"husky": "0.14.3",
-		"jest": "22.4.3",
-		"lint-staged": "7.1.1",
-		"mocha": "5.1.1",
-		"patch-package": "5.1.1",
-		"postinstall-prepare": "1.0.1",
-		"react-dom": "16.3.2",
-		"react-native-css-transformer": "1.2.0",
-		"react-native-rename": "2.2.2",
-		"react-native-typescript-transformer": "1.2.5",
-		"react-test-renderer": "16.3.2",
-		"ts-jest": "22.4.6",
-		"tslint": "5.10.0",
-		"typescript": "2.8.3"
-	},
-	"jest": {
-		"transform": {
-			"^.+\\.tsx?$": "ts-jest"
-		},
-		"preset": "react-native",
-		"modulePaths": [
-			"<rootDir>"
-		],
-		"setupFiles": [
-			"./scripts/setup-jest.js"
-		],
-		"testMatch": [
-			"**/__tests__/**/*.spec.js"
-		]
-	},
-	"detox": {
-		"test-runner": "mocha",
-		"specs": "__tests__",
-		"runner-config": "__tests__/mocha.opts",
-		"configurations": {
-			"ios.sim.release": {
-				"binaryPath": "ios/build/Build/Products/Release-iphonesimulator/react-native-starter.app",
-				"build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/react-native-starter.xcworkspace -scheme react-native-starter -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -quiet",
-				"type": "ios.simulator",
-				"name": "iPhone 7 Plus"
-			},
-			"ios.sim.debug": {
-				"binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/react-native-starter.app",
-				"build": "xcodebuild -workspace ios/react-native-starter.xcworkspace -scheme react-native-starter -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -quiet",
-				"type": "ios.simulator",
-				"name": "iPhone 7 Plus"
-			},
-			"android.emu.release": {
-				"binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
-				"build": "pushd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && popd",
-				"type": "android.emulator",
-				"name": "Nexus_5_API_27"
-			},
-			"android.emu.debug": {
-				"binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
-				"build": "pushd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && popd",
-				"type": "android.emulator",
-				"name": "Nexus_5_API_27"
-			}
-		}
-	}
+    "@types/react-test-renderer": "16.0.1",
+    "babel-core": "6.26.3",
+    "babel-eslint": "8.2.3",
+    "babel-jest": "23.0.1",
+    "babel-plugin-module-resolver": "3.1.1",
+    "babel-preset-react-native": "4.0.0",
+    "babel-preset-react-native-stage-0": "1.0.1",
+    "css-to-react-native-transform": "1.6.0",
+    "detox": "7.3.7",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-import-resolver-babel-module": "4.0.0",
+    "eslint-plugin-detox": "1.0.0",
+    "eslint-plugin-import": "2.12.0",
+    "eslint-plugin-jest": "21.15.1",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "7.8.2",
+    "eslint-plugin-react-native": "3.2.1",
+    "husky": "0.14.3",
+    "jest": "22.4.3",
+    "lint-staged": "7.1.1",
+    "mocha": "5.1.1",
+    "patch-package": "5.1.1",
+    "postinstall-prepare": "1.0.1",
+    "react-dom": "16.3.2",
+    "react-native-css-transformer": "1.2.0",
+    "react-native-rename": "2.2.2",
+    "react-native-typescript-transformer": "1.2.5",
+    "react-test-renderer": "16.4.0",
+    "ts-jest": "22.4.6",
+    "tslint": "5.10.0",
+    "typescript": "2.8.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.tsx?$": "ts-jest",
+      "^.+\\.css$": "<rootDir>/scripts/jest-css-modules.js"
+    },
+    "preset": "react-native",
+    "modulePaths": [
+      "<rootDir>"
+    ],
+    "setupFiles": [
+      "./scripts/setup-jest.js"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.spec.js",
+      "**/__tests__/**/*.spec.ts",
+      "**/__tests__/**/*.spec.tsx"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "css"
+    ],
+    "globals": {
+      "ts-jest": {
+        "useBabelrc": true
+      }
+    }
+  },
+  "detox": {
+    "test-runner": "mocha",
+    "specs": "__tests__",
+    "runner-config": "__tests__/mocha.opts",
+    "configurations": {
+      "ios.sim.release": {
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/react-native-starter.app",
+        "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/react-native-starter.xcworkspace -scheme react-native-starter -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -quiet",
+        "type": "ios.simulator",
+        "name": "iPhone 7 Plus"
+      },
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/react-native-starter.app",
+        "build": "xcodebuild -workspace ios/react-native-starter.xcworkspace -scheme react-native-starter -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -quiet",
+        "type": "ios.simulator",
+        "name": "iPhone 7 Plus"
+      },
+      "android.emu.release": {
+        "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
+        "build": "pushd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && popd",
+        "type": "android.emulator",
+        "name": "Nexus_5_API_27"
+      },
+      "android.emu.debug": {
+        "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+        "build": "pushd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && popd",
+        "type": "android.emulator",
+        "name": "Nexus_5_API_27"
+      }
+    }
+  }
 }

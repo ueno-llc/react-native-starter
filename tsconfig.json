@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "jsx": "react-native",
+    "jsx": "react",
     "noEmit": true,
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "baseUrl": "./src",
     "experimentalDecorators": true,
     "allowJs": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "strictNullChecks": false,
+    "sourceMap": true
   },
-  "allowSyntheticDefaultImports": true,
   "exclude": [
     "node_modules"
   ]

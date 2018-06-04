@@ -5,7 +5,6 @@ import { Navigation } from 'react-native-navigation';
 import { autobind } from 'core-decorators';
 import { observer } from 'mobx-react'
 import { SPLASH_SCREEN } from 'screens';
-import styled from 'styled-components';
 import Button from 'components/button';
 const styles = require('./Splash.css');
 
