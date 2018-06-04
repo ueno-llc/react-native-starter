@@ -449,28 +449,64 @@
   version "0.22.7"
   resolved "https://registry.yarnpkg.com/@types/cheerio/-/cheerio-0.22.7.tgz#4a92eafedfb2b9f4437d3a4410006d81114c66ce"
 
-"@types/enzyme@3.1.10":
+"@types/core-decorators@^0.20.0":
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/@types/core-decorators/-/core-decorators-0.20.0.tgz#831fa2a8bb3cefcba8be0ca7e3e1d5c6226f09c2"
+  dependencies:
+    core-decorators "*"
+
+"@types/date-fns@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@types/date-fns/-/date-fns-2.6.0.tgz#b062ca46562002909be0c63a6467ed173136acc1"
+  dependencies:
+    date-fns "*"
+
+"@types/detox@^7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@types/detox/-/detox-7.3.0.tgz#1ecd3a9a4e79a137e9a8e6e14f1f512584b3b7d0"
+
+"@types/enzyme-adapter-react-16@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.0.2.tgz#15ae37c64d6221a6f4b3a4aacc357cf773859de4"
+  dependencies:
+    "@types/enzyme" "*"
+
+"@types/enzyme@*", "@types/enzyme@^3.1.10":
   version "3.1.10"
   resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-3.1.10.tgz#28108a9864e65699751469551a803a35d2e26160"
   dependencies:
     "@types/cheerio" "*"
     "@types/react" "*"
 
-"@types/jest@22.2.3", "@types/jest@22.x.x":
+"@types/jest@22.x.x":
   version "22.2.3"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.2.3.tgz#0157c0316dc3722c43a7b71de3fdf3acbccef10d"
 
-"@types/lodash@4.x.x":
+"@types/jest@^23.0.0":
+  version "23.0.0"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.0.0.tgz#760cac74f00bb9c3075587716d2b3b4435663bc0"
+
+"@types/lodash@4.x.x", "@types/lodash@^4.14.109":
   version "4.14.109"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.109.tgz#b1c4442239730bf35cabaf493c772b18c045886d"
+
+"@types/mocha@^5.2.1":
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-5.2.1.tgz#465450aaf5cec6f7d35523748c6cc89a5e222dc5"
 
 "@types/node@*":
   version "9.6.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.4.tgz#0ef7b4cfc3499881c81e0ea1ce61a23f6f4f5b42"
 
-"@types/prop-types@15.x.x":
+"@types/prop-types@15.x.x", "@types/prop-types@^15.5.3":
   version "15.5.3"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.3.tgz#bef071852dca2a2dbb65fecdb7bfb30cedae2de2"
+
+"@types/react-native-navigation@^1.1.11":
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/@types/react-native-navigation/-/react-native-navigation-1.1.11.tgz#58a9457468129ad1ed4484579f8c05dd87d444c6"
+  dependencies:
+    "@types/react" "*"
 
 "@types/react-native@0.51.x":
   version "0.51.10"
@@ -478,33 +514,21 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-native@0.55.14":
-  version "0.55.14"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.55.14.tgz#9a702845c7d72f2774b4e2004cb698c099f9b50e"
+"@types/react-native@^0.55.17":
+  version "0.55.17"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.55.17.tgz#c3ac72096c3dfe26ff58cce820a1ba39c0026564"
   dependencies:
     "@types/react" "*"
 
-"@types/react-test-renderer@16.0.1", "@types/react-test-renderer@16.x.x":
+"@types/react-test-renderer@16.x.x", "@types/react-test-renderer@^16.0.1":
   version "16.0.1"
   resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-16.0.1.tgz#36ee8c4fe33c61d460ad0e7bc42a2d0ddcc775a1"
   dependencies:
     "@types/react" "*"
 
-"@types/react@*":
-  version "16.3.9"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.3.9.tgz#15be16b53c89aac558cf6445774502b2792555ff"
-  dependencies:
-    csstype "^2.2.0"
-
-"@types/react@16.3.16":
+"@types/react@*", "@types/react@16.3.16", "@types/react@16.x.x", "@types/react@^16.3.16":
   version "16.3.16"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.3.16.tgz#78fc44a90b45701f50c8a7008f733680ba51fc86"
-  dependencies:
-    csstype "^2.2.0"
-
-"@types/react@16.x.x":
-  version "16.3.14"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.3.14.tgz#f90ac6834de172e13ecca430dcb6814744225d36"
   dependencies:
     csstype "^2.2.0"
 
@@ -2204,7 +2228,7 @@ copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
 
-core-decorators@0.20.0:
+core-decorators@*, core-decorators@0.20.0:
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/core-decorators/-/core-decorators-0.20.0.tgz#605896624053af8c28efbe735c25a301a61c65c5"
 
@@ -2372,7 +2396,7 @@ data-urls@^1.0.0:
     whatwg-mimetype "^2.0.0"
     whatwg-url "^6.4.0"
 
-date-fns@1.29.0, date-fns@^1.27.2:
+date-fns@*, date-fns@1.29.0, date-fns@^1.27.2:
   version "1.29.0"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.29.0.tgz#12e609cdcb935127311d04d33334e2960a2a54e6"
 
@@ -6373,9 +6397,9 @@ react-native-sentry@0.37.0:
     "@sentry/wizard" "^0.9.5"
     raven-js "^3.24.2"
 
-react-native-typescript-transformer@1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/react-native-typescript-transformer/-/react-native-typescript-transformer-1.2.5.tgz#3e3b94fca705bcf40c7a99540bca47598f75a01b"
+react-native-typescript-transformer@1.2.9:
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/react-native-typescript-transformer/-/react-native-typescript-transformer-1.2.9.tgz#a8724eee5d787c4f88da50cf2e091c53be2121ee"
   dependencies:
     chalk "^2.4.0"
     find-root "^1.1.0"
@@ -6492,9 +6516,9 @@ react-transform-hmr@^1.0.4:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
-react@16.3.2:
-  version "16.3.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.3.2.tgz#fdc8420398533a1e58872f59091b272ce2f91ea9"
+react@16.4.0:
+  version "16.4.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.4.0.tgz#402c2db83335336fba1962c08b98c6272617d585"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -7700,9 +7724,9 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript@2.8.3:
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.8.3.tgz#5d817f9b6f31bb871835f4edf0089f21abe6c170"
+typescript@2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.9.1.tgz#fdb19d2c67a15d11995fd15640e373e09ab09961"
 
 ua-parser-js@^0.7.9:
   version "0.7.17"

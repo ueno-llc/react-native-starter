@@ -1,9 +1,10 @@
 import 'react-native';
-import * as React from 'react';
+import React from 'react';
 import { ReactElement } from 'react';
 import { shallow } from 'enzyme';
-import * as renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer';
 import Button from '../Button';
+
 
 test('renders correctly', () => {
   const button = <Button />;
@@ -11,7 +12,6 @@ test('renders correctly', () => {
 
   expect(tree).toMatchSnapshot();
 });
-
 
 test('Button renders children text', () => {
   const text = 'Sample text';
