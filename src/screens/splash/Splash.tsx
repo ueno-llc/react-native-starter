@@ -8,13 +8,13 @@ import { SPLASH_SCREEN } from 'screens';
 import Button from 'components/button';
 const styles = require('./Splash.css');
 
-interface ISplashProps {
+interface Props {
   children: React.ReactNode,
   componentId: string,
 }
 
 @observer
-export default class Splash extends React.Component<ISplashProps, any> {
+export default class Splash extends React.Component<Props, any> {
 
   @autobind
   async onPress() {

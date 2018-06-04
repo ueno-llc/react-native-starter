@@ -6,12 +6,7 @@
     "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
-    // "baseUrl": "./src",
     "experimentalDecorators": true,
-    // "allowJs": true,
-    // "importHelpers": true,
-    // "strictNullChecks": false,
-    "noStrictGenericChecks": true,
     "sourceMap": true
   },
   "exclude": [
