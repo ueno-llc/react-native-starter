@@ -3,15 +3,8 @@
 exports[`renders correctly 1`] = `
 <View
   accessibilityComponentType="button"
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -29,17 +22,20 @@ exports[`renders correctly 1`] = `
       "opacity": 1,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
       Object {
         "alignItems": "center",
         "backgroundColor": "transparent",
-        "flex": 1,
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
         "justifyContent": "center",
-        "paddingHorizontal": 60,
+        "paddingBottom": 0,
+        "paddingLeft": 60,
+        "paddingRight": 60,
+        "paddingTop": 0,
       }
     }
   >

@@ -1,11 +1,12 @@
 import 'react-native';
-import React from 'react';
+import * as React from 'react';
 import { shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
-import Button from '../Button.tsx';
+import * as renderer from 'react-test-renderer';
+import Button from '../Button';
 
 test('renders correctly', () => {
-  const tree = renderer.create(<Button />).toJSON();
+  const button = <Button />;
+  const tree = renderer.create(button).toJSON();
 
   expect(tree).toMatchSnapshot();
 });

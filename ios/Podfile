@@ -5,7 +5,7 @@ target 'react-native-starter' do
   pod 'Firebase/Core'
 
   pod 'react-native-blur', :path => '../node_modules/react-native-blur'
-  pod 'react-native-navigation', :path => '../node_modules/react-native-navigation'
+  pod 'ReactNativeNavigation', :path => '../node_modules/react-native-navigation'
   pod 'react-native-config', :path => '../node_modules/react-native-config'
   pod 'SentryReactNative', :path => '../node_modules/react-native-sentry'
   pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios/RNFirebase.podspec'
