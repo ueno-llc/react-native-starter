@@ -29,6 +29,8 @@ ios/Podfile.lock
 #
 android/keystores/release.*
 android/app/bin
+.settings
+.classpath
 .project
 build/
 .idea

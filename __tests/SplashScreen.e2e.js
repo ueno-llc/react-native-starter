@@ -1,4 +1,3 @@
-/* eslint-env detox/detox, mocha */
 describe('SplashScreen', () => {
 
   beforeEach(async () => {

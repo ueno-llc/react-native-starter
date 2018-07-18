@@ -104,16 +104,21 @@ android {
 
     defaultConfig {
         applicationId "com.ueno.reactnativestarter"
-        minSdkVersion 18
+        minSdkVersion 21
         targetSdkVersion 22
-        versionCode 25
-        versionName "1.0.4"
+        versionCode 26
+        versionName "2.0.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        missingDimensionStrategy "RNN.reactNativeVersion", "reactNative55"
         multiDexEnabled true
         testBuildType System.getProperty('testBuildType', 'debug')
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
     }
     splits {
         abi {
@@ -123,22 +128,12 @@ android {
             include "armeabi-v7a", "x86"
         }
     }
-    signingConfigs {
-        release {
-            storeFile file("../keystores/release.keystore")
-            storePassword "$System.env.ANDROID_KEYSTORE_PASSWORD"
-            keyAlias "release"
-            keyPassword "$System.env.ANDROID_KEYSTORE_PASSWORD"
-        }
-    }
     buildTypes {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            signingConfig signingConfigs.release
         }
     }
-    // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
             // For each separate APK per architecture, set a unique version code as described here:
@@ -158,26 +153,37 @@ android {
 
 configurations.all {
     resolutionStrategy.force 'com.android.support:support-annotations:25.3.1'
+    resolutionStrategy.force 'org.webkit:android-jsc:r224109'
+
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support' && requested.name != 'multidex') {
+            details.useVersion "25.4.0"
+        }
+    }
 }
 
 dependencies {
+    // Local implementations
     implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    // Ueno RNS: Add your modules here
     implementation project(':react-native-sentry')
     implementation project(':react-native-navigation')
     implementation project(':react-native-code-push')
     implementation project(':react-native-config')
-    implementation project(':react-native-blur')
     implementation(project(':react-native-firebase')) {
         transitive = false
-        // exclude group: 'com.google.firebase', :module 'firebase-firestore'
-        // exclude group: 'com.google.firebase', :module 'firebase-invites'
-        // exclude group: 'com.google.firebase', :module 'firebase-ads'
     }
-    implementation "com.google.android.gms:play-services-base:11.6.0"
-    implementation "com.google.firebase:firebase-core:11.6.0"
-    implementation "com.android.support:appcompat-v7:25.0.0"
+
+    // Other implementations
+    implementation "com.google.android.gms:play-services-base:15.0.1"
+    implementation "com.google.firebase:firebase-core:16.0.1"
+    implementation "com.android.support:appcompat-v7:25.4.0"
     implementation "com.facebook.react:react-native:+"
     implementation "com.android.support:multidex:1.0.1"
+
+    // Test implementations
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test:rules:1.0.1'
     androidTestImplementation(project(":detox"), {

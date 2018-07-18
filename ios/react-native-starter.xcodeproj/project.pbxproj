@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B0739A8F5C9048E9AC93D045 /* libPods-react-native-starter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3988A5A05ABF10E5A9B33ED5 /* libPods-react-native-starter.a */; };
+		1C9BC405710B4376ACBA4D1F /* libPods-react-native-starter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1E4EB30ABEFC190EFE7436 /* libPods-react-native-starter.a */; };
 		E33FD0F41FFBDBD900EB627A /* RNUeno.m in Sources */ = {isa = PBXBuildFile; fileRef = E33FD0F31FFBDBD900EB627A /* RNUeno.m */; };
 		E3A2B8A61FEACEE70099C8F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A2B89F1FEACEE70099C8F8 /* AppDelegate.m */; };
 		E3A2B8A71FEACEE70099C8F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A2B8A01FEACEE70099C8F8 /* LaunchScreen.xib */; };
@@ -17,15 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13B07F961A680F5B00A75B9A /* react-native-starter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "react-native-starter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3988A5A05ABF10E5A9B33ED5 /* libPods-react-native-starter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-react-native-starter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		53031DDE923D9778D106F497 /* Pods-UenoNativeStarter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UenoNativeStarter.release.xcconfig"; path = "Pods/Target Support Files/Pods-UenoNativeStarter/Pods-UenoNativeStarter.release.xcconfig"; sourceTree = "<group>"; };
-		7B642519012E49C28F333EDB /* Pods-UenoNativeStarterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UenoNativeStarterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UenoNativeStarterTests/Pods-UenoNativeStarterTests.release.xcconfig"; sourceTree = "<group>"; };
-		B5CE841990A646807137FE1B /* Pods-UenoNativeStarter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UenoNativeStarter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UenoNativeStarter/Pods-UenoNativeStarter.debug.xcconfig"; sourceTree = "<group>"; };
-		C6D9CAC761C0BC40C9E6DED5 /* libPods-UenoNativeStarterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UenoNativeStarterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* react-native-starter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "react-native-starter.app"; path = "/Volumes/Data/Projects/birkir/react-native-starter/ios/build/Debug-iphoneos/react-native-starter.app"; sourceTree = "<absolute>"; };
+		BE1E4EB30ABEFC190EFE7436 /* libPods-react-native-starter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-react-native-starter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54EB502811BEE926F2F8941 /* Pods-react-native-starter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-react-native-starter.release.xcconfig"; path = "Pods/Target Support Files/Pods-react-native-starter/Pods-react-native-starter.release.xcconfig"; sourceTree = "<group>"; };
-		DF6B3032214A4831BACEAB38 /* libPods-UenoNativeStarter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UenoNativeStarter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF940EB702F911EAF36780E6 /* Pods-UenoNativeStarterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UenoNativeStarterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UenoNativeStarterTests/Pods-UenoNativeStarterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E33FD0F31FFBDBD900EB627A /* RNUeno.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNUeno.m; sourceTree = "<group>"; };
 		E33FD0F51FFBDBFB00EB627A /* RNUeno.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNUeno.h; sourceTree = "<group>"; };
 		E3A2B89E1FEACEE70099C8F8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,19 +37,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0739A8F5C9048E9AC93D045 /* libPods-react-native-starter.a in Frameworks */,
+				1C9BC405710B4376ACBA4D1F /* libPods-react-native-starter.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4CE6C5BA572EF6078027A293 /* Frameworks */ = {
+		34010D848C7A0E50E09F601F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DF6B3032214A4831BACEAB38 /* libPods-UenoNativeStarter.a */,
-				C6D9CAC761C0BC40C9E6DED5 /* libPods-UenoNativeStarterTests.a */,
-				3988A5A05ABF10E5A9B33ED5 /* libPods-react-native-starter.a */,
+				BE1E4EB30ABEFC190EFE7436 /* libPods-react-native-starter.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -63,43 +55,22 @@
 		8079FCF0BF9CE803AC9EB17F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B5CE841990A646807137FE1B /* Pods-UenoNativeStarter.debug.xcconfig */,
-				53031DDE923D9778D106F497 /* Pods-UenoNativeStarter.release.xcconfig */,
-				DF940EB702F911EAF36780E6 /* Pods-UenoNativeStarterTests.debug.xcconfig */,
-				7B642519012E49C28F333EDB /* Pods-UenoNativeStarterTests.release.xcconfig */,
 				F978EFCD4B3FC4AAB213917B /* Pods-react-native-starter.debug.xcconfig */,
 				D54EB502811BEE926F2F8941 /* Pods-react-native-starter.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Libraries;
-			sourceTree = "<group>";
-		};
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
 				E3A2B89D1FEACEE70099C8F8 /* react-native-starter */,
-				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				83CBBA001A601CBA00E9B192 /* Products */,
 				8079FCF0BF9CE803AC9EB17F /* Pods */,
-				4CE6C5BA572EF6078027A293 /* Frameworks */,
+				34010D848C7A0E50E09F601F /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
 			tabWidth = 2;
-		};
-		83CBBA001A601CBA00E9B192 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				13B07F961A680F5B00A75B9A /* react-native-starter.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
 		};
 		E3A2B89D1FEACEE70099C8F8 /* react-native-starter */ = {
 			isa = PBXGroup;
@@ -167,7 +138,7 @@
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = M734F5G6DK;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					E3AAD4501F573E3700B7831D = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -185,7 +156,7 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
-			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			productRefGroup = 83CBB9F61A601CBA00E9B192;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -273,11 +244,12 @@
 			baseConfigurationReference = F978EFCD4B3FC4AAB213917B /* Pods-react-native-starter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 18;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = M734F5G6DK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "react-native-starter/Info.plist";
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/GeneratedInfoPlistDotEnv.h";
@@ -290,8 +262,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ueno.reactnativestarter;
 				PRODUCT_NAME = "react-native-starter";
-				PROVISIONING_PROFILE = "93f64944-5111-4c7a-afcc-f49d50f2e560";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.ueno.reactnativestarter";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -301,10 +273,11 @@
 			baseConfigurationReference = D54EB502811BEE926F2F8941 /* Pods-react-native-starter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 18;
-				DEVELOPMENT_TEAM = M734F5G6DK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "react-native-starter/Info.plist";
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/GeneratedInfoPlistDotEnv.h";
@@ -317,8 +290,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ueno.reactnativestarter;
 				PRODUCT_NAME = "react-native-starter";
-				PROVISIONING_PROFILE = "93f64944-5111-4c7a-afcc-f49d50f2e560";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.ueno.reactnativestarter";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

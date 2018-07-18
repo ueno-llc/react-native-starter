@@ -1,4 +1,3 @@
-/* eslint-env detox/detox, mocha */
 const detox = require('detox');
 const config = require('../package.json').detox;
 

@@ -1,1 +1,1 @@
-import './src';
+require('./src/index.ts');

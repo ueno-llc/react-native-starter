@@ -1,53 +1,63 @@
 import * as React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, GestureResponderEvent } from 'react-native';
-import PropTypes from 'prop-types';
+import { View, Text, TouchableOpacity, TouchableNativeFeedback, GestureResponderEvent, Platform, AccessibilityTrait } from 'react-native';
+const styles = require('./Button.css');
 
-interface IButtonProps {
-  children: React.ReactNode,
-  onPress: (event: GestureResponderEvent) => void,
-  testID: string
+interface Props {
+  title: string;
+  accessibilityLabel?: string;
+  disabled?: boolean;
+  hasTVPreferredFocus?: boolean;
+  onPress?: (event: GestureResponderEvent) => void;
+  testID?: string;
 }
 
-export default class Button extends React.PureComponent<IButtonProps, any> {
+export default class Button extends React.Component<Props> {
 
   render() {
-    const { children, onPress, testID } = this.props;
+    const {
+      title,
+      accessibilityLabel,
+      disabled,
+      onPress,
+      hasTVPreferredFocus,
+      testID,
+    } = this.props;
+
+    const buttonStyles = [
+      styles.button,
+    ];
+
+    const textStyles = [
+      styles.text,
+    ];
+
+    const accessibilityTraits: AccessibilityTrait[] = ['button'];
+
+    if (disabled) {
+      buttonStyles.push(styles.button__disabled);
+      textStyles.push(styles.text__disabled);
+      accessibilityTraits.push('disabled');
+    }
+
+    const Touchable = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
+    const titleLabel = Platform.OS === 'android' ? title.toLocaleUpperCase() : title;
 
     return (
-      <TouchableOpacity
+      <Touchable
         accessibilityComponentType="button"
+        accessibilityLabel={accessibilityLabel}
+        accessibilityTraits={accessibilityTraits}
         testID={testID}
+        disabled={disabled}
         onPress={onPress}
-        disabled={!onPress}
-        style={styles.host}
+        {...Platform.OS === 'ios' ? { hasTVPreferredFocus } : {}}
       >
-        <View style={styles.container}>
-          <Text style={styles.text}>{children}</Text>
+        <View style={buttonStyles}>
+          <Text style={textStyles}>
+            {titleLabel}
+          </Text>
         </View>
-      </TouchableOpacity>
+      </Touchable>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  host: {
-    height: 52,
-    backgroundColor: '#E0E3E6',
-    borderRadius: 4,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 20,
-  },
-
-  container: {
-    flex: 1,
-    paddingHorizontal: 60,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-  },
-
-  text: {
-    textAlign: 'center',
-  },
-});
