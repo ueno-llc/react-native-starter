@@ -74,6 +74,7 @@
 		"react-dom": "16.4.1",
 		"react-native-css-transformer": "1.2.2",
 		"react-native-typescript-transformer": "1.2.10",
+		"react-native-ueno-css-modules": "1.0.5",
 		"react-test-renderer": "16.4.1",
 		"stylus": "0.54.5",
 		"ts-jest": "23.0.1",

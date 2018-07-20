@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Dimensions } from 'react-native';
 import { observer } from 'mobx-react';
 import Button from 'components/button/Button';
 import { UI } from 'store';

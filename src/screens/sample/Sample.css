@@ -1,7 +1,12 @@
 .host {
-  margin: 64px;
+  flex: 1;
 
-  background-color: white;
+  margin-top: var(--status-bar-height);
+
+  padding-horizontal: var(--gutter);
+  padding-vertical: var(--gutter);
+
+  background-color: #f8f7f6;
 }
 
 .text {
