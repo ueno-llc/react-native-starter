@@ -4,15 +4,14 @@
 	"private": true,
 	"scripts": {
 		"build:env": "sh ./scripts/build-env.sh",
-		"build:e2e": "detox build --configuration $E2E_CONFIG",
-		"build:e2e:ios": "E2E_CONFIG=ios.sim.release yarn build:e2e",
-		"build:e2e:android": "E2E_CONFIG=android.emu.release yarn build:e2e",
+		"build:e2e:ios": "detox build --configuration ios.sim.release",
+		"build:e2e:android": "detox build --configuration android.emu.release",
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"rename": "./scripts/rename.sh",
 		"test": "jest",
-		"test:e2e": "detox test --configuration $E2E_CONFIG",
-		"test:e2e:ios": "E2E_CONFIG=ios.sim.release yarn test:e2e",
-		"test:e2e:android": "E2E_CONFIG=android.emu.release yarn test:e2e",
+		"test:e2e": "yarn build:e2e:ios && yarn test:e2e:ios",
+		"test:e2e:ios": "detox test --configuration ios.sim.release",
+		"test:e2e:android": "detox test --configuration android.emu.release",
 		"lint": "yarn tslint",
 		"tslint": "tslint src/**/*.ts src/**/*.tsx",
 		"precommit": "lint-staged",
@@ -30,15 +29,15 @@
 		"lodash": "4.17.10",
 		"mobx": "5.0.3",
 		"mobx-react": "5.2.3",
-		"mobx-state-tree": "3.0.0",
+		"mobx-state-tree": "3.0.2",
 		"react": "16.4.1",
 		"react-native": "0.56.0",
 		"react-native-code-push": "5.4.0",
 		"react-native-config": "0.11.5",
 		"react-native-fast-image": "4.0.14",
-		"react-native-firebase": "4.3.7",
+		"react-native-firebase": "4.3.8",
 		"react-native-navigation": "2.0.2394",
-		"react-native-sentry": "0.38.2",
+		"react-native-sentry": "0.38.3",
 		"react-native-version-number": "0.3.4"
 	},
 	"devDependencies": {
@@ -56,7 +55,7 @@
 		"@types/react": "16.4.6",
 		"@types/react-native": "0.56.3",
 		"@types/react-native-navigation": "1.1.12",
-		"@types/react-test-renderer": "^16.0.1",
+		"@types/react-test-renderer": "16.0.1",
 		"babel-core": "^7.0.0-0",
 		"babel-jest": "23.4.0",
 		"babel-plugin-module-resolver": "3.1.1",
@@ -74,7 +73,7 @@
 		"react-dom": "16.4.1",
 		"react-native-css-transformer": "1.2.2",
 		"react-native-typescript-transformer": "1.2.10",
-		"react-native-ueno-css-modules": "1.0.5",
+		"react-native-ueno-css-modules": "1.0.8",
 		"react-test-renderer": "16.4.1",
 		"stylus": "0.54.5",
 		"ts-jest": "23.0.1",
@@ -85,36 +84,35 @@
 		"typescript": "2.9.2"
 	},
 	"jest": {
+    "preset": "react-native",
+    "setupFiles": [
+      "<rootDir>/scripts/jest-setup.js"
+    ],
 		"transform": {
-			"^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
 			"^.+\\.tsx?$": "ts-jest",
+      "^.+\\.jsx?$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
 			"^.+\\.css$": "<rootDir>/scripts/jest-css.js"
 		},
-		"preset": "react-native",
-		"modulePaths": [
-			"<rootDir>"
-		],
-		"setupFiles": [
-			"./scripts/setup-jest.js"
-		],
+    "modulePaths": [
+      "<rootDir>"
+    ],
 		"testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+		"testPathIgnorePatterns": [
+			"<rootDir>/node_modules/",
+			"<rootDir>/e2e/"
+		],
 		"moduleFileExtensions": [
 			"ts",
 			"tsx",
 			"js",
 			"jsx",
-			"json"
-		],
-		"globals": {
-			"ts-jest": {
-				"useBabelrc": true
-			}
-		}
+      "json",
+      "node"
+		]
 	},
 	"detox": {
-		"test-runner": "mocha",
-		"specs": "__tests__",
-		"runner-config": "__tests__/mocha.opts",
+		"test-runner": "jest",
+		"specs": "e2e",
 		"configurations": {
 			"ios.sim.release": {
 				"binaryPath": "ios/build/Build/Products/Release-iphonesimulator/react-native-starter.app",
@@ -122,21 +120,9 @@
 				"type": "ios.simulator",
 				"name": "iPhone 7 Plus"
 			},
-			"ios.sim.debug": {
-				"binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/react-native-starter.app",
-				"build": "xcodebuild -workspace ios/react-native-starter.xcworkspace -scheme react-native-starter -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build -quiet",
-				"type": "ios.simulator",
-				"name": "iPhone 7 Plus"
-			},
 			"android.emu.release": {
 				"binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
 				"build": "pushd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && popd",
-				"type": "android.emulator",
-				"name": "Nexus_5_API_27"
-			},
-			"android.emu.debug": {
-				"binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
-				"build": "pushd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && popd",
 				"type": "android.emulator",
 				"name": "Nexus_5_API_27"
 			}

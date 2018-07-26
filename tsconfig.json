@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "es2015",
-    "module": "es2015",
-    "jsx": "react-native",
+    "module": "commonjs",
+    "jsx": "react",
     "noEmit": true,
     "moduleResolution": "node",
     "strictPropertyInitialization": false,

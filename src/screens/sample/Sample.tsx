@@ -19,9 +19,9 @@ export default class Sample extends React.Component<Props> {
 
   render() {
     return (
-      <View style={styles.host} testID={this.props.testID}>
+      <View style={styles.host} testID="SAMPLE_SCREEN">
         <Text style={styles.text}>Counter: {UI.counter}</Text>
-        <Button title="Sample" onPress={UI.increment} />
+        <Button title="Increment" onPress={UI.increment} testID="BUTTON_INCREMENT" />
       </View>
     );
   }
