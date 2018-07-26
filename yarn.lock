@@ -706,9 +706,9 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-native@0.51.1":
-  version "0.51.1"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.51.1.tgz#ab47c0d17c68149cbe5233d9f67dc586c61146df"
+"@types/react-native@0.51.x":
+  version "0.51.10"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.51.10.tgz#ab060c0b87110a32a2e797ebaef5b485a7856217"
   dependencies:
     "@types/react" "*"
 
@@ -4205,6 +4205,10 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
+jsc-android@224109.0.0:
+  version "224109.0.0"
+  resolved "https://registry.yarnpkg.com/jsc-android/-/jsc-android-224109.0.0.tgz#decd9f4b6f76280a01697a3be9c1e56620659c2a"
+
 jsdom@^11.5.1:
   version "11.11.0"
   resolved "https://registry.yarnpkg.com/jsdom/-/jsdom-11.11.0.tgz#df486efad41aee96c59ad7a190e2449c7eb1110e"
@@ -5826,10 +5830,6 @@ rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-addons-test-utils@15.6.2:
-  version "15.6.2"
-  resolved "https://registry.yarnpkg.com/react-addons-test-utils/-/react-addons-test-utils-15.6.2.tgz#c12b6efdc2247c10da7b8770d185080a7b047156"
-
 react-clone-referenced-element@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-clone-referenced-element/-/react-clone-referenced-element-1.0.1.tgz#2bba8c69404c5e4a944398600bcc4c941f860682"
@@ -5902,15 +5902,15 @@ react-native-firebase@4.3.8:
     postinstall-build "^5.0.1"
     prop-types "^15.6.1"
 
-react-native-navigation@2.0.2394:
-  version "2.0.2394"
-  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.0.2394.tgz#c454d007bbb30d6c474f988c10c2113c06030a79"
+react-native-navigation@2.0.2431:
+  version "2.0.2431"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.0.2431.tgz#dfd65c9b88e4ccf021cab6bd562176f5b1c2a92e"
   dependencies:
     "@types/jest" "22.x.x"
     "@types/lodash" "4.x.x"
     "@types/prop-types" "15.x.x"
     "@types/react" "16.x.x"
-    "@types/react-native" "0.51.1"
+    "@types/react-native" "0.51.x"
     "@types/react-test-renderer" "16.x.x"
     hoist-non-react-statics "2.x.x"
     lodash "4.x.x"

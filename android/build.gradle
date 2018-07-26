@@ -4,7 +4,25 @@ project.ext {
   minSdkVersion = 21
   compileSdkVersion = 26
   targetSdkVersion = 26
-  buildToolsVersion = '27.0.1'
+  buildToolsVersion = '27.0.3'
+}
+
+subprojects { subproject ->
+    afterEvaluate {
+        if ((subproject.plugins.hasPlugin('android') || subproject.plugins.hasPlugin('android-library'))) {
+            android {
+                variantFilter { variant ->
+                    def names = variant.flavors*.name
+                    if (names.contains("reactNative51") || names.contains("reactNative55")) {
+                        setIgnore(true)
+                    }
+                }
+
+                compileSdkVersion 26
+                buildToolsVersion '27.0.3'
+            }
+        }
+    }
 }
 
 buildscript {

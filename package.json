@@ -26,6 +26,7 @@
 	"dependencies": {
 		"core-decorators": "0.20.0",
 		"date-fns": "1.29.0",
+		"jsc-android": "224109.0.0",
 		"lodash": "4.17.10",
 		"mobx": "5.0.3",
 		"mobx-react": "5.2.3",
@@ -36,7 +37,7 @@
 		"react-native-config": "0.11.5",
 		"react-native-fast-image": "4.0.14",
 		"react-native-firebase": "4.3.8",
-		"react-native-navigation": "2.0.2394",
+		"react-native-navigation": "2.0.2431",
 		"react-native-sentry": "0.38.3",
 		"react-native-version-number": "0.3.4"
 	},
@@ -84,18 +85,18 @@
 		"typescript": "2.9.2"
 	},
 	"jest": {
-    "preset": "react-native",
-    "setupFiles": [
-      "<rootDir>/scripts/jest-setup.js"
-    ],
+		"preset": "react-native",
+		"setupFiles": [
+			"<rootDir>/scripts/jest-setup.js"
+		],
 		"transform": {
 			"^.+\\.tsx?$": "ts-jest",
-      "^.+\\.jsx?$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+			"^.+\\.jsx?$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
 			"^.+\\.css$": "<rootDir>/scripts/jest-css.js"
 		},
-    "modulePaths": [
-      "<rootDir>"
-    ],
+		"modulePaths": [
+			"<rootDir>"
+		],
 		"testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
 		"testPathIgnorePatterns": [
 			"<rootDir>/node_modules/",
@@ -106,8 +107,8 @@
 			"tsx",
 			"js",
 			"jsx",
-      "json",
-      "node"
+			"json",
+			"node"
 		]
 	},
 	"detox": {
@@ -124,7 +125,7 @@
 				"binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
 				"build": "pushd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && popd",
 				"type": "android.emulator",
-				"name": "Nexus_5_API_27"
+				"name": "Nexus_5X_API_28"
 			}
 		}
 	}
