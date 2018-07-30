@@ -6,13 +6,13 @@ Pre-requirements: Sentry and
 
 1. Add New App, for example `"Sample (iOS)"`, select `iOS` for OS and `React Native` for Platform.
 
-![Create New App in App Center](./images/_ci_appcenter_new_app_ios.png)
+<img src="./images/_ci_appcenter_new_app_ios.png" alt="Create New App in App Center" width="50%" />
 
 2. Create an CodePush deployment configuration
 
 Go to **Distribute** -> **CodePush** and hit the `"Create standard deployments"` button.
 
-![Create standard deployments](./images/_ci_appcenter_codepush_create.png)
+<img src="./images/_ci_appcenter_codepush_create.png" alt="Create standard deployments" width="50%" />
 
 You can see your keys by typing this into your console:
 
@@ -31,17 +31,17 @@ $ code-push deployment ls MyOrg/Sample-iOS -k
 
 Go to **Your Name** in the lower left corner of the screen and hit **Account Settings**. Then click **API Tokens** in the left menu and there should be a button called `New API token`.
 
-![Create New API Token](./images/_ci_appcenter_api_token_create.png)
+<img src="./images/_ci_appcenter_api_token_create.png" alt="Create New API Token" width="50%"  />
 
 Make sure to store this token safely. You will be using it twice, once for each platform. It will disappear once you close this dialog:
 
-![View API Token](./images/_ci_appcenter_api_token_view.png)
+<img src="./images/_ci_appcenter_api_token_view.png" alt="View API Token" width="50%"  />
 
 4. Go to **Build** in the sidebar, select your branch for example **master** and click the gear icon in the top right corner (you can also hover over the branch row and go to configure from there).
 
 5. Change the **Shared Scheme** to `react-native-starter` or the name of your scheme, do not select *build-env*. Make sure you turn off **Automatically increment build number**. It is recommended to run the tests before each build, but I left it as optional.
 
-![Configure the build](./images/_ci_appcenter_build_app_ios.png)
+<img src="./images/_ci_appcenter_build_app_ios.png" alt="Configure the build" width="50%"  />
 
 6. Insert all your environment variables. 
 
@@ -63,13 +63,13 @@ CODEPUSH_ACCESS_KEY=
 SENTRY_AUTH_TOKEN=
 ```
 
-![Insert environment variables](./images/_ci_appcenter_env_ios.png)
+<img src="./images/_ci_appcenter_env_ios.png" alt="Insert environment variables" width="50%" />
 
 7. Upload required files for code signing the app.
 
 See https://docs.microsoft.com/en-us/appcenter/build/ios/uploading-signing-files how to get these files.
 
-![Create New App in App Center](./images/_ci_appcenter_sign_app_ios.png)
+<img src="./images/_ci_appcenter_sign_app_ios.png" alt="Create New App in App Center" width="50%" />
 
 8. Configure your distribution
 
@@ -83,4 +83,4 @@ This requires less waiting time, but more work is involved for the testers.
 
 This is the recommended method, distribute straight to iTunes Connect users is the fastest way to test your app. You can also choose your own TestFlight group or distribute to the production Store if you will.
 
-![Create New App in App Center](./images/_ci_appcenter_distribute_ios.png)
+<img src="./images/_ci_appcenter_distribute_ios.png" alt="Setup distribution" width="50%" />
