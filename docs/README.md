@@ -1,4 +1,4 @@
-![React Native](_ueno-loves-react.png)
+![React Native](/images/_ueno-loves-react.png)
 
 # react-native-starter <small>1.0.1</small>
 

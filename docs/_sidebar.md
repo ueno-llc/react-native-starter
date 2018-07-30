@@ -10,5 +10,6 @@
 - [Services](/SERVICES.md)
 - [Publishing](/PUBLISHING.md)
 - [Continous Delivery](/CI.md)
+  - [App Center](/CI_APPCENTER.md)
   - [Travis](/CI_TRAVIS.md)
-  - [Bitrise](CI_BITRISE.md)
+  - [Bitrise](/CI_BITRISE.md)
