@@ -6156,9 +6156,9 @@ react-native-typescript-transformer@1.2.10:
     semver "^5.4.1"
     source-map "^0.5.6"
 
-react-native-ueno-css-modules@1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/react-native-ueno-css-modules/-/react-native-ueno-css-modules-1.0.8.tgz#adcdd5c4935c56e325d675f413c15268a0981960"
+react-native-ueno-css-modules@1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/react-native-ueno-css-modules/-/react-native-ueno-css-modules-1.0.11.tgz#2fb775abc81242477d8aa839d243f8e73f8356b1"
   dependencies:
     app-root-path "^2.1.0"
     css-to-react-native-transform "^1.7.0"
