@@ -19,4 +19,4 @@ test('Button calls onPress function', () => {
   const button = shallow(<Button title="demo" onPress={onPress} />);
   button.simulate('press');
   expect(onPress).toHaveBeenCalled();
-})
+});

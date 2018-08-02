@@ -31,7 +31,7 @@ const Store = types
   .create();
 
 // Persist settings on every write
-onSnapshot(UI, (snapshot: Object) => {
+onSnapshot(UI, (snapshot: object) => {
   AsyncStorage.setItem('UI', JSON.stringify(snapshot));
 });
 

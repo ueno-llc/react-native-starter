@@ -30,5 +30,5 @@ export default {
     // Add dynamic variables here
     // ...
     return true;
-  }
-}
+  },
+};

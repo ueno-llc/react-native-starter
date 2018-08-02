@@ -1,8 +1,17 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, TouchableNativeFeedback, GestureResponderEvent, Platform, AccessibilityTrait } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TouchableNativeFeedback,
+  GestureResponderEvent,
+  Platform,
+  AccessibilityTrait,
+} from 'react-native';
+
 const styles = require('./Button.css');
 
-interface Props {
+interface IProps {
   title: string;
   accessibilityLabel?: string;
   disabled?: boolean;
@@ -11,7 +20,7 @@ interface Props {
   testID?: string;
 }
 
-export default class Button extends React.Component<Props> {
+export default class Button extends React.Component<IProps> {
 
   render() {
     const {
@@ -39,6 +48,7 @@ export default class Button extends React.Component<Props> {
       accessibilityTraits.push('disabled');
     }
 
+    // tslint:disable-next-line variable-name
     const Touchable = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
     const titleLabel = Platform.OS === 'android' ? title.toLocaleUpperCase() : title;
 

@@ -5,13 +5,13 @@ import Button from 'components/button/Button';
 import { UI } from 'store';
 const styles = require('./Sample.css');
 
-interface Props {
+interface IProps {
   componentId?: string;
   testID?: string;
 }
 
 @observer
-export default class Sample extends React.Component<Props> {
+export default class Sample extends React.Component<IProps> {
 
   componentDidAppear() {
     UI.setComponentId(this.props.componentId);

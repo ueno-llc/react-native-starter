@@ -18,6 +18,7 @@ if [ ! -f ./node_modules/.bin/react-native-rename ]; then
   exit 1
 fi
 
+TITLE=$1
 NAME=$(echo ${1//[[:blank:]]/} | iconv -t ascii//TRANSLIT | sed -E 's/[^a-zA-Z0-9-]+//g')
 ID=$2
 REST=$3
@@ -119,16 +120,7 @@ do
 done
 
 echo "echo 'Rename script has already been executed.'" > ./scripts/rename.sh
-cat >./README.md <<EOL
-# ${NAME}
-
-Created with react-native-starter. See [docs](https://ueno-llc.github.io/react-native-starter/#/) for instructions.
-
-## Quick start
-```bash
-yarn start & react-native run-ios &
-```
-EOL
+echo "# $TITLE\nSee [react-native-starter docs](https://ueno-llc.github.io/react-native-starter/)\n\n## Development\n\`\`\`bash\nyarn start & react-native run-ios\n\`\`\`" > ./README.md
 
 if [[ $REST != *"--no-git"* ]]; then
   git add .
