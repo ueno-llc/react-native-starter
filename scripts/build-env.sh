@@ -28,8 +28,8 @@ if [ ! -f $GOOGLESERVICE_JSON_FILE ]; then
 fi
 
 if [ ! -f ".env" ]; then
-  echo "[Ueno RNS] Warning: No .env file found... Copied .env_example to .env!"
-  cp .env_example .env
+  echo "[Ueno RNS] Warning: No .env file found... Copied .env.public to .env!"
+  cp .env.public .env
 fi
 
 if [ ! -z "$ENVFILE" ]; then

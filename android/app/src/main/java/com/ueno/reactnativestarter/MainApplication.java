@@ -25,6 +25,7 @@ import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.sentry.RNSentryPackage;
+import com.apsl.versionnumber.RNVersionNumberPackage;
 
 public class MainApplication extends NavigationApplication {
 
@@ -56,6 +57,7 @@ public class MainApplication extends NavigationApplication {
         return Arrays.<ReactPackage>asList(
           new CodePush(BuildConfig.ANDROID_CODEPUSH_DEPLOYMENT_KEY, MainApplication.this, BuildConfig.DEBUG),
           new ReactNativeConfigPackage(),
+          new RNVersionNumberPackage(),
           new RNSentryPackage(),
           new RNFirebasePackage(),
           new RNFirebaseAnalyticsPackage()

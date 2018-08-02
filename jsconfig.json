@@ -1,9 +1,0 @@
-{
-    "compilerOptions": {
-        "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true
-    },
-    "exclude": [
-        "node_modules"
-    ]
-}

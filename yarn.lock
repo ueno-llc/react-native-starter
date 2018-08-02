@@ -680,10 +680,6 @@
   version "1.2.16"
   resolved "https://registry.yarnpkg.com/@types/html-entities/-/html-entities-1.2.16.tgz#4d1fe208c4c33727ac4657e6f5d92bfe52427023"
 
-"@types/jest@22.x.x":
-  version "22.2.3"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.2.3.tgz#0157c0316dc3722c43a7b71de3fdf3acbccef10d"
-
 "@types/jest@23.3.1":
   version "23.3.1"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.1.tgz#a4319aedb071d478e6f407d1c4578ec8156829cf"
@@ -691,10 +687,6 @@
 "@types/lodash@4.14.115":
   version "4.14.115"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.115.tgz#54d171b2ce12c058742443b5f6754760f701b8f9"
-
-"@types/lodash@4.x.x":
-  version "4.14.113"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.113.tgz#1d1cb063f17fec4cc46f1a90d978ebf441113061"
 
 "@types/mobx-devtools-mst@0.9.0":
   version "0.9.0"
@@ -708,21 +700,9 @@
   version "8.10.21"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.21.tgz#12b3f2359b27aa05a45d886c8ba1eb8d1a77e285"
 
-"@types/prop-types@15.x.x":
-  version "15.5.4"
-  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.4.tgz#9e6199bad131786e24c2baa2a82705a02139fbf8"
-  dependencies:
-    "@types/react" "*"
-
 "@types/react-native-navigation@1.1.12":
   version "1.1.12"
   resolved "https://registry.yarnpkg.com/@types/react-native-navigation/-/react-native-navigation-1.1.12.tgz#1f43bdf88d39bce2a3c0fdded0befda5083df6ff"
-  dependencies:
-    "@types/react" "*"
-
-"@types/react-native@0.51.x":
-  version "0.51.10"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.51.10.tgz#ab060c0b87110a32a2e797ebaef5b485a7856217"
   dependencies:
     "@types/react" "*"
 
@@ -732,13 +712,13 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-test-renderer@16.0.1", "@types/react-test-renderer@16.x.x":
+"@types/react-test-renderer@16.0.1":
   version "16.0.1"
   resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-16.0.1.tgz#36ee8c4fe33c61d460ad0e7bc42a2d0ddcc775a1"
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@16.4.7", "@types/react@16.x.x":
+"@types/react@*", "@types/react@16.4.7":
   version "16.4.7"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.7.tgz#f33f6d759a7e1833befa15224d68942d178a5a3f"
   dependencies:
@@ -1983,15 +1963,15 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-code-push@2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/code-push/-/code-push-2.0.5.tgz#5dae053ab4eb5682ce39df8d173683c18be1089f"
+code-push@2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/code-push/-/code-push-2.0.6.tgz#fb4e140c90fdb7fa047f3be6f53caacc8915d0b8"
   dependencies:
     q "^1.4.1"
     recursive-fs "0.1.4"
     slash "1.0.0"
     superagent "^3.8.0"
-    superagent-proxy "^1.0.0"
+    superagent-proxy "^1.0.3"
     yazl "^2.4.1"
 
 collection-visit@^1.0.0:
@@ -4345,9 +4325,9 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
-jsc-android@224109.0.0:
-  version "224109.0.0"
-  resolved "https://registry.yarnpkg.com/jsc-android/-/jsc-android-224109.0.0.tgz#decd9f4b6f76280a01697a3be9c1e56620659c2a"
+jsc-android@224109.1.0:
+  version "224109.1.0"
+  resolved "https://registry.yarnpkg.com/jsc-android/-/jsc-android-224109.1.0.tgz#9749ec92f1e284b3c09befe7c47cc6e60b1f0cdf"
 
 jsdom@^11.5.1:
   version "11.11.0"
@@ -6064,9 +6044,9 @@ react-devtools-core@^3.2.2:
     shell-quote "^1.6.1"
     ws "^3.3.1"
 
-react-dom@16.4.1:
-  version "16.4.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.1.tgz#7f8b0223b3a5fbe205116c56deb85de32685dad6"
+react-dom@16.4.2:
+  version "16.4.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.2.tgz#4afed569689f2c561d2b8da0b819669c38a0bda4"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -6077,6 +6057,10 @@ react-is@^16.4.1:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"
 
+react-is@^16.4.2:
+  version "16.4.2"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.2.tgz#84891b56c2b6d9efdee577cc83501dfc5ecead88"
+
 react-lifecycles-compat@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-2.0.0.tgz#71d9c4cde47114c4102454f76da055c2bc48c948"
@@ -6085,11 +6069,11 @@ react-lifecycles-compat@^3.0.2:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
-react-native-code-push@5.4.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/react-native-code-push/-/react-native-code-push-5.4.0.tgz#f8e1309a89c66c624079cd4a158a6dac31a8aa1d"
+react-native-code-push@5.4.1:
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-code-push/-/react-native-code-push-5.4.1.tgz#8502c44075bb4f1ac2d64991912056691a89f049"
   dependencies:
-    code-push "2.0.5"
+    code-push "2.0.6"
     glob "^5.0.15"
     hoist-non-react-statics "^2.3.1"
     inquirer "1.1.2"
@@ -6114,16 +6098,10 @@ react-native-firebase@4.3.8:
     postinstall-build "^5.0.1"
     prop-types "^15.6.1"
 
-react-native-navigation@2.0.2439:
-  version "2.0.2439"
-  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.0.2439.tgz#5aa0138b6745e7d30c0c24ae57de318da381a69e"
+react-native-navigation@2.0.2452:
+  version "2.0.2452"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.0.2452.tgz#67a4b97c9a5b038f926411b95e8224afe57f6d2f"
   dependencies:
-    "@types/jest" "22.x.x"
-    "@types/lodash" "4.x.x"
-    "@types/prop-types" "15.x.x"
-    "@types/react" "16.x.x"
-    "@types/react-native" "0.51.x"
-    "@types/react-test-renderer" "16.x.x"
     hoist-non-react-statics "2.x.x"
     lodash "4.x.x"
     prop-types "15.x.x"
@@ -6156,9 +6134,9 @@ react-native-typescript-transformer@1.2.10:
     semver "^5.4.1"
     source-map "^0.5.6"
 
-react-native-ueno-css-modules@1.0.11:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/react-native-ueno-css-modules/-/react-native-ueno-css-modules-1.0.11.tgz#2fb775abc81242477d8aa839d243f8e73f8356b1"
+react-native-ueno-css-modules@1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/react-native-ueno-css-modules/-/react-native-ueno-css-modules-1.0.12.tgz#3829291f5012dedf87c68477fd5c3e00316a8bc3"
   dependencies:
     app-root-path "^2.1.0"
     css-to-react-native-transform "^1.7.0"
@@ -6240,7 +6218,16 @@ react-reconciler@^0.7.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-test-renderer@16.4.1, react-test-renderer@^16.0.0-0:
+react-test-renderer@16.4.2:
+  version "16.4.2"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.4.2.tgz#4e03eca9359bb3210d4373f7547d1364218ef74e"
+  dependencies:
+    fbjs "^0.8.16"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
+    react-is "^16.4.2"
+
+react-test-renderer@^16.0.0-0:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.4.1.tgz#f2fb30c2c7b517db6e5b10ed20bb6b0a7ccd8d70"
   dependencies:
@@ -6260,9 +6247,9 @@ react-transform-hmr@^1.0.4:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
-react@16.4.1:
-  version "16.4.1"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.4.1.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"
+react@16.4.2:
+  version "16.4.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.4.2.tgz#2cd90154e3a9d9dd8da2991149fdca3c260e129f"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -7143,7 +7130,7 @@ sumchecker@^1.2.0:
     debug "^2.2.0"
     es6-promise "^4.0.5"
 
-superagent-proxy@^1.0.0:
+superagent-proxy@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/superagent-proxy/-/superagent-proxy-1.0.3.tgz#acfa776672f11c24a90ad575e855def8be44f741"
   dependencies:

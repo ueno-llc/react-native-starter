@@ -104,6 +104,32 @@ cd ios
 pod install
 cd -
 
+# Cleanup
+CLEANUP=(
+  "./CHANGELOG.md"
+  "./README.md"
+  "./CODE_OF_CONDUCT.md"
+  "./LICENSE.md"
+  "./docs"
+)
+
+for file in "${CLEANUP[@]}"
+do
+  rm -r "$file"
+done
+
+echo "echo 'Rename script has already been executed.'" > ./scripts/rename.sh
+cat >./README.md <<EOL
+# ${NAME}
+
+Created with react-native-starter. See [docs](https://ueno-llc.github.io/react-native-starter/#/) for instructions.
+
+## Quick start
+```bash
+yarn start & react-native run-ios &
+```
+EOL
+
 if [[ $REST != *"--no-git"* ]]; then
   git add .
   git commit -m "App renamed to $NAME ($ID)" --no-verify
