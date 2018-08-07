@@ -43,6 +43,10 @@ public class MainApplication extends NavigationApplication {
             protected String getJSBundleFile() {
                 return CodePush.getJSBundleFile();
             }
+            @Override
+            protected String getJSMainModuleName() {
+                return "index";
+            }
         };
         return new ReactGateway(this, isDebug(), host);
     }
