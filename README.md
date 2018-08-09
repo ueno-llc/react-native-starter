@@ -1,4 +1,4 @@
-![Build status](https://travis-ci.org/ueno-llc/react-native-starter.svg?branch=master) ![Dependencies](https://david-dm.org/ueno-llc/react-native-starter/status.svg) ![devDependencies](https://david-dm.org/ueno-llc/react-native-starter/dev-status.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/ueno-llc/react-native-starter.svg)](https://greenkeeper.io/)
+![Build status](https://travis-ci.org/ueno-llc/react-native-starter.svg?branch=master) ![Dependencies](https://david-dm.org/ueno-llc/react-native-starter/status.svg) ![devDependencies](https://david-dm.org/ueno-llc/react-native-starter/dev-status.svg)
 
 ![Ueno](/docs/images/_ueno-loves-react.png)
 
