@@ -32,7 +32,7 @@
     "mobx-react": "5.2.3",
     "mobx-state-tree": "3.0.2",
     "react": "16.4.2",
-    "react-native": "0.56.0",
+    "react-native": "0.57.0-rc.0",
     "react-native-code-push": "5.4.1",
     "react-native-config": "0.11.5",
     "react-native-fast-image": "4.0.14",
@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.0.0-beta.56",
+    "@babel/plugin-proposal-decorators": "7.0.0-beta.56",
     "@firebase/app-types": "0.3.2",
     "@types/core-decorators": "^0.20.0",
     "@types/date-fns": "^2.6.0",
