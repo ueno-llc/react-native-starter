@@ -2,12 +2,6 @@
 
 exports[`renders correctly 1`] = `
 <View
-  accessibilityComponentType="button"
-  accessibilityTraits={
-    Array [
-      "button",
-    ]
-  }
   accessible={true}
   isTVSelectable={true}
   onResponderGrant={[Function]}
@@ -26,7 +20,7 @@ exports[`renders correctly 1`] = `
     style={
       Array [
         Object {
-          "backgroundColor": "var(--primary-color)",
+          "backgroundColor": "#eee",
           "borderRadius": 4,
         },
       ]
