@@ -16,7 +16,7 @@
     "tslint": "tslint 'src/**/*.ts?(x)'",
     "precommit": "lint-staged",
     "prepush": "npm run test",
-    "prepare": "patch-package"
+    "prepare": "patch-package && if [ -f ./scripts/postinstall.sh ]; then sh ./scripts/postinstall.sh; fi"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -28,14 +28,14 @@
     "date-fns": "1.29.0",
     "jsc-android": "224109.1.0",
     "lodash": "4.17.10",
-    "mobx": "5.0.3",
-    "mobx-react": "5.2.3",
-    "mobx-state-tree": "3.0.2",
+    "mobx": "5.1.0",
+    "mobx-react": "5.2.5",
+    "mobx-state-tree": "3.2.3",
     "react": "16.4.2",
-    "react-native": "0.57.0-rc.0",
-    "react-native-code-push": "5.4.1",
+    "react-native": "0.57.0-rc.3",
+    "react-native-code-push": "5.4.2",
     "react-native-config": "0.11.5",
-    "react-native-fast-image": "4.0.14",
+    "react-native-fast-image": "5.0.3",
     "react-native-firebase": "4.3.8",
     "react-native-navigation": "2.0.2501",
     "react-native-sentry": "0.39.0",
@@ -61,7 +61,7 @@
     "babel-jest": "23.4.2",
     "babel-plugin-module-resolver": "3.1.1",
     "babel-preset-react-native": "5.0.2",
-    "detox": "8.1.4",
+    "detox": "8.2.3",
     "enzyme": "3.5.0",
     "enzyme-adapter-react-16": "1.3.0",
     "husky": "0.14.3",
