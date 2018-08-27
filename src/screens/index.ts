@@ -1,16 +1,24 @@
 import { Navigation } from 'react-native-navigation';
-import Sample from './sample/Sample';
+import Home from './home/Home';
+import Counter from './counter/Counter';
 
-export const SAMPLE = 'ueno-rns.Sample';
+export const HOME = 'ueno-rns.Home';
+export const COUNTER = 'ueno-rns.Counter';
 
 export const Screens = new Map();
-Screens.set(SAMPLE, Sample);
+Screens.set(HOME, Home);
+Screens.set(COUNTER, Counter);
 
 export const startApp = () => {
   Navigation.setRoot({
     root: {
-      component: {
-        name: SAMPLE,
+      stack: {
+        id: 'ROOT_STACK',
+        children: [{
+          component: {
+            name: HOME,
+          },
+        }],
       },
     },
   });

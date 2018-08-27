@@ -114,7 +114,7 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
-        missingDimensionStrategy "RNN.reactNativeVersion", "reactNative56"
+        missingDimensionStrategy "RNN.reactNativeVersion", "reactNative57"
         multiDexEnabled true
         testBuildType System.getProperty('testBuildType', 'debug')
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

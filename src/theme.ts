@@ -9,8 +9,8 @@ setVar('--hairline-width', StyleSheet.hairlineWidth);
 setTheme('default');
 setThemeVars('default', {
   '--primary-color': '#6ea',
-  '--primary-color-ios': 'red',
-  '--primary-color-android': 'blue',
+  // '--primary-color-ios': 'red',
+  // '--primary-color-android': 'blue',
   '--gutter': 16,
 });
 
@@ -29,6 +29,7 @@ export default {
 
     // Add dynamic variables here
     // ...
+
     return true;
   },
 };

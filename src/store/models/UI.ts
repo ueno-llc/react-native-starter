@@ -13,7 +13,10 @@ const UI = types
     },
     increment() {
       self.counter += 1;
-    }
+    },
+    decrement() {
+      self.counter -= 1;
+    },
   }));
 
 export default UI;

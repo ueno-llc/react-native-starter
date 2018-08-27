@@ -7,6 +7,7 @@ import {
   GestureResponderEvent,
   Platform,
   AccessibilityTrait,
+  ViewStyle,
 } from 'react-native';
 
 const styles = require('./Button.css');
@@ -15,6 +16,7 @@ interface IProps {
   title: string;
   accessibilityLabel?: string;
   disabled?: boolean;
+  style?: ViewStyle;
   hasTVPreferredFocus?: boolean;
   onPress?: (event: GestureResponderEvent) => void;
   testID?: string;
@@ -27,6 +29,7 @@ export default class Button extends React.Component<IProps> {
       title,
       accessibilityLabel,
       disabled,
+      style,
       onPress,
       hasTVPreferredFocus,
       testID,
@@ -60,6 +63,7 @@ export default class Button extends React.Component<IProps> {
         testID={testID}
         disabled={disabled}
         onPress={onPress}
+        style={style}
         {...Platform.OS === 'ios' ? { hasTVPreferredFocus } : {}}
       >
         <View style={buttonStyles}>
