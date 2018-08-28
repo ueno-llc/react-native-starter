@@ -23,6 +23,7 @@ git clone -b master git@github.com:ueno-llc/react-native-starter.git my-app
 cd my-app
 yarn
 yarn rename "My New App" com.ueno.mynewapp
+yarn start
 react-native run-ios
 ```
 
