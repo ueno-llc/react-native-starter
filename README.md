@@ -20,6 +20,11 @@ Super-Quick Start
 
 ```bash
 git clone -b master git@github.com:ueno-llc/react-native-starter.git my-app
+
+# or for latest version
+
+git clone git@github.com:ueno-llc/react-native-starter.git my-app
+
 cd my-app
 yarn
 yarn rename "My New App" com.ueno.mynewapp
