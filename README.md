@@ -27,12 +27,19 @@ git clone git@github.com:ueno-llc/react-native-starter.git my-app
 
 cd my-app
 yarn
-yarn rename "My New App" com.ueno.mynewapp
+yarn rename "MyNewApp" com.ueno.mynewapp
 yarn start
 react-native run-ios
 ```
 
 [Detailed guide here](https://ueno-llc.github.io/react-native-starter/#/GETTING_STARTED)
+
+Alternatively you can use the `ueno-cli`:
+
+```bash
+npm install -g ueno-cli
+ueno-cli react-native init "MyNewApp" --bundleId "com.ueno.mynewapp" --next
+```
 
 ## Documentation
 
