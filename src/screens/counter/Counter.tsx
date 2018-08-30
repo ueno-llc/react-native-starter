@@ -5,16 +5,12 @@ import { observer } from 'mobx-react';
 import { UI } from 'store';
 import { IReactNavigation } from 'typings';
 
-import Button from 'components/button/Button';
-
-interface IProps extends IReactNavigation {
-  testID?: string;
-}
+import Button from 'components/button';
 
 const s = require('./Counter.css');
 
 @observer
-export default class Counter extends React.Component<IProps> {
+export default class Counter extends React.Component<IReactNavigation> {
 
   static get options() {
     return {

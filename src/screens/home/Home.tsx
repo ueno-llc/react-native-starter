@@ -9,14 +9,10 @@ import { IReactNavigation } from 'typings';
 
 import Button from 'components/button';
 
-interface IProps extends IReactNavigation {
-  testID?: string;
-}
-
 const s = require('./Home.css');
 
 @observer
-export default class Home extends React.Component<IProps> {
+export default class Home extends React.Component<IReactNavigation> {
 
   static get options() {
     return {
