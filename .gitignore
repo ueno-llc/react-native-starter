@@ -71,3 +71,6 @@ google-services.json
 
 # Android emulator logs
 *_API_*.log
+
+# Misc
+.expo/
