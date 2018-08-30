@@ -7,6 +7,7 @@ setVar('--hairline-width', StyleSheet.hairlineWidth);
 
 // Add themes here
 setTheme('default');
+
 setThemeVars('default', {
   '--primary-color': '#6ea',
   // '--primary-color-ios': 'red',

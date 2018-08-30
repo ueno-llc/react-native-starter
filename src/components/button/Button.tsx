@@ -1,16 +1,7 @@
 import * as React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  TouchableNativeFeedback,
-  GestureResponderEvent,
-  Platform,
-  AccessibilityTrait,
-  ViewStyle,
-} from 'react-native';
+import { View, Text, TouchableOpacity, TouchableNativeFeedback, GestureResponderEvent, Platform, AccessibilityTrait, ViewStyle } from 'react-native';
 
-const styles = require('./Button.css');
+const s = require('./Button.css');
 
 interface IProps {
   title: string;
@@ -22,7 +13,7 @@ interface IProps {
   testID?: string;
 }
 
-export default class Button extends React.Component<IProps> {
+export default class Button extends React.PureComponent<IProps> {
 
   render() {
     const {
@@ -35,23 +26,16 @@ export default class Button extends React.Component<IProps> {
       testID,
     } = this.props;
 
-    const buttonStyles = [
-      styles.button,
-    ];
-
-    const textStyles = [
-      styles.text,
-    ];
-
+    const buttonStyles = [s.button];
+    const textStyles = [s.text];
     const accessibilityTraits: AccessibilityTrait[] = ['button'];
 
     if (disabled) {
-      buttonStyles.push(styles.button__disabled);
-      textStyles.push(styles.text__disabled);
+      buttonStyles.push(s.button__disabled);
+      textStyles.push(s.text__disabled);
       accessibilityTraits.push('disabled');
     }
 
-    // tslint:disable-next-line variable-name
     const Touchable = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
     const titleLabel = Platform.OS === 'android' ? title.toLocaleUpperCase() : title;
 

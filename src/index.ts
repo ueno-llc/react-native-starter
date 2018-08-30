@@ -1,7 +1,9 @@
 import { Navigation } from 'react-native-navigation';
+
 import theme from 'theme';
-import { Screens, startApp } from './screens';
 import Store from 'store';
+
+import { Screens, startApp } from './screens';
 
 // Include devtools
 if (__DEV__) {
@@ -16,7 +18,8 @@ Screens.forEach((ScreenComponent, key) =>
 // Start application
 Navigation.events().registerAppLaunchedListener(() => {
   // Hydrate store and start app
-  Store.hydrate()
-  .then(theme.update)
-  .then(startApp);
+  Store
+    .hydrate()
+    .then(theme.update)
+    .then(startApp);
 });
