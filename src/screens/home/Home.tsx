@@ -1,19 +1,18 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { observer } from 'mobx-react';
-import Button from 'components/button/Button';
-import { UI } from 'store';
 import { Navigation } from 'react-native-navigation';
-import { COUNTER } from 'screens';
-import * as styles from './Home.css';
 
-interface IProps {
-  componentId: string;
-  testID?: string;
-}
+import { UI } from 'store';
+import { COUNTER } from 'screens';
+import { IReactNavigation } from 'typings';
+
+import Button from 'components/button';
+
+const s = require('./Home.css');
 
 @observer
-export default class Home extends React.Component<IProps> {
+export default class Home extends React.Component<IReactNavigation> {
 
   static get options() {
     return {
@@ -39,10 +38,11 @@ export default class Home extends React.Component<IProps> {
 
   render() {
     return (
-      <View style={styles.host} testID="HOME_SCREEN">
-        <View style={styles.content}>
-          <Text style={styles.text}>Welcome Home</Text>
+      <View style={s.host} testID="HOME_SCREEN">
+        <View style={s.content}>
+          <Text style={s.text}>Welcome Home</Text>
         </View>
+
         <Button onPress={this.onCounterScreenPress} title="Counter Screen" />
       </View>
     );

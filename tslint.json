@@ -8,6 +8,7 @@
   "rules": {
     "ordered-imports": false,
     "object-literal-sort-keys": false,
+    "max-line-length": false,
     "member-access": false,
     "member-ordering": false,
     "no-var-requires": false,

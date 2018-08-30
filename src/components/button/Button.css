@@ -3,10 +3,18 @@
   background-color: #eee;
 }
 
+.button__disabled {
+  background-color: #e4e4e4;
+}
+
 .text {
   padding: 12px;
 
   font-size: 18px;
-  color: black;
+  color: #000;
   text-align: center;
+}
+
+.text__disabled {
+  color: #b8b8b8;
 }

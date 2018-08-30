@@ -30,7 +30,7 @@ exports[`renders correctly 1`] = `
       style={
         Array [
           Object {
-            "color": "black",
+            "color": "#000",
             "fontSize": 18,
             "paddingBottom": 12,
             "paddingLeft": 12,
