@@ -70,6 +70,7 @@ FILES=(
   "ios/fastlane/Fastfile"
   "ios/fastlane/Deliverfile"
   "ios/fastlane/Matchfile"
+  "ios/fastlane/metadata/en-US/name.txt"
   "ios/*/Info.plist"
   "ios/*.xcodeproj/project.pbxproj"
   "ios/*.xcodeproj/xcshareddata/xcschemes/*.xcscheme"
