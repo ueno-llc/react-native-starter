@@ -65,18 +65,11 @@ FILES=(
   "android/app/src/main/AndroidManifest.xml"
   "android/app/src/androidTest/java/$IDPATH/DetoxTest.java"
   "android/app/proguard-rules.pro"
-  "android/fastlane/Appfile"
-  "ios/fastlane/Appfile"
   "ios/fastlane/Fastfile"
-  "ios/fastlane/Deliverfile"
-  "ios/fastlane/Matchfile"
   "ios/*/Info.plist"
   "ios/*.xcodeproj/project.pbxproj"
   "ios/*.xcodeproj/xcshareddata/xcschemes/*.xcscheme"
-  "scripts/gen-secrets.sh"
   "scripts/build-env.sh"
-  ".travis/gen-secrets.sh"
-  ".travis/build.sh"
   "package.json"
 )
 
