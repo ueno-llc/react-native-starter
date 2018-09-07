@@ -5,7 +5,9 @@ const config = {
   resolver: {
     sourceExts: ['js', 'json', 'ts', 'tsx', 'css'],
   },
-  transformModulePath: require.resolve('./scripts/transformer.js'),
+  transformer: {
+    babelTransformerPath: require.resolve('./scripts/transformer.js'),
+  },
 };
 
 module.exports = mergeConfig(DEFAULT, config);

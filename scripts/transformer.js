@@ -4,10 +4,6 @@ const uenoCssModulesTransformer = require('react-native-ueno-css-modules/transfo
 
 module.exports.transform = ({ src, filename, options }) => {
 
-  if (filename.endsWith('.ts') || filename.endsWith('.tsx')) {
-    return typescriptTransformer.transform({ src, filename, options });
-  }
-
   if (filename.endsWith('.css') || filename.endsWith('.styl') || filename.endsWith('.scss') || filename.endsWith('.sass') || filename.endsWith('.less')) {
     return uenoCssModulesTransformer.transform({ src, filename, options });
   }
