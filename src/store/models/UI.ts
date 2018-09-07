@@ -1,9 +1,10 @@
-import { types } from 'mobx-state-tree';
+import { AsyncStorage } from 'react-native';
+import { types, flow, applySnapshot } from 'mobx-state-tree';
 
-const UI = types
-  .model('UI', {
-    componentId: types.maybe(types.string),
-    counter: types.optional(types.number, 0),
+export const UI = types.model('UI', {
+    componentId: '',
+    isBeta: false,
+    counter: 0,
   })
   .actions(self => ({
     setComponentId(componentId?: string) {
@@ -17,6 +18,10 @@ const UI = types
     decrement() {
       self.counter -= 1;
     },
+    hydrate: flow(function* () {
+      const data = yield AsyncStorage.getItem('UI');
+      if (data) {
+        applySnapshot(self, JSON.parse(data));
+      }
+    }),
   }));
-
-export default UI;

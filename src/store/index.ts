@@ -1,38 +1,27 @@
 import { AsyncStorage } from 'react-native';
-import { types, flow, applySnapshot, onSnapshot } from 'mobx-state-tree';
+import { types, flow, onSnapshot } from 'mobx-state-tree';
+import { UI } from './models/UI';
 import makeInspectable from 'mobx-devtools-mst';
-import UIModel from './models/UI';
 
-// Create sub-models
-export const UI = UIModel.create();
-
-/**
- * Store
- */
-const Store = types
-  .model('Store', {
-    isHydrated: types.optional(types.boolean, false),
+export const Store = types.model('Store', {
+    UI,
+    isHydrated: false,
   })
   .actions(self => ({
-    hydrate: flow(function* () {
-      const data = yield AsyncStorage.getItem('UI');
-      if (data) {
-        applySnapshot(UI, JSON.parse(data));
-      }
-
-      if (__DEV__) {
-        // Inspect individual models
-        makeInspectable(UI);
-      }
-
+    hydrate: flow(function* hydrate() {
+      yield self.UI.hydrate();
       self.isHydrated = true;
     }),
   }))
-  .create();
+  .create({
+    UI: {},
+  });
 
-// Persist settings on every write
-onSnapshot(UI, (snapshot: object) => {
+// Persist snapshots
+onSnapshot(Store.UI, (snapshot: object) => {
   AsyncStorage.setItem('UI', JSON.stringify(snapshot));
 });
 
-export default Store;
+if (__DEV__) {
+  makeInspectable(Store.UI);
+}

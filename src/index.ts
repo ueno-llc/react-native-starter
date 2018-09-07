@@ -1,15 +1,8 @@
+import './utils/setup';
 import { Navigation } from 'react-native-navigation';
-
-import theme from 'theme';
-import Store from 'store';
-
+import { updateTheme } from './utils/theme';
 import { Screens, startApp } from './screens';
-
-// Include devtools
-if (__DEV__) {
-  const { connectToDevTools } = require('mobx-devtools/lib/mobxDevtoolsBackend.js');
-  connectToDevTools({ host: 'localhost', port: '8098' });
-}
+import { Store } from './store';
 
 // Register screens
 Screens.forEach((ScreenComponent, key) =>
@@ -20,6 +13,6 @@ Navigation.events().registerAppLaunchedListener(() => {
   // Hydrate store and start app
   Store
     .hydrate()
-    .then(theme.update)
+    .then(updateTheme)
     .then(startApp);
 });

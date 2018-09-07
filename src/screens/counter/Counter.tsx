@@ -1,13 +1,10 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { observer } from 'mobx-react';
-
-import { UI } from 'store';
+import { Store } from 'store';
 import { IReactNavigation } from 'typings';
-
 import Button from 'components/button';
-
-const s = require('./Counter.css');
+import s from './Counter.css';
 
 @observer
 export default class Counter extends React.Component<IReactNavigation> {
@@ -23,10 +20,12 @@ export default class Counter extends React.Component<IReactNavigation> {
   }
 
   componentDidAppear() {
-    UI.setComponentId(this.props.componentId);
+    Store.UI.setComponentId(this.props.componentId);
   }
 
   render() {
+    const { UI } = Store;
+
     return (
       <View style={s.host} testID="COUNTER_SCREEN">
         <View style={s.content}>
