@@ -1,6 +1,6 @@
 import { Sentry } from 'react-native-sentry';
 import CodePush from 'react-native-code-push';
-import config from 'config';
+import { config } from '~config';
 
 if (!__DEV__ && config.SENTRY_DSN) {
 
@@ -10,7 +10,7 @@ if (!__DEV__ && config.SENTRY_DSN) {
   // Set Sentry CodePush metadata
   CodePush.getUpdateMetadata()
     .then((update) => {
-      if (update) {
+      if (update !== null) {
         Sentry.setVersion(`${update.appVersion}-codepush:${update.label}`);
       }
     });
@@ -18,6 +18,7 @@ if (!__DEV__ && config.SENTRY_DSN) {
 
 // Include devtools
 if (__DEV__) {
+  // tslint:disable-next-line no-require-imports no-var-requires no-submodule-imports
   const { connectToDevTools } = require('mobx-devtools/lib/mobxDevtoolsBackend.js');
   connectToDevTools({ host: 'localhost', port: '8098' });
 }

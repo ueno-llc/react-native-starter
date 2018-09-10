@@ -15,9 +15,9 @@ setThemeVars('default', {
   '--gutter': 16,
 });
 
-export async function updateTheme() {
+export async function updateTheme(): Promise<boolean> {
   // Add device width and height
-  const { width, height } = Dimensions.get('window');
+  const { width, height } = Dimensions.get('window'); // tslint:disable-line no-backbone-get-set-outside-model
   setVar('--window-width', width);
   setVar('--window-height', height);
 

@@ -1,15 +1,16 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { observer } from 'mobx-react';
-import { Store } from 'store';
-import { IReactNavigation } from 'typings';
-import Button from 'components/button';
-import s from './Counter.css';
+import { Counter } from '~stores/Counter';
+import { UI } from '~stores/UI';
+import { IScreen } from '~screens';
+import { Button } from '~components/button/Button';
+import * as s from './Counter.css';
 
 @observer
-export default class Counter extends React.Component<IReactNavigation> {
+export class CounterScreen extends React.Component<IScreen> {
 
-  static get options() {
+  static get options(): object {
     return {
       topBar: {
         title: {
@@ -19,23 +20,21 @@ export default class Counter extends React.Component<IReactNavigation> {
     };
   }
 
-  componentDidAppear() {
-    Store.UI.setComponentId(this.props.componentId);
+  public componentDidAppear(): void {
+    UI.setComponentId(this.props.componentId);
   }
 
-  render() {
-    const { UI } = Store;
-
+  public render(): JSX.Element {
     return (
       <View style={s.host} testID="COUNTER_SCREEN">
         <View style={s.content}>
-          <Text style={s.text}>Counter: {UI.counter}</Text>
+          <Text style={s.text}>Counter: {Counter.counter}</Text>
         </View>
 
         <View style={s.actions}>
           <Button
             title="Decrement"
-            onPress={UI.decrement}
+            onPress={Counter.decrement}
             testID="BUTTON_DECREMENT"
             style={s.actions__button}
           />
@@ -44,7 +43,7 @@ export default class Counter extends React.Component<IReactNavigation> {
 
           <Button
             title="Increment"
-            onPress={UI.increment}
+            onPress={Counter.increment}
             testID="BUTTON_INCREMENT"
             style={s.actions__button}
           />

@@ -1,21 +1,24 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, TouchableNativeFeedback, GestureResponderEvent, Platform, AccessibilityTrait, ViewStyle } from 'react-native';
-
-const s = require('./Button.css');
+import { View, Text, TouchableOpacity, TouchableNativeFeedback, GestureResponderEvent,
+  Platform, AccessibilityTrait, ViewStyle, TextStyle } from 'react-native';
+import * as s from './Button.css';
 
 interface IProps {
   title: string;
+  testID?: string;
   accessibilityLabel?: string;
   disabled?: boolean;
   style?: ViewStyle;
   hasTVPreferredFocus?: boolean;
-  onPress?: (event: GestureResponderEvent) => void;
-  testID?: string;
+  onPress?(event: GestureResponderEvent): void;
 }
 
-export default class Button extends React.PureComponent<IProps> {
+// tslint:disable-next-line variable-name typedef
+const TouchableElement = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
 
-  render() {
+export class Button extends React.PureComponent<IProps> {
+
+  public render(): JSX.Element {
     const {
       title,
       accessibilityLabel,
@@ -26,8 +29,8 @@ export default class Button extends React.PureComponent<IProps> {
       testID,
     } = this.props;
 
-    const buttonStyles = [s.button];
-    const textStyles = [s.text];
+    const buttonStyles: ViewStyle[] = [s.button];
+    const textStyles: TextStyle[] = [s.text];
     const accessibilityTraits: AccessibilityTrait[] = ['button'];
 
     if (disabled) {
@@ -36,11 +39,10 @@ export default class Button extends React.PureComponent<IProps> {
       accessibilityTraits.push('disabled');
     }
 
-    const Touchable = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
-    const titleLabel = Platform.OS === 'android' ? title.toLocaleUpperCase() : title;
+    const titleLabel: string = Platform.OS === 'android' ? title.toLocaleUpperCase() : title;
 
     return (
-      <Touchable
+      <TouchableElement
         accessibilityComponentType="button"
         accessibilityLabel={accessibilityLabel}
         accessibilityTraits={accessibilityTraits}
@@ -55,7 +57,7 @@ export default class Button extends React.PureComponent<IProps> {
             {titleLabel}
           </Text>
         </View>
-      </Touchable>
+      </TouchableElement>
     );
   }
 }

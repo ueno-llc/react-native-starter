@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as testRenderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
-import Button from '../Button';
+import { Button } from '../Button';
 
 test('renders correctly', () => {
   const tree = testRenderer.create(<Button title="test" />).toJSON();

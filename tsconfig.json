@@ -17,7 +17,16 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "~assets/*": ["assets/*"],
+      "~components/*": ["components/*"],
+      "~screens": ["screens/index"],
+      "~screens/*": ["screens/*"],
+      "~stores/*": ["stores/*"],
+      "~utils/*": ["utils/*"],
+      "~config": ["config"]
+    }
   },
   "exclude": [
     "node_modules"

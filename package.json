@@ -13,7 +13,7 @@
     "test:e2e:ios": "detox test --configuration ios.sim.release",
     "test:e2e:android": "detox test --configuration android.emu.release",
     "lint": "yarn tslint",
-    "tslint": "tslint 'src/**/*.ts?(x)'",
+    "tslint": "tslint -p .",
     "precommit": "lint-staged",
     "prepush": "npm run test",
     "prepare": "patch-package && if [ -f ./scripts/postinstall.sh ]; then sh ./scripts/postinstall.sh; fi"
@@ -80,8 +80,7 @@
     "ts-jest": "23.1.4",
     "tslib": "1.9.3",
     "tslint": "5.11.0",
-    "tslint-config-airbnb": "5.11.0",
-    "tslint-react": "3.6.0",
+    "tslint-microsoft-contrib": "5.2.1",
     "typescript": "3.0.3"
   },
   "jest": {

@@ -2,19 +2,18 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { observer } from 'mobx-react';
 import { Navigation } from 'react-native-navigation';
-import { Store } from 'store';
-import { COUNTER } from 'screens';
-import { IReactNavigation } from 'typings';
-import { codePushConfig } from 'utils/code-push';
 import CodePush from 'react-native-code-push';
-import Button from 'components/button';
-import s from './Home.css';
+import { UI } from '~stores/UI';
+import { IScreen, COUNTER } from '~screens';
+import { codePushConfig } from '~utils/code-push';
+import { Button } from '~components/button/Button';
+import * as s from './Home.css';
 
 @CodePush(codePushConfig())
 @observer
-export default class Home extends React.Component<IReactNavigation> {
+export class Home extends React.Component<IScreen> {
 
-  static get options() {
+  static get options(): object {
     return {
       topBar: {
         title: {
@@ -24,19 +23,19 @@ export default class Home extends React.Component<IReactNavigation> {
     };
   }
 
-  componentDidAppear() {
-    Store.UI.setComponentId(this.props.componentId);
+  public componentDidAppear(): void {
+    UI.setComponentId(this.props.componentId);
   }
 
-  onCounterScreenPress = () => {
-    Navigation.push(this.props.componentId, {
+  public onCounterScreenPress = async () => {
+    await Navigation.push(this.props.componentId, {
       component: {
         name: COUNTER,
       },
     });
   }
 
-  render() {
+  public render(): JSX.Element {
     return (
       <View style={s.host} testID="HOME_SCREEN">
         <View style={s.content}>
