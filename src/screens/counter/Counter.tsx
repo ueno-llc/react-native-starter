@@ -1,16 +1,17 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { observer } from 'mobx-react';
-import { Counter } from '~stores/Counter';
+import { CounterStore } from '~stores/CounterStore';
 import { UI } from '~stores/UI';
 import { IScreen } from '~screens';
 import { Button } from '~components/button/Button';
+
 import * as s from './Counter.css';
 
 @observer
-export class CounterScreen extends React.Component<IScreen> {
+export class Counter extends React.Component<IScreen> {
 
-  static get options(): object {
+  static get options() {
     return {
       topBar: {
         title: {
@@ -20,21 +21,21 @@ export class CounterScreen extends React.Component<IScreen> {
     };
   }
 
-  public componentDidAppear(): void {
+  public componentDidAppear() {
     UI.setComponentId(this.props.componentId);
   }
 
-  public render(): JSX.Element {
+  public render() {
     return (
       <View style={s.host} testID="COUNTER_SCREEN">
         <View style={s.content}>
-          <Text style={s.text}>Counter: {Counter.counter}</Text>
+          <Text style={s.text}>Counter: {CounterStore.counter}</Text>
         </View>
 
         <View style={s.actions}>
           <Button
             title="Decrement"
-            onPress={Counter.decrement}
+            onPress={CounterStore.decrement}
             testID="BUTTON_DECREMENT"
             style={s.actions__button}
           />
@@ -43,7 +44,7 @@ export class CounterScreen extends React.Component<IScreen> {
 
           <Button
             title="Increment"
-            onPress={Counter.increment}
+            onPress={CounterStore.increment}
             testID="BUTTON_INCREMENT"
             style={s.actions__button}
           />

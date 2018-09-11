@@ -1,5 +1,7 @@
 {
-  "presets": ["module:metro-react-native-babel-preset"],
+  "presets": [
+    "module:metro-react-native-babel-preset"
+  ],
   "sourceMaps": "inline",
   "plugins": [
     [
@@ -12,13 +14,22 @@
       "module-resolver", {
         "extensions": [
           ".js",
+          ".json",
           ".ts",
           ".tsx",
           ".css"
         ],
         "root": [
           "./src"
-        ]
+        ],
+        "alias": {
+          "~assets": "./src/assets",
+          "~components": "./src/components",
+          "~screens": "./src/screens",
+          "~stores": "./src/stores",
+          "~utils": "./src/utils",
+          "~config": "./src/config"
+        }
       }
     ]
   ]

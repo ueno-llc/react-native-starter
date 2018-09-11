@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, TouchableNativeFeedback, GestureResponderEvent,
-  Platform, AccessibilityTrait, ViewStyle, TextStyle } from 'react-native';
+import { View, Text, TouchableOpacity, TouchableNativeFeedback, GestureResponderEvent, Platform, AccessibilityTrait, ViewStyle, TextStyle } from 'react-native';
+
 import * as s from './Button.css';
 
 interface IProps {
@@ -13,7 +13,6 @@ interface IProps {
   onPress?(event: GestureResponderEvent): void;
 }
 
-// tslint:disable-next-line variable-name typedef
 const TouchableElement = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
 
 export class Button extends React.PureComponent<IProps> {

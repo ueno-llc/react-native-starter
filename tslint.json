@@ -8,11 +8,25 @@
       "src/config.env.js"
     ]
   },
+  "rulesDirectory": [
+    "node_modules/tslint-origin-ordered-imports-rule/dist"
+  ],
   "rules": {
     "quotemark": [
       true,
       "single",
       "jsx-double"
+    ],
+    "origin-ordered-imports": [
+      true,
+      "one-blank-line"
+    ],
+    "max-line-length": [
+      true,
+      {
+        "limit": 140,
+        "ignore-pattern": "^import |^export {(.*?)}"
+      }
     ],
     "no-implicit-dependencies": [
       true,
@@ -26,10 +40,15 @@
         "~screens"
       ]
     ],
+    "variable-name": [
+      true,
+      "allow-pascal-case",
+      "ban-keywords",
+      "check-format"
+    ],
+    "typedef": false,
     "no-submodule-imports": false,
-    "typedef": [true, "call-signature", "parameter", "member-variable-declaration"],
     "ordered-imports": false,
-    "variable-name": false,
     "import-name": false,
     "export-name": false,
     "no-relative-imports": false,

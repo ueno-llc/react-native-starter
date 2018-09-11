@@ -7,6 +7,7 @@ import { UI } from '~stores/UI';
 import { IScreen, COUNTER } from '~screens';
 import { codePushConfig } from '~utils/code-push';
 import { Button } from '~components/button/Button';
+
 import * as s from './Home.css';
 
 @CodePush(codePushConfig())

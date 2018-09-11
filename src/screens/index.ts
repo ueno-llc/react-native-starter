@@ -1,6 +1,6 @@
 import { Navigation } from 'react-native-navigation';
-import Home from './home';
-import Counter from './counter';
+import { Home } from '~screens/home/Home';
+import { Counter } from '~screens/counter/Counter';
 
 export interface IScreen {
   componentId: string;

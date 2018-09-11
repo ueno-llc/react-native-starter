@@ -1,7 +1,7 @@
 import { types } from 'mobx-state-tree';
 
-export const Counter = types
-  .model('Counter', {
+export const CounterStore = types
+  .model('CounterStore', {
     counter: 0,
   })
   .actions(self => ({
