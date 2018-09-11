@@ -92,6 +92,9 @@ perl -pi -e "s/\"version\": \".*\",/\"version\": \"1.0.0\",/" package.json
 perl -pi -e "s/export const HOME = 'ueno-rns.Home';/export const HOME = '$SLUG.Home';/" src/screens/index.ts
 perl -pi -e "s/export const COUNTER = 'ueno-rns.Counter';/export const COUNTER = '$SLUG.Counter';/" src/screens/index.ts
 
+# Info.plist
+perl -pi -e "s/React Native Starter/$NAME/" ios/*/Info.plist
+
 # Build environment
 source ./scripts/build-env.sh
 
