@@ -3901,7 +3901,13 @@ hoek@4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.1.tgz#9634502aa12c445dd5a7c5734b572bb8738aacbb"
 
-hoist-non-react-statics@2.x.x, hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
+hoist-non-react-statics@3.x.x:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.0.1.tgz#fba3e7df0210eb9447757ca1a7cb607162f0a364"
+  dependencies:
+    react-is "^16.3.2"
+
+hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
 
@@ -7074,6 +7080,10 @@ react-dom@16.5.0, react-dom@^16.4.1:
     prop-types "^15.6.2"
     schedule "^0.3.0"
 
+react-is@^16.3.2, react-is@^16.5.0:
+  version "16.5.0"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.5.0.tgz#2ec7c192709698591efe13722fab3ef56144ba55"
+
 react-is@^16.4.1:
   version "16.4.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"
@@ -7081,10 +7091,6 @@ react-is@^16.4.1:
 react-is@^16.4.2:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.2.tgz#84891b56c2b6d9efdee577cc83501dfc5ecead88"
-
-react-is@^16.5.0:
-  version "16.5.0"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.5.0.tgz#2ec7c192709698591efe13722fab3ef56144ba55"
 
 react-lazy-load@^3.0.12:
   version "3.0.13"
@@ -7144,11 +7150,11 @@ react-native-navigation@*:
   dependencies:
     lodash "4.x.x"
 
-react-native-navigation@2.0.2501:
-  version "2.0.2501"
-  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.0.2501.tgz#3ddf12a74fea0b9db9749bf31b6beb2315edb25f"
+react-native-navigation@2.0.2542:
+  version "2.0.2542"
+  resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-2.0.2542.tgz#a3b2378f53d1ee4910ffcd99d2c9932f3c985c72"
   dependencies:
-    hoist-non-react-statics "2.x.x"
+    hoist-non-react-statics "3.x.x"
     lodash "4.x.x"
     prop-types "15.x.x"
     react-lifecycles-compat "2.0.0"
