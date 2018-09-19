@@ -1,6 +1,6 @@
-![Build status](https://travis-ci.org/ueno-llc/react-native-starter.svg?branch=master) ![Dependencies](https://david-dm.org/ueno-llc/react-native-starter/status.svg) ![devDependencies](https://david-dm.org/ueno-llc/react-native-starter/dev-status.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/ueno-llc/react-native-starter.svg)](https://greenkeeper.io/)
+![Build status](https://travis-ci.org/ueno-llc/react-native-starter.svg?branch=master) ![Dependencies](https://david-dm.org/ueno-llc/react-native-starter/status.svg) ![devDependencies](https://david-dm.org/ueno-llc/react-native-starter/dev-status.svg)
 
-![Ueno](/docs/_ueno-loves-react.png)
+![Ueno](/docs/images/_ueno-loves-react.png)
 
 # React Native Starter
 
@@ -20,13 +20,26 @@ Super-Quick Start
 
 ```bash
 git clone -b master git@github.com:ueno-llc/react-native-starter.git my-app
+
+# or for latest version
+
+git clone git@github.com:ueno-llc/react-native-starter.git my-app
+
 cd my-app
 yarn
-yarn rename "My New App" com.ueno.mynewapp
+yarn rename "MyNewApp" com.ueno.mynewapp
+yarn start
 react-native run-ios
 ```
 
 [Detailed guide here](https://ueno-llc.github.io/react-native-starter/#/GETTING_STARTED)
+
+Alternatively you can use the `ueno-cli`:
+
+```bash
+npm install -g ueno-cli
+ueno-cli react-native init "MyNewApp" --bundleId "com.ueno.mynewapp" --next
+```
 
 ## Documentation
 

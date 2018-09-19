@@ -18,6 +18,7 @@ if [ ! -f ./node_modules/.bin/react-native-rename ]; then
   exit 1
 fi
 
+TITLE=$1
 NAME=$(echo ${1//[[:blank:]]/} | iconv -t ascii//TRANSLIT | sed -E 's/[^a-zA-Z0-9-]+//g')
 ID=$2
 REST=$3
@@ -64,18 +65,11 @@ FILES=(
   "android/app/src/main/AndroidManifest.xml"
   "android/app/src/androidTest/java/$IDPATH/DetoxTest.java"
   "android/app/proguard-rules.pro"
-  "android/fastlane/Appfile"
-  "ios/fastlane/Appfile"
   "ios/fastlane/Fastfile"
-  "ios/fastlane/Deliverfile"
-  "ios/fastlane/Matchfile"
   "ios/*/Info.plist"
   "ios/*.xcodeproj/project.pbxproj"
   "ios/*.xcodeproj/xcshareddata/xcschemes/*.xcscheme"
-  "scripts/gen-secrets.sh"
   "scripts/build-env.sh"
-  ".travis/gen-secrets.sh"
-  ".travis/build.sh"
   "package.json"
 )
 
@@ -94,6 +88,13 @@ done
 perl -pi -e "s/\"name\": \"react-native-starter\",/\"name\"\: \"$SLUG\",/" package.json
 perl -pi -e "s/\"version\": \".*\",/\"version\": \"1.0.0\",/" package.json
 
+# src/screens/index.ts
+perl -pi -e "s/export const HOME = 'ueno-rns.Home';/export const HOME = '$SLUG.Home';/" src/screens/index.ts
+perl -pi -e "s/export const COUNTER = 'ueno-rns.Counter';/export const COUNTER = '$SLUG.Counter';/" src/screens/index.ts
+
+# Info.plist
+perl -pi -e "s/React Native Starter/$NAME/" ios/*/Info.plist
+
 # Build environment
 source ./scripts/build-env.sh
 
@@ -103,6 +104,24 @@ rm -rf ./ios/{Pods,Podfile.lock}
 cd ios
 pod install
 cd -
+
+# Cleanup
+CLEANUP=(
+  "./CHANGELOG.md"
+  "./README.md"
+  "./CODE_OF_CONDUCT.md"
+  "./LICENSE.md"
+  "./docs"
+  "./.github"
+)
+
+for file in "${CLEANUP[@]}"
+do
+  rm -r "$file"
+done
+
+echo "echo 'Rename script has already been executed.'" > ./scripts/rename.sh
+echo "# $TITLE\nSee [react-native-starter docs](https://ueno-llc.github.io/react-native-starter/)\n\n## Development\n\`\`\`bash\nyarn start & react-native run-ios\n\`\`\`" > ./README.md
 
 if [[ $REST != *"--no-git"* ]]; then
   git add .

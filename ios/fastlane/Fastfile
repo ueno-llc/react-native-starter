@@ -1,3 +1,5 @@
+fastlane_require 'dotenv'
+
 fastlane_version "2.69.2"
 
 default_platform :ios
@@ -11,7 +13,7 @@ platform :ios do
   before_all do
   end
 
-  desc "Build"
+  desc "Build Debug"
   lane :build do
     xcodebuild(
       workspace: "./#{project_name}.xcworkspace",
@@ -42,10 +44,14 @@ platform :ios do
     increment_build_number(
       xcodeproj: path
     )
+    increment_version_number(
+      xcodeproj: path,
+      bump_type: "patch"
+    )
   end
 
   desc "Tag current version and push to GitHub"
-  lane :tag_version do |options|
+  lane :tag_version do
     version = get_version_number(
       xcodeproj: path,
       target: project_name
@@ -58,7 +64,7 @@ platform :ios do
     commit_version_bump(
       force: true,
       xcodeproj: path,
-      message: "Version #{version} (build #{build}) [#{options[:ci]}-ios] [skip ci]"
+      message: "Version #{version} (build #{build}) [release ios] [skip ci]"
     )
     add_git_tag(
       tag: "v#{version}-#{build}-ios"
@@ -68,51 +74,31 @@ platform :ios do
       tags: true,
       force: true
     )
-    slack(
-      message: "Successfully uploaded #{version} (build #{build}) to TestFlight"
-    )
   end
 
-  desc "Bitrise build to TestFlight"
-  lane :bitrise do
-    if ENV["BUILD_IOS"] != "1"
-      UI.important 'Skipping build'
-      next
-    end
-    match(
-      type: "appstore",
-      readonly: true
+  desc "Upload latest Debug Symbols to Sentry"
+  lane :upload_dsyms do
+    download_dsyms
+    sentry_upload_dsym(
+      auth_token: ENV['SENTRY_AUTH_TOKEN'],
+      org_slug: ENV['SENTRY_ORG'],
+      project_slug: ENV['SENTRY_PROJECT']
     )
-    bump_version
-    build_release
-    testflight(
-      skip_waiting_for_build_processing: true
-    )
-    tag_version(ci: "bitrise")
+    sh "rm -rf *.dSYM.zip"
   end
 
-  desc "Travis build to TestFlight"
-  lane :travis do
-    create_keychain(
-      name: "ios-build.keychain-db",
-      password: ENV["MATCH_PASSWORD"],
-      default_keychain: true,
-      unlock: true,
-      timeout: 3600,
-      add_to_search_list: true
+  desc "Upload current Debug Symbol to Sentry"
+  lane :upload_current_dsym do
+    download_dsyms(
+      version: get_version_number(xcodeproj: path, target: project_name),
+      build_number: get_build_number(xcodeproj: path)
     )
-    match(
-      type: "appstore",
-      keychain_name: "ios-build.keychain-db",
-      keychain_password: ENV["MATCH_PASSWORD"],
-      readonly: true
+    sentry_upload_dsym(
+      auth_token: ENV['SENTRY_AUTH_TOKEN'],
+      org_slug: ENV['SENTRY_ORG'],
+      project_slug: ENV['SENTRY_PROJECT']
     )
-    bump_version
-    build_release
-    testflight(
-      skip_waiting_for_build_processing: true
-    )
-    tag_version(ci: "travis")
+    sh "rm -rf *.dSYM.zip"
   end
 
   after_all do |lane|

@@ -2,7 +2,7 @@
 
 Keep all your environment variables in `.env` file in the root of your project.
 
-If you don't have any, it will be created by copying the `.env_example`.
+If you don't have any, it will be created by copying the `.env.public`.
 
 ### Using env
 
@@ -51,4 +51,4 @@ yarn build:env
 
 Do not store sensitive values in your .env configuration. Things like passphrases, secret tokens or other things that you don't want to expose.
 
-To ensure safety you can keep a list of **safe** environment variables in `.env_example`, they will be used to populate the build on CI servers.
+To ensure safety you can keep a list of **safe** environment variables in `.env.public`, they will be used to populate the build on CI servers.

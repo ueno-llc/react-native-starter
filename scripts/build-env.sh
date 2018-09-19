@@ -18,26 +18,26 @@ EOL
 )
 
 if [ ! -f $GOOGLESERVICE_INFO_FILE ]; then
-  echo "Warning: No GoogleService-Info.plist file in ios app directory... Added placeholder for now!"
+  echo "[Ueno RNS] Warning: No GoogleService-Info.plist file in ios app directory... Added placeholder for now!"
   echo $GOOGLESERVICE_INFO_CONTENT > $GOOGLESERVICE_INFO_FILE
 fi
 
 if [ ! -f $GOOGLESERVICE_JSON_FILE ]; then
-  echo "Warning: No google-services.json file in android app directory... Added placeholder for now!"
+  echo "[Ueno RNS] Warning: No google-services.json file in android app directory... Added placeholder for now!"
   echo $GOOGLESERVICE_JSON_CONTENT > $GOOGLESERVICE_JSON_FILE
 fi
 
 if [ ! -f ".env" ]; then
-  echo "Warning: No .env file found... Copied .env_example to .env!"
-  cp .env_example .env
+  echo "[Ueno RNS] Warning: No .env file found... Copied .env.public to .env!"
+  cp .env.public .env
 fi
 
 if [ ! -z "$ENVFILE" ]; then
   TARGET_ENV=$ENVFILE
 fi
 
-echo "> Building environment config"
-echo "Using $TARGET_ENV"
+echo "[Ueno RNS] Building environment config"
+echo "[Ueno RNS] Using $TARGET_ENV"
 
 if [ ! -z "$SYMROOT" ]; then
   mkdir -p $SYMROOT
@@ -55,8 +55,8 @@ fi
 
 # Generate dynamic environment for development
 JSON="export default {$(cat $TARGET_ENV | egrep "^[A-Za-z]+" | sed 's/\"/\\\"/g' | sed -n 's|\(.*\)=\(.*\)$|"\1":"\2",|p' | sed 's|\\\"||g') \"generatedAt\": \"$(date '+%FT%T')\" }"
-echo "Generating ./src/config.env.js"
+echo "[Ueno RNS] Generating ./src/config.env.js"
 echo $JSON > ./src/config.env.js
 
 # Build config
-echo "Config built successfully"
+echo "[Ueno RNS] Config built successfully"

@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 2.0.0 - 2018-07-18
+
+WIP - New api
+
 ## 1.0.2 - 2018-02-24
 
 Big release.
