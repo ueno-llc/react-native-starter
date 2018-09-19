@@ -75,6 +75,7 @@
     "react-native-typescript-transformer": "1.2.10",
     "react-native-ueno-css-modules": "1.0.12",
     "react-test-renderer": "16.5.2",
+    "schedule": "0.4.0",
     "stylus": "0.54.5",
     "ts-jest": "23.10.0",
     "tslib": "1.9.3",
