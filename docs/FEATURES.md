@@ -1,12 +1,6 @@
 # Features
 
-This Starter Kit is packed with great features.
-
-## TypeScript
-
-We support TypeScript out of the box. Checkout `./components/button` for example how to write using TypeScript.
-
-You can disable TypeScript support by removing `./rn-cli.config.js`.
+ReactNativeStarterKit is packed with great features:
 
 ## Dependencies
 
@@ -16,20 +10,22 @@ These dependencies are shipped by default. They are strictly opinionated by Ueno
 
  - [react-native-navigation](#react-native-navigation)
  - [react-native-config](#react-native-config)
- - [react-native-blur](#react-native-ui-lib)
- - [code-push](#code-push)
- - [sentry](#sentry)
- - [firebase](#firebase)
+ - [react-native-code-push](#code-push)
+ - [react-native-sentry](#sentry)
+ - [react-native-firebase](#firebase)
 
 ## Other modules
 
+ - [typescript](#typescript)
  - [mobx](#mobx)
  - [mobx-react](#mobx)
- - [mobx-persist](#mobx)
+ - [mobx-state-tree](#mobx)
  - [lodash](#lodash)
- - [core-decorators](#core-decorators)
  - [date-fns](#date-fns)
- - [react-native-ui-lib](#react-native-ui-lib)
+
+_____________
+
+## Native modules
 
 ### react-native-navigation
 
@@ -39,25 +35,37 @@ This library is the heart of the app. It provides excellent native navigation, w
 
 Handles all environment variables and passes them into the build for future use. We provided a little helper utility to hot reload your `.env` file. [Read more](/ENV.md)
 
-### code-push
+### react-native-code-push
 
 Distributing an react-native app without code-push is like uploading complete WordPress website via FTP. On a 56k connection. Every time you make a change.
 
 You can update your app remotely, all javascript changes, images and other bundled files, over-the-air.
 
-### sentry
+### react-native-sentry
 
 Catching errors made easy.
 
 We add sentry from the start to make sure we catch any errors that may occour when Apple is reviewing the app for the first time.
 
-### firebase
+### react-native-firebase
 
 Everything you need to make an app. Database, analaytics, push notifications, etc. All in one place.
 
 Only downside is that it can get pretty heavy when using all the features.
 
+_____________
+
+## Other modules
+
+### typescript
+
+TODO
+
 ### mobx
+
+We use mobx to manage our state. Its awesome.
+
+### mobx-state-tree
 
 We use mobx to manage our state. Its awesome.
 
@@ -68,13 +76,3 @@ This is pretty much essential tool to manipulate arrays and objects.
 ### date-fns
 
 We like date-fns better than momentjs because it is modular.
-
-### core-decorators
-
-Mostly for autobind, but also for other things like create our own decorators.
-
-### react-native-ui-lib
-
-Wix doing an awesome job of scaffolding great way to deal with UI components. We are currently experimenting with the library and decided to include it in the build.
-
-It also includes the native library `react-native-blur`.
