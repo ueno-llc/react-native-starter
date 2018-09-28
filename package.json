@@ -44,6 +44,7 @@
   "devDependencies": {
     "@babel/core": "7.1.0",
     "@babel/plugin-proposal-decorators": "7.1.0",
+    "@babel/runtime": "7.0.0",
     "@firebase/app-types": "0.3.2",
     "@types/core-decorators": "^0.20.0",
     "@types/date-fns": "^2.6.0",
