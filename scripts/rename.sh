@@ -70,6 +70,7 @@ FILES=(
   "ios/*.xcodeproj/project.pbxproj"
   "ios/*.xcodeproj/xcshareddata/xcschemes/*.xcscheme"
   "scripts/build-env.sh"
+  "appcenter-pre-build.sh"
   "package.json"
 )
 

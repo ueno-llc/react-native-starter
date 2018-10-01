@@ -21,7 +21,7 @@ if [ ! -z "$GOOGLE_SERVICES_JSON" ]; then
 fi
 
 if [ ! -z "$GOOGLE_SERVICES_PLIST" ]; then
-  echo $GOOGLE_SERVICES_PLIST | base64 --decode > "$APPCENTER_SOURCE_DIRECTORY/ios/Hekla/GoogleService-Info.plist"
+  echo $GOOGLE_SERVICES_PLIST | base64 --decode > "$APPCENTER_SOURCE_DIRECTORY/ios/react-native-starter/GoogleService-Info.plist"
 fi
 
 for KEY in $(cat .env.public | egrep "^[A-Za-z]+" | sed 's/\"/\\\"/g' | sed -n 's|\(.*\)=\(.*\)|\1|p'); do
@@ -51,7 +51,7 @@ if [ ! -z "$IOS_CODEPUSH_APPID" ]; then
   else
     prepare_code_push
     echo "[Ueno RNS] Bundling and publishing code-push release..."
-    code-push release-react $IOS_CODEPUSH_APPID ios --outputDir ./build --plistFile ./ios/Hekla/Info.plist --description "$COMMIT_MESSAGE"
+    code-push release-react $IOS_CODEPUSH_APPID ios --outputDir ./build --plistFile ./ios/react-native-starter/Info.plist --description "$COMMIT_MESSAGE"
     echo "[Ueno RNS] Uploading sourcemaps..."
     sentry-cli react-native codepush $IOS_CODEPUSH_APPID ios ./build/CodePush --bundle-id $IOS_BUNDLE_ID
     echo "[Ueno RNS] Shutting down build machine"
