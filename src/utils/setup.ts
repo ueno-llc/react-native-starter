@@ -1,3 +1,14 @@
+// @ts-ignore
+import applyDecoratedDescriptor from '@babel/runtime/helpers/esm/applyDecoratedDescriptor';
+// @ts-ignore
+import initializerDefineProperty from '@babel/runtime/helpers/esm/initializerDefineProperty';
+
+// @ts-ignore
+Object.assign(babelHelpers, {
+  applyDecoratedDescriptor,
+  initializerDefineProperty,
+});
+
 import { Sentry } from 'react-native-sentry';
 import CodePush from 'react-native-code-push';
 import config from 'config';
