@@ -1,12 +1,12 @@
 ![React Native](/images/_ueno-loves-react.png)
 
-# react-native-starter <small>1.0.1</small>
+# react-native-starter <small>2.0.0</small>
 
-The Professional react-native starter kit with everything you'll ever need to deploy rock solid apps.
+The Professional React Native Starter with everything you'll ever need to deploy rock solid apps.
 
-- Opinionated dependencies.
-- Native navigation
-- TypeScript support
+- Opinionated dependencies
+- React Native Navigation 2
+- TypeScript 3
 - Cocoapods
 - Gradle 4
 - Unit and integration tests
@@ -14,4 +14,4 @@ The Professional react-native starter kit with everything you'll ever need to de
 
 **[GitHub](https://github.com/ueno-llc/react-native-starter)**
 
-**[Get Started](/GETTING_STARTED.md)**
+**[Get Started](/INSTALLATION.md)**

@@ -1,14 +1,19 @@
-# Dev Tools
+# Dev tools
 
 ## Debugging
 
 There are many tools you can use to debug you app, but simply using Chrome DevTools usually works great.
 
+If you are using vscode, there is an awesome extension to launch, debug and all the rest within it directly:
+
+- [React Native Tools](https://marketplace.visualstudio.com/items?itemName=vsmobile.vscode-react-native)
+
 Other tools to look at:
 
- - [react-devtools](https://github.com/facebook/react-devtools/tree/master/packages/react-devtools)
- - [react-native-debugger](https://github.com/jhen0409/react-native-debugger)
- - [reactotron](https://github.com/infinitered/reactotron)
+- [mobx-devtools](https://github.com/mobxjs/mobx-devtools)
+- [react-devtools](https://github.com/facebook/react-devtools/tree/master/packages/react-devtools)
+- [react-native-debugger](https://github.com/jhen0409/react-native-debugger)
+- [reactotron](https://github.com/infinitered/reactotron)
 
 ## Network Requests
 

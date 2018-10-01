@@ -5,4 +5,4 @@ You might get issues that only happens when you are in a release environnement. 
 Follow these two guides:
 
 - [iOS](/DEBUGGING_IOS.md)
-- [Android](/docs/DEBUGGING_ANDROID.md)
+- [Android](/DEBUGGING_ANDROID.md)

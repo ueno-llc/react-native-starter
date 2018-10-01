@@ -30,7 +30,7 @@ We have the bundle and assets linked with Xcode, we now have to tell to the nati
 
 Final step, we have to change the build configuration to `release`.
 
-<kbd>alt + clikc</kbd> on your scheme:
+<kbd>alt + click</kbd> on your scheme:
 
 ![xcode-3](https://user-images.githubusercontent.com/937328/46286290-315c3100-c56e-11e8-9e41-361b7f35d697.png)
 
