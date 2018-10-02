@@ -52,7 +52,7 @@ Update `./ios/fastlane/Appfile` with your **team_id** and **apple_id**.
 
 ## Android
 
-## 1. Google Play Developer Account
+### 1. Google Play Developer Account
 
 You will need a Google Play Developer account to publish and distribute Android apps.
 
@@ -60,13 +60,13 @@ You can [register for one here](https://play.google.com/apps/publish/) and then 
 
 Complete your profile and create the app in the Google Play Developer console.
 
-## 2. Download the Google Credentials file
+### 2. Download the Google Credentials file
 
 [Guide to download](https://docs.fastlane.tools/getting-started/android/setup/#collect-your-google-credentials)
 
 Save the file as `./android/playstore.json`
 
-## 3. Create app
+### 3. Create app
 
 Create new application in Google Developer Console.
 
