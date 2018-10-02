@@ -10,7 +10,7 @@ The Professional React Native Starter with everything you'll ever need to deploy
 - Cocoapods
 - Gradle 4
 - Unit and integration tests
-- Continuous delivery support for Travis and Bitrise
+- Continuous delivery support for Microsoft App Center
 
 **[GitHub](https://github.com/ueno-llc/react-native-starter)**
 

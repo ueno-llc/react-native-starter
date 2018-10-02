@@ -10,6 +10,9 @@
     - [react-native-firebase](/FEATURES.md?id=firebase)
 - Guide
   - [Installing dependencies](/INSTALL_DEPENDENCIES.md)
+    - [iOS](/INSTALL_DEPENDENCIES.md?id=ios)
+    - [Android](/INSTALL_DEPENDENCIES.md?id=android)
+    - [Troubleshooting](/INSTALL_DEPENDENCIES.md?id=android)
   - [Environment Variables](/ENV.md)
   - [Testing](/TESTING.md)
   - [Devtools](/DEVTOOLS.md)
@@ -23,3 +26,5 @@
   - [Continous Delivery](/CI.md)
     - [App Center](/CI_APPCENTER.md)
   - [Publishing](/PUBLISHING.md)
+    - [iOS](/PUBLISHING.md?id=ios)
+    - [Android](/PUBLISHING.md?id=android)

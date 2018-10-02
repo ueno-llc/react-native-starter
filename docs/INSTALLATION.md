@@ -1,4 +1,6 @@
-# Setup
+# Installation
+
+## Setup
 
 It is very easy to get started, no environment variables or anything are required to start developing.
 

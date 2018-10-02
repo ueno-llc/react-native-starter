@@ -44,13 +44,15 @@ protected List<ReactPackage> getPackages() {
 );
 ```
 
-!> The dependency I want to use doesn't have a Podspec file
+## Troubleshooting
 
-Don't worry, we got your back. To fix that, we have two utils for you, `yarn podspec` and `yarn patch-package`.
+The dependency I want to use doesn't have a Podspec file, don't worry, we got your back. To fix that, we have two utils for you, `yarn podspec` and `yarn patch-package`.
 
 1. First run `yarn podspec` to create a podspec for your dependency.
 2. Run `pod install` in the `./ios` folder.
 3. Once working, run `yarn patch-package PACKAGE_NAME`.
 4. Commit your changes you're done.
+
+!> We assume with `yarn podspec` that the native files are located into the `ios` folder. It works 80% of the time. If the dependency needs to import files from another folder, follow [this example](https://github.com/Microsoft/react-native-code-push/blob/master/CodePush.podspec#L17-L18).
 
 ?> Example installation [Click here the sample commit](https://github.com/ueno-llc/react-native-starter/commit/6e546ebc20bf1102a82d36e93eef52551d30ffed)

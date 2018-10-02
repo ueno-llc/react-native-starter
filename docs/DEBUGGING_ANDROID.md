@@ -1,3 +1,8 @@
-## Android
+# Android
 
-TODO - Signed apk -> keystore -> password in .env -> adb logcat
+TODO
+
+- Signed apk
+- keystore
+- password in .env
+- adb logcat
