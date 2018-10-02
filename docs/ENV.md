@@ -1,8 +1,6 @@
 # Environment Variables
 
-Keep all your environment variables in `.env` file in the root of your project.
-
-If you don't have any, it will be created by copying the `.env.public`.
+Keep all your environment variables in `.env` file in the root of your project. If you don't have any, it will be created by copying the `.env.public`.
 
 ### Using env
 

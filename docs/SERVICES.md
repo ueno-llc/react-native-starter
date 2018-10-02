@@ -1,6 +1,6 @@
 # Services
 
-We recommend the following services to get good developer experience for your app.
+We recommend the following services to get good developer experience for your app. Follow these guides:
 
 ## Code Push
 
@@ -61,7 +61,6 @@ The ORG and PROJECT can be extracted from the URL on the same page:
 
 sentry.io/<b>&lt;SENTRY_ORG&gt;</b>/<b>&lt;SENTRY_PROJECT&gt;</b>/settings/settings/
 
-
 ```
 SENTRY_AUTH_TOKEN=<your generated auth token>
 SENTRY_DSN=<dsn url>
@@ -81,12 +80,12 @@ But we recommand this for great integration between analytics, user targeting an
 
 ### 2. Create iOS App
 
-Go to Project Settings and create new iOS app. 
+Go to Project Settings and create new iOS app.
 
 Download the **GoogleService-Info.plist** file and save as `./ios/<appName>/GoogleService-Info.plist`.
 
 ### 3. Create Android App
 
-Go to Project Settings and create new Android app. 
+Go to Project Settings and create new Android app.
 
 Download the **google-services.json** file and save as `./android/app/google-services.json`.
