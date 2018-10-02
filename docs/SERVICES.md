@@ -35,6 +35,8 @@ IOS_CODEPUSH_APPID=<appName>-ios
 IOS_CODEPUSH_DEPLOYMENT_KEY=<android production deployment key>
 ```
 
+_____________
+
 ## Sentry
 
 Install the sentry command line utility
@@ -67,6 +69,8 @@ SENTRY_DSN=<dsn url>
 SENTRY_ORG=<your organization slug>
 SENTRY_PROJECT=<your project slug>
 ```
+
+_____________
 
 ## Firebase
 

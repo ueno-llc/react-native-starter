@@ -50,6 +50,8 @@ If you got any issue to launch the app through your device because of some signi
 
 Additionally, you may want to open the console from your device to see in real time what happens on it. In this case go to `Xcode > Window -> Devices and Simulators -> Choose your device > Open Console`.
 
+_____________
+
 ## Android
 
 TODO

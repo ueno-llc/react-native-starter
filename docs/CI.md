@@ -26,6 +26,8 @@ New builds will also be triggered via commit message tags `[BUILD]` for both or 
 
 Every task listed above is conditionally executed based on other task actions. It will for example not deploy a code-push update for android if a native android build was done (and same for iOS).
 
+_____________
+
 ## App Center
 
 This guide will help you set up CI pipeline for App Center.

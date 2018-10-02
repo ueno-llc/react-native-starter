@@ -50,6 +50,8 @@ Update `./ios/fastlane/Appfile` with your **team_id** and **apple_id**.
 
 (Also update `./ios/fastlane/Deliverfile` with the correct **apple_id**)
 
+_____________
+
 ## Android
 
 ### 1. Google Play Developer Account
