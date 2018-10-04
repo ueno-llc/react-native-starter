@@ -1,5 +1,4 @@
 const upstreamTransformer = require('metro/src/reactNativeTransformer');
-const typescriptTransformer = require('react-native-typescript-transformer');
 const uenoCssModulesTransformer = require('react-native-ueno-css-modules/transformer');
 
 module.exports.transform = ({ src, filename, options }) => {
