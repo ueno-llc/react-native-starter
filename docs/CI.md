@@ -8,7 +8,7 @@ Commit changes are detected in `./android` and `./ios` folder that will make nat
 
 New builds will also be triggered via commit message tags `[BUILD]` for both or explicitly `[BUILD IOS]` and `[BUILD ANDROID]`.
 
-### Android ci
+### Android CI
  - run `jest`, `lint` and `detox test` in Android Emulator
  - build a release and upload to Play Store
  - update build number, git commit, tag and push to github
@@ -32,7 +32,7 @@ _____________
 
 This guide will help you set up CI pipeline for App Center.
 
-Pre-requirements: Sentry and
+Pre-requirements: `Sentry`
 
 1. Add New App, for example `"Sample (iOS)"`, select `iOS` for OS and `React Native` for Platform.
 
