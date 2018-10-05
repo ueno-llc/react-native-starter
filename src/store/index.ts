@@ -1,7 +1,8 @@
 import { AsyncStorage } from 'react-native';
 import { types, flow, onSnapshot } from 'mobx-state-tree';
-import { UI } from './models/UI';
 import makeInspectable from 'mobx-devtools-mst';
+
+import { UI } from './models/UI';
 
 export const Store = types.model('Store', {
     UI,

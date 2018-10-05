@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { observer } from 'mobx-react';
+
 import { Store } from 'store';
 import { IReactNavigation } from 'typings';
+
 import Button from 'components/button';
+
 import s from './Counter.css';
 
 @observer

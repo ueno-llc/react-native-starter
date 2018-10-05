@@ -1,6 +1,7 @@
 import { Platform } from 'react-native';
-import { Store } from '../store';
 import CodePush, { CodePushOptions } from 'react-native-code-push';
+
+import { Store } from '../store';
 import config from '../config';
 
 export function codePushConfig(): CodePushOptions {
