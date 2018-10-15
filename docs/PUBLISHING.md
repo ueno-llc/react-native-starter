@@ -105,9 +105,11 @@ Follow these two guides to get the files
 
 **iOS:** https://docs.microsoft.com/en-us/appcenter/build/ios/uploading-signing-files
 
+<img src="./images/_ci_appcenter_sign_app_ios.png" alt="Signing builds for iOS" />
+
 **Android:** https://docs.microsoft.com/en-us/appcenter/build/android/code-signing
 
-<img src="./images/_ci_appcenter_sign_app_ios.png" alt="Create New App in App Center" />
+<img src="./images/_ci_appcenter_sign_app_android.png" alt="Signing builds for Android" />
 
 ### 8. Configure your distribution
 
