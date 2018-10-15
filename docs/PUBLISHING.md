@@ -6,7 +6,19 @@ Publishing is probably the most complicated thing about app development. We have
 
 You will need to first go through the [Sentry's step by step](/SERVICES.md?id=sentry) to get the differents keys.
 
-## iOS or Android
+## Overview
+
+Here is how the CI works:
+
+![CI](https://i.imgur.com/o91jUrQ.png)
+
+The pipeline to continously deliver the app are two separate processes integrated into one. Commit changes are detected in `./android` and `./ios` folder that will make native builds automatically.
+
+New builds will also be triggered via commit message tags `[BUILD]` for both or explicitly `[BUILD IOS]` and `[BUILD ANDROID]`.
+
+?> Every task listed above is conditionally executed based on other task actions. It will for example not deploy a code-push update for android if a native android build was done (and same for iOS).
+
+## Configure iOS or Android
 
 ### 1. Add a new App
 
