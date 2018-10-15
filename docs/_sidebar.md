@@ -9,5 +9,4 @@
   - [Devtools](/DEVTOOLS)
   - [Debugging](/DEBUGGING)
   - [Services](/SERVICES)
-  - [Continous Delivery](/CI)
   - [Publishing](/PUBLISHING)
