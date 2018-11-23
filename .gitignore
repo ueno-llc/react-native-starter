@@ -24,6 +24,7 @@ DerivedData
 project.xcworkspace
 ios/Pods
 ios/Podfile.lock
+ios/Index/
 
 # Android/IntelliJ
 #
