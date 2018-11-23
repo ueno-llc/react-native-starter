@@ -1,4 +1,4 @@
-package com.ueno.reactnativestarter;
+package com.daviswhitehead.foundation;
 
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;

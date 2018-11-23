@@ -4,7 +4,7 @@ fastlane_version "2.69.2"
 
 default_platform :ios
 
-project_name = "react-native-starter"
+project_name = "foundation"
 scheme = project_name
 path = "./#{project_name}.xcodeproj"
 

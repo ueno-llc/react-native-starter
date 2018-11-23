@@ -106,11 +106,11 @@ android {
     buildToolsVersion '27.0.3'
 
     defaultConfig {
-        applicationId "com.ueno.reactnativestarter"
+        applicationId "com.daviswhitehead.foundation"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 26
-        versionName "2.0.0"
+        versionCode 1
+        versionName "1.0.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }

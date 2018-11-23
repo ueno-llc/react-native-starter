@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C9BC405710B4376ACBA4D1F /* libPods-react-native-starter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1E4EB30ABEFC190EFE7436 /* libPods-react-native-starter.a */; };
+		1C9BC405710B4376ACBA4D1F /* libPods-foundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1E4EB30ABEFC190EFE7436 /* libPods-foundation.a */; };
 		E33FD0F41FFBDBD900EB627A /* RNUeno.m in Sources */ = {isa = PBXBuildFile; fileRef = E33FD0F31FFBDBD900EB627A /* RNUeno.m */; };
 		E3A2B8A61FEACEE70099C8F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A2B89F1FEACEE70099C8F8 /* AppDelegate.m */; };
 		E3A2B8A71FEACEE70099C8F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A2B8A01FEACEE70099C8F8 /* LaunchScreen.xib */; };
@@ -17,9 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13B07F961A680F5B00A75B9A /* react-native-starter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "react-native-starter.app"; path = "/Volumes/Data/Projects/birkir/react-native-starter/ios/build/Debug-iphoneos/react-native-starter.app"; sourceTree = "<absolute>"; };
-		BE1E4EB30ABEFC190EFE7436 /* libPods-react-native-starter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-react-native-starter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D54EB502811BEE926F2F8941 /* Pods-react-native-starter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-react-native-starter.release.xcconfig"; path = "Pods/Target Support Files/Pods-react-native-starter/Pods-react-native-starter.release.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* foundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "foundation.app"; path = "/Volumes/Data/Projects/birkir/foundation/ios/build/Debug-iphoneos/foundation.app"; sourceTree = "<absolute>"; };
+		BE1E4EB30ABEFC190EFE7436 /* libPods-foundation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-foundation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D54EB502811BEE926F2F8941 /* Pods-foundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-foundation/Pods-foundation.release.xcconfig"; sourceTree = "<group>"; };
 		E33FD0F31FFBDBD900EB627A /* RNUeno.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNUeno.m; sourceTree = "<group>"; };
 		E33FD0F51FFBDBFB00EB627A /* RNUeno.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNUeno.h; sourceTree = "<group>"; };
 		E3A2B89E1FEACEE70099C8F8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -29,7 +29,7 @@
 		E3A2B8A31FEACEE70099C8F8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E3A2B8A41FEACEE70099C8F8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3A2B8A51FEACEE70099C8F8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F978EFCD4B3FC4AAB213917B /* Pods-react-native-starter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-react-native-starter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-react-native-starter/Pods-react-native-starter.debug.xcconfig"; sourceTree = "<group>"; };
+		F978EFCD4B3FC4AAB213917B /* Pods-foundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-foundation/Pods-foundation.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C9BC405710B4376ACBA4D1F /* libPods-react-native-starter.a in Frameworks */,
+				1C9BC405710B4376ACBA4D1F /* libPods-foundation.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,7 +47,7 @@
 		34010D848C7A0E50E09F601F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BE1E4EB30ABEFC190EFE7436 /* libPods-react-native-starter.a */,
+				BE1E4EB30ABEFC190EFE7436 /* libPods-foundation.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -55,8 +55,8 @@
 		8079FCF0BF9CE803AC9EB17F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F978EFCD4B3FC4AAB213917B /* Pods-react-native-starter.debug.xcconfig */,
-				D54EB502811BEE926F2F8941 /* Pods-react-native-starter.release.xcconfig */,
+				F978EFCD4B3FC4AAB213917B /* Pods-foundation.debug.xcconfig */,
+				D54EB502811BEE926F2F8941 /* Pods-foundation.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -64,7 +64,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				E3A2B89D1FEACEE70099C8F8 /* react-native-starter */,
+				E3A2B89D1FEACEE70099C8F8 /* foundation */,
 				8079FCF0BF9CE803AC9EB17F /* Pods */,
 				34010D848C7A0E50E09F601F /* Frameworks */,
 			);
@@ -72,7 +72,7 @@
 			sourceTree = "<group>";
 			tabWidth = 2;
 		};
-		E3A2B89D1FEACEE70099C8F8 /* react-native-starter */ = {
+		E3A2B89D1FEACEE70099C8F8 /* foundation */ = {
 			isa = PBXGroup;
 			children = (
 				E3A2B89E1FEACEE70099C8F8 /* AppDelegate.h */,
@@ -85,7 +85,7 @@
 				E33FD0F31FFBDBD900EB627A /* RNUeno.m */,
 				E33FD0F51FFBDBFB00EB627A /* RNUeno.h */,
 			);
-			path = "react-native-starter";
+			path = "foundation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,9 +108,9 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* react-native-starter */ = {
+		13B07F861A680F5B00A75B9A /* foundation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "react-native-starter" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "foundation" */;
 			buildPhases = (
 				DE29A3C61EA94606C7B30F25 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
@@ -122,9 +122,9 @@
 			);
 			dependencies = (
 			);
-			name = "react-native-starter";
+			name = "foundation";
 			productName = "Hello World";
-			productReference = 13B07F961A680F5B00A75B9A /* react-native-starter.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* foundation.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -147,7 +147,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "react-native-starter" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "foundation" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -161,7 +161,7 @@
 			projectRoot = "";
 			targets = (
 				E3AAD4501F573E3700B7831D /* build-env */,
-				13B07F861A680F5B00A75B9A /* react-native-starter */,
+				13B07F861A680F5B00A75B9A /* foundation */,
 			);
 		};
 /* End PBXProject section */
@@ -205,7 +205,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-react-native-starter-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-foundation-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -241,7 +241,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F978EFCD4B3FC4AAB213917B /* Pods-react-native-starter.debug.xcconfig */;
+			baseConfigurationReference = F978EFCD4B3FC4AAB213917B /* Pods-foundation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -250,7 +250,7 @@
 				CURRENT_PROJECT_VERSION = 18;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "react-native-starter/Info.plist";
+				INFOPLIST_FILE = "foundation/Info.plist";
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/GeneratedInfoPlistDotEnv.h";
 				INFOPLIST_PREPROCESS = YES;
@@ -260,8 +260,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ueno.reactnativestarter;
-				PRODUCT_NAME = "react-native-starter";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daviswhitehead.foundation;
+				PRODUCT_NAME = "foundation";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -270,7 +270,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D54EB502811BEE926F2F8941 /* Pods-react-native-starter.release.xcconfig */;
+			baseConfigurationReference = D54EB502811BEE926F2F8941 /* Pods-foundation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -278,7 +278,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "react-native-starter/Info.plist";
+				INFOPLIST_FILE = "foundation/Info.plist";
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
 				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/GeneratedInfoPlistDotEnv.h";
 				INFOPLIST_PREPROCESS = YES;
@@ -288,8 +288,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ueno.reactnativestarter;
-				PRODUCT_NAME = "react-native-starter";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daviswhitehead.foundation;
+				PRODUCT_NAME = "foundation";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -414,7 +414,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "react-native-starter" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "foundation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -423,7 +423,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "react-native-starter" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "foundation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

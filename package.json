@@ -1,6 +1,6 @@
 {
-  "name": "react-native-starter",
-  "version": "1.0.5",
+  "name": "foundation",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "build:env": "sh ./scripts/build-env.sh",
@@ -114,8 +114,8 @@
     "specs": "e2e",
     "configurations": {
       "ios.sim.release": {
-        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/react-native-starter.app",
-        "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/react-native-starter.xcworkspace -scheme react-native-starter -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -quiet",
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/foundation.app",
+        "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/foundation.xcworkspace -scheme foundation -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -quiet",
         "type": "ios.simulator",
         "name": "iPhone 7 Plus"
       },

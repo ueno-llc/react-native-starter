@@ -71,4 +71,4 @@
 
 # react-native-config
 
--keep class com.ueno.reactnativestarter.BuildConfig { *; }
+-keep class com.daviswhitehead.foundation.BuildConfig { *; }

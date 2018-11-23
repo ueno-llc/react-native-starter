@@ -3,8 +3,8 @@ import { Navigation } from 'react-native-navigation';
 import Home from './home';
 import Counter from './counter';
 
-export const HOME = 'ueno-rns.Home';
-export const COUNTER = 'ueno-rns.Counter';
+export const HOME = 'foundation.Home';
+export const COUNTER = 'foundation.Counter';
 
 export const Screens = new Map();
 

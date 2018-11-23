@@ -1,4 +1,4 @@
-package com.ueno.reactnativestarter;
+package com.daviswhitehead.foundation;
 
 import android.app.Application;
 import android.content.Context;
