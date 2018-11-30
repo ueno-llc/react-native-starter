@@ -51,8 +51,16 @@ Go to Project Settings and create new iOS app.
 
 Download the **GoogleService-Info.plist** file and save as `./ios/<appName>/GoogleService-Info.plist`.
 
+If using App Center, base64 encode this file and add it as an env var `$GOOGLE_SERVICES_PLIST`.
+
+To encode your file you can do: `echo ./ios/<appName>/GoogleService-Info.plist | base64`
+
 ### 3. Create Android App
 
 Go to Project Settings and create new Android app.
 
 Download the **google-services.json** file and save as `./android/app/google-services.json`.
+
+If using App Center, base64 encode this file and add it as an env var `$GOOGLE_SERVICES_JSON`.
+
+To encode your file you can do: `echo ./android/app/google-services.json | base64`
