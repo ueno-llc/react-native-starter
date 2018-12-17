@@ -1,10 +1,8 @@
 # Environment Variables
 
-Keep all your environment variables in `.env` file in the root of your project.
+Keep all your environment variables in `.env` file in the root of your project. If you don't have any, it will be created by copying the `.env.public`.
 
-If you don't have any, it will be created by copying the `.env.public`.
-
-### Using env
+## Usage
 
 JavaScript
 ```js
@@ -37,7 +35,7 @@ NSString *apiUrl = [ReactNativeConfig envFor:@"MY_ENV_VAR"];
 
 More examples on [react-native-config documentation](https://github.com/luggit/react-native-config).
 
-### Hot reloading config
+## Hot reloading config
 
 You can hot-reload config object by running the following command.
 
@@ -47,7 +45,7 @@ yarn build:env
 
 **Note:** Native modules using environment variables will require fresh build.
 
-### Sensitive values
+## Sensitive values
 
 Do not store sensitive values in your .env configuration. Things like passphrases, secret tokens or other things that you don't want to expose.
 

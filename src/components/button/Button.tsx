@@ -13,7 +13,7 @@ interface IProps {
   onPress?(event: GestureResponderEvent): void;
 }
 
-const TouchableElement = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
+const TouchableElement: typeof React.Component = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
 
 export class Button extends React.PureComponent<IProps> {
 

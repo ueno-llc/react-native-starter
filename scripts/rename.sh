@@ -70,6 +70,7 @@ FILES=(
   "ios/*.xcodeproj/project.pbxproj"
   "ios/*.xcodeproj/xcshareddata/xcschemes/*.xcscheme"
   "scripts/build-env.sh"
+  "appcenter-pre-build.sh"
   "package.json"
 )
 
@@ -112,6 +113,7 @@ CLEANUP=(
   "./CODE_OF_CONDUCT.md"
   "./LICENSE.md"
   "./docs"
+  "./.github"
 )
 
 for file in "${CLEANUP[@]}"

@@ -9,9 +9,6 @@ setVar('--hairline-width', StyleSheet.hairlineWidth);
 setTheme('default');
 
 setThemeVars('default', {
-  '--primary-color': '#6ea',
-  // '--primary-color-ios': 'red',
-  // '--primary-color-android': 'blue',
   '--gutter': 16,
 });
 

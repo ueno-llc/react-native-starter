@@ -1,39 +1,6 @@
 # Services
 
-We recommend the following services to get good developer experience for your app.
-
-## Code Push
-
-Install the code-push command line utility
-
-```bash
-npm install -g code-push-cli
-```
-
-### 1. Create code-push account
-
-```bash
-code-push register
-```
-
-### 2. Create code-push app for each platorm
-
-```bash
-code-push app add <appName>-android android react-native
-code-push app add <appName>-ios ios react-native
-```
-
-Write down the deployment keys for future use (you can also retrieve them later).
-
-### 3. Update environment variables in `.env`
-
-```bash
-ANDROID_CODEPUSH_APPID=<appName>-android
-ANDROID_CODEPUSH_DEPLOYMENT_KEY=<android production deployment key>
-
-IOS_CODEPUSH_APPID=<appName>-ios
-IOS_CODEPUSH_DEPLOYMENT_KEY=<android production deployment key>
-```
+We recommend the following services to get good developer experience for your app. Follow these guides:
 
 ## Sentry
 
@@ -55,19 +22,18 @@ Go to https://sentry.io/api/ and create new authorization token.
 
 ### 3. Store environment varibles to `.env`
 
-Find your DSN by going to Project Settings and select **Client keys** from the side menu.
+Find your `DSN` by going to Project Settings and select **Client keys (DSN)** from the side menu.
 
-The ORG and PROJECT can be extracted from the URL on the same page:
-
-sentry.io/<b>&lt;SENTRY_ORG&gt;</b>/<b>&lt;SENTRY_PROJECT&gt;</b>/settings/settings/
-
+The `ORG` and `PROJECT` can be extracted from the `url` on the same page: `sentry.io/settings/**ORG**/**PROJECT**/keys`
 
 ```
-SENTRY_AUTH_TOKEN=<your generated auth token>
-SENTRY_DSN=<dsn url>
-SENTRY_ORG=<your organization slug>
-SENTRY_PROJECT=<your project slug>
+SENTRY_AUTH_TOKEN=
+SENTRY_DSN=
+SENTRY_ORG=
+SENTRY_PROJECT=
 ```
+
+_____________
 
 ## Firebase
 
@@ -81,12 +47,20 @@ But we recommand this for great integration between analytics, user targeting an
 
 ### 2. Create iOS App
 
-Go to Project Settings and create new iOS app. 
+Go to Project Settings and create new iOS app.
 
 Download the **GoogleService-Info.plist** file and save as `./ios/<appName>/GoogleService-Info.plist`.
 
+If using App Center, base64 encode this file and add it as an env var `$GOOGLE_SERVICES_PLIST`.
+
+To encode your file you can do: `echo ./ios/<appName>/GoogleService-Info.plist | base64`
+
 ### 3. Create Android App
 
-Go to Project Settings and create new Android app. 
+Go to Project Settings and create new Android app.
 
 Download the **google-services.json** file and save as `./android/app/google-services.json`.
+
+If using App Center, base64 encode this file and add it as an env var `$GOOGLE_SERVICES_JSON`.
+
+To encode your file you can do: `echo ./android/app/google-services.json | base64`

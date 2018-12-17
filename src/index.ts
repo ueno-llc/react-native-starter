@@ -1,9 +1,11 @@
 // tslint:disable origin-ordered-imports no-import-side-effect
 import './utils/setup';
+
 import { Navigation } from 'react-native-navigation';
+import makeInspectable from 'mobx-devtools-mst';
+
 import { updateTheme } from '~utils/theme';
 import { Screens, startApp } from '~screens';
-import makeInspectable from 'mobx-devtools-mst';
 import { UI } from '~stores/UI';
 import { CounterStore } from '~stores/CounterStore';
 
@@ -18,11 +20,13 @@ if (__DEV__) {
 }
 
 // Start application
-Navigation.events().registerAppLaunchedListener(() => {
-  // Hydrate store and start app
-  Promise.all([
-    UI.hydrate,
-    updateTheme,
-  ])
-    .then(startApp);
-});
+Navigation
+  .events()
+  .registerAppLaunchedListener(() => {
+    // Hydrate store and start app
+    Promise.all([
+      UI.hydrate,
+      updateTheme,
+    ])
+      .then(startApp);
+  });
