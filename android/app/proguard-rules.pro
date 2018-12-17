@@ -72,3 +72,8 @@
 # react-native-config
 
 -keep class com.ueno.reactnativestarter.BuildConfig { *; }
+
+# react-native-firebase
+
+-keep class io.invertase.firebase.** { *; }
+-dontwarn io.invertase.firebase.**
