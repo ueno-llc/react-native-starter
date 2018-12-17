@@ -1,8 +1,13 @@
+[![logo](https://user-images.githubusercontent.com/937328/50091886-7e15e680-0204-11e9-9934-6b46962bed00.png)](https://ueno.co/?utm_source=github&utm_campaign=react-native-starter)
+<br /><br />
+![banner](https://user-images.githubusercontent.com/937328/50092038-e8c72200-0204-11e9-9da7-9a3e42447769.png)
+<br /><br />
+[![logo](https://user-images.githubusercontent.com/937328/50091101-49a12b00-0202-11e9-88ab-7f49a59e1c49.png)](https://ueno.co/contact/?utm_source=github&utm_campaign=react-native-starter)
+<br /><br />
+
+## React Native Starter
+
 ![Dependencies](https://david-dm.org/ueno-llc/react-native-starter/status.svg) ![devDependencies](https://david-dm.org/ueno-llc/react-native-starter/dev-status.svg)
-
-![Ueno](/docs/images/_ueno-loves-react.png)
-
-# React Native Starter
 
 The Professional React Native Starter with everything you'll ever need to deploy rock solid apps.
 
