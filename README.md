@@ -1,8 +1,8 @@
-[![logo](https://user-images.githubusercontent.com/937328/50091886-7e15e680-0204-11e9-9934-6b46962bed00.png)](https://ueno.co/?utm_source=github&utm_campaign=react-native-starter)
+[![logo](https://user-images.githubusercontent.com/937328/50185086-cb7e7a80-030e-11e9-8d95-436082e38de6.png)](https://ueno.co/?utm_source=github&utm_campaign=react-native-starter)
 <br /><br />
-![banner](https://user-images.githubusercontent.com/937328/50092038-e8c72200-0204-11e9-9da7-9a3e42447769.png)
+![banner](https://user-images.githubusercontent.com/937328/50185090-cb7e7a80-030e-11e9-9077-8fcc4e5ac900.png)
 <br /><br />
-[![logo](https://user-images.githubusercontent.com/937328/50091101-49a12b00-0202-11e9-88ab-7f49a59e1c49.png)](https://ueno.co/contact/?utm_source=github&utm_campaign=react-native-starter)
+[![about](https://user-images.githubusercontent.com/937328/50184746-da186200-030d-11e9-8edb-3227e9300524.png)](https://ueno.co/contact/?utm_source=github&utm_campaign=react-native-starter)
 <br /><br />
 
 ## React Native Starter
