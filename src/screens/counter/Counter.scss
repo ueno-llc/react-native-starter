@@ -1,0 +1,30 @@
+.counter {
+  flex: 1;
+
+  padding-horizontal: var(--gutter);
+  padding-vertical: var(--gutter);
+
+  background-color: #fff;
+
+  &__content {
+    margin-bottom: var(--gutter);
+  }
+
+  &__text {
+    font-size: 21px;
+    font-weight: 200;
+  }
+
+  &__actions {
+    flex-direction: row;
+  }
+
+  &__button {
+    flex: 1;
+  }
+
+  &__spacer {
+    width: var(--gutter);
+  }
+}
+

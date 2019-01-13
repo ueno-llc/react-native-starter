@@ -13,15 +13,18 @@
     "test:e2e": "yarn build:e2e:ios && yarn test:e2e:ios",
     "test:e2e:ios": "detox test --configuration ios.sim.release",
     "test:e2e:android": "detox test --configuration android.emu.release",
-    "lint": "yarn tslint",
-    "tslint": "tslint 'src/**/*.ts?(x)'",
+    "lint": "yarn tslint && yarn stylelint",
+    "tslint": "tsc -p . --noEmit --skipLibCheck; tslint -p .",
+    "stylelint": "stylelint 'src/**/*.scss' --syntax scss",
     "precommit": "lint-staged",
-    "prepush": "npm run test",
     "prepare": "patch-package && if [ -f ./scripts/postinstall.sh ]; then sh ./scripts/postinstall.sh; fi"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
       "tslint"
+    ],
+    "*.{scss}": [
+      "stylelint"
     ]
   },
   "dependencies": {
@@ -30,6 +33,7 @@
     "jsc-android": "236355.1.1",
     "lodash": "4.17.11",
     "mobx": "5.8.0",
+    "mobx-devtools-mst": "0.9.18",
     "mobx-react": "5.4.3",
     "mobx-state-tree": "3.9.0",
     "react": "16.6.3",
@@ -39,6 +43,7 @@
     "react-native-firebase": "5.1.1",
     "react-native-navigation": "2.2.5",
     "react-native-sentry": "0.40.2",
+    "react-native-ueno-css-modules": "1.0.12",
     "react-native-version-number": "0.3.5"
   },
   "devDependencies": {
@@ -57,6 +62,8 @@
     "@types/react-native": "0.57.18",
     "@types/react-native-navigation": "2.0.0",
     "@types/react-test-renderer": "16.0.3",
+    "@ueno/stylelint-config": "1.1.0",
+    "@ueno/tslint-config": "1.0.1",
     "babel-jest": "23.6.0",
     "babel-plugin-module-resolver": "3.1.1",
     "detox": "9.1.2",
@@ -66,20 +73,18 @@
     "jest": "23.6.0",
     "lint-staged": "7.3.0",
     "mobx-devtools": "0.9.20",
-    "mobx-devtools-mst": "0.9.18",
+    "node-sass": "4.11.0",
     "patch-package": "5.1.1",
     "postinstall-prepare": "1.0.1",
     "react-dom": "16.6.3",
     "react-native-rename": "2.4.0",
     "react-native-typescript-transformer": "1.2.10",
-    "react-native-ueno-css-modules": "1.0.12",
     "react-test-renderer": "16.6.3",
     "schedule": "0.4.0",
+    "stylelint": "9.9.0",
     "ts-jest": "23.10.5",
     "tslib": "1.9.3",
     "tslint": "5.11.0",
-    "tslint-config-airbnb": "5.11.1",
-    "tslint-react": "3.6.0",
     "typescript": "3.2.2"
   },
   "jest": {

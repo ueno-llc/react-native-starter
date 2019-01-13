@@ -3,7 +3,7 @@ const { DEFAULT } = require('react-native/local-cli/util/Config');
 
 const config = {
   resolver: {
-    sourceExts: ['js', 'json', 'ts', 'tsx', 'css'],
+    sourceExts: ['js', 'json', 'ts', 'tsx', 'css', 'scss'],
   },
   transformer: {
     babelTransformerPath: require.resolve('./scripts/transformer.js'),

@@ -12,9 +12,11 @@
       "module-resolver", {
         "extensions": [
           ".js",
+          ".json",
           ".ts",
           ".tsx",
-          ".css"
+          ".css",
+          ".scss"
         ],
         "root": [
           "./src"

@@ -2,15 +2,15 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { observer } from 'mobx-react';
 
-import { Store } from 'store';
-import { IReactNavigation } from 'typings';
+import { UIStore } from 'stores/UIStore';
+import { CounterStore } from 'stores/CounterStore';
+import { Button } from 'components/button/Button';
+import { IScreen } from 'screens';
 
-import Button from 'components/button';
-
-import s from './Counter.css';
+const s = require('./Counter.scss');
 
 @observer
-export default class Counter extends React.Component<IReactNavigation> {
+export class Counter extends React.Component<IScreen> {
 
   static get options() {
     return {
@@ -23,33 +23,31 @@ export default class Counter extends React.Component<IReactNavigation> {
   }
 
   componentDidAppear() {
-    Store.UI.setComponentId(this.props.componentId);
+    UIStore.setComponentId(this.props.componentId);
   }
 
   render() {
-    const { UI } = Store;
-
     return (
-      <View style={s.host} testID="COUNTER_SCREEN">
-        <View style={s.content}>
-          <Text style={s.text}>Counter: {UI.counter}</Text>
+      <View style={s.counter} testID="COUNTER_SCREEN">
+        <View style={s.counter__content}>
+          <Text style={s.counter__text}>Counter: {CounterStore.counter}</Text>
         </View>
 
-        <View style={s.actions}>
+        <View style={s.counter__actions}>
           <Button
             title="Decrement"
-            onPress={UI.decrement}
+            onPress={CounterStore.decrement}
             testID="BUTTON_DECREMENT"
-            style={s.actions__button}
+            style={s.counter__button}
           />
 
-          <View style={s.actions__spacer} />
+          <View style={s.counter__spacer} />
 
           <Button
             title="Increment"
-            onPress={UI.increment}
+            onPress={CounterStore.increment}
             testID="BUTTON_INCREMENT"
-            style={s.actions__button}
+            style={s.counter__button}
           />
         </View>
       </View>
