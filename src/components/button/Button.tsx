@@ -4,28 +4,19 @@ import { View, Text, TouchableOpacity, TouchableNativeFeedback, GestureResponder
 interface IProps {
   title: string;
   accessibilityLabel?: string;
+  testID?: string;
   disabled?: boolean;
   style?: ViewStyle;
   hasTVPreferredFocus?: boolean;
-  onPress?: (event: GestureResponderEvent) => void;
-  testID?: string;
+  onPress?(event: GestureResponderEvent): void;
 }
 
-const s = require('./Button.css');
+const s = require('./Button.scss');
 
-export default class Button extends React.PureComponent<IProps> {
+export class Button extends React.PureComponent<IProps> {
 
   render() {
-    const {
-      title,
-      accessibilityLabel,
-      disabled,
-      style,
-      onPress,
-      hasTVPreferredFocus,
-      testID,
-    } = this.props;
-
+    const { title, accessibilityLabel, disabled, style, onPress, hasTVPreferredFocus, testID } = this.props;
     const buttonStyles = [s.button];
     const textStyles = [s.text];
     const accessibilityTraits: AccessibilityTrait[] = ['button'];

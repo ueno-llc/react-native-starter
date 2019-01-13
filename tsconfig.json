@@ -1,25 +1,6 @@
 {
+  "extends": "./node_modules/@ueno/tslint-config/tsconfig-react-native",
   "compilerOptions": {
-    "target": "es2015",
-    "module": "commonjs",
-    "jsx": "react",
-    "noEmit": true,
-    "moduleResolution": "node",
-    "strictPropertyInitialization": false,
-    "skipLibCheck": true,
-    "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "baseUrl": "./src",
-    "noUnusedLocals": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "noUnusedParameters": true,
-    "lib": [
-      "es2017",
-      "dom"
-    ]
-  },
-  "exclude": [
-    "node_modules"
-  ]
+    "baseUrl": "./src"
+  }
 }

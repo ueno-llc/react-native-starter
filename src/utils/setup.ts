@@ -1,7 +1,7 @@
 import { Sentry } from 'react-native-sentry';
 import CodePush from 'react-native-code-push';
 
-import config from 'config';
+import { config } from 'config';
 
 if (!__DEV__ && config.SENTRY_DSN) {
 

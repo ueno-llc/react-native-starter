@@ -1,13 +1,13 @@
 import { NativeModules } from 'react-native';
-import config from 'react-native-config';
+import Config from 'react-native-config';
 
 const env = require('./config.env.js').default;
 
 // Combine native config and generated JS config
-export default {
-  ...config,
+export const config = {
+  ...Config,
   ...env,
   ...NativeModules.RNUeno,
-  __native: config,
+  __native: Config,
   __js: env,
 };

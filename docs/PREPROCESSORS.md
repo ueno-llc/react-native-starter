@@ -1,16 +1,15 @@
 # CSS Preprocessors
 
-By default, React Native Starter works only with `.css`. It's already a really good feature to be able to write CSS and behind the scene compile it to React Native Stylesheet. But you can use one of theses preprocessors if you want.
+At Ueno. we love using `SCSS`, that's why it's our default choice for both web and mobile projects. Even though you can use another preprocessor if you want.
 
-!> One important thing to remind. You have to use `const s = require('./Style.css');` to make it works. Using `import` will break the hot/live-reload and you won't be able to use the variables defined in `theme.ts`.
+!> One important thing. You have to use `const s = require('./Style.scss');` to make the hot/live-reload and css variables work.
 
-## SCSS
+## CSS
 
-If you want to do use SCSS, like Ueno, because we are cool:
+If you want to do use CSS:
 
-1. Open `metro.config.js` and add to `sourceExts`'s array: `.scss`
-2. Then you need sass `yarn add node-sass -ED`
-3. You can now do `const s = require('./Style.scss');`
+1. Remove `node-sass` from `package.json`
+2. Import file like `import s from './Style.scss';`
 
 ## Stylus
 

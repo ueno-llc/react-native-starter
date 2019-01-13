@@ -1,21 +1,19 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { observer } from 'mobx-react';
 import { Navigation } from 'react-native-navigation';
 import CodePush from 'react-native-code-push';
 
-import { Store } from 'store';
-import { COUNTER } from 'screens';
-import { IReactNavigation } from 'typings';
+import { UIStore } from 'stores/UIStore';
 import { codePushConfig } from 'utils/code-push';
+import { COUNTER, IScreen } from 'screens';
+import { Button } from 'components/button/Button';
 
-import Button from 'components/button';
-
-import s from './Home.css';
+const s = require('./Home.scss');
 
 @CodePush(codePushConfig())
 @observer
-export default class Home extends React.Component<IReactNavigation> {
+export class Home extends React.Component<IScreen> {
 
   static get options() {
     return {
@@ -28,7 +26,7 @@ export default class Home extends React.Component<IReactNavigation> {
   }
 
   componentDidAppear() {
-    Store.UI.setComponentId(this.props.componentId);
+    UIStore.setComponentId(this.props.componentId);
   }
 
   onCounterScreenPress = () => {
@@ -43,6 +41,12 @@ export default class Home extends React.Component<IReactNavigation> {
     return (
       <View style={s.host} testID="HOME_SCREEN">
         <View style={s.content}>
+          <Image
+            style={s.logo}
+            source={require('assets/images/logo.png')}
+            resizeMode="contain"
+          />
+
           <Text style={s.text}>Welcome Home</Text>
         </View>
 
