@@ -1,6 +1,39 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 2.1.0 - 2019-01-14
+
+## Added
+
+- Add default support for `SCSS`
+- Add stylelint for `SCSS`
+- Script to create podspec file for library without it `yarn podspec`
+- Add `@ueno/tslint-config` to the repository
+
+**Android sepcific**
+
+- Add `google()` as default provider
+
+## Changed
+
+- Bump `react-native` to `0.57.8`
+- Bump `react` to `16.7.0`
+- Bump `react-native-firebase` to `5.2.0`
+- Bump `react-native-navigation` to `2.5.2`
+- More documented documentation
+- Fix `appcenter-pre-build` script
+- No more default export
+
+**Android specific**
+
+- Bump `android-jsc` to `r236355`
+- Bump to `com.google.android.gms:play-services-base:16.0.1`
+- Bump to `com.google.gms:google-services:4.0.1`
+
+## Removed
+
+- Some unused packages
+
 ## 2.0.0 - 2018-07-18
 
 WIP - New api
@@ -43,6 +76,7 @@ Big release.
 - patch-package: 5.0.0 → **5.1.1**
 
 ## 1.0.1 - 2018-02-10
+
 - Now using patch-package to modify npm packages automatically.
 - Docsify for automatic gh-pages generation
 
