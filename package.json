@@ -1,6 +1,6 @@
 {
   "name": "react-native-starter",
-  "version": "1.0.5",
+  "version": "2.1.0",
   "private": true,
   "scripts": {
     "build:env": "sh ./scripts/build-env.sh",
