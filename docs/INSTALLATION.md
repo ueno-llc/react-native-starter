@@ -18,7 +18,7 @@ git remote add origin {your own git repository}
 yarn install
 
 # Rename the application, Cocoapods will be installed automatically
-yarn rename "My New App" com.ueno.mynewapp
+yarn rename "My New App" co.ueno.mynewapp
 
 # Yarn start
 yarn start
@@ -27,7 +27,15 @@ yarn start
 react-native run-ios
 ```
 
-?> When choosing your app name `My New App`, you can only use alphanumeric characters and spaces. The bundle indentifier: `com.ueno.mynewapp` is usually the company's reversed domain name + product name.
+Alternatively you can use `create-ueno-app`:
+
+```bash
+yarn create ueno-app native my-new-app co.ueno.mynewapp
+```
+
+More details available [here](https://github.com/ueno-llc/create-ueno-app#native)
+
+?> When choosing your app name `My New App`, you can only use alphanumeric characters and spaces. The bundle indentifier: `co.ueno.mynewapp` is usually the company's reversed domain name + product name.
 
 !> Don't forget to run the `yarn rename` command otherwise the React Native Starter won't be fully set up.
 

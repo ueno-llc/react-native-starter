@@ -38,12 +38,13 @@ react-native run-(ios/android)
 
 [Detailed guide here](https://ueno-llc.github.io/react-native-starter/#/INSTALLATION)
 
-Alternatively you can use the `ueno-cli`:
+Alternatively you can use `create-ueno-app`:
 
 ```bash
-npm install -g ueno-cli
-ueno-cli react-native init "MyNewApp" --bundleId "com.ueno.mynewapp" --next
+yarn create ueno-app native my-new-app co.ueno.mynewapp
 ```
+
+More details available [here](https://github.com/ueno-llc/create-ueno-app#native)
 
 ## Documentation
 
