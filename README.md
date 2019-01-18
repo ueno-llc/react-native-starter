@@ -24,12 +24,9 @@ The Professional React Native Starter with everything you'll ever need to deploy
 Super-Quick Start
 
 ```bash
-git clone -b master git@github.com:ueno-llc/react-native-starter.git my-app
+git clone git@github.com:ueno-llc/react-native-starter.git my-new-app
 
-# or for latest version
-git clone git@github.com:ueno-llc/react-native-starter.git my-app
-
-cd my-app
+cd my-new-app
 yarn
 yarn rename "MyNewApp" com.ueno.mynewapp
 yarn start

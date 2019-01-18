@@ -8,17 +8,17 @@ It is very easy to get started, no environment variables or anything are require
 # Clone the repository to your own folder
 git clone git@github.com:ueno-llc/react-native-starter.git my-new-app
 
-# Especially important for Ueno employees!
-git remote remove origin
-
-# Add your own git repository (optional)
-git remote add origin {your own git repository}
+# Move to the new folder
+cd my-new-app
 
 # Install dependencies
 yarn install
 
 # Rename the application, Cocoapods will be installed automatically
 yarn rename "My New App" co.ueno.mynewapp
+
+# Link the folder to your repository
+git remote add origin git@github.com:username/new_repo
 
 # Yarn start
 yarn start
