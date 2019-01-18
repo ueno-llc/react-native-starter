@@ -48,6 +48,7 @@ echo ""
 echo "  Id: $ID"
 echo "  Name: $NAME"
 echo "  Slug: $SLUG"
+echo ""
 
 # Reset versions
 cat android/app/build.gradle | sed -e 's/versionCode .*/versionCode 1/' | sed -e 's/versionName ".*"/versionName "1.0.0"/' > android/app/_build.gradle && mv android/app/_build.gradle android/app/build.gradle
@@ -57,6 +58,7 @@ RENAME=$(./node_modules/.bin/react-native-rename "$NAME" -b "$ID")
 if [[ $RENAME = *"not a valid name"* ]]; then
   echo ""
   echo $RENAME
+  echo ""
   exit 1
 fi
 
@@ -82,16 +84,11 @@ FILES=(
 for file in "${FILES[@]}"
 do
   if [ -f $file ]; then
-    echo ""
     echo "> Patching $file"
-    echo ""
-
     perl -pi -e "s/com.ueno.reactnativestarter/$ID/g" $file
     perl -pi -e "s/react-native-starter/$NAME/g" $file
   else
-    echo ""
     echo "$file does not match any file(s)."
-    echo ""
   fi
 done
 
@@ -142,6 +139,7 @@ if [[ $REST != *"--no-git"* ]]; then
   git merge feature/rename
   git branch -D feature/rename
 
+  echo ""
   echo "> Successfully renamed app"
 
   rm -rf ./.git
