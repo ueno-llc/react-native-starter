@@ -110,7 +110,6 @@ cd -
 CLEANUP=(
   "./CHANGELOG.md"
   "./README.md"
-  "./CODE_OF_CONDUCT.md"
   "./LICENSE.md"
   "./docs"
   "./.github"
