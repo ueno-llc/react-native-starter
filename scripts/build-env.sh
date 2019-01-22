@@ -72,7 +72,7 @@ if [ ! -f $ENV_PATH ]; then
 fi
 
 if [ ! -z "$ENVFILE" ]; then
-  TARGET_ENV=$ENVFILE
+  ENV_PATH=$ENVFILE
 fi
 
 echo "[Ueno RNS] Building environment config"
