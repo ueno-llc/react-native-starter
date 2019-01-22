@@ -143,4 +143,8 @@ if [[ $REST != *"--no-git"* ]]; then
   echo "> Successfully renamed app"
 
   rm -rf ./.git
+
+  git init
+  git add .
+  git commit -m "Initial commit for React Native Starter" --no-verify
 fi
