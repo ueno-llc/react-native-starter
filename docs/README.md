@@ -2,7 +2,7 @@
 <br /><br />
 ![banner](https://user-images.githubusercontent.com/937328/50185090-cb7e7a80-030e-11e9-9077-8fcc4e5ac900.png)
 <br /><br />
-[![about](https://user-images.githubusercontent.com/937328/50184746-da186200-030d-11e9-8edb-3227e9300524.png)](https://ueno.co/contact/?utm_source=github&utm_campaign=react-native-starter)
+[![about](https://user-images.githubusercontent.com/937328/51540139-999c8e80-1e4d-11e9-866d-284657a34744.png)](https://ueno.co/contact/?utm_source=github&utm_campaign=react-native-starter)
 
 ## React Native Starter
 
