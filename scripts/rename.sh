@@ -146,5 +146,5 @@ if [[ $REST != *"--no-git"* ]]; then
 
   git init
   git add .
-  git commit -m "Initial commit for React Native Starter" --no-verify
+  git commit -m "Init Create Ueno App with React Native Starter" --no-verify
 fi
