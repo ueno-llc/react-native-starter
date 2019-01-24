@@ -2,7 +2,7 @@
 <br /><br />
 ![banner](https://user-images.githubusercontent.com/937328/50185090-cb7e7a80-030e-11e9-9077-8fcc4e5ac900.png)
 <br /><br />
-[![about](https://user-images.githubusercontent.com/937328/50184746-da186200-030d-11e9-8edb-3227e9300524.png)](https://ueno.co/contact/?utm_source=github&utm_campaign=react-native-starter)
+[![about](https://user-images.githubusercontent.com/937328/51540139-999c8e80-1e4d-11e9-866d-284657a34744.png)](https://ueno.co/contact/?utm_source=github&utm_campaign=react-native-starter)
 <br /><br />
 
 ## React Native Starter
@@ -25,7 +25,9 @@ Super-Quick Start
 
 ```bash
 git clone git@github.com:ueno-llc/react-native-starter.git my-new-app
+```
 
+```bash
 cd my-new-app
 yarn
 yarn rename "MyNewApp" com.ueno.mynewapp
@@ -33,19 +35,15 @@ yarn start
 react-native run-(ios/android)
 ```
 
-[Detailed guide here](https://ueno-llc.github.io/react-native-starter/#/INSTALLATION)
-
-Alternatively you can use `create-ueno-app`:
+Alternatively you can use [`create-ueno-app`](https://github.com/ueno-llc/create-ueno-app#native):
 
 ```bash
 yarn create ueno-app native my-new-app co.ueno.mynewapp
 ```
 
-More details available [here](https://github.com/ueno-llc/create-ueno-app#native)
-
 ## Documentation
 
-The **[Documentation is available here](https://ueno-llc.github.io/react-native-starter)** on GitHub Pages.
+The **[documentation is available here](https://ueno-llc.github.io/react-native-starter)** on GitHub Pages.
 
 We also recommend the following reading material:
  - [React Native](https://facebook.github.io/react-native/)
