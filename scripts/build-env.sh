@@ -6,11 +6,6 @@ ENV_PATH=".env"
 RNC_PATH="./node_modules/react-native-config/ios"
 GOOGLESERVICE_JSON_PATH="./android/app/google-services.json"
 GOOGLESERVICE_INFO_PATH="./ios/react-native-starter/GoogleService-Info.plist"
-ANDROID_DIRECTORY="false"
-
-if [[ $PWD == *"android"* ]]; then
-  ANDROID_DIRECTORY="true"
-fi
 
 GOOGLESERVICE_JSON_CONTENT='{\n
 \t"project_info": {\n
@@ -44,13 +39,6 @@ GOOGLESERVICE_INFO_CONTENT='<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE pl
 \t<dict>\n
 \t</dict>\n</plist>'
 
-if [ $ANDROID_DIRECTORY = "true" ]; then
-  ENV_PATH="../../.env"
-  RNC_PATH="../../node_modules/react-native-config/ios"
-  GOOGLESERVICE_JSON_PATH="./google-services.json"
-  GOOGLESERVICE_INFO_PATH="../../ios/react-native-starter/GoogleService-Info.plist"
-fi
-
 if [ ! -f $GOOGLESERVICE_INFO_PATH ]; then
   echo "[Ueno RNS] Warning: No GoogleService-Info.plist file in ios app directory... We created a placeholder for you!"
   echo $GOOGLESERVICE_INFO_CONTENT > $GOOGLESERVICE_INFO_PATH
@@ -63,12 +51,7 @@ fi
 
 if [ ! -f $ENV_PATH ]; then
   echo "[Ueno RNS] Warning: No .env file found... Copied .env.public to .env!"
-
-  if [ $ANDROID_DIRECTORY = "true" ]; then
-    cp ../../.env.public ../../.env
-  else
-    cp .env.public .env
-  fi
+  cp .env.public .env
 fi
 
 if [ ! -z "$ENVFILE" ]; then
@@ -95,12 +78,7 @@ fi
 # Generate dynamic environment for development
 JSON="export default {$(cat $ENV_PATH | egrep "^[A-Za-z]+" | sed 's/\"/\\\"/g' | sed -n 's|\(.*\)=\(.*\)$|"\1":"\2",|p' | sed 's|\\\"||g') \"generatedAt\": \"$(date '+%FT%T')\" }"
 echo "[Ueno RNS] Generating ./src/config.env.js"
-
-if [ $ANDROID_DIRECTORY = "true" ]; then
-  echo $JSON > ../../src/config.env.js
-else
-  echo $JSON > ./src/config.env.js
-fi
+echo $JSON > ./src/config.env.js
 
 # Build config
 echo "[Ueno RNS] Config built successfully!"
