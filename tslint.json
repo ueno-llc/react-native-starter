@@ -1,7 +1,6 @@
 {
-  "extends": "@ueno/tslint-config/react-native",
+  "extends": ["@ueno/tslint-config/react-native", "tslint-config-prettier"],
   "rules": {
-    "origin-ordered-imports": false,
     "interface-name": false
   }
 }

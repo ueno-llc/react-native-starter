@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  View,
-  Text,
-  TouchableOpacity,
-  TouchableNativeFeedback,
+  AccessibilityTrait,
   GestureResponderEvent,
   Platform,
-  AccessibilityTrait,
+  Text,
+  TouchableNativeFeedback,
+  TouchableOpacity,
+  View,
   ViewStyle,
 } from 'react-native';
 import s from './Button.scss';

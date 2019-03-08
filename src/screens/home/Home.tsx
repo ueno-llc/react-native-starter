@@ -1,9 +1,9 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 import { Navigation } from 'react-native-navigation';
+import Logo from '../../assets/images/logo.png';
 import { Button } from '../../components/button/Button';
 import { COUNTER } from '../index';
-import Logo from '../../assets/images/logo.png';
 import s from './Home.scss';
 export const HomeScreen = ({ componentId }: any) => {
   const onCounterScreenPress = () => {
