@@ -1,8 +1,6 @@
 package com.ueno.reactnativestarter;
 
 import android.app.Application;
-// import android.content.Context;
-// import android.support.multidex.MultiDex;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,12 +26,6 @@ import io.sentry.RNSentryPackage;
 import com.apsl.versionnumber.RNVersionNumberPackage;
 
 public class MainApplication extends NavigationApplication {
-
-    // @Override
-    // protected void attachBaseContext(Context base) {
-    //     super.attachBaseContext(base);
-    //     MultiDex.install(this);
-    // }
 
     @Override
     protected ReactGateway createReactGateway() {

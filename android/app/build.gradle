@@ -1,8 +1,8 @@
 apply plugin: "com.android.application"
 
 exec {
-    commandLine './scripts/build-env.sh'
-    workingDir '../../'
+  commandLine './scripts/build-env.sh'
+  workingDir '../../'
 }
 
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
@@ -39,145 +39,104 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 28
+  compileSdkVersion 28
 
-    defaultConfig {
-        applicationId "com.ueno.reactnativestarter"
-        minSdkVersion 19
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0.0"
-        ndk {
-            abiFilters "armeabi-v7a", "x86"
-        }
-        multiDexEnabled true
-        missingDimensionStrategy "minReactNative", "minReactNative46"
-        missingDimensionStrategy "RNN.reactNativeVersion", "reactNative57_5"
-        testBuildType System.getProperty('testBuildType', 'debug')
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  defaultConfig {
+    applicationId "com.ueno.reactnativestarter"
+    minSdkVersion 19
+    targetSdkVersion 28
+    versionCode 1
+    versionName "1.0.0"
+    ndk {
+      abiFilters "armeabi-v7a", "x86"
+    }
+    multiDexEnabled true
+    missingDimensionStrategy "minReactNative", "minReactNative46"
+      missingDimensionStrategy "RNN.reactNativeVersion", "reactNative57_5"
+      testBuildType System.getProperty('testBuildType', 'debug')
+      testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
-        release {
-            storeFile file("keystore.jks")
-            storePassword "12345678"
-            keyAlias "key0"
-            keyPassword "12345678"
-        }
+      release {
+        storeFile file("keystore.jks")
+        storePassword "12345678"
+        keyAlias "key0"
+        keyPassword "12345678"
+      }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+      sourceCompatibility JavaVersion.VERSION_1_8
+      targetCompatibility JavaVersion.VERSION_1_8
     }
     splits {
-        abi {
-            reset()
-            enable enableSeparateBuildPerCPUArchitecture
-            universalApk false  // If true, also generate a universal APK
-            include "armeabi-v7a", "x86"
-        }
+      abi {
+        reset()
+        enable enableSeparateBuildPerCPUArchitecture
+        universalApk false  // If true, also generate a universal APK
+        include "armeabi-v7a", "x86"
+      }
     }
     buildTypes {
-        release {
-            minifyEnabled enableProguardInReleaseBuilds
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-            signingConfig signingConfigs.release
-            matchingFallbacks = ['release']
-        }
-        debug {
-            matchingFallbacks = ['debug']
-        }
+      release {
+        minifyEnabled enableProguardInReleaseBuilds
+        proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        signingConfig signingConfigs.release
+        matchingFallbacks = ['release']
+      }
+      debug {
+        matchingFallbacks = ['debug']
+      }
     }
     applicationVariants.all { variant ->
-        variant.outputs.each { output ->
-            // For each separate APK per architecture, set a unique version code as described here:
-            // http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits
-            def versionCodes = ["armeabi-v7a": 1, "x86": 2]
-            def abi = output.getFilter(OutputFile.ABI)
-            if (abi != null) {  // null for the universal-debug, universal-release variants
-                output.versionCodeOverride =
-                versionCodes.get(abi) * 1048576 + defaultConfig.versionCode
-            }
+      variant.outputs.each { output ->
+        // For each separate APK per architecture, set a unique version code as described here:
+        // http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits
+        def versionCodes = ["armeabi-v7a": 1, "x86": 2]
+        def abi = output.getFilter(OutputFile.ABI)
+        if (abi != null) {  // null for the universal-debug, universal-release variants
+          output.versionCodeOverride =
+          versionCodes.get(abi) * 1048576 + defaultConfig.versionCode
         }
+      }
     }
-
     packagingOptions {
-        exclude 'META-INF/proguard/androidx-annotations.pro'
-        exclude 'META-INF/-no-jdk.kotlin_module'
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/LICENSE.txt'
-        exclude 'META-INF/NOTICE.txt'
+      exclude 'META-INF/proguard/androidx-annotations.pro'
+      exclude 'META-INF/-no-jdk.kotlin_module'
+      exclude 'META-INF/DEPENDENCIES'
+      exclude 'META-INF/NOTICE'
+      exclude 'META-INF/LICENSE'
+      exclude 'META-INF/LICENSE.txt'
+      exclude 'META-INF/NOTICE.txt'
     }
 }
 
 dependencies {
-    implementation "com.facebook.react:react-native:+"
-    implementation fileTree(dir: "libs", include: ["*.jar"])
+  implementation "com.facebook.react:react-native:+"
+  implementation 'com.android.support:design:27.1.1'
 
-    implementation project(':react-native-version-number')
-    implementation project(':react-native-sentry')
-    implementation project(':react-native-navigation')
-    implementation project(':react-native-code-push')
-    implementation project(':react-native-config')
-    implementation(project(':react-native-firebase')) {
-        transitive = false
-    }
+  implementation fileTree(dir: "libs", include: ["*.jar"])
 
-    implementation 'com.android.support:design:27.1.1'
+  implementation project(':react-native-version-number')
+  implementation project(':react-native-sentry')
+  implementation project(':react-native-navigation')
+  implementation project(':react-native-code-push')
+  implementation project(':react-native-config')
+  implementation(project(':react-native-firebase')) {
+    transitive = false
+  }
 
-    androidTestImplementation project(path: ":detox")
-    androidTestImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+  androidTestImplementation project(path: ":detox")
+  androidTestImplementation 'junit:junit:4.12'
+  androidTestImplementation 'com.android.support.test:runner:1.0.2'
+  androidTestImplementation 'com.android.support.test:rules:1.0.2'
 }
 
 // Run this once to be able to run the application with BUCK
 // puts all compile dependencies into folder libs for BUCK to use
 task copyDownloadableDepsToLibs(type: Copy) {
-    from configurations.compile
-    into 'libs'
+  from configurations.compile
+  into 'libs'
 }
 
 apply plugin: 'com.google.gms.google-services'
 com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
-
-// dependencies {
-//     // Local implementations
-//     implementation fileTree(dir: "libs", include: ["*.jar"])
-
-//     // Ueno RNS: Add your modules here
-//     implementation project(':react-native-version-number')
-//     implementation project(':react-native-sentry')
-//     implementation project(':react-native-navigation')
-//     implementation project(':react-native-code-push')
-//     implementation project(':react-native-config')
-//     implementation(project(':react-native-firebase')) {
-//         transitive = false
-//     }
-
-//     // implementation "com.google.android.gms:play-services-base:16.0.1"
-//     // implementation "com.google.firebase:firebase-core:16.0.1"
-
-//     // Other implementations
-//     implementation "com.android.support:design:27.0.2"
-//     implementation "com.android.support:appcompat-v7:27.0.2"
-//     implementation "com.android.support:support-annotations:27.0.2"
-//     implementation "com.android.support:multidex:1.0.1"
-//     implementation "com.facebook.react:react-native:+"
-
-//     // Test implementations
-//     androidTestImplementation project(":detox")
-//     androidTestImplementation 'junit:junit:4.12'
-//     androidTestImplementation 'com.android.support.test:runner:1.0.2'
-//     androidTestImplementation 'com.android.support.test:rules:1.0.2'
-// }
-
-// // Run this once to be able to run the application with BUCK
-// // puts all compile dependencies into folder libs for BUCK to use
-// task copyDownloadableDepsToLibs(type: Copy) {
-//     from configurations.compile
-//     into 'libs'
-// }
-
-// apply plugin: 'com.google.gms.google-services'

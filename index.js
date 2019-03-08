@@ -1,1 +1,1 @@
-// require('./src/index.ts');
+require('./src/index.ts');
