@@ -1,13 +1,12 @@
 .counter {
   flex: 1;
 
-  padding-horizontal: var(--gutter);
-  padding-vertical: var(--gutter);
+  padding: 16px;
 
   background-color: #fff;
 
   &__content {
-    margin-bottom: var(--gutter);
+    margin-bottom: 16px;
   }
 
   &__text {
@@ -24,7 +23,7 @@
   }
 
   &__spacer {
-    width: var(--gutter);
+    width: 16px;
   }
 }
 

@@ -7,21 +7,6 @@
       {
         "legacy": true
       }
-    ],
-    [
-      "module-resolver", {
-        "extensions": [
-          ".js",
-          ".json",
-          ".ts",
-          ".tsx",
-          ".css",
-          ".scss"
-        ],
-        "root": [
-          "./src"
-        ]
-      }
     ]
   ]
 }

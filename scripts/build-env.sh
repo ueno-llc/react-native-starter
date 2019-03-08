@@ -78,7 +78,7 @@ fi
 # Generate dynamic environment for development
 JSON="export default {$(cat $ENV_PATH | egrep "^[A-Za-z]+" | sed 's/\"/\\\"/g' | sed -n 's|\(.*\)=\(.*\)$|"\1":"\2",|p' | sed 's|\\\"||g') \"generatedAt\": \"$(date '+%FT%T')\" }"
 echo "[Ueno RNS] Generating ./src/config.env.js"
-echo $JSON > ./src/config.env.js
+echo $JSON > ./src/utils/config.env.js
 
 # Build config
 echo "[Ueno RNS] Config built successfully!"

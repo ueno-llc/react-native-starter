@@ -1,57 +1,36 @@
-import * as React from 'react';
-import { View, Text, Image } from 'react-native';
-import { observer } from 'mobx-react';
+import React from 'react';
+import { Image, Text, View } from 'react-native';
 import { Navigation } from 'react-native-navigation';
-import CodePush from 'react-native-code-push';
-
-import { UIStore } from 'stores/UIStore';
-import { codePushConfig } from 'utils/code-push';
-import { COUNTER, IScreen } from 'screens';
-import { Button } from 'components/button/Button';
-
-const s = require('./Home.scss');
-
-@CodePush(codePushConfig())
-@observer
-export class Home extends React.Component<IScreen> {
-
-  static get options() {
-    return {
-      topBar: {
-        title: {
-          text: 'Home',
-        },
-      },
-    };
-  }
-
-  componentDidAppear() {
-    UIStore.setComponentId(this.props.componentId);
-  }
-
-  onCounterScreenPress = () => {
-    Navigation.push(this.props.componentId, {
+import { Button } from '../../components/button/Button';
+import { COUNTER } from '../index';
+import Logo from '../../assets/images/logo.png';
+import s from './Home.scss';
+export const HomeScreen = ({ componentId }: any) => {
+  const onCounterScreenPress = () => {
+    Navigation.push(componentId, {
       component: {
         name: COUNTER,
       },
     });
-  }
+  };
 
-  render() {
-    return (
-      <View style={s.host} testID="HOME_SCREEN">
-        <View style={s.content}>
-          <Image
-            style={s.logo}
-            source={require('assets/images/logo.png')}
-            resizeMode="contain"
-          />
+  return (
+    <View style={s.host} testID="HOME_SCREEN">
+      <View style={s.content}>
+        <Image style={s.logo} source={Logo} resizeMode="contain" />
 
-          <Text style={s.text}>Welcome Home</Text>
-        </View>
-
-        <Button onPress={this.onCounterScreenPress} title="Counter Screen" />
+        <Text style={s.text}>Welcome Home</Text>
       </View>
-    );
-  }
-}
+
+      <Button onPress={onCounterScreenPress} title="Counter Screen" />
+    </View>
+  );
+};
+
+HomeScreen.options = {
+  topBar: {
+    title: {
+      text: 'Home',
+    },
+  },
+};

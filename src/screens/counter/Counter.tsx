@@ -1,56 +1,46 @@
-import * as React from 'react';
-import { View, Text } from 'react-native';
-import { observer } from 'mobx-react';
+import { Observer } from 'mobx-react';
+import React from 'react';
+import { Text, View } from 'react-native';
+import { Button } from '../../components/button/Button';
+import { Counter } from '../../stores/Counter';
+import s from './Counter.scss';
 
-import { UIStore } from 'stores/UIStore';
-import { CounterStore } from 'stores/CounterStore';
-import { Button } from 'components/button/Button';
-import { IScreen } from 'screens';
+export const CounterScreen = () => {
+  return (
+    <Observer
+      render={() => (
+        <View style={s.counter} testID="COUNTER_SCREEN">
+          <View style={s.counter__content}>
+            <Text style={s.counter__text}>Counter: {Counter.counter}</Text>
+          </View>
 
-const s = require('./Counter.scss');
+          <View style={s.counter__actions}>
+            <Button
+              title="Decrement"
+              onPress={Counter.decrement}
+              testID="BUTTON_DECREMENT"
+              style={s.counter__button}
+            />
 
-@observer
-export class Counter extends React.Component<IScreen> {
+            <View style={s.counter__spacer} />
 
-  static get options() {
-    return {
-      topBar: {
-        title: {
-          text: 'Counter',
-        },
-      },
-    };
-  }
-
-  componentDidAppear() {
-    UIStore.setComponentId(this.props.componentId);
-  }
-
-  render() {
-    return (
-      <View style={s.counter} testID="COUNTER_SCREEN">
-        <View style={s.counter__content}>
-          <Text style={s.counter__text}>Counter: {CounterStore.counter}</Text>
+            <Button
+              title="Increment"
+              onPress={Counter.increment}
+              testID="BUTTON_INCREMENT"
+              style={s.counter__button}
+            />
+          </View>
         </View>
+      )}
+    />
+  );
+};
 
-        <View style={s.counter__actions}>
-          <Button
-            title="Decrement"
-            onPress={CounterStore.decrement}
-            testID="BUTTON_DECREMENT"
-            style={s.counter__button}
-          />
-
-          <View style={s.counter__spacer} />
-
-          <Button
-            title="Increment"
-            onPress={CounterStore.increment}
-            testID="BUTTON_INCREMENT"
-            style={s.counter__button}
-          />
-        </View>
-      </View>
-    );
-  }
-}
+CounterScreen.options = {
+  topBar: {
+    title: {
+      text: 'Counter',
+    },
+  },
+};
