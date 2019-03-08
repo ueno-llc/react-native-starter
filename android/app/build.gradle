@@ -112,7 +112,6 @@ android {
 
 dependencies {
   implementation "com.facebook.react:react-native:+"
-  implementation 'com.android.support:design:27.1.1'
 
   implementation fileTree(dir: "libs", include: ["*.jar"])
 
@@ -124,6 +123,8 @@ dependencies {
   implementation(project(':react-native-firebase')) {
     transitive = false
   }
+
+  implementation 'com.android.support:design:27.1.1'
 
   androidTestImplementation project(path: ":detox")
   androidTestImplementation 'junit:junit:4.12'

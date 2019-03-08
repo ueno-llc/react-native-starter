@@ -1,0 +1,17 @@
+diff --git a/node_modules/react-native-navigation/lib/android/app/build.gradle b/node_modules/react-native-navigation/lib/android/app/build.gradle
+index 2e6c70a..39de2ce 100644
+--- a/node_modules/react-native-navigation/lib/android/app/build.gradle
++++ b/node_modules/react-native-navigation/lib/android/app/build.gradle
+@@ -83,9 +83,9 @@ allprojects { p ->
+ 
+ dependencies {
+     implementation fileTree(include: ['*.jar'], dir: 'libs')
+-    implementation 'com.android.support:design:26.1.0'
+-    implementation 'com.android.support:appcompat-v7:26.1.0'
+-    implementation 'com.android.support:support-v4:26.1.0'
++    implementation 'com.android.support:design:27.1.1'
++    implementation 'com.android.support:appcompat-v7:27.1.1'
++    implementation 'com.android.support:support-v4:27.1.1'
+ 
+     implementation 'com.github.wix-playground:ahbottomnavigation:2.4.9'
+     implementation 'com.github.wix-playground:reflow-animator:1.0.4'
