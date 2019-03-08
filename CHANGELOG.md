@@ -1,9 +1,49 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
+
+## 2.2.0 - 2019-03-08
+
+React Native 0.59 with _Hooks_
+
+- Removed root resolver to embrace TypeScript
+- Build env on Android
+- Prettier for the community
+- No require()'s
+
+### Added
+
+- @react-native-community/async-storage
+- prettier
+
+### Changed
+
+- Bump `jsc-android` to `241213.0.0`
+- Bump `mobx` to `5.9.0`
+- Bump `mobx-state-tree` to `3.10.2`
+- Bump `react` to `16.8.3`
+- Bump `react-native` to `0.59.0-rc.3`
+- Bump `react-native-code-push` to `5.5.2`
+- Bump `react-native-firebase` to `5.2.3`
+- Bump `react-native-navigation` to `2.13.1`
+- Bump `react-native-sentry` to `0.42.0`
+- Bump `react-native-ueno-modules` to `1.1.0`
+- Bumped all `@types` to latest
+- Bump `detox` to `10.0.12`
+- Bump `jest` and `babel-jest` to `24.3.1`
+
+### Removed
+
+- date-fns
+- core-decorators
+- tslib
+- schedule
+- babel-plugin-module-resolver
+- @firebase/app-types
 
 ## 2.1.0 - 2019-01-14
 
-## Added
+### Added
 
 - Add default support for `SCSS`
 - Add stylelint for `SCSS`
@@ -14,7 +54,7 @@ All notable changes to this project will be documented in this file.
 
 - Add `google()` as default provider
 
-## Changed
+### Changed
 
 - Bump `react-native` to `0.57.8`
 - Bump `react` to `16.7.0`
@@ -30,7 +70,7 @@ All notable changes to this project will be documented in this file.
 - Bump to `com.google.android.gms:play-services-base:16.0.1`
 - Bump to `com.google.gms:google-services:4.0.1`
 
-## Removed
+### Removed
 
 - Some unused packages
 
@@ -49,11 +89,13 @@ Big release.
 - Ignore set of default YellowBox warnings
 
 ## iOS
+
 - Better TestFlight detection
 - iOS Simulator detection
 - Fix Code Push key in Info.plist
 
 ### Updated dependencies
+
 - react-native: 0.53.0 → **0.53.3**
 - react-native-firebase: 3.2.4 → **3.2.6**
 - react-native-navigation: 1.1.374 → **1.1.386**
@@ -61,6 +103,7 @@ Big release.
 - react-native-ui-lib: 3.2.14 → **3.2.21**
 
 ## Updated devDependencies
+
 - mobx-react: 4.4.1 → **4.4.2**
 - babel-eslint: 8.2.1 → **8.2.2**
 - babel-jest: 22.2.0 → **22.4.1**
@@ -81,11 +124,13 @@ Big release.
 - Docsify for automatic gh-pages generation
 
 ### Added
+
 - react-native-ui-lib
 - react-native-blur
 - react-native-interactable
 
 ### Updated npm packages
+
 - react-native: 0.52.2 → **0.53.0**
 - react-native-navigation: 1.1.361 → **1.1.374**
 - react-native-firebase: 3.2.2 → **3.2.4**
@@ -94,6 +139,7 @@ Big release.
 - detox: 6.0.4 → **7.0.1**
 
 ### Android
+
 - Upgraded gradle to 4.4 and gradle build-tools to 3.1.0
 - Patching npm packages build.gradle to buildToolsVersion 27.0.1
 
