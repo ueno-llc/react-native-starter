@@ -112,6 +112,7 @@ android {
 
 dependencies {
   implementation "com.facebook.react:react-native:+"
+  implementation "com.google.firebase:firebase-core:16.0.1"
 
   implementation fileTree(dir: "libs", include: ["*.jar"])
 
