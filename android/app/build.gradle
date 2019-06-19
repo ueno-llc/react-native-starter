@@ -113,6 +113,7 @@ android {
 dependencies {
   implementation "com.facebook.react:react-native:+"
   implementation "com.google.firebase:firebase-core:16.0.1"
+  implementation 'com.android.support:design:27.1.1'
 
   implementation fileTree(dir: "libs", include: ["*.jar"])
 
@@ -121,11 +122,8 @@ dependencies {
   implementation project(':react-native-navigation')
   implementation project(':react-native-code-push')
   implementation project(':react-native-config')
-  implementation(project(':react-native-firebase')) {
-    transitive = false
-  }
-
-  implementation 'com.android.support:design:27.1.1'
+  implementation(project(':react-native-firebase')) { transitive = false }
+  implementation project(':@react-native-community_async-storage')
 
   androidTestImplementation project(path: ":detox")
   androidTestImplementation 'junit:junit:4.12'

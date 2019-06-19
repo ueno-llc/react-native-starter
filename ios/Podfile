@@ -11,6 +11,7 @@ target 'react-native-starter' do
 
   pod 'react-native-config', :path => '../node_modules/react-native-config'
   pod 'react-native-version-number', :path => '../node_modules/react-native-version-number'
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
 
   pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
