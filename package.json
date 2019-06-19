@@ -99,7 +99,7 @@
     "ts-jest": "24.0.0",
     "tslint": "5.13.1",
     "tslint-config-prettier": "1.18.0",
-    "typescript": "3.5.2"
+    "typescript": "3.3.3333"
   },
   "jest": {
     "preset": "react-native",
