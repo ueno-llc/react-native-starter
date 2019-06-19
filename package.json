@@ -17,7 +17,7 @@
     "lint": "yarn tslint && yarn stylelint",
     "tslint": "tsc -p . --noEmit --skipLibCheck; tslint --fix 'src/**/*.{ts,tsx}' -p .",
     "stylelint": "stylelint 'src/**/*.scss' --syntax scss",
-    "prepare": "patch-package && if [ -f ./scripts/postinstall.sh ]; then sh ./scripts/postinstall.sh; fi"
+    "prepare": "patch-package && sh ./scripts/postinstall.sh"
   },
   "contributors": [
     "Jérémy Barbet <jeremgraph@gmail.com>",
