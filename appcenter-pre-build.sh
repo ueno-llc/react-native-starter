@@ -43,7 +43,7 @@ if [ ! -z "$IOS_CODEPUSH_APPID" ]; then
   echo "[Ueno RNS] Last trigger: $LAST_IOS"
   echo "[Ueno RNS] Current trigger: $TRIGGER_IOS"
 
-  if [[ "$TRIGGER_IOS" != "" ]]; then
+  if [[ "$TRIGGER_IOS" != "" ]] || [[ $COMMIT_MESSAGE = *"[BUILD]"* ]]; then
     echo "[Ueno RNS] Bumping version and build number"
     cd ios
     fastlane bump_version
@@ -64,7 +64,7 @@ if [ ! -z "$ANDROID_CODEPUSH_APPID" ]; then
   echo "[Ueno RNS] Last trigger: $LAST_ANDROID"
   echo "[Ueno RNS] Current trigger: $TRIGGER_ANDROID"
 
-  if [[ "$TRIGGER_ANDROID" != "" ]]; then
+  if [[ "$TRIGGER_ANDROID" != "" ]] || [[ $COMMIT_MESSAGE = *"[BUILD]"* ]]; then
     echo "[Ueno RNS] Bumping version and build number"
     cd android
     fastlane bump_version
