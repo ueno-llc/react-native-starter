@@ -106,14 +106,16 @@ perl -pi -e "s/React Native Starter/$NAME/" ios/*/Info.plist
 # Build environment
 source ./scripts/build-env.sh
 
-# Build Cocoapods
-echo ""
-echo "> Rebuilding pods"
-echo ""
-rm -rf ./ios/{Pods,Podfile.lock}
-cd ios
-pod install
-cd -
+# Build Cocoapods (Only on macOS)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo ""
+  echo "> Rebuilding pods"
+  echo ""
+  rm -rf ./ios/{Pods,Podfile.lock}
+  cd ios
+  pod install
+  cd -
+fi
 
 # Cleanup
 CLEANUP=(
