@@ -1,0 +1,13 @@
+diff --git a/node_modules/detox/android/detox/build.gradle b/node_modules/detox/android/detox/build.gradle
+index 91d3d70..d8349ba 100644
+--- a/node_modules/detox/android/detox/build.gradle
++++ b/node_modules/detox/android/detox/build.gradle
+@@ -62,7 +62,7 @@ dependencies {
+     implementation "org.jetbrains.kotlin:$_kotlinStdlib:$_kotlinVersion"
+ 
+     // noinspection GradleDynamicVersion
+-    compileOnly 'com.facebook.react:react-native:+'
++    api "com.facebook.react:react-native:+"
+ 
+     implementation 'org.apache.commons:commons-lang3:3.4'
+ 

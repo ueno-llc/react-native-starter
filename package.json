@@ -79,7 +79,7 @@
     "@ueno/stylelint-config": "1.1.2",
     "@ueno/tslint-config": "1.0.8",
     "babel-jest": "24.3.1",
-    "detox": "10.0.12",
+    "detox": "12.11.2",
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.10.0",
     "husky": "1.3.1",
