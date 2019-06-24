@@ -1,8 +1,13 @@
 apply plugin: "com.android.application"
 
 exec {
+  workingDir '../..'
+
+  // on windows
+  commandLine 'cmd', '/c', 'scripts/build-env.sh'
+
+  // on linux
   commandLine './scripts/build-env.sh'
-  workingDir '../../'
 }
 
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
