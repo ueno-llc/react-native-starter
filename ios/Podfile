@@ -2,7 +2,7 @@ platform :ios, '9.0'
 
 target 'react-native-starter' do
 
-  pod 'Firebase/Core', '~> 5.20.2'
+  pod 'Firebase/Core', '~> 6.3.0'
 
   pod 'CodePush', :path => '../node_modules/react-native-code-push'
   pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios/RNFirebase.podspec'
