@@ -1,36 +1,57 @@
 import { Observer } from 'mobx-react';
 import React from 'react';
-import { Text, View } from 'react-native';
+import styled from 'styled-components/native';
 import { Button } from '../../components/button/Button';
 import { Counter } from '../../stores/Counter';
-import s from './Counter.scss';
+
+const Main = styled.View`
+  flex: 1;
+  padding: 16px;
+  background-color: #fff;
+`;
+
+const Content = styled.View`
+  margin-bottom: 16px;
+`;
+
+const Text = styled.Text`
+  font-size: 21px;
+  font-weight: 200;
+`;
+
+const Actions = styled.View`
+  flex-direction: row;
+`;
+
+const Spacer = styled.View`
+  width: 16px;
+`;
+
+const ActionButton = styled(Button)`
+  flex: 1;
+`;
 
 export const CounterScreen = () => (
   <Observer
     render={() => (
-      <View style={s.counter} testID="COUNTER_SCREEN">
-        <View style={s.counter__content}>
-          <Text style={s.counter__text}>Counter: {Counter.counter}</Text>
-        </View>
-
-        <View style={s.counter__actions}>
-          <Button
+      <Main testID="COUNTER_SCREEN">
+        <Content>
+          <Text>Counter: {Counter.counter}</Text>
+        </Content>
+        <Actions>
+          <ActionButton
             title="Decrement"
             onPress={Counter.decrement}
             testID="BUTTON_DECREMENT"
-            style={s.counter__button}
           />
-
-          <View style={s.counter__spacer} />
-
-          <Button
+          <Spacer />
+          <ActionButton
             title="Increment"
             onPress={Counter.increment}
             testID="BUTTON_INCREMENT"
-            style={s.counter__button}
           />
-        </View>
-      </View>
+        </Actions>
+      </Main>
     )}
   />
 );

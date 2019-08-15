@@ -3,41 +3,44 @@ import {
   AccessibilityTrait,
   GestureResponderEvent,
   Platform,
-  Text,
   TouchableNativeFeedback,
   TouchableOpacity,
-  View,
-  ViewStyle,
 } from 'react-native';
-import s from './Button.scss';
+import styled from 'styled-components/native';
 
 interface ButtonProps {
   title: string;
   accessibilityLabel?: string;
   testID?: string;
   disabled?: boolean;
-  style?: ViewStyle;
   hasTVPreferredFocus?: boolean;
   onPress?(event: GestureResponderEvent): void;
 }
+
+const ButtonView = styled.View<{ disabled?: boolean }>`
+  border-radius: 4px;
+  background-color: ${props => (props.disabled ? '#e4e4e4' : '#eee')};
+`;
+
+const ButtonText = styled.Text<{ disabled?: boolean }>`
+  padding: 12px;
+  font-size: 18px;
+  text-align: center;
+  color: ${props => (props.disabled ? '#b8b8b8' : '#000')};
+`;
 
 export const Button = (props: ButtonProps) => {
   const {
     title,
     accessibilityLabel,
     disabled,
-    style,
     onPress,
     hasTVPreferredFocus,
     testID,
   } = props;
-  const buttonStyles = [s.button];
-  const textStyles = [s.text];
   const accessibilityTraits: AccessibilityTrait[] = ['button'];
 
   if (disabled) {
-    buttonStyles.push(s.button__disabled);
-    textStyles.push(s.text__disabled);
     accessibilityTraits.push('disabled');
   }
 
@@ -54,12 +57,11 @@ export const Button = (props: ButtonProps) => {
       testID={testID}
       disabled={disabled}
       onPress={onPress}
-      style={style}
       {...(Platform.OS === 'ios' ? { hasTVPreferredFocus } : {})}
     >
-      <View style={buttonStyles}>
-        <Text style={textStyles}>{titleLabel}</Text>
-      </View>
+      <ButtonView disabled={disabled}>
+        <ButtonText disabled={disabled}>{titleLabel}</ButtonText>
+      </ButtonView>
     </Touchable>
   );
 };

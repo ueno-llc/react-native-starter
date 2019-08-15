@@ -9,12 +9,11 @@
 
 #import "AppDelegate.h"
 #import "ReactNativeNavigation.h"
-#import "RNSentry.h"
 
 #import <React/RCTLinkingManager.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import <CodePush/CodePush.h>
+#import <RNSentry.h>
 #import <Firebase.h>
 
 @implementation AppDelegate
@@ -35,7 +34,7 @@
   #ifdef DEBUG
     jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
   #else
-    jsCodeLocation = [CodePush bundleURL];
+    jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
   #endif
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

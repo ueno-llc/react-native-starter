@@ -37,7 +37,6 @@ build/
 .gradle
 local.properties
 *.iml
-.vscode
 playstore.json
 
 # node.js

@@ -8,7 +8,7 @@ buildscript {
   }
   dependencies {
     classpath 'com.android.tools.build:gradle:3.3.1'
-    classpath 'com.google.gms:google-services:4.0.1'
+    classpath 'com.google.gms:google-services:4.2.0'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     classpath 'com.google.firebase:firebase-plugins:1.1.5'
   }
@@ -37,6 +37,9 @@ allprojects {
     jcenter()
     maven {
       url "$rootDir/../node_modules/react-native/android"
+    }
+    maven {
+      url "$rootDir/../node_modules/detox/Detox-android"
     }
     maven {
       url "$rootDir/../node_modules/jsc-android/dist"
@@ -75,7 +78,7 @@ subprojects {
           if (names.contains("minReactNative44")) {
             setIgnore(true)
           }
-          if (names.contains("reactNative51") || names.contains("reactNative55") || names.contains("reactNative57")) {
+          if (names.contains("reactNative51") || names.contains("reactNative55") || names.contains("reactNative56") || names.contains("reactNative57") || names.contains("reactNative57_5") || names.contains("reactNative57WixFork")) {
             setIgnore(true)
           }
         }
@@ -84,7 +87,7 @@ subprojects {
   }
 }
 
-task wrapper(type: Wrapper) {
-  gradleVersion = '4.10.2'
-  distributionUrl = distributionUrl.replace("bin", "all")
-}
+// task wrapper(type: Wrapper) {
+//   gradleVersion = '4.10.2'
+//   distributionUrl = distributionUrl.replace("bin", "all")
+// }

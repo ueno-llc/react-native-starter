@@ -21,12 +21,14 @@ project.ext.react = [
 apply from: "../../node_modules/react-native/react.gradle"
 
 if (project.env.get("SENTRY_ORG") != '') {
-  apply from: "../../node_modules/react-native-sentry/sentry.gradle"
 }
 
 if (project.env.get('CODEPUSH_ACCESS_KEY') != '') {
   apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 }
+
+def jscFlavor = 'org.webkit:android-jsc:+'
+def enableHermes = project.ext.react.get("enableHermes", false);
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -57,9 +59,9 @@ android {
     }
     multiDexEnabled true
     missingDimensionStrategy "minReactNative", "minReactNative46"
-      missingDimensionStrategy "RNN.reactNativeVersion", "reactNative57_5"
+      missingDimensionStrategy "RNN.reactNativeVersion", "reactNative60"
       testBuildType System.getProperty('testBuildType', 'debug')
-      testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+      testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
       release {
@@ -117,23 +119,24 @@ android {
 
 dependencies {
   implementation "com.facebook.react:react-native:+"
-  implementation "com.google.firebase:firebase-core:16.0.1"
+  implementation "com.google.firebase:firebase-core:16.0.9"
+  implementation "com.google.android.gms:play-services-base:16.1.0"
   implementation 'com.android.support:design:27.1.1'
 
   implementation fileTree(dir: "libs", include: ["*.jar"])
-
-  implementation project(':react-native-version-number')
-  implementation project(':react-native-sentry')
   implementation project(':react-native-navigation')
   implementation project(':react-native-code-push')
-  implementation project(':react-native-config')
-  implementation(project(':react-native-firebase')) { transitive = false }
-  implementation project(':@react-native-community_async-storage')
 
-  androidTestImplementation project(path: ":detox")
+  if (enableHermes) {
+    def hermesPath = "../../node_modules/hermesvm/android/";
+    debugImplementation files(hermesPath + "hermes-debug.aar")
+    releaseImplementation files(hermesPath + "hermes-release.aar")
+  } else {
+    implementation jscFlavor
+  }
+
+  androidTestImplementation('com.wix:detox:+') { transitive = true }
   androidTestImplementation 'junit:junit:4.12'
-  androidTestImplementation 'com.android.support.test:runner:1.0.2'
-  androidTestImplementation 'com.android.support.test:rules:1.0.2'
 }
 
 // Run this once to be able to run the application with BUCK
@@ -145,3 +148,6 @@ task copyDownloadableDepsToLibs(type: Copy) {
 
 apply plugin: 'com.google.gms.google-services'
 com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
+
+apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
+applyNativeModulesAppBuildGradle(project);

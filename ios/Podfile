@@ -1,23 +1,16 @@
 platform :ios, '9.0'
 
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
 target 'react-native-starter' do
 
+  # Pods
   pod 'Firebase/Core', '~> 6.3.0'
 
-  pod 'CodePush', :path => '../node_modules/react-native-code-push'
-  pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios/RNFirebase.podspec'
-  pod 'ReactNativeNavigation', :path => '../node_modules/react-native-navigation'
-  pod 'SentryReactNative', :path => '../node_modules/react-native-sentry'
-
-  pod 'react-native-config', :path => '../node_modules/react-native-config'
-  pod 'react-native-version-number', :path => '../node_modules/react-native-version-number'
-  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
-
-
+  # ReactNative
   pod 'React', :path => '../node_modules/react-native/'
   pod 'React-Core', :path => '../node_modules/react-native/React'
   pod 'React-DevSupport', :path => '../node_modules/react-native/React'
-  pod 'React-fishhook', :path => '../node_modules/react-native/Libraries/fishhook'
   pod 'React-RCTActionSheet', :path => '../node_modules/react-native/Libraries/ActionSheetIOS'
   pod 'React-RCTAnimation', :path => '../node_modules/react-native/Libraries/NativeAnimation'
   pod 'React-RCTBlob', :path => '../node_modules/react-native/Libraries/Blob'
@@ -36,4 +29,6 @@ target 'react-native-starter' do
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+
+  use_native_modules!
 end

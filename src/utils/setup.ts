@@ -18,6 +18,6 @@ if (!__DEV__ && config.SENTRY_DSN) {
 if (__DEV__) {
   const {
     connectToDevTools,
-  } = require('mobx-devtools/lib/mobxDevtoolsBackend.js');
+  } = require('mobx-devtools/lib/mobxDevtoolsBackend.js'); // tslint:disable-line
   connectToDevTools({ host: 'localhost', port: '8098' });
 }
