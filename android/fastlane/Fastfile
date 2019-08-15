@@ -1,0 +1,61 @@
+fastlane_version "2.69.2"
+
+default_platform :android
+
+platform :android do
+  before_all do
+  end
+
+  desc "Build Debug"
+  lane :build do
+    gradle(
+      task: "assembleDebug"
+    )
+  end
+
+  desc "Build Release"
+  lane :build_release do
+    gradle(
+      task: "assembleRelease"
+    )
+  end
+
+  desc "Bump version number"
+  lane :bump_version do
+    android_set_version_code
+    version = android_get_version_name
+    parts = version.split(/[.]/)
+    major = parts[0].to_i
+    minor = parts[1].to_i
+    patch = parts[2].to_i
+    android_set_version_name(
+      version_name: "#{major}.#{minor}.#{patch + 1}"
+    )
+  end
+
+  desc "Tag current version and push to GitHub"
+  lane :tag_version do
+    version = android_get_version_name
+    build = android_get_version_code
+    sh "git checkout master"
+    git_pull
+    git_commit(
+      path: "./app/build.gradle",
+      message: "Version #{version} (build #{build}) [release android] [skip ci]"
+    )
+    add_git_tag(
+      tag: "v#{version}-#{build}-android"
+    )
+    push_to_git_remote(
+      remote_branch: "master",
+      tags: true,
+      force: true
+    )
+  end
+
+  after_all do |lane|
+  end
+
+  error do |lane, exception|
+  end
+end

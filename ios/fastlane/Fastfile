@@ -1,0 +1,111 @@
+fastlane_require 'dotenv'
+
+fastlane_version "2.69.2"
+
+default_platform :ios
+
+project_name = "react-native-starter"
+scheme = project_name
+path = "./#{project_name}.xcodeproj"
+
+platform :ios do
+
+  before_all do
+  end
+
+  desc "Build Debug"
+  lane :build do
+    xcodebuild(
+      workspace: "./#{project_name}.xcworkspace",
+      scheme: scheme,
+      configuration: "Debug",
+      build: true,
+      destination: "generic/platform=iOS",
+      build_settings: {
+        "CODE_SIGNING_REQUIRED" => "NO",
+        "CODE_SIGN_IDENTITY" => ""
+      }
+    )
+  end
+
+  desc "Build Release"
+  lane :build_release do
+    gym(
+      scheme: scheme,
+      workspace: "./#{project_name}.xcworkspace",
+      output_directory: "ios/build",
+      configuration: "Release",
+      export_method: "app-store"
+    )
+  end
+
+  desc "Bump version number"
+  lane :bump_version do
+    increment_build_number(
+      xcodeproj: path
+    )
+    increment_version_number(
+      xcodeproj: path,
+      bump_type: "patch"
+    )
+  end
+
+  desc "Tag current version and push to GitHub"
+  lane :tag_version do
+    version = get_version_number(
+      xcodeproj: path,
+      target: project_name
+    )
+    build = get_build_number(
+      xcodeproj: path
+    )
+    sh "git checkout master"
+    git_pull
+    commit_version_bump(
+      force: true,
+      xcodeproj: path,
+      message: "Version #{version} (build #{build}) [release ios] [skip ci]"
+    )
+    add_git_tag(
+      tag: "v#{version}-#{build}-ios"
+    )
+    push_to_git_remote(
+      remote_branch: "master",
+      tags: true,
+      force: true
+    )
+  end
+
+  desc "Upload latest Debug Symbols to Sentry"
+  lane :upload_dsyms do
+    download_dsyms
+    sentry_upload_dsym(
+      auth_token: ENV['SENTRY_AUTH_TOKEN'],
+      org_slug: ENV['SENTRY_ORG'],
+      project_slug: ENV['SENTRY_PROJECT']
+    )
+    sh "rm -rf *.dSYM.zip"
+  end
+
+  desc "Upload current Debug Symbol to Sentry"
+  lane :upload_current_dsym do
+    download_dsyms(
+      version: get_version_number(xcodeproj: path, target: project_name),
+      build_number: get_build_number(xcodeproj: path)
+    )
+    sentry_upload_dsym(
+      auth_token: ENV['SENTRY_AUTH_TOKEN'],
+      org_slug: ENV['SENTRY_ORG'],
+      project_slug: ENV['SENTRY_PROJECT']
+    )
+    sh "rm -rf *.dSYM.zip"
+  end
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+  end
+
+  error do |lane, exception|
+  end
+
+end
