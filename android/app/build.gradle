@@ -21,6 +21,7 @@ project.ext.react = [
 apply from: "../../node_modules/react-native/react.gradle"
 
 if (project.env.get("SENTRY_ORG") != '') {
+  apply from: "../../node_modules/react-native-sentry/sentry.gradle"
 }
 
 if (project.env.get('CODEPUSH_ACCESS_KEY') != '') {
