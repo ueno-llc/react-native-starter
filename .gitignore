@@ -21,7 +21,7 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-project.xcworkspace
+xcshareddata
 ios/Pods
 ios/Podfile.lock
 
@@ -49,6 +49,7 @@ yarn-error.log
 buck-out/
 \.buckd/
 *.keystore
+!debug.keystore
 
 # fastlane
 */fastlane/report.xml

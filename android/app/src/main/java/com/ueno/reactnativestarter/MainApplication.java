@@ -1,9 +1,11 @@
 package com.ueno.reactnativestarter;
 
+import android.content.Context;
 import android.app.Application;
 import android.util.Log;
 import java.util.Arrays;
 import java.util.List;
+import java.lang.reflect.InvocationTargetException;
 
 // React Native
 import com.facebook.react.ReactInstanceManager;
