@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "ReactNativeNavigation.h"
 
+#import <CodePush/CodePush.h>
 #import <React/RCTLinkingManager.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
@@ -29,18 +30,23 @@
     NSLog(@"Warning: Invalid GoogleService-Info.plist. Get one from the Firebase Console.");
   }
 
-  NSURL *jsCodeLocation;
-
-  #ifdef DEBUG
-    jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-  #else
-    jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-  #endif
+  NSURL *jsCodeLocation = [self sourceURLForBridge:[ReactNativeNavigation getBridge]];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   [ReactNativeNavigation bootstrap:jsCodeLocation launchOptions:launchOptions];
 
   return YES;
+}
+
+- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
+{
+  //   // jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+
+  #if DEBUG
+    return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"src/index.ts" fallbackResource:nil];
+  #else
+    return [CodePush bundleURL];
+  #endif
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url

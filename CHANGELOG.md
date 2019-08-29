@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file.
 
+## 3.0.0 - 2019-09-01
+
+React Native 0.61 with _Fast Reload_
+
+- devDependencies now have caret versioning
+- Replace bundle root from `index.js` to `src/index.ts`.
+- macOS checks in postinstall scripts
+- Hermes support (disabled for now because of mobx 5 Proxy requirement)
+- styled-components
+- removed css files support
+- VSCode autosave config
+- Auto linking for iOS (Podfile) and Android (gradle)
+- Gradle 5.xx
+- RNN 3 (react-native-navigation)
+
+### Added
+
+- `styled-components`
+- `polished`
+
+### Changed
+
+- `@react-native-community/async-storage` to `1.6.1`
+- `jsc-android` to `241213.1.0`
+- `lodash` to `4.17.15`
+- `mobx` to `5.13.0`
+- `mobx-devtools-mst` to `0.9.21`
+- `mobx-react` to `6.1.3`
+- `mobx-state-tree` to `3.14.1`
+- `react` to `16.9.0`
+- `react-native` to `0.61.0-rc.0`
+- `react-native-code-push` to `5.6.1`
+- `react-native-config` to `0.11.7`
+- `react-native-firebase` to `5.5.6`
+- `react-native-navigation` to `3.0.0`
+- `react-native-sentry` to `0.43.2`
+
+### Removed
+
+- `react-native-ueno-css-modules`
+- `node-sass`
+
 ## 2.2.0 - 2019-03-08
 
 React Native 0.59 with _Hooks_

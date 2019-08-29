@@ -15,7 +15,7 @@ apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.grad
 import com.android.build.OutputFile
 
 project.ext.react = [
-  entryFile: "index.js",
+  entryFile: "src/index.ts",
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
