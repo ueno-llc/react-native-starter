@@ -13,8 +13,8 @@ if [[ "$LAST_IOS" == "" ]]; then
   LAST_IOS=$(git log --max-parents=0 HEAD | grep -o -E -e "[0-9a-f]{40}")
 fi
 
-TRIGGER_ANDROID=$(git rev-list $LAST_ANDROID..$COMMIT_HASH | xargs -L1 git diff-tree --no-commit-id --name-only -r | grep "^android")
-TRIGGER_IOS=$(git rev-list $LAST_IOS..$COMMIT_HASH | xargs -L1 git diff-tree --no-commit-id --name-only -r | grep "^ios")
+TRIGGER_ANDROID=$(git diff --name-only $LAST_ANDROID..$COMMIT_HASH | grep "^android")
+TRIGGER_IOS=$(git diff --name-only $LAST_IOS..$COMMIT_HASH | grep "^ios")
 
 if [ ! -z "$GOOGLE_SERVICES_JSON" ]; then
   echo $GOOGLE_SERVICES_JSON | base64 --decode > "$APPCENTER_SOURCE_DIRECTORY/android/app/google-services.json"
