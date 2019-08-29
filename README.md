@@ -12,10 +12,10 @@
 The Professional React Native Starter with everything you'll ever need to deploy rock solid apps.
 
 - Opinionated dependencies
-- React Native Navigation 2
+- React Native Navigation 3
 - TypeScript 3
-- Cocoapods
-- Gradle 4
+- Auto Linking
+- Gradle 5
 - Unit and integration tests
 - Continuous delivery support for Microsoft App Center
 
@@ -41,16 +41,37 @@ Alternatively you can use [`create-ueno-app`](https://github.com/ueno-llc/create
 yarn create ueno-app native my-new-app co.ueno.mynewapp
 ```
 
+## Running automated tests
+
+### iOS
+
+```
+yarn build:e2e:ios
+yarn test:e2e:ios
+```
+
+Note: To see the testing in-action, open the iPhone X Simulator manually before running the tests.
+
+### Android
+
+```
+yarn build:e2e:android
+yarn test:e2e:android
+```
+
+Note: You will need to create Emulator with the name `Pixel_2_API_28` in Android Studio.
+
 ## Documentation
 
 The **[documentation is available here](https://ueno-llc.github.io/react-native-starter)** on GitHub Pages.
 
 We also recommend the following reading material:
- - [React Native](https://facebook.github.io/react-native/)
- - [React Native Navigation](https://wix.github.io/react-native-navigation/)
- - [React Native Config](https://github.com/luggit/react-native-config)
- - [Apple Developer Documentation](https://developer.apple.com/documentation/)
- - [Android Developer Guide](https://developer.android.com/guide/index.html)
+
+- [React Native](https://facebook.github.io/react-native/)
+- [React Native Navigation](https://wix.github.io/react-native-navigation/)
+- [React Native Config](https://github.com/luggit/react-native-config)
+- [Apple Developer Documentation](https://developer.apple.com/documentation/)
+- [Android Developer Guide](https://developer.android.com/guide/index.html)
 
 ## Upgrading
 
@@ -63,4 +84,3 @@ If you are interested in helping out, feel free to submit issues, pull-requests 
 ## License
 
 This project is [MIT licensed](/LICENSE.md)
-
