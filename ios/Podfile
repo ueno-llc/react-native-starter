@@ -38,9 +38,6 @@ end
 
 target 'react-native-starter' do
 
-  # Pods
-  pod 'Firebase/Core', '~> 6.3.0'
-
   # ReactNative
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"

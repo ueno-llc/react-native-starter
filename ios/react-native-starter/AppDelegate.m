@@ -7,6 +7,8 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
+@import Firebase;
+
 #import "AppDelegate.h"
 #import "ReactNativeNavigation.h"
 
@@ -14,7 +16,6 @@
 #import <React/RCTLinkingManager.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import <Firebase.h>
 
 #ifdef DEBUG
   #import <FlipperKit/FlipperClient.h>
@@ -32,9 +33,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [self initializeFlipper:application];
-
-  if ([[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"GoogleService-Info" ofType:@"plist"]] objectForKey:@"GOOGLE_APP_ID"]) {
+  if ([FIRApp defaultApp] == nil) {
     [FIRApp configure];
+  }
+  if ([[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"GoogleService-Info" ofType:@"plist"]] objectForKey:@"GOOGLE_APP_ID"]) {
     NSLog(@"Firebase initialized");
   } else {
     NSLog(@"Warning: Invalid GoogleService-Info.plist. Get one from the Firebase Console.");

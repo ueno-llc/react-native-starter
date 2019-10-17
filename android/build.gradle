@@ -2,11 +2,15 @@ buildscript {
   ext.kotlinVersion = '1.3.20'
   repositories {
     google()
+    maven {
+      url 'https://maven.fabric.io/public'
+    }
     mavenLocal()
     mavenCentral()
     jcenter()
   }
   dependencies {
+    classpath 'io.fabric.tools:gradle:1.28.1'
     classpath 'com.android.tools.build:gradle:3.5.1'
     classpath 'com.google.gms:google-services:4.2.0'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"

@@ -1,4 +1,9 @@
 apply plugin: "com.android.application"
+apply plugin: "io.fabric"
+
+crashlytics {
+  enableNdk true
+}
 
 exec {
   workingDir '../..'
