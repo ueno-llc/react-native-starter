@@ -65,6 +65,7 @@ fi
 # Move android test folder
 mkdir -p "android/app/src/androidTest/java/$IDPATH"
 mv android/app/src/androidTest/java/com/ueno/reactnativestarter/* "android/app/src/androidTest/java/$IDPATH/."
+mv android/app/src/debug/java/com/ueno/reactnativestarter/* "android/app/src/debug/java/$IDPATH/."
 rm -rf android/app/src/androidTest/java/com/ueno/reactnativestarter
 
 # Some stuff

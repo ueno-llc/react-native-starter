@@ -33,7 +33,7 @@ SENTRY_ORG=
 SENTRY_PROJECT=
 ```
 
-_____________
+---
 
 ## Firebase
 

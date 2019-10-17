@@ -5,9 +5,11 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		1C9BC405710B4376ACBA4D1F /* libPods-react-native-starter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1E4EB30ABEFC190EFE7436 /* libPods-react-native-starter.a */; };
 		E33FD0F41FFBDBD900EB627A /* RNUeno.m in Sources */ = {isa = PBXBuildFile; fileRef = E33FD0F31FFBDBD900EB627A /* RNUeno.m */; };
+		E373E2302358A8E0009B1CA4 /* Ueno.swift in Sources */ = {isa = PBXBuildFile; fileRef = E373E22F2358A8E0009B1CA4 /* Ueno.swift */; };
 		E3A2B8A61FEACEE70099C8F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A2B89F1FEACEE70099C8F8 /* AppDelegate.m */; };
 		E3A2B8A71FEACEE70099C8F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A2B8A01FEACEE70099C8F8 /* LaunchScreen.xib */; };
 		E3A2B8A81FEACEE70099C8F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3A2B8A21FEACEE70099C8F8 /* GoogleService-Info.plist */; };
@@ -21,6 +23,8 @@
 		E31225D42231705F00990353 /* react-native-starter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "react-native-starter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E33FD0F31FFBDBD900EB627A /* RNUeno.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNUeno.m; sourceTree = "<group>"; };
 		E33FD0F51FFBDBFB00EB627A /* RNUeno.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNUeno.h; sourceTree = "<group>"; };
+		E373E22E2358A8E0009B1CA4 /* react-native-starter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "react-native-starter-Bridging-Header.h"; sourceTree = "<group>"; };
+		E373E22F2358A8E0009B1CA4 /* Ueno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ueno.swift; sourceTree = "<group>"; };
 		E3A2B89E1FEACEE70099C8F8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E3A2B89F1FEACEE70099C8F8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E3A2B8A11FEACEE70099C8F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 				E3A2B8A51FEACEE70099C8F8 /* main.m */,
 				E33FD0F31FFBDBD900EB627A /* RNUeno.m */,
 				E33FD0F51FFBDBFB00EB627A /* RNUeno.h */,
+				E373E22F2358A8E0009B1CA4 /* Ueno.swift */,
+				E373E22E2358A8E0009B1CA4 /* react-native-starter-Bridging-Header.h */,
 			);
 			path = "react-native-starter";
 			sourceTree = "<group>";
@@ -138,6 +144,7 @@
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = M734F5G6DK;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 					};
 					E3AAD4501F573E3700B7831D = {
@@ -152,6 +159,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -192,7 +200,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\nif [ ! -z \"$SENTRY_AUTH_TOKEN\" ]; then\n  ../node_modules/@sentry/cli/bin/sentry-cli react-native xcode ../node_modules/react-native/scripts/react-native-xcode.sh\nelse\n  ../node_modules/react-native/scripts/react-native-xcode.sh\nfi\n";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
 		DE29A3C61EA94606C7B30F25 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -219,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E373E2302358A8E0009B1CA4 /* Ueno.swift in Sources */,
 				E3A2B8AB1FEACEE70099C8F8 /* main.m in Sources */,
 				E33FD0F41FFBDBD900EB627A /* RNUeno.m in Sources */,
 				E3A2B8A61FEACEE70099C8F8 /* AppDelegate.m in Sources */,
@@ -244,6 +253,7 @@
 			baseConfigurationReference = F978EFCD4B3FC4AAB213917B /* Pods-react-native-starter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -256,6 +266,10 @@
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DFB_SONARKIT_ENABLED=1",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -265,6 +279,9 @@
 				PRODUCT_NAME = "react-native-starter";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "react-native-starter/react-native-starter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -275,6 +292,7 @@
 			baseConfigurationReference = D54EB502811BEE926F2F8941 /* Pods-react-native-starter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +304,10 @@
 				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DFB_SONARKIT_ENABLED=1",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -295,6 +317,8 @@
 				PRODUCT_NAME = "react-native-starter";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "react-native-starter/react-native-starter-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};

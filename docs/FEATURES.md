@@ -10,11 +10,9 @@ React Native Starter is packed with a lot great features. These dependencies are
 
 [react-native-code-push](https://github.com/Microsoft/react-native-code-push) Distributing a react-native app without code-push is like uploading complete WordPress website via FTP. On a 56k connection. Every time you make a change. You can update your app remotely, all javascript changes, images and other bundled files, over-the-air. [Read more](/CODEPUSH.md)
 
-[react-native-sentry](https://github.com/getsentry/react-native-sentry) Catching errors made easy. We add sentry from the start to make sure we catch any errors that may occour when Apple is reviewing the app for the first time. [Read more](/SENTRY.md)
-
 [react-native-firebase](https://github.com/invertase/react-native-firebase) Everything you need to make an app. Database, analaytics, push notifications, etc. All in one place. Only downside is that it can get pretty heavy when using all the features. [Read more](/FIREBASE.md)
 
-_____________
+---
 
 ## Other modules
 

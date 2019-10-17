@@ -31,8 +31,6 @@ done
 source "$APPCENTER_SOURCE_DIRECTORY/scripts/build-env.sh"
 
 prepare_code_push() {
-  echo "[Ueno RNS] Installing Sentry CLI"
-  curl -sL https://sentry.io/get-cli/ | bash
   npm install -g code-push-cli
   echo "[Ueno RNS] Logging into code-push-cli"
   code-push login --accessKey $CODEPUSH_ACCESS_KEY
@@ -52,8 +50,6 @@ if [ ! -z "$IOS_CODEPUSH_APPID" ]; then
     prepare_code_push
     echo "[Ueno RNS] Bundling and publishing code-push release..."
     code-push release-react $IOS_CODEPUSH_APPID ios --outputDir ./build --plistFile ./ios/react-native-starter/Info.plist --description "$COMMIT_MESSAGE"
-    echo "[Ueno RNS] Uploading sourcemaps..."
-    sentry-cli react-native codepush $IOS_CODEPUSH_APPID ios ./build/CodePush --bundle-id $IOS_BUNDLE_ID
     echo "[Ueno RNS] Shutting down build machine"
     curl -X PATCH "https://api.appcenter.ms/v0.1/apps/$IOS_CODEPUSH_APPID/builds/$APPCENTER_BUILD_ID" -H "accept: application/json" -H "X-API-Token: $APPCENTER_API_KEY" -H "Content-Type: application/json" -d "{ \"status\": \"cancelling\" }"
   fi
@@ -73,8 +69,6 @@ if [ ! -z "$ANDROID_CODEPUSH_APPID" ]; then
     prepare_code_push
     echo "[Ueno RNS] Bundling and publishing code-push release..."
     code-push release-react $ANDROID_CODEPUSH_APPID android --outputDir build --description "$COMMIT_MESSAGE"
-    echo "[Ueno RNS] Uploading sourcemaps..."
-    sentry-cli react-native codepush $ANDROID_CODEPUSH_APPID android ./build/CodePush --bundle-id $ANDROID_BUNDLE_ID
     echo "[Ueno RNS] Shutting down build machine"
     curl -X PATCH "https://api.appcenter.ms/v0.1/apps/$ANDROID_CODEPUSH_APPID/builds/$APPCENTER_BUILD_ID" -H "accept: application/json" -H "X-API-Token: $APPCENTER_API_KEY" -H "Content-Type: application/json" -d "{ \"status\": \"cancelling\" }"
   fi

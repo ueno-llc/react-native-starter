@@ -14,14 +14,24 @@
 #import <React/RCTLinkingManager.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import <RNSentry.h>
 #import <Firebase.h>
+
+#ifdef DEBUG
+  #import <FlipperKit/FlipperClient.h>
+  #import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
+  #import <FlipperKitLayoutPlugin/SKDescriptorMapper.h>
+  #import <FlipperKitUserDefaultsPlugin/FKUserDefaultsPlugin.h>
+  #import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
+  #import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
+  #import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
+  #import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
+#endif
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [RNSentry installWithBridge:[ReactNativeNavigation getBridge]];
+  [self initializeFlipper:application];
 
   if ([[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"GoogleService-Info" ofType:@"plist"]] objectForKey:@"GOOGLE_APP_ID"]) {
     [FIRApp configure];
@@ -54,6 +64,18 @@
 {
   return [RCTLinkingManager application:application openURL:url
                       sourceApplication:sourceApplication annotation:annotation];
+}
+
+- (void) initializeFlipper:(UIApplication *)application {
+  #ifdef DEBUG
+    FlipperClient *client = [FlipperClient sharedClient];
+    SKDescriptorMapper *layoutDescriptorMapper = [[SKDescriptorMapper alloc] initWithDefaults];
+    [client addPlugin: [[FlipperKitLayoutPlugin alloc] initWithRootNode: application withDescriptorMapper: layoutDescriptorMapper]];
+    [client addPlugin:[[FKUserDefaultsPlugin alloc] initWithSuiteName:nil]]; [client start];
+    [client addPlugin: [[FlipperKitNetworkPlugin alloc] initWithNetworkAdapter:[SKIOSNetworkAdapter new]]];
+    [client addPlugin:[FlipperKitReactPlugin new]];
+    [client start];
+  #endif
 }
 
 @end

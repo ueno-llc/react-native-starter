@@ -64,8 +64,7 @@ GeneratedInfoPlistDotEnv.h
 .travis/secrets.zip
 .travis/id_rsa
 
-# Firebase and Sentry
-sentry.properties
+# Firebase
 GoogleService-Info.plist
 google-services.json
 

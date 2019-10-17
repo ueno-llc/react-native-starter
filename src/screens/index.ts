@@ -1,5 +1,6 @@
 import CodePush from 'react-native-code-push';
 import { Navigation } from 'react-native-navigation';
+import { withCounterContext } from '../contexts/CounterContext';
 import { codePushConfig } from '../utils/code-push';
 import { CounterScreen } from './counter/Counter';
 import { HomeScreen } from './home/Home';
@@ -10,7 +11,7 @@ export const HOME = 'ueno-rns.Home';
 export const COUNTER = 'ueno-rns.Counter';
 
 Screens.set(HOME, CodePush(codePushConfig())(HomeScreen));
-Screens.set(COUNTER, CounterScreen);
+Screens.set(COUNTER, withCounterContext(CounterScreen));
 
 export const startApp = () => {
   Navigation.setRoot({
