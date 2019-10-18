@@ -70,8 +70,11 @@ target 'react-native-starter' do
 
   use_native_modules!
 
-  flipper_pods()
-  post_install do |installer|
-    flipper_post_install(installer)
-  end
+  # Currently breaks Folly paths
+  # https://github.com/facebook/flipper/pull/518
+  #
+  # flipper_pods()
+  # post_install do |installer|
+  #   flipper_post_install(installer)
+  # end
 end

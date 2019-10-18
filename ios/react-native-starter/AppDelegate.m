@@ -17,7 +17,7 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
-#ifdef DEBUG
+#ifdef FLIPPER
   #import <FlipperKit/FlipperClient.h>
   #import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
   #import <FlipperKitLayoutPlugin/SKDescriptorMapper.h>
@@ -69,7 +69,7 @@
 }
 
 - (void) initializeFlipper:(UIApplication *)application {
-  #ifdef DEBUG
+  #ifdef FLIPPER
     FlipperClient *client = [FlipperClient sharedClient];
     SKDescriptorMapper *layoutDescriptorMapper = [[SKDescriptorMapper alloc] initWithDefaults];
     [client addPlugin: [[FlipperKitLayoutPlugin alloc] initWithRootNode: application withDescriptorMapper: layoutDescriptorMapper]];
