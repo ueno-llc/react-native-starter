@@ -1,0 +1,22 @@
+diff --git a/node_modules/detox/android/detox/src/main/java/com/wix/detox/reactnative/idlingresources/TimersIdlingResource.kt b/node_modules/detox/android/detox/src/main/java/com/wix/detox/reactnative/idlingresources/TimersIdlingResource.kt
+index 1dd1ea4..28fb9ce 100644
+--- a/node_modules/detox/android/detox/src/main/java/com/wix/detox/reactnative/idlingresources/TimersIdlingResource.kt
++++ b/node_modules/detox/android/detox/src/main/java/com/wix/detox/reactnative/idlingresources/TimersIdlingResource.kt
+@@ -3,7 +3,7 @@ package com.wix.detox.reactnative.idlingresources
+ import android.view.Choreographer
+ import androidx.test.espresso.IdlingResource
+ import com.facebook.react.bridge.ReactContext
+-import com.facebook.react.modules.core.Timing
++import com.facebook.react.modules.core.TimingModule
+ import org.joor.Reflect
+ import java.util.*
+ import java.util.concurrent.atomic.AtomicBoolean
+@@ -24,7 +24,7 @@ class TimerReflected(timer: Any) {
+ }
+ 
+ class TimingModuleReflected(reactContext: ReactContext) {
+-    private var nativeModule = reactContext.getNativeModule(Timing::class.java)
++    private var nativeModule = reactContext.getNativeModule(TimingModule::class.java)
+ 
+     val timersQueue: PriorityQueue<Any>
+         get() = Reflect.on(nativeModule).field("mTimers").get()

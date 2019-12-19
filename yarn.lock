@@ -2348,10 +2348,10 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-code-push@^2.0.7:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/code-push/-/code-push-2.0.7.tgz#aa2303376552a15ea3c2092ff2f19e4d6666ab9e"
-  integrity sha512-8cEO60OYPiDj4vaSBxRAySzShYrKLi8GXdxcbJhTJ25PAvMUkf9rC/IQxgRK01EqWcGwKvIAGvz+Xk9YJcMM+A==
+code-push@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/code-push/-/code-push-3.0.1.tgz#d6d48b1e112a49148b2244b0213afaf3f818645b"
+  integrity sha512-UgktdhS47nxtUdGB1l4D6JBnuGB20hMT7QswGj6gQgQbiTjSmOBJ0MK/09fyeYzWKjUnJBEmUud08rC7WzKFMw==
   dependencies:
     q "^1.4.1"
     recursive-fs "^1.1.2"
@@ -2841,10 +2841,10 @@ detect-newline@^2.1.0:
   resolved "https://registry.yarnpkg.com/detect-newline/-/detect-newline-2.1.0.tgz#f41f1c10be4b00e87b5f13da680759f2c5bfd3e2"
   integrity sha1-9B8cEL5LAOh7XxPaaAdZ8sW/0+I=
 
-detox@^14.5.0:
-  version "14.5.0"
-  resolved "https://registry.yarnpkg.com/detox/-/detox-14.5.0.tgz#cc96b41a2b76a029ef26be861fb04f69fe70c965"
-  integrity sha512-6LH/Aw/0pnf5llCY5rZICxVK1uoAmV+OZzGPQogpE3ZqxPkViFkg/SHsQqOn1M1Iswia7SzfSgu2KfKMNFXvRA==
+detox@^14.9.0:
+  version "14.9.1"
+  resolved "https://registry.yarnpkg.com/detox/-/detox-14.9.1.tgz#e86eb3c3349c8a5951ba0e06208dac97496d2b59"
+  integrity sha512-/xbxVZYRsVlCeN+e0UP3ybjOPZ231KXDvjlJ911H/ALoipLYXIomEIVk7WgArWNxCa5KUy0EvdpVCF7q7o64eQ==
   dependencies:
     "@babel/core" "^7.4.5"
     bunyan "^1.8.12"
@@ -7689,12 +7689,12 @@ react-lifecycles-compat@2.0.0:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-2.0.0.tgz#71d9c4cde47114c4102454f76da055c2bc48c948"
   integrity sha512-txfpPCQYiazVdcbMRhatqWKcAxJweUu2wDXvts5/7Wyp6+Y9cHojqXHsLPEckzutfHlxZhG8Oiundbmp8Fd6eQ==
 
-react-native-code-push@5.6.1:
-  version "5.6.1"
-  resolved "https://registry.yarnpkg.com/react-native-code-push/-/react-native-code-push-5.6.1.tgz#d08d5a05ec619c6909822c2f6c4130da5d264d93"
-  integrity sha512-3iAKPeVCiqOdpBes7KQ4mUXjFTYiY2YdNR5smFfebGZQTgMj1hDWknQfIULaIwr7yE7+UiBe+WsnoAzepoNOIA==
+react-native-code-push@6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-code-push/-/react-native-code-push-6.0.0.tgz#4b91159b3ed9495fd8cbf39b07a93e921f810420"
+  integrity sha512-CjAAQg0/RnZQaU1mzs3dMEzbiNTglwpXI6UrJKbsw3+Y1PAdmtqkscWAFyphFc80acMZzaYxxEzMQSwcmIOECQ==
   dependencies:
-    code-push "^2.0.7"
+    code-push "^3.0.1"
     glob "^5.0.15"
     hoist-non-react-statics "^2.3.1"
     inquirer "^1.1.2"

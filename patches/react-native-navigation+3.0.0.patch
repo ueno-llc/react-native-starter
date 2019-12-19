@@ -1,0 +1,67 @@
+diff --git a/node_modules/react-native-navigation/lib/android/app/src/reactNative60/java/com/reactnativenavigation/react/DevBundleDownloadListenerAdapter.java b/node_modules/react-native-navigation/lib/android/app/src/reactNative60/java/com/reactnativenavigation/react/DevBundleDownloadListenerAdapter.java
+index 86af8ca..d81c292 100644
+--- a/node_modules/react-native-navigation/lib/android/app/src/reactNative60/java/com/reactnativenavigation/react/DevBundleDownloadListenerAdapter.java
++++ b/node_modules/react-native-navigation/lib/android/app/src/reactNative60/java/com/reactnativenavigation/react/DevBundleDownloadListenerAdapter.java
+@@ -1,16 +1,10 @@
+ package com.reactnativenavigation.react;
+ 
+-import com.facebook.react.bridge.NativeDeltaClient;
+ import com.facebook.react.devsupport.interfaces.DevBundleDownloadListener;
+ 
+ import javax.annotation.Nullable;
+ 
+ public class DevBundleDownloadListenerAdapter implements DevBundleDownloadListener, NavigationDevBundleDownloadListener {
+-    @Override
+-    public void onSuccess(@Nullable NativeDeltaClient nativeDeltaClient) {
+-        onSuccess();
+-    }
+-
+     @Override
+     public void onSuccess() {
+ 
+diff --git a/node_modules/react-native-navigation/lib/android/app/src/reactNative60/java/com/reactnativenavigation/react/JsDevReloadHandlerFacade.java b/node_modules/react-native-navigation/lib/android/app/src/reactNative60/java/com/reactnativenavigation/react/JsDevReloadHandlerFacade.java
+index 919fe4a..1c3be95 100644
+--- a/node_modules/react-native-navigation/lib/android/app/src/reactNative60/java/com/reactnativenavigation/react/JsDevReloadHandlerFacade.java
++++ b/node_modules/react-native-navigation/lib/android/app/src/reactNative60/java/com/reactnativenavigation/react/JsDevReloadHandlerFacade.java
+@@ -1,15 +1,10 @@
+ package com.reactnativenavigation.react;
+ 
+-import com.facebook.react.bridge.NativeDeltaClient;
+ import com.facebook.react.devsupport.interfaces.DevBundleDownloadListener;
+ 
+ import javax.annotation.Nullable;
+ 
+ public class JsDevReloadHandlerFacade implements DevBundleDownloadListener, NavigationDevBundleDownloadListener {
+-    @Override
+-    public void onSuccess(@Nullable NativeDeltaClient nativeDeltaClient) {
+-        onSuccess();
+-    }
+ 
+     @Override
+     public void onProgress(@Nullable String status, @Nullable Integer done, @Nullable Integer total) {
+diff --git a/node_modules/react-native-navigation/lib/android/app/src/reactNative60/java/com/reactnativenavigation/react/ReloadHandlerFacade.java b/node_modules/react-native-navigation/lib/android/app/src/reactNative60/java/com/reactnativenavigation/react/ReloadHandlerFacade.java
+index 697ea43..f30f66b 100644
+--- a/node_modules/react-native-navigation/lib/android/app/src/reactNative60/java/com/reactnativenavigation/react/ReloadHandlerFacade.java
++++ b/node_modules/react-native-navigation/lib/android/app/src/reactNative60/java/com/reactnativenavigation/react/ReloadHandlerFacade.java
+@@ -1,13 +1,12 @@
+ package com.reactnativenavigation.react;
+ 
+-import com.facebook.react.bridge.NativeDeltaClient;
+ import com.facebook.react.devsupport.interfaces.DevBundleDownloadListener;
+ 
+ import javax.annotation.Nullable;
+ 
+ public abstract class ReloadHandlerFacade implements DevBundleDownloadListener {
+     @Override
+-    public void onSuccess(@Nullable NativeDeltaClient nativeDeltaClient) {
++    public void onSuccess() {
+ 
+     }
+ 
+@@ -20,6 +19,4 @@ public abstract class ReloadHandlerFacade implements DevBundleDownloadListener {
+     public void onFailure(Exception cause) {
+ 
+     }
+-
+-    protected abstract void onSuccess();
+ }
