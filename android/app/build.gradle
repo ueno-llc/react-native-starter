@@ -114,7 +114,9 @@ android {
 }
 
 dependencies {
-  implementation "com.facebook.react:react-native:+"
+  implementation("com.facebook.react:react-native:+") {
+    exclude group:'com.facebook.fbjni', module: 'fbjni'
+  }
   implementation "com.google.firebase:firebase-core:16.0.9"
   implementation "com.google.android.gms:play-services-base:16.1.0"
   implementation 'com.android.support:design:27.1.1'
@@ -148,6 +150,8 @@ dependencies {
     exclude group:'com.facebook.litho', module: 'litho-annotations'
     exclude group:'com.squareup.okhttp3'
   }
+  // todo
+  // debugImplementation 'com.facebook.fbjni:fbjni:0.0.2'
 }
 
 // Run this once to be able to run the application with BUCK

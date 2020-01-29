@@ -50,6 +50,9 @@ allprojects {
       url "$rootDir/../node_modules/jsc-android/dist"
     }
     maven {
+      url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+    maven {
       url 'https://maven.google.com'
     }
     maven {
