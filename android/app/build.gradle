@@ -5,16 +5,6 @@ crashlytics {
   enableNdk true
 }
 
-exec {
-  workingDir '../..'
-
-  // on windows
-  commandLine 'cmd', '/c', 'scripts/build-env.sh'
-
-  // on linux
-  commandLine './scripts/build-env.sh'
-}
-
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 
 import com.android.build.OutputFile
@@ -61,7 +51,7 @@ android {
     }
     multiDexEnabled true
     missingDimensionStrategy "minReactNative", "minReactNative46"
-      missingDimensionStrategy "RNN.reactNativeVersion", "reactNative60"
+      missingDimensionStrategy "RNN.reactNativeVersion", "reactNative62"
       testBuildType System.getProperty('testBuildType', 'debug')
       testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -146,18 +136,18 @@ dependencies {
 
   // Enable flipper for Android
   //
-  // debugImplementation('com.facebook.flipper:flipper-network-plugin:0.30.1') {
-  //   exclude group:'com.facebook.flipper', module: 'fbjni'
-  // }
-  // debugImplementation('com.facebook.flipper:flipper-fresco-plugin:0.30.1') {
-  //   exclude group:'com.facebook.flipper', module: 'fbjni'
-  // }
-  // debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
-  //   exclude group:'com.facebook.yoga'
-  //   exclude group:'com.facebook.flipper', module: 'fbjni'
-  //   exclude group:'com.facebook.litho', module: 'litho-annotations'
-  //   exclude group:'com.squareup.okhttp3'
-  // }
+  debugImplementation('com.facebook.flipper:flipper-network-plugin:0.30.1') {
+    exclude group:'com.facebook.fbjni', module: 'fbjni'
+  }
+  debugImplementation('com.facebook.flipper:flipper-fresco-plugin:0.30.1') {
+    exclude group:'com.facebook.fbjni', module: 'fbjni'
+  }
+  debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
+    exclude group:'com.facebook.yoga'
+    exclude group:'com.facebook.fbjni', module: 'fbjni'
+    exclude group:'com.facebook.litho', module: 'litho-annotations'
+    exclude group:'com.squareup.okhttp3'
+  }
 }
 
 // Run this once to be able to run the application with BUCK

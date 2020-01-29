@@ -32,6 +32,7 @@
 		E3A2B8A31FEACEE70099C8F8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E3A2B8A41FEACEE70099C8F8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3A2B8A51FEACEE70099C8F8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E3C5C46223ABD29A0015F17E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		F978EFCD4B3FC4AAB213917B /* Pods-react-native-starter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-react-native-starter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-react-native-starter/Pods-react-native-starter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +82,7 @@
 			children = (
 				E3A2B89E1FEACEE70099C8F8 /* AppDelegate.h */,
 				E3A2B89F1FEACEE70099C8F8 /* AppDelegate.m */,
+				E3C5C46223ABD29A0015F17E /* Config.xcconfig */,
 				E3A2B8A01FEACEE70099C8F8 /* LaunchScreen.xib */,
 				E3A2B8A21FEACEE70099C8F8 /* GoogleService-Info.plist */,
 				E3A2B8A31FEACEE70099C8F8 /* Images.xcassets */,
@@ -95,23 +97,6 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
-
-/* Begin PBXLegacyTarget section */
-		E3AAD4501F573E3700B7831D /* build-env */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
-			buildConfigurationList = E3AAD4511F573E3800B7831D /* Build configuration list for PBXLegacyTarget "build-env" */;
-			buildPhases = (
-			);
-			buildToolPath = "${SRCROOT}/../scripts/build-env.sh";
-			buildWorkingDirectory = "${SRCROOT}/..";
-			dependencies = (
-			);
-			name = "build-env";
-			passBuildSettingsInEnvironment = 1;
-			productName = BuildEnv;
-		};
-/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		13B07F861A680F5B00A75B9A /* react-native-starter */ = {
@@ -150,11 +135,6 @@
 						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 					};
-					E3AAD4501F573E3700B7831D = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5PD7JU2FJC;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "react-native-starter" */;
@@ -171,7 +151,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E3AAD4501F573E3700B7831D /* build-env */,
 				13B07F861A680F5B00A75B9A /* react-native-starter */,
 			);
 		};
@@ -441,45 +420,6 @@
 			};
 			name = Release;
 		};
-		E3AAD4521F573E3800B7831D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				DEBUGGING_SYMBOLS = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 5PD7JU2FJC;
-				ENABLE_TESTABILITY = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		E3AAD4531F573E3800B7831D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5PD7JU2FJC;
-				GCC_NO_COMMON_BLOCKS = YES;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -497,15 +437,6 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E3AAD4511F573E3800B7831D /* Build configuration list for PBXLegacyTarget "build-env" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E3AAD4521F573E3800B7831D /* Debug */,
-				E3AAD4531F573E3800B7831D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

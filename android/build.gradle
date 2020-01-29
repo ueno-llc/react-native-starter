@@ -83,7 +83,13 @@ subprojects {
           if (names.contains("minReactNative44")) {
             setIgnore(true)
           }
-          if (names.contains("reactNative51") || names.contains("reactNative55") || names.contains("reactNative56") || names.contains("reactNative57") || names.contains("reactNative57_5") || names.contains("reactNative57WixFork")) {
+          if (names.contains("reactNative51") ||
+              names.contains("reactNative55") ||
+              names.contains("reactNative56") ||
+              names.contains("reactNative57") ||
+              names.contains("reactNative57_5") ||
+              names.contains("reactNative57WixFork") ||
+              names.contains("reactNative60")) {
             setIgnore(true)
           }
         }

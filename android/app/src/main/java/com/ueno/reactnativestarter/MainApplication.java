@@ -41,7 +41,7 @@ public class MainApplication extends NavigationApplication {
         };
         ReactGateway gateway = new ReactGateway(this, isDebug(), host);
         // Enable Flipper for Android
-        // initializeFlipper(this, host.getReactInstanceManager());
+        initializeFlipper(this, host.getReactInstanceManager());
         return gateway;
     }
 

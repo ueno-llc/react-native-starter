@@ -12,8 +12,8 @@
 The Professional React Native Starter with everything you'll ever need to deploy rock solid apps.
 
 - Opinionated dependencies
-- React Native Navigation 3
-- TypeScript 3
+- React Native Navigation 4
+- TypeScript 3.7
 - Auto Linking
 - Gradle 5
 - Unit and integration tests
