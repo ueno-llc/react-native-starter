@@ -17,15 +17,16 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
-#ifdef FLIPPER
-  #import <FlipperKit/FlipperClient.h>
-  #import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
-  #import <FlipperKitLayoutPlugin/SKDescriptorMapper.h>
-  #import <FlipperKitUserDefaultsPlugin/FKUserDefaultsPlugin.h>
-  #import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
-  #import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
-  #import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
-  #import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
+#if DEBUG
+#ifdef FB_SONARKIT_ENABLED
+#import <FlipperKit/FlipperClient.h>
+#import <FlipperKitLayoutPlugin/FlipperKitLayoutPlugin.h>
+#import <FlipperKitUserDefaultsPlugin/FKUserDefaultsPlugin.h>
+#import <FlipperKitNetworkPlugin/FlipperKitNetworkPlugin.h>
+#import <SKIOSNetworkPlugin/SKIOSNetworkAdapter.h>
+#import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
+#import <flipper-plugin-react-native-performance/FlipperReactPerformancePlugin.h>
+#endif
 #endif
 
 @implementation AppDelegate
@@ -46,7 +47,11 @@
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   [ReactNativeNavigation bootstrap:jsCodeLocation launchOptions:launchOptions];
-
+  #if DEBUG
+  #ifdef FB_SONARKIT_ENABLED
+  [[FlipperReactPerformancePlugin sharedInstance] setBridge:[ReactNativeNavigation getBridge]];
+  #endif
+  #endif
   return YES;
 }
 
@@ -69,14 +74,17 @@
 }
 
 - (void) initializeFlipper:(UIApplication *)application {
-  #ifdef FLIPPER
+  #if DEBUG
+  #ifdef FB_SONARKIT_ENABLED
     FlipperClient *client = [FlipperClient sharedClient];
     SKDescriptorMapper *layoutDescriptorMapper = [[SKDescriptorMapper alloc] initWithDefaults];
+    [client addPlugin: [FlipperReactPerformancePlugin sharedInstance]];
     [client addPlugin: [[FlipperKitLayoutPlugin alloc] initWithRootNode: application withDescriptorMapper: layoutDescriptorMapper]];
-    [client addPlugin:[[FKUserDefaultsPlugin alloc] initWithSuiteName:nil]]; [client start];
+    [client addPlugin: [[FKUserDefaultsPlugin alloc] initWithSuiteName:nil]];
+    [client addPlugin: [FlipperKitReactPlugin new]];
     [client addPlugin: [[FlipperKitNetworkPlugin alloc] initWithNetworkAdapter:[SKIOSNetworkAdapter new]]];
-    [client addPlugin:[FlipperKitReactPlugin new]];
     [client start];
+  #endif
   #endif
 }
 
