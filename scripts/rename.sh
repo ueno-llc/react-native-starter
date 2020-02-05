@@ -77,7 +77,6 @@ FILES=(
   "ios/*/Info.plist"
   "ios/*.xcodeproj/project.pbxproj"
   "ios/*.xcodeproj/xcshareddata/xcschemes/*.xcscheme"
-  "scripts/build-env.sh"
   "appcenter-pre-build.sh"
   "package.json"
 )
@@ -103,9 +102,6 @@ perl -pi -e "s/export const COUNTER = 'ueno-rns.Counter';/export const COUNTER =
 
 # Info.plist
 perl -pi -e "s/React Native Starter/$NAME/" ios/*/Info.plist
-
-# Build environment
-source ./scripts/build-env.sh
 
 # Build Cocoapods (Only on macOS)
 if [[ "$OSTYPE" == "darwin"* ]]; then
