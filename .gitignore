@@ -73,3 +73,6 @@ google-services.json
 
 # Misc
 .expo/
+
+# react-native-config codegen
+ios/tmp.xcconfig

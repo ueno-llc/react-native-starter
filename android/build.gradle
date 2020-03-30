@@ -1,18 +1,24 @@
 buildscript {
-  ext.kotlinVersion = '1.3.61'
-  ext.detoxKotlinVersion = '1.3.61'
+  ext {
+    kotlinVersion = '1.3.61'
+    detoxKotlinVersion = '1.3.61'
+    supportLibVersion = "28.0.0"
+    playServicesVersion = "17.0.0"
+    googlePlayServicesVersion = "15.0.1"
+    androidMapsUtilsVersion = "0.6.2"
+    RNNKotlinVersion = kotlinVersion
+    RNNKotlinStdlib = "kotlin-stdlib-jdk8"
+  }
+
   repositories {
     google()
-    maven {
-      url 'https://maven.fabric.io/public'
-    }
     mavenLocal()
     mavenCentral()
     jcenter()
   }
+
   dependencies {
-    classpath 'io.fabric.tools:gradle:1.28.1'
-    classpath 'com.android.tools.build:gradle:3.5.1'
+    classpath 'com.android.tools.build:gradle:3.6.0'
     classpath 'com.google.gms:google-services:4.2.0'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     classpath 'com.google.firebase:firebase-plugins:1.1.5'
@@ -64,6 +70,7 @@ allprojects {
 
 subprojects {
   task listAllDependencies(type: DependencyReportTask) {}
+
   ext {
     compileSdk = 28
     buildTools = "28.0.3"
@@ -72,29 +79,13 @@ subprojects {
   }
 
   afterEvaluate { project ->
-    if (!project.name.equalsIgnoreCase("app")
-      && project.hasProperty("android")) {
+    if (!project.name.equalsIgnoreCase("app") && project.hasProperty("android")) {
       android {
         compileSdkVersion compileSdk
         buildToolsVersion buildTools
         defaultConfig {
           minSdkVersion minSdk
           targetSdkVersion targetSdk
-        }
-        variantFilter { variant ->
-          def names = variant.flavors*.name
-          if (names.contains("minReactNative44")) {
-            setIgnore(true)
-          }
-          if (names.contains("reactNative51") ||
-              names.contains("reactNative55") ||
-              names.contains("reactNative56") ||
-              names.contains("reactNative57") ||
-              names.contains("reactNative57_5") ||
-              names.contains("reactNative57WixFork") ||
-              names.contains("reactNative60")) {
-            setIgnore(true)
-          }
         }
       }
     }
