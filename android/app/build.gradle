@@ -1,17 +1,20 @@
-import com.android.build.OutputFile
-
 apply plugin: "com.android.application"
+apply from: project(":react-native-config").projectDir.getPath() + "/dotenv.gradle"
+
+import com.android.build.OutputFile
 
 project.ext.react = [
   entryFile: "src/index.ts",
   enableHermes: false
 ]
 
-apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 apply from: "../../node_modules/react-native/react.gradle"
-apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
-def jscFlavor = 'org.webkit:android-jsc:+'
+if (project.env.get("CODEPUSH_ACCESS_KEY") != "") {
+  apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
+}
+
+def jscFlavor = "org.webkit:android-jsc:+"
 def enableHermes = project.ext.react.get("enableHermes", false);
 
 /**
@@ -34,17 +37,22 @@ android {
 
   defaultConfig {
     applicationId "com.ueno.reactnativestarter"
-    minSdkVersion 19
-    targetSdkVersion 28
+    minSdkVersion rootProject.ext.minSdk
+    targetSdkVersion rootProject.ext.targetSdk
     versionCode 1
     versionName "1.0.0"
     multiDexEnabled true
-    testBuildType System.getProperty('testBuildType', 'debug')
+    testBuildType System.getProperty("testBuildType", "debug")
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     ndk {
       abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
     }
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
   }
 
   signingConfigs {
@@ -54,11 +62,6 @@ android {
       keyAlias "key0"
       keyPassword "12345678"
     }
-  }
-
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
   }
 
   splits {
@@ -75,11 +78,11 @@ android {
       minifyEnabled enableProguardInReleaseBuilds
       proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
       signingConfig signingConfigs.release
-      matchingFallbacks = ['release']
+      matchingFallbacks = ["release"]
     }
 
     debug {
-      matchingFallbacks = ['debug']
+      matchingFallbacks = ["debug"]
     }
   }
 
@@ -98,41 +101,36 @@ android {
   }
 
   packagingOptions {
-    exclude 'META-INF/proguard/androidx-annotations.pro'
-    exclude 'META-INF/-no-jdk.kotlin_module'
-    exclude 'META-INF/DEPENDENCIES'
-    exclude 'META-INF/NOTICE'
-    exclude 'META-INF/LICENSE'
-    exclude 'META-INF/LICENSE.txt'
-    exclude 'META-INF/NOTICE.txt'
-    pickFirst '**/armeabi-v7a/libc++_shared.so'
-    pickFirst '**/x86/libc++_shared.so'
-    pickFirst '**/arm64-v8a/libc++_shared.so'
-    pickFirst '**/x86_64/libc++_shared.so'
-    pickFirst '**/x86/libjsc.so'
-    pickFirst '**/armeabi-v7a/libjsc.so'
+    exclude "META-INF/proguard/androidx-annotations.pro"
+    exclude "META-INF/-no-jdk.kotlin_module"
+    exclude "META-INF/DEPENDENCIES"
+    exclude "META-INF/NOTICE"
+    exclude "META-INF/LICENSE"
+    exclude "META-INF/LICENSE.txt"
+    exclude "META-INF/NOTICE.txt"
+    pickFirst "lib/armeabi-v7a/libc++_shared.so"
+    pickFirst "lib/arm64-v8a/libc++_shared.so"
+    pickFirst "lib/x86/libc++_shared.so"
+    pickFirst "lib/x86_64/libc++_shared.so"
   }
 }
 
 dependencies {
-  implementation("com.facebook.react:react-native:+") {
-    exclude group:'com.facebook.fbjni', module: 'fbjni'
-  }
-  implementation "com.google.firebase:firebase-core:16.0.9"
-  implementation "com.google.android.gms:play-services-base:16.1.0"
-  implementation 'com.android.support:design:27.1.1'
-
   implementation fileTree(dir: "libs", include: ["*.jar"])
-  implementation project(':react-native-navigation')
-  implementation project(':react-native-code-push')
+  implementation "com.facebook.react:react-native:+"
+  implementation "com.google.firebase:firebase-core:17.0.1"
+  implementation "com.google.android.gms:play-services-base:17.0.0"
+  implementation "com.android.support:design:28.0.0"
+  implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
   // Enable flipper for Android
-  debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") { exclude group:'com.facebook.fbjni' }
-  debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") { exclude group:'com.facebook.flipper' }
-  debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") { exclude group:'com.facebook.flipper' }
+  debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") { exclude group:"com.facebook.fbjni" }
+  debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") { exclude group:"com.facebook.flipper" }
+  debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") { exclude group:"com.facebook.flipper" }
 
-  androidTestImplementation('com.wix:detox:+') { transitive = true }
-  androidTestImplementation 'junit:junit:4.12'
+  // Detox
+  androidTestImplementation("com.wix:detox:+") { transitive = true }
+  androidTestImplementation "junit:junit:4.12"
 
   if (enableHermes) {
     def hermesPath = "../../node_modules/hermes-engine/android/";
@@ -147,10 +145,10 @@ dependencies {
 // puts all compile dependencies into folder libs for BUCK to use
 task copyDownloadableDepsToLibs(type: Copy) {
   from configurations.compile
-  into 'libs'
+  into "libs"
 }
 
-apply plugin: 'com.google.gms.google-services'
+apply plugin: "com.google.gms.google-services"
 com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");

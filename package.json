@@ -103,7 +103,7 @@
     "polished": "3.5.1",
     "react": "^16.13.1",
     "react-native": "0.62.0",
-    "react-native-code-push": "6.1.1",
+    "react-native-code-push": "6.2.0",
     "react-native-config": "1.0.0",
     "react-native-navigation": "6.3.3",
     "react-native-version-number": "0.3.6",
