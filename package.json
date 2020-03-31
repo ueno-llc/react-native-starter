@@ -101,7 +101,7 @@
     "jsc-android": "245459.0.0",
     "lodash": "4.17.15",
     "polished": "3.5.1",
-    "react": "^16.13.1",
+    "react": "16.13.1",
     "react-native": "0.62.0",
     "react-native-code-push": "6.2.0",
     "react-native-config": "1.0.0",
