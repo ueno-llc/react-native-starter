@@ -82,7 +82,7 @@
     "configurations": {
       "ios.sim.release": {
         "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/react-native-starter.app",
-        "build": "export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/react-native-starter.xcworkspace -scheme react-native-starter -configuration Release -sdk iphonesimulator -derivedDataPath ios/build ONLY_ACTIVE_ARCH=YES -quiet -UseModernBuildSystem=NO",
+        "build": "export RCT_NO_LAUNCH_PACKAGER=true && export PRODUCT_BUNDLE_IDENTIFIER=com.ueno.reactnativestarter && xcodebuild -workspace ios/react-native-starter.xcworkspace -scheme react-native-starter -configuration Release -sdk iphonesimulator -derivedDataPath ios/build ONLY_ACTIVE_ARCH=YES -quiet -UseModernBuildSystem=NO",
         "type": "ios.simulator",
         "name": "iPhone 11"
       },
