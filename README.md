@@ -32,7 +32,7 @@ cd my-new-app
 yarn
 yarn rename "MyNewApp" com.ueno.mynewapp
 yarn start
-react-native run-(ios/android)
+yarn ios # or yarn android
 ```
 
 Alternatively you can use [`create-ueno-app`](https://github.com/ueno-llc/create-ueno-app#native):

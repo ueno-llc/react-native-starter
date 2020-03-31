@@ -128,6 +128,51 @@ do
   rm -r "$file"
 done
 
+GOOGLESERVICE_JSON_PATH="./android/app/google-services.json"
+GOOGLESERVICE_INFO_PATH="./ios/react-native-starter/GoogleService-Info.plist"
+
+GOOGLESERVICE_JSON_CONTENT='{\n
+\t"project_info": {\n
+\t\t"project_id": "sample",\n
+\t\t"project_number": "000000000000",\n
+\t\t"name": "sample",\n
+\t\t"firebase_url": "https://sample.firebaseio.com"\n
+\t},\n
+\t"client": [\n
+\t\t{\n
+\t\t\t"client_info": {\n
+\t\t\t\t"mobilesdk_app_id": "1:000000000000:android:ffffffffffffffff",\n
+\t\t\t\t"client_id": "android:com.ueno.reactnativestarter",\n
+\t\t\t\t"client_type": 1,\n
+\t\t\t\t"android_client_info": {\n
+\t\t\t\t\t"package_name": "com.ueno.reactnativestarter",\n
+\t\t\t\t\t"certificate_hash": []\n
+\t\t\t\t}\n
+\t\t\t},\n
+\t\t\t"api_key": [\n
+\t\t\t\t{\n
+\t\t\t\t\t"current_key": "sample"\n
+\t\t\t\t}\n
+\t\t\t]\n
+\t\t}\n
+\t],\n
+\t"configuration_version": "1"\n
+}'
+
+GOOGLESERVICE_INFO_CONTENT='<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n<plist version="1.0">\n
+\t<dict>\n
+\t</dict>\n</plist>'
+
+if [ ! -f $GOOGLESERVICE_INFO_PATH ]; then
+  echo "[Ueno RNS] Info: We created GoogleService-Info.plist placeholder for you!"
+  echo $GOOGLESERVICE_INFO_CONTENT > $GOOGLESERVICE_INFO_PATH
+fi
+
+if [ ! -f $GOOGLESERVICE_JSON_PATH ]; then
+  echo "[Ueno RNS] Info: We created google-services.json placeholder for you!"
+  echo $GOOGLESERVICE_JSON_CONTENT > $GOOGLESERVICE_JSON_PATH
+fi
+
 echo "echo 'Rename script has already been executed.'" > ./scripts/rename.sh
 echo "# $TITLE\nSee [react-native-starter docs](https://ueno-llc.github.io/react-native-starter/)\n\n## Development\n\`\`\`bash\nyarn start & react-native run-ios\n\`\`\`" > ./README.md
 

@@ -59,8 +59,6 @@ buck-out/
 # Environment (react-native-config)
 .env
 config.env.js
-GeneratedDotEnv.m
-GeneratedInfoPlistDotEnv.h
 .travis/secrets.zip
 .travis/id_rsa
 

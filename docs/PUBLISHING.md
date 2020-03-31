@@ -41,6 +41,7 @@ $ code-push deployment ls MyOrg/Sample-(iOS/Android) -k
 ```
 
 You will get this table
+
 ```bash
 ┌────────────┬──────────────────┬─────────────────────┬──────────────────────┐
 │ Name       │ Deployment Key   │ Update Metadata     │ Install Metrics      │
@@ -101,7 +102,7 @@ SENTRY_AUTH_TOKEN=
 
 Go to **Build** in the sidebar, select your branch for example **master** and click the gear icon in the top right corner.
 
-Change the **Shared Scheme** to `react-native-starter` (or the name of your scheme), do not select *build-env*. Make sure you turn off **Automatically increment build number**. It is recommended to run the tests before each build, but I left it as optional.
+Change the **Shared Scheme** to `react-native-starter` (or the name of your scheme). Make sure you turn off **Automatically increment build number**. It is recommended to run the tests before each build, but I left it as optional.
 
 <img src="./images/_ci_appcenter_build_app_ios.png" alt="Configure the build"  />
 

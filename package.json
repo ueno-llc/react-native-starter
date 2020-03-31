@@ -3,7 +3,6 @@
   "version": "3.0.0-alpha.0",
   "private": true,
   "scripts": {
-    "build:env": "sh ./scripts/build-env.sh",
     "build:e2e:ios": "detox build --configuration ios.sim.release",
     "build:e2e:android": "detox build --configuration android.emu.release",
     "start": "react-native start",
@@ -17,7 +16,9 @@
     "tslint": "tsc -p . --noEmit --skipLibCheck; tslint --fix 'src/**/*.{ts,tsx}' -p .",
     "stylelint": "stylelint 'src/**/*.{ts,tsx}'",
     "prepare": "patch-package && sh ./scripts/postinstall.sh",
-    "clean": "rm -rf {yarn.lock,node_modules} **/{node_modules,coverage,build,Pods,Podfile.lock,yarn.lock}"
+    "clean": "rm -rf {yarn.lock,node_modules} **/{node_modules,coverage,build,Pods,Podfile.lock,yarn.lock}",
+    "ios": "react-native run-ios --simulator='iPhone 11'",
+    "android": "react-native run-android"
   },
   "contributors": [
     "Jérémy Barbet <jeremgraph@gmail.com>",
@@ -30,8 +31,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json,md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.{ts,tsx}": [
       "tslint --fix"
@@ -98,7 +98,6 @@
     "@react-native-community/async-storage": "1.8.1",
     "@react-native-firebase/analytics": "6.3.4",
     "@react-native-firebase/app": "6.3.4",
-    "flipper-plugin-react-native-performance": "0.4.3",
     "jsc-android": "245459.0.0",
     "lodash": "4.17.15",
     "polished": "3.5.1",
