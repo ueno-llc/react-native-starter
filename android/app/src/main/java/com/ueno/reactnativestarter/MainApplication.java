@@ -38,7 +38,7 @@ public class MainApplication extends NavigationApplication {
 
         @Override
         protected String getJSMainModuleName() {
-            return "index";
+            return "src/index";
         }
 
         @Override
