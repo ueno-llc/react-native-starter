@@ -57,7 +57,10 @@ public class MainApplication extends NavigationApplication {
     public void onCreate() {
         super.onCreate();
         SoLoader.init(this, false);
-        initializeFlipper(this, getReactNativeHost());
+
+        if (BuildConfig.DEBUG) {
+            initializeFlipper(this, getReactNativeHost());
+        }
     }
 
     @Override
@@ -68,7 +71,7 @@ public class MainApplication extends NavigationApplication {
     private static void initializeFlipper(Context context, ReactNativeHost reactNativeHost) {
         if (reactNativeHost.getUseDeveloperSupport()) {
             try {
-                Class<?> aClass = Class.forName("com.helloaurora.ReactNativeFlipper");
+                Class<?> aClass = Class.forName("com.ueno.reactnativestarter.ReactNativeFlipper");
                 aClass.getMethod("initializeFlipper", Context.class, ReactInstanceManager.class).invoke(null, context, reactNativeHost.getReactInstanceManager());
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();

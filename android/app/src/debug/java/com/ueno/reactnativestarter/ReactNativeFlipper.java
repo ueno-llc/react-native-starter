@@ -1,4 +1,4 @@
-package com.helloaurora;
+package com.ueno.reactnativestarter;
 
 import android.content.Context;
 import com.facebook.flipper.android.AndroidFlipperClient;
