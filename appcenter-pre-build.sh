@@ -28,8 +28,6 @@ for KEY in $(cat .env.public | egrep "^[A-Za-z]+" | sed 's/\"/\\\"/g' | sed -n '
   echo "$KEY=$(printf '%s\n' "${!KEY}")" >> "$APPCENTER_SOURCE_DIRECTORY/.env"
 done
 
-source "$APPCENTER_SOURCE_DIRECTORY/scripts/build-env.sh"
-
 prepare_code_push() {
   npm install -g code-push-cli
   echo "[Ueno RNS] Logging into code-push-cli"

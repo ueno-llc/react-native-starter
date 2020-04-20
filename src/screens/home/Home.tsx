@@ -8,6 +8,8 @@ import { COUNTER } from '../index';
 const Main = styled.View`
   flex: 1;
   padding: 16px;
+
+  background-color: #fff;
 `;
 
 const Content = styled.View`

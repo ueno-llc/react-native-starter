@@ -59,8 +59,6 @@ buck-out/
 # Environment (react-native-config)
 .env
 config.env.js
-GeneratedDotEnv.m
-GeneratedInfoPlistDotEnv.h
 .travis/secrets.zip
 .travis/id_rsa
 
@@ -73,3 +71,6 @@ google-services.json
 
 # Misc
 .expo/
+
+# react-native-config codegen
+ios/tmp.xcconfig
