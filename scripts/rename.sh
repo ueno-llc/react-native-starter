@@ -129,7 +129,7 @@ do
 done
 
 GOOGLESERVICE_JSON_PATH="./android/app/google-services.json"
-GOOGLESERVICE_INFO_PATH="./ios/react-native-starter/GoogleService-Info.plist"
+GOOGLESERVICE_INFO_PATH="./ios/$NAME/GoogleService-Info.plist"
 
 GOOGLESERVICE_JSON_CONTENT='{\n
 \t"project_info": {\n
