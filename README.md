@@ -1,3 +1,7 @@
+# WARNING
+
+## This starter kit has been deprecated and is no longer being actively maintained by Ueno. 
+
 [![logo](https://user-images.githubusercontent.com/937328/50185086-cb7e7a80-030e-11e9-8d95-436082e38de6.png)](https://ueno.co/?utm_source=github&utm_campaign=react-native-starter)
 <br /><br />
 ![banner](https://user-images.githubusercontent.com/937328/50185090-cb7e7a80-030e-11e9-9077-8fcc4e5ac900.png)
